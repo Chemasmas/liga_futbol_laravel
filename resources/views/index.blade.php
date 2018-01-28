@@ -19,7 +19,7 @@
 
                         <!-- Item -->
                         <div class="item active">
-                            <img src="images/banner-slider/img-01.jpg" alt="">
+                            <img src="public/images/banner-slider/img-01.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-1 p-white h-white pull-right">
@@ -34,7 +34,7 @@
 
                         <!-- Item -->
                         <div class="item">
-                            <img src="images/banner-slider/img-02.jpg" alt="">
+                            <img src="public/images/banner-slider/img-02.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-2 p-white h-white pull-left">
@@ -49,7 +49,7 @@
 
                         <!-- Item -->
                         <div class="item">
-                            <img src="images/banner-slider/img-03.jpg" alt="">
+                            <img src="public/images/banner-slider/img-03.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-2 p-white h-white pull-left">
@@ -84,7 +84,7 @@
 
             <!-- Itme -->
             <li>
-                <img src="images/banner-bgs/img-03.jpg" alt="">
+                <img src="public/images/banner-bgs/img-03.jpg" alt="">
                 <div class="video-banner-caption position-center-center p-white h-white">
                     <h1>Continuous effort  not strength or<br> intelligence  is the key to unlocking our potential</h1>
                     <p>Hart's short pass wasn't controlled by Fernando, and the Swedish striker's tackle<br> resulted in the ball rolling into the net. While the bulk</p>
@@ -98,22 +98,22 @@
 
             <!-- Itme -->
             <li>
-                <img src="images/banner-bgs/img-01.jpg" alt="">
+                <img src="public/images/banner-bgs/img-01.jpg" alt="">
             </li>
             <!-- Itme -->
 
             <!-- Itme -->
             <li>
-                <img src="images/banner-bgs/img-02.jpg" alt="">
+                <img src="public/images/banner-bgs/img-02.jpg" alt="">
                 <div class="position-center-center">
                     <div class="container theme-padding">
                         <div class="pager-heading match-detail h-white">
-                            <span class="pull-left win-tag"><img src="images/Instituciones Logos/cumbres.gif" alt=""></span>
+                            <span class="pull-left win-tag"><img src="public/images/Instituciones Logos/cumbres.gif" alt=""></span>
                             <div class="vs-match-heading position-center-center">
                                 <strong class="vs-match-result">3<span>Vs</span>1</strong>
                                 <span class="end-time"><i class="fa fa-clock-o"></i>13:57 min (IST)</span>
                             </div>
-                            <span class="pull-right loss-tag"><img src="images/Instituciones Logos/9999719-300x300e405.png" alt=""></span>
+                            <span class="pull-right loss-tag"><img src="public/images/Instituciones Logos/9999719-300x300e405.png" alt=""></span>
                         </div>
                     </div>
                 </div>
@@ -162,13 +162,13 @@
                 <div class="add-banners">
                     <ul id="add-banners-slider" class="add-banners-slider">
                         <li>
-                            <a href="#"><img src="images/add-banners/img-01.jpg" alt=""></a>
+                            <a href="#"><img src="public/images/add-banners/img-01.jpg" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="images/add-banners/img-02.jpg" alt=""></a>
+                            <a href="#"><img src="public/images/add-banners/img-02.jpg" alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="images/add-banners/img-03.jpg" alt=""></a>
+                            <a href="#"><img src="public/images/add-banners/img-03.jpg" alt=""></a>
                         </li>
                     </ul>
                 </div>
@@ -187,7 +187,7 @@
                                         <div id="matches-detail-slider" class="matches-detail-slider">
 
                                             <!-- Item -->
-                                            <div class="item matches-detail" style="background: url(images/country-flags-bg.jpg);">
+                                            <div class="item matches-detail" style="background: url(public/images/country-flags-bg.jpg);">
                                                 <div class="time-left">
                                                     <ul id="countdown-1" class="countdown">
                                                         <li><span class="days">00</span>D:</li>
@@ -200,11 +200,11 @@
                                                 <div class="team-btw-match">
                                                     <ul>
                                                         <li>
-                                                            <img src="images/Instituciones Logos/cropped-cvh-deportes-192x192e8e2.png" alt="">
+                                                            <img src="public/images/Instituciones Logos/cropped-cvh-deportes-192x192e8e2.png" alt="">
                                                             <span>Vista<span>Hermosa</span></span>
                                                         </li>
                                                         <li>
-                                                            <img src="images/Instituciones Logos/photoa6e0.jpg" alt="">
+                                                            <img src="public/images/Instituciones Logos/photoa6e0.jpg" alt="">
                                                             <span>Colegio<span>Aleman</span></span>
                                                         </li>
                                                     </ul>
@@ -213,7 +213,7 @@
                                             <!-- Item -->
 
                                             <!-- Item -->
-                                            <div class="item matches-detail" style="background: url(images/country-flags-bg.jpg);">
+                                            <div class="item matches-detail" style="background: url(public/images/country-flags-bg.jpg);">
                                                 <div class="time-left">
                                                     <ul id="countdown-2" class="countdown">
                                                         <li><span class="days">00</span>D:</li>
@@ -226,11 +226,11 @@
                                                 <div class="team-btw-match">
                                                     <ul>
                                                         <li>
-                                                            <img src="images/Instituciones Logos/logo-britishb273.jpg" alt="">
+                                                            <img src="public/images/Instituciones Logos/logo-britishb273.jpg" alt="">
                                                             <span>Colegio<span>Americano</span></span>
                                                         </li>
                                                         <li>
-                                                            <img src="images/team-logos/img-02.png" alt="">
+                                                            <img src="public/images/team-logos/img-02.png" alt="">
                                                             <span>Super Team<span>Club</span></span>
                                                         </li>
                                                     </ul>
@@ -252,38 +252,38 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>
-                                                        <div class="logo-width-name"><img src="images/team-logos-small/img-01.png" alt="">Equipo 1</div>
+                                                        <div class="logo-width-name"><img src="public/images/team-logos-small/img-01.png" alt="">Equipo 1</div>
                                                     </td>
                                                     <td class="upcoming-fixture-date"><span>6 Feb 2016 15:00</span></td>
                                                     <td>
-                                                        <div class="logo-width-name w-icon"><img src="images/team-logos-small/img-02.png" alt="">Equipo 2</div>
+                                                        <div class="logo-width-name w-icon"><img src="public/images/team-logos-small/img-02.png" alt="">Equipo 2</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <div class="logo-width-name"><img src="images/team-logos-small/img-03.png" alt="">Equipo 3</div>
+                                                        <div class="logo-width-name"><img src="public/images/team-logos-small/img-03.png" alt="">Equipo 3</div>
                                                     </td>
                                                     <td class="upcoming-fixture-date"><span>6 Feb 2016 15:00</span></td>
                                                     <td>
-                                                        <div class="logo-width-name w-icon"><img src="images/team-logos-small/img-04.png" alt="">Equipo 4</div>
+                                                        <div class="logo-width-name w-icon"><img src="public/images/team-logos-small/img-04.png" alt="">Equipo 4</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <div class="logo-width-name"><img src="images/team-logos-small/img-05.png" alt="">Equipo 5</div>
+                                                        <div class="logo-width-name"><img src="public/images/team-logos-small/img-05.png" alt="">Equipo 5</div>
                                                     </td>
                                                     <td class="upcoming-fixture-date"><span>6 Feb 2016 15:00</span></td>
                                                     <td>
-                                                        <div class="logo-width-name w-icon"><img src="images/team-logos-small/img-06.png">Equipo 6</div>
+                                                        <div class="logo-width-name w-icon"><img src="public/images/team-logos-small/img-06.png">Equipo 6</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <div class="logo-width-name"><img src="images/team-logos-small/img-07.png" alt="">Equipo 7</div>
+                                                        <div class="logo-width-name"><img src="public/images/team-logos-small/img-07.png" alt="">Equipo 7</div>
                                                     </td>
                                                     <td class="upcoming-fixture-date"><span>6 Feb 2016 15:00</span></td>
                                                     <td>
-                                                        <div class="logo-width-name w-icon"><img src="images/team-logos-small/img-08.png" alt="">Equipo 8</div>
+                                                        <div class="logo-width-name w-icon"><img src="public/images/team-logos-small/img-08.png" alt="">Equipo 8</div>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -305,31 +305,31 @@
                                             <div class="col-sm-9">
                                                 <ul id="latest-news-slider" class="latest-news-slider">
                                                     <li>
-                                                        <img src="images/latest-news/img-01.jpg" alt="">
+                                                        <img src="public/images/latest-news/img-01.jpg" alt="">
                                                         <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
                                                     </li>
                                                     <li>
-                                                        <img src="images/latest-news/img-02.jpg" alt="">
+                                                        <img src="public/images/latest-news/img-02.jpg" alt="">
                                                         <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
                                                     </li>
                                                     <li>
-                                                        <img src="images/latest-news/img-03.jpg" alt="">
+                                                        <img src="public/images/latest-news/img-03.jpg" alt="">
                                                         <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
                                                     </li>
                                                     <li>
-                                                        <img src="images/latest-news/img-04.jpg" alt="">
+                                                        <img src="public/images/latest-news/img-04.jpg" alt="">
                                                         <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
                                                     </li>
                                                     <li>
-                                                        <img src="images/latest-news/img-01.jpg" alt="">
+                                                        <img src="public/images/latest-news/img-01.jpg" alt="">
                                                         <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
                                                     </li>
                                                     <li>
-                                                        <img src="images/latest-news/img-02.jpg" alt="">
+                                                        <img src="public/images/latest-news/img-02.jpg" alt="">
                                                         <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
                                                     </li>
                                                     <li>
-                                                        <img src="images/latest-news/img-03.jpg" alt="">
+                                                        <img src="public/images/latest-news/img-03.jpg" alt="">
                                                         <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
                                                     </li>
                                                 </ul>
@@ -391,16 +391,16 @@
                                 <div class="col-lg-12 col-md-12 col-sm-5 col-xs-6 r-full-width">
                                     <div class="last-matches theme-margin-bottom win-tag">
                                         <h4>Ultimo Partido</h4>
-                                        <div class="matches-detail style-2" style="background: url(images/keper-img.jpg);">
+                                        <div class="matches-detail style-2" style="background: url(public/images/keper-img.jpg);">
                                             <p>Campo 1 Sierra Nevada 12/02/2016 / 19:00</p>
                                             <div class="team-btw-match">
                                                 <ul>
                                                     <li>
-                                                        <img src="images/Instituciones Logos/9999719-300x300e405.png" alt="">
+                                                        <img src="public/images/Instituciones Logos/9999719-300x300e405.png" alt="">
                                                         <span>Northbridge<span>School</span></span>
                                                     </li>
                                                     <li>
-                                                        <img src="images/Instituciones Logos/cumbres.gif" alt="">
+                                                        <img src="public/images/Instituciones Logos/cumbres.gif" alt="">
                                                         <span>Instituto<span>Cumbres</span></span>
                                                     </li>
                                                 </ul>
@@ -521,7 +521,7 @@
         <!-- Match Detail -->
 
         <!-- Player Features And History -->
-        <section class="red-section" style=" background: url(images/red-bg.jpg) no-repeat;">
+        <section class="red-section" style=" background: url(public/images/red-bg.jpg) no-repeat;">
 
             <!-- Red Section Heading -->
             <div class="red-sec-heading">
@@ -538,7 +538,7 @@
                     <!-- Player Featuer -->
                     <div class="col-sm-6">
                         <div class="theme-padding top-profiler">
-                            <img class="player-img animate fadeInLeft" data-wow-delay="0.2s" src="images/player-img.png" alt="">
+                            <img class="player-img animate fadeInLeft" data-wow-delay="0.2s" src="public/images/player-img.png" alt="">
                             <strong class="number-batch style-1">13</strong>
                             <strong class="number-batch style-2">06</strong>
                         </div>
@@ -553,7 +553,7 @@
                                 <p>Para agregar texto y descripcion del articulo, noticia o mencion</p>
                                 <div class="player-video-sec">
                                     <div class="video video-post">
-                                        <img src="images/video-bg.jpg" alt="">
+                                        <img src="public/images/video-bg.jpg" alt="">
                                         <span class="play-lable fa fa-video-camera"></span>
                                         <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
                                     </div>
@@ -564,7 +564,7 @@
                                 <p>The wait for a major title is weighing heavily on Argentina, and it showed as they lost again to Chile, Tim Vickery writes</p>
                                 <div class="player-video-sec">
                                     <div class="video video-post">
-                                        <img src="images/video-bg-2.jpg" alt="">
+                                        <img src="public/images/video-bg-2.jpg" alt="">
                                         <span class="play-lable fa fa-video-camera"></span>
                                         <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
                                     </div>
@@ -575,7 +575,7 @@
                                 <p>The wait for a major title is weighing heavily on Argentina, and it showed as they lost again to Chile, Tim Vickery writes</p>
                                 <div class="player-video-sec">
                                     <div class="video video-post">
-                                        <img src="images/video-bg-3.jpg" alt="">
+                                        <img src="public/images/video-bg-3.jpg" alt="">
                                         <span class="play-lable fa fa-video-camera"></span>
                                         <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
                                     </div>
@@ -646,11 +646,11 @@
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12 r-full-width p-0">
                                     <figure class="gallery-figure">
-                                        <img src="images/gallery-v3/img-01.jpg" alt="">
+                                        <img src="public/images/gallery-v3/img-01.jpg" alt="">
                                         <figcaption class="overlay">
                                             <div class="position-center-center">
                                                 <ul class="btn-list">
-                                                    <li><a href="images/gallery-v3/img-1-1.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
+                                                    <li><a href="public/images/gallery-v3/img-1-1.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
                                                     <li><a class="fa fa-eye" href="#"></a></li>
                                                 </ul>
                                             </div>
@@ -659,11 +659,11 @@
                                 </div>
                                 <div class="col-sm-6 col-xs-6 r-full-width p-0">
                                     <figure class="gallery-figure">
-                                        <img src="images/gallery-v3/img-02.jpg" alt="">
+                                        <img src="public/images/gallery-v3/img-02.jpg" alt="">
                                         <figcaption class="overlay">
                                             <div class="position-center-center">
                                                 <ul class="btn-list">
-                                                    <li><a href="images/gallery-v3/img-1-2.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
+                                                    <li><a href="public/images/gallery-v3/img-1-2.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
                                                     <li><a class="fa fa-eye" href="#"></a></li>
                                                 </ul>
                                             </div>
@@ -672,11 +672,11 @@
                                 </div>
                                 <div class="col-sm-6 col-xs-6 r-full-width p-0">
                                     <figure class="gallery-figure">
-                                        <img src="images/gallery-v3/img-03.jpg" alt="">
+                                        <img src="public/images/gallery-v3/img-03.jpg" alt="">
                                         <figcaption class="overlay">
                                             <div class="position-center-center">
                                                 <ul class="btn-list">
-                                                    <li><a href="images/gallery-v3/img-1-3.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
+                                                    <li><a href="public/images/gallery-v3/img-1-3.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
                                                     <li><a class="fa fa-eye" href="#"></a></li>
                                                 </ul>
                                             </div>
@@ -689,11 +689,11 @@
                             <div class="row">
                                 <div class="col-sm-6 col-xs-6 r-full-width p-0">
                                     <figure class="gallery-figure">
-                                        <img src="images/gallery-v3/img-04.jpg" alt="">
+                                        <img src="public/images/gallery-v3/img-04.jpg" alt="">
                                         <figcaption class="overlay">
                                             <div class="position-center-center">
                                                 <ul class="btn-list">
-                                                    <li><a href="images/gallery-v3/img-1-4.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
+                                                    <li><a href="public/images/gallery-v3/img-1-4.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
                                                     <li><a class="fa fa-eye" href="#"></a></li>
                                                 </ul>
                                             </div>
@@ -702,11 +702,11 @@
                                 </div>
                                 <div class="col-sm-6 col-xs-6 r-full-width p-0">
                                     <figure class="gallery-figure">
-                                        <img src="images/gallery-v3/img-05.jpg" alt="">
+                                        <img src="public/images/gallery-v3/img-05.jpg" alt="">
                                         <figcaption class="overlay">
                                             <div class="position-center-center">
                                                 <ul class="btn-list">
-                                                    <li><a href="images/gallery-v3/img-1-5.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
+                                                    <li><a href="public/images/gallery-v3/img-1-5.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
                                                     <li><a class="fa fa-eye" href="#"></a></li>
                                                 </ul>
                                             </div>
@@ -715,11 +715,11 @@
                                 </div>
                                 <div class="col-sm-12 col-xs-12 r-full-width p-0">
                                     <figure class="gallery-figure">
-                                        <img src="images/gallery-v3/img-06.jpg" alt="">
+                                        <img src="public/images/gallery-v3/img-06.jpg" alt="">
                                         <figcaption class="overlay">
                                             <div class="position-center-center">
                                                 <ul class="btn-list">
-                                                    <li><a href="images/gallery-v3/img-1-6.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
+                                                    <li><a href="public/images/gallery-v3/img-1-6.jpg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
                                                     <li><a class="fa fa-link" href="#"></a></li>
                                                 </ul>
                                             </div>
@@ -760,7 +760,7 @@
                         <!-- Team Column -->
                         <div class="item">
                             <div class="team-column">
-                                <img src="images/team/img-01.jpg" alt="">
+                                <img src="public/images/team/img-01.jpg" alt="">
                                 <span class="player-number">12</span>
                                 <div class="team-detail">
                                     <h5><a href="team-detail.html">Jugador 1</a></h5>
@@ -796,7 +796,7 @@
                         <!-- Team Column -->
                         <div class="item">
                             <div class="team-column">
-                                <img src="images/team/img-02.jpg" alt="">
+                                <img src="public/images/team/img-02.jpg" alt="">
                                 <span class="player-number">12</span>
                                 <div class="team-detail">
                                     <h5><a href="team-detail.html">Jugador 2</a></h5>
@@ -832,7 +832,7 @@
                         <!-- Team Column -->
                         <div class="item">
                             <div class="team-column">
-                                <img src="images/team/img-03.jpg" alt="">
+                                <img src="public/images/team/img-03.jpg" alt="">
                                 <span class="player-number">12</span>
                                 <div class="team-detail">
                                     <h5><a href="team-detail.html">Jugador 3</a></h5>
@@ -868,7 +868,7 @@
                         <!-- Team Column -->
                         <div class="item">
                             <div class="team-column">
-                                <img src="images/team/img-04.jpg" alt="">
+                                <img src="public/images/team/img-04.jpg" alt="">
                                 <span class="player-number">12</span>
                                 <div class="team-detail">
                                     <h5><a href="team-detail.html">Jugador 4</a></h5>
@@ -919,7 +919,7 @@
                 <div class="product-column">
                     <div class="product-column-inner">
                         <div class="product-img">
-                            <img src="images/products/img-01.jpg" alt="">
+                            <img src="public/images/products/img-01.jpg" alt="">
                         </div>
                         <h5><a href="shop-detail.html">Playera</a></h5>
                         <span class="product-use">Playera deportiva Hombre</span>
@@ -935,7 +935,7 @@
                 <div class="product-column">
                     <div class="product-column-inner">
                         <div class="product-img">
-                            <img src="images/products/img-02.jpg" alt="">
+                            <img src="public/images/products/img-02.jpg" alt="">
                             <span class="sale-batch">sale</span>
                         </div>
                         <h5><a href="shop-detail.html">Copa</a></h5>
@@ -952,7 +952,7 @@
                 <div class="product-column">
                     <div class="product-column-inner">
                         <div class="product-img">
-                            <img src="images/products/img-03.jpg" alt="">
+                            <img src="public/images/products/img-03.jpg" alt="">
                         </div>
                         <h5><a href="shop-detail.html">Tenis</a></h5>
                         <span class="product-use">Tenis para Mujer Deportivos</span>
@@ -968,7 +968,7 @@
                 <div class="product-column">
                     <div class="product-column-inner">
                         <div class="product-img">
-                            <img src="images/products/img-04.jpg" alt="">
+                            <img src="public/images/products/img-04.jpg" alt="">
                         </div>
                         <h5><a href="shop-detail.html">Playera</a></h5>
                         <span class="product-use">Playera deportiva hombre</span>
@@ -984,7 +984,7 @@
                 <div class="product-column">
                     <div class="product-column-inner">
                         <div class="product-img">
-                            <img src="images/products/img-05.jpg" alt="">
+                            <img src="public/images/products/img-05.jpg" alt="">
                             <span class="sale-batch">sale</span>
                         </div>
                         <h5><a href="shop-detail.html">Manopla</a></h5>
@@ -1001,7 +1001,7 @@
                 <div class="product-column">
                     <div class="product-column-inner">
                         <div class="product-img">
-                            <img src="images/products/img-06.jpg" alt="">
+                            <img src="public/images/products/img-06.jpg" alt="">
                         </div>
                         <h5><a href="shop-detail.html">Playera</a></h5>
                         <span class="product-use">Playera deportiva hombre</span>
@@ -1017,7 +1017,7 @@
                 <div class="product-column">
                     <div class="product-column-inner">
                         <div class="product-img">
-                            <img src="images/products/img-01.jpg" alt="">
+                            <img src="public/images/products/img-01.jpg" alt="">
                         </div>
                         <h5><a href="shop-detail.html">Sports T-Shirt</a></h5>
                         <span class="product-use">Men’s Running Shirt</span>

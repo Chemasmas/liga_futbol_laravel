@@ -19,5 +19,9 @@
 //    return view('test');
 //});
 
+Route::get("/admin/dashboard","AdminController@index");
+Route::get("/admin","AdminController@index");
 Route::get('/',"HomeController@index");
 Route::get('/test',"HomeController@ejemplo");
+
+

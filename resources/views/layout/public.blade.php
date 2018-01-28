@@ -9,19 +9,19 @@
     <!-- Document Title -->
     <title>Liga Poniente | @yield('titulo')</title>
     <!-- StyleSheets -->
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/transition.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/transition.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/color.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <!-- FontsOnline -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800|Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <!-- JavaScripts -->
-    <script src="js/vendor/modernizr.js"></script>
+    <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
 </head>
 <body>
 
@@ -103,7 +103,7 @@
 
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="home-1.html"><img src="images/logo-4.png" alt="" width="215"></a>
+                        <a href="home-1.html"><img src="public/images/logo-4.png" alt="" width="215"></a>
                     </div>
                     <!-- Logo -->
 
@@ -164,7 +164,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                    <img src="public/images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -183,7 +183,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-2.jpg" alt="">
+                                                    <img src="public/images/blog-grid-view/img-2-2.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -202,7 +202,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-3.jpg" alt="">
+                                                    <img src="public/images/blog-grid-view/img-2-3.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -221,7 +221,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-4.jpg" alt="">
+                                                    <img src="public/images/blog-grid-view/img-2-4.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -240,7 +240,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                    <img src="public/images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -259,7 +259,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-2.jpg" alt="">
+                                                    <img src="public/images/blog-grid-view/img-2-2.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -324,7 +324,7 @@
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
                             <div class="logo-column p-white">
-                                <img src="images/Instituciones Logos/logo_1a6b6.png" alt="" width="200" class="footer-logo">
+                                <img src="public/images/Instituciones Logos/logo_1a6b6.png" alt="" width="200" class="footer-logo">
                                 <ul class="address-list style-2">
                                     <li><span>Dirección:</span>Dirección correspondiente</li>
                                     <li><span>Telefono:</span>52 00000000</li>
@@ -347,7 +347,7 @@
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
                             <h5>Anuncio</h5>
-                            <a href="#"><img src="images/footer-add.jpg" alt=""></a>
+                            <a href="#"><img src="public/images/footer-add.jpg" alt=""></a>
                         </div>
                     </div>
                     <!-- Footer Column -->
@@ -358,20 +358,20 @@
                             <h5>Patrocinadores</h5>
                             <ul id="brand-icons-slider-2" class="brand-icons-slider-2">
                                 <li>
-                                    <a href="#"><img src="images/brand-icons/img-1-1.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-2.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-3.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-4.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-5.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-6.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-1.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-2.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-3.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-4.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-5.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-6.png" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/brand-icons/img-1-1.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-2.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-3.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-4.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-5.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-6.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-1.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-2.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-3.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-4.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-5.png" alt=""></a>
+                                    <a href="#"><img src="public/images/brand-icons/img-1-6.png" alt=""></a>
                                 </li>
                             </ul>
                         </div>
@@ -402,7 +402,7 @@
 
 <!-- Slide Menu -->
 <nav id="menu" class="responive-nav">
-    <a class="r-nav-logo" href="home-1.html"><img src="images/logo-1.png" alt=""></a>
+    <a class="r-nav-logo" href="home-1.html"><img src="public/images/logo-1.png" alt=""></a>
     <ul class="respoinve-nav-list">
         <li>
             <a data-toggle="collapse" href="#list-1"><i class="pull-right fa fa-angle-down"></i>Home</a>
@@ -465,25 +465,25 @@
 <!-- Slide Menu -->
 
 <!-- Java Script -->
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="public/js/vendor/jquery.js"></script>
+<script src="public/js/vendor/bootstrap.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script src="js/gmap3.min.js"></script>
-<script src="js/bigslide.js"></script>
-<script src="js/slick.js"></script>
-<script src="js/waterwheelCarousel.js"></script>
-<script src="js/contact-form.js"></script>
-<script src="js/countTo.js"></script>
-<script src="js/datepicker.js"></script>
-<script src="js/rating-star.js"></script>
-<script src="js/range-slider.js"></script>
-<script src="js/spinner.js"></script>
-<script src="js/parallax.js"></script>
-<script src="js/countdown.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/prettyPhoto.js"></script>
-<script src="js/wow-min.js"></script>
-<script src="js/main.js"></script>
+<script src="public/js/gmap3.min.js"></script>
+<script src="public/js/bigslide.js"></script>
+<script src="public/js/slick.js"></script>
+<script src="public/js/waterwheelCarousel.js"></script>
+<script src="public/js/contact-form.js"></script>
+<script src="public/js/countTo.js"></script>
+<script src="public/js/datepicker.js"></script>
+<script src="public/js/rating-star.js"></script>
+<script src="public/js/range-slider.js"></script>
+<script src="public/js/spinner.js"></script>
+<script src="public/js/parallax.js"></script>
+<script src="public/js/countdown.js"></script>
+<script src="public/js/appear.js"></script>
+<script src="public/js/prettyPhoto.js"></script>
+<script src="public/js/wow-min.js"></script>
+<script src="public/js/main.js"></script>
 </body>
 
 <!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:51:22 GMT -->
