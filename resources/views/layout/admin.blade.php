@@ -27,16 +27,16 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             @if(auth()->user()["level"]<2)
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Torneo">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Torneos">
                 <a class="nav-link" href="crearTorneo.html">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                    <span class="nav-link-text">Crear Torneo</span>
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    <span class="nav-link-text">Torneos</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Equipo">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
                 <a class="nav-link" href="crearEquipo.html">
                     <i class="fa fa-users" aria-hidden="true"></i>
-                    <span class="nav-link-text">Crear Equipo</span>
+                    <span class="nav-link-text">Equipos</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Administrador">

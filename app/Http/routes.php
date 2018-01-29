@@ -30,4 +30,4 @@ Route::get("/admin/logout","AdminController@logout");
 Route::get('/',"HomeController@index");
 Route::get('/test',"HomeController@ejemplo");
 
-
+Route::get('/admin/equipo/crear',['middleware' => 'auth', 'uses' => "EquipoController@create"]);
