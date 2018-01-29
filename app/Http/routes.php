@@ -19,8 +19,14 @@
 //    return view('test');
 //});
 
-Route::get("/admin/dashboard","AdminController@index");
-Route::get("/admin","AdminController@index");
+Route::get("/auth/login",function (){return redirect("/");});
+
+Route::get("/admin/dashboard",['middleware' => 'auth', 'uses' => "AdminController@index"]);
+Route::get("/admin/p2","AdminController@p2");
+Route::post("/admin/login","AdminController@login");
+Route::get("/admin/logout","AdminController@logout");
+
+
 Route::get('/',"HomeController@index");
 Route::get('/test',"HomeController@ejemplo");
 

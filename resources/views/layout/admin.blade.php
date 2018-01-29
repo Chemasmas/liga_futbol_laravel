@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Inicio</title>
+    <title>@yield('rol') | @yield('titulo')</title>
     <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -25,6 +26,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            @if(auth()->user()["level"]<2)
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Torneo">
                 <a class="nav-link" href="crearTorneo.html">
                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -62,7 +64,7 @@
                     <span class="nav-link-text">Crear Programador</span>
                 </a>
             </li>
-
+            @endif
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Juegos">
                 <a class="nav-link" href="juegos.html">
                     <i class="fa fa-fw fa-table"></i>
@@ -96,21 +98,8 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-
-            <li class="nav-item dropdown">
-
-            </li>
             <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Buscar...">
-                        <span class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-                    </div>
-                </form>
+                <a class="navbar-brand" href="#"><i class="fa fa-user"></i>{{auth()->user()["username"]}}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
@@ -125,17 +114,15 @@
 
         <div class="row">
             <div class="col-12">
-                <h1>Blank</h1>
-                <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p>
+                @yield('content')
             </div>
         </div>
     </div>
-    <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © Your Website 2018</small>
+                <small>Copyright © Liga Poniente</small>
             </div>
         </div>
     </footer>
@@ -156,18 +143,18 @@
                 <div class="modal-body">Seleccione "Cerrar sesión" si está listo para finalizar su sesión.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="http://ligaponiente.com/">Cerrar sesión</a>
+                    <a class="btn btn-primary" href="{{action('AdminController@logout')}}">Cerrar sesión</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="{{ asset('js/sb-admin.min.js') }}"></script>
 </div>
 </body>
 

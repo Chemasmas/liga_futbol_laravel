@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\usuarios;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -18,6 +21,32 @@ class AdminController extends Controller
     {
         //
         return view('admin.index');
+    }
+
+    public function login(Request $request){
+
+        $email = $request->input("user");
+        $password = $request->input("pass");
+        if (Auth::attempt(['username' => $email, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->intended('admin/dashboard');
+        }
+        else{
+            return redirect("/test");
+        }
+        //$usuario = usuarios::all();
+
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect("/");
+    }
+
+    public function p2()
+    {
+        //
+        return view('admin.p2');
     }
 
     /**

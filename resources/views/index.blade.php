@@ -19,7 +19,7 @@
 
                         <!-- Item -->
                         <div class="item active">
-                            <img src="images/banner-slider/img-01.jpg" alt="">
+                            <img src="{{ asset('images/banner-slider/img-01.jpg') }}" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-1 p-white h-white pull-right">
@@ -34,7 +34,7 @@
 
                         <!-- Item -->
                         <div class="item">
-                            <img src="images/banner-slider/img-02.jpg" alt="">
+                            <img src="{{ asset('images/banner-slider/img-02.jpg') }}" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-2 p-white h-white pull-left">
@@ -49,7 +49,7 @@
 
                         <!-- Item -->
                         <div class="item">
-                            <img src="images/banner-slider/img-03.jpg" alt="">
+                            <img src="{{ asset('images/banner-slider/img-03.jpg') }}" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-2 p-white h-white pull-left">
@@ -84,7 +84,7 @@
 
             <!-- Itme -->
             <li>
-                <img src="images/banner-bgs/img-03.jpg" alt="">
+                <img src="{{asset('images/banner-bgs/img-03.jpg')}}" alt="">
                 <div class="video-banner-caption position-center-center p-white h-white">
                     <h1>Continuous effort  not strength or<br> intelligence  is the key to unlocking our potential</h1>
                     <p>Hart's short pass wasn't controlled by Fernando, and the Swedish striker's tackle<br> resulted in the ball rolling into the net. While the bulk</p>
@@ -98,22 +98,24 @@
 
             <!-- Itme -->
             <li>
-                <img src="images/banner-bgs/img-01.jpg" alt="">
+                <img src="{{asset('images/banner-bgs/img-01.jpg')}}" alt="">
             </li>
             <!-- Itme -->
 
             <!-- Itme -->
             <li>
-                <img src="images/banner-bgs/img-02.jpg" alt="">
+                <img src="{{asset('images/banner-bgs/img-02.jpg')}}" alt="">
                 <div class="position-center-center">
                     <div class="container theme-padding">
                         <div class="pager-heading match-detail h-white">
-                            <span class="pull-left win-tag"><img src="images/Instituciones Logos/cumbres.gif" alt=""></span>
+                            <span class="pull-left win-tag">
+                                <img src="{{asset('images/Instituciones Logos/cumbres.gif')}}" alt="">
+                            </span>
                             <div class="vs-match-heading position-center-center">
                                 <strong class="vs-match-result">3<span>Vs</span>1</strong>
                                 <span class="end-time"><i class="fa fa-clock-o"></i>13:57 min (IST)</span>
                             </div>
-                            <span class="pull-right loss-tag"><img src="images/Instituciones Logos/9999719-300x300e405.png" alt=""></span>
+                            <span class="pull-right loss-tag"><img src="{{asset('images/Instituciones Logos/9999719-300x300e405.png')}}" alt=""></span>
                         </div>
                     </div>
                 </div>
@@ -521,7 +523,7 @@
         <!-- Match Detail -->
 
         <!-- Player Features And History -->
-        <section class="red-section" style=" background: url(public/images/red-bg.jpg) no-repeat;">
+        <section class="red-section" style=" background: url( {{asset('images/red-bg.jpg')}} ) no-repeat;">
 
             <!-- Red Section Heading -->
             <div class="red-sec-heading">

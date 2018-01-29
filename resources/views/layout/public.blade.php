@@ -44,11 +44,19 @@
                 <!-- User Login Option -->
                 <ul class="user-login-option pull-right">
                     <li class="login-modal">
+
+                        @if( auth()->check() )
+                            <a href="{{action('AdminController@index')}}" class="login" >
+                                <i class="fa fa-user"></i>{{auth()->user()["username"]}}
+                            </a>
+
+                        @else
                         <a href="#" class="login" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>Login</a>
                         <div class="modal fade" id="login-modal">
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form>
+                                <form method="POST" action="{{action('AdminController@login')}}">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -70,6 +78,7 @@
                                 </form>
                             </div>
                         </div>
+                        @endif
                         <div class="modal fade" id="login-modal-2">
                             <div class="login-form position-center-center">
                                 <h2>Forgot password<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
