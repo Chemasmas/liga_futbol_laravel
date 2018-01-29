@@ -39,7 +39,7 @@
                     <span class="nav-link-text">Equipos</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Administrador">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administrador">
                 <a class="nav-link" href="crearAdministrador.html">
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
                     <span class="nav-link-text">Crear Administrador</span>
