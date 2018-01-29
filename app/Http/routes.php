@@ -26,6 +26,10 @@ Route::get("/admin/p2","AdminController@p2");
 Route::post("/admin/login","AdminController@login");
 Route::get("/admin/logout","AdminController@logout");
 
+Route::get("/admin/torneo",['middleware' => 'auth', 'uses' => "TorneoController@index"]);
+Route::get("/admin/torneo/create",['middleware' => 'auth', 'uses' => "TorneoController@create"]);
+
+
 
 Route::get('/',"HomeController@index");
 Route::get('/test',"HomeController@ejemplo");
