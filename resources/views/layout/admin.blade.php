@@ -27,53 +27,150 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             @if(auth()->user()["level"]<2)
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Torneos">
-                <a class="nav-link" href="{{action('TorneoController@create')}}">
-                    <i class="fa fa-trophy" aria-hidden="true"></i>
-                    <span class="nav-link-text">Torneos</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
-                <a class="nav-link" href="{{action('EquipoController@create')}}">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    <span class="nav-link-text">Equipos</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administrador">
-                <a class="nav-link" href="crearAdministrador.html">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    <span class="nav-link-text">Crear Administrador</span>
-                </a>
-            </li>
 
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Jugador">
-                <a class="nav-link" href="crearJugador.html">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    <span class="nav-link-text">Crear Jugador</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Arbitro">
-                <a class="nav-link" href="crearArbitro.html">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    <span class="nav-link-text">Crear Árbitro</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Crear Programador">
-                <a class="nav-link" href="crearProgramador.html">
-                    <i class="fa fa-user-plus"></i>
-                    <span class="nav-link-text">Crear Programador</span>
-                </a>
-            </li>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Torneos">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseTorneos" data-parent="#exampleAccordion">
+                        <i class="fa fa-trophy"></i>
+                        <span class="nav-link-text">Torneos</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseTorneos">
+                        <li>
+                            <a class="nav-link" href="{{action('TorneoController@create')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a class="nav-link" href="{{action('TorneoController@create')}}">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-link-text">Crear</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseEquipos" data-parent="#exampleAccordion">
+                        <i class="fa fa-users"></i>
+                        <span class="nav-link-text">Equipos</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseEquipos">
+                        <li>
+                            <a class="nav-link" href="# ">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-link-text">Crear</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administradores">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAdministradores" data-parent="#exampleAccordion">
+                        <i class="fa fa-user"></i>
+                        <span class="nav-link-text">Administradores</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseAdministradores">
+                        <li>
+                            <a class="nav-link" href="# ">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-link-text">Crear</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Jugadores">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseJugadores" data-parent="#exampleAccordion">
+                        <i class="fa fa-user"></i>
+                        <span class="nav-link-text">Jugadores</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseJugadores">
+                        <li>
+                            <a class="nav-link" href="# ">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-link-text">Crear</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Árbitros">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseArbitros" data-parent="#exampleAccordion">
+                        <i class="fa fa-user"></i>
+                        <span class="nav-link-text">Árbitros</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseArbitros">
+                        <li>
+                            <a class="nav-link" href="# ">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-link-text">Crear</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Programadores">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProgramadores" data-parent="#exampleAccordion">
+                        <i class="fa fa-user"></i>
+                        <span class="nav-link-text">Programadores</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseProgramadores">
+                        <li>
+                            <a class="nav-link" href="# ">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-link-text">Crear</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
             @endif
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Juegos">
                 <a class="nav-link" href="juegos.html">
-                    <i class="fa fa-fw fa-table"></i>
+                    <i class="fa fa-list-ol"></i>
                     <span class="nav-link-text">Juegos</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
                 <a class="nav-link" href="equipos.html">
-                    <i class="fa fa-fw fa-table" aria-hidden="true"></i>
+                    <i class="fa fa-list-ol" aria-hidden="true"></i>
                     <span class="nav-link-text">Equipos</span>
                 </a>
             </li>
