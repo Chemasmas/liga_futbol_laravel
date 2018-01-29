@@ -28,13 +28,13 @@
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             @if(auth()->user()["level"]<2)
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Torneos">
-                <a class="nav-link" href="crearTorneo.html">
+                <a class="nav-link" href="{{action('TorneoController@create')}}">
                     <i class="fa fa-trophy" aria-hidden="true"></i>
                     <span class="nav-link-text">Torneos</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
-                <a class="nav-link" href="crearEquipo.html">
+                <a class="nav-link" href="{{action('EquipoController@create')}}">
                     <i class="fa fa-users" aria-hidden="true"></i>
                     <span class="nav-link-text">Equipos</span>
                 </a>
@@ -83,11 +83,6 @@
                     <span class="nav-link-text">Programación</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-sitemap"></i>
-                    <span class="nav-link-text">Menu Levels</span>
-                </a>
 
         </ul>
         <ul class="navbar-nav sidenav-toggler">
