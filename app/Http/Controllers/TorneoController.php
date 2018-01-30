@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\division;
 use App\torneo;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,18 @@ class TorneoController extends Controller
      */
     public function index()
     {
-        $torneo = torneo::all()->filter( function($t) { return $t->activo; } );
-        return view('admin.indexTorneo');
+        $torneosG = torneo::all()->filter( function($t) { return $t->activo; } )
+                    ->groupBy('id_division');
+
+
+        $divisiones = division::all();
+
+        debug($divisiones);
+
+        return view('admin.torneo.index',[
+            "torneosG"=>$torneosG,
+            "divisiones"=>$divisiones
+        ]);
     }
 
     /**
@@ -26,9 +37,13 @@ class TorneoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        return view('admin.indexTorneoCreate');
+        $divisiones = division::all();
+
+        return view('admin.torneo.crear',[
+            "divisiones"=>$divisiones
+        ]);
     }
 
     /**
@@ -39,7 +54,25 @@ class TorneoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        debug($request["nombre"]);
+
+
+
+        $torneo = new torneo();
+        $torneo->nombre = $request["nombre"];
+        $torneo->id_division = $request["id_division"];
+        $torneo->tipo_torneo = $request["tipo_torneo"];
+        $torneo->activo = true;
+
+        $torneo->save(['timestamps' => false]);
+
+        //TODO validacion exito de la insercion
+
+        return redirect()->action("TorneoController@create")->with(
+            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Insercion Exitosa"]]
+        );
+
+        //return view('admin.torneo.index');
     }
 
     /**

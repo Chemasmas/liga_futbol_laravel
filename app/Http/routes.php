@@ -22,12 +22,12 @@
 Route::get("/auth/login",function (){return redirect("/");});
 
 Route::get("/admin/dashboard",['middleware' => 'auth', 'uses' => "AdminController@index"]);
-Route::get("/admin/p2","AdminController@p2");
 Route::post("/admin/login","AdminController@login");
 Route::get("/admin/logout","AdminController@logout");
 
 Route::get("/admin/torneo",['middleware' => 'auth', 'uses' => "TorneoController@index"]);
 Route::get("/admin/torneo/create",['middleware' => 'auth', 'uses' => "TorneoController@create"]);
+Route::post("/admin/torneo/store",['middleware' => 'auth', 'uses' => "TorneoController@store"]);
 
 
 

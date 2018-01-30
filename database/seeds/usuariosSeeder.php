@@ -29,7 +29,7 @@ class usuariosSeeder extends Seeder
         DB::table('usuarios')->insert(
             [
                 'id'=>1,
-                'username' => "Chema",
+                'username' => "chema@iterando.mx",
                 'password' => Hash::make("123456"),
                 'active' => 1,
                 "level" => 1
@@ -39,28 +39,10 @@ class usuariosSeeder extends Seeder
         DB::table('usuarios')->insert(
             [
                 'id'=>2,
-                'username' => "Andrea",
-                'password' => Hash::make("123456"),
+                'username' => "Ivang4",
+                'password' => Hash::make("Guzmanperezivan7"),
                 'active' => 1,
-                "level" => 2
-            ]
-        );
-        DB::table('usuarios')->insert(
-            [
-                'id'=>3,
-                'username' => "Ivan",
-                'password' => Hash::make("123456"),
-                'active' => 1,
-                "level" => 3
-            ]
-        );
-        DB::table('usuarios')->insert(
-            [
-                'id'=>4,
-                'username' => "Oscar",
-                'password' => Hash::make("123456"),
-                'active' => 1,
-                "level" => 4
+                "level" => 1
             ]
         );
     }

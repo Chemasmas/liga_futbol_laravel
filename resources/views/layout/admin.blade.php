@@ -36,7 +36,7 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseTorneos">
                         <li>
-                            <a class="nav-link" href="{{action('TorneoController@create')}}">
+                            <a class="nav-link" href="{{action('TorneoController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
                             </a>
