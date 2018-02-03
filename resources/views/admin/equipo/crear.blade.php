@@ -7,11 +7,23 @@
 @section('content')
 
     <div class="offset-sm-3 col-sm-6">
-        <form method="POST" action="{{ action('TorneoController@create') }}">
+        <form method="POST" action="{{ action('TorneoController@create') }}" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input type="file" name="foto" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="coach">Nombre Coach</label>
+                <input type="text" name="coach" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="asistente">Nombre Asistente</label>
+                <input type="text" name="asistente" class="form-control">
             </div>
             <div class="form-group">
                 <label for="tipo">Tipo</label>

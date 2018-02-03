@@ -29,7 +29,8 @@
                             {{$torneo["tipo_torneo"]}}
                         </td>
                         <td>
-                            <a class="btn btn-succes">Ver</a>
+                            <a class="btn btn-primary" role="button">Ver</a>
+                            <a class="btn btn-success" role="button">Editar</a>
                         </td>
                     </tr>
                 @endforeach

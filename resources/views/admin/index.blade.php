@@ -6,7 +6,8 @@
 
 @section('content')
 
-    <div> Esto es un ejemplo
+    <div>
+        <h3>Bienvenido</h3>
     </div>
 
 @endsection

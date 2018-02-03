@@ -19,13 +19,13 @@
 
                         <!-- Item -->
                         <div class="item active">
-                            <img src="{{ asset('images/banner-slider/img-01.jpg') }}" alt="">
+                            <img src="images/banner-slider/img-01.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-1 p-white h-white pull-right">
-                                        <h1 class="animated fadeInUp delay-1s">Calendario<br>Proximos<br>Partidos</h1>
-                                        <p class="animated fadeInUp delay-2s">Información General</p>
-                                        <a class="btn lg red-btn animated fadeInRight delay-3s" href="#"><i>+</i>Leer mas</a>
+                                        <h1 class="animated fadeInUp delay-1s">Proximos<br>Partidos<br></h1>
+                                        <p class="animated fadeInUp delay-2s">para agregar texto</p>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s" href="#"><i>+</i>leer mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -34,13 +34,13 @@
 
                         <!-- Item -->
                         <div class="item">
-                            <img src="{{ asset('images/banner-slider/img-02.jpg') }}" alt="">
+                            <img src="images/banner-slider/img-02.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-2 p-white h-white pull-left">
-                                        <h1 class="animated fadeInUp delay-1s">Estadisticas<br>de jornada<br>actual</h1>
-                                        <p class="animated fadeInUp delay-2s">informacion general</p>
-                                        <a class="btn lg red-btn animated fadeInRight delay-3s" href="#"><i>+</i>Leer mas</a>
+                                        <h1 class="animated fadeInUp delay-1s">Estadisticas de<br>jornada actual<br></h1>
+                                        <p class="animated fadeInUp delay-2s">para agregar texto</p>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s" href="#"><i>+</i>leer mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -49,13 +49,13 @@
 
                         <!-- Item -->
                         <div class="item">
-                            <img src="{{ asset('images/banner-slider/img-03.jpg') }}" alt="">
+                            <img src="images/banner-slider/img-03.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-2 p-white h-white pull-left">
-                                        <h1 class="animated fadeInUp delay-1s">Nuestras Convocatorias<br>Inscripciones<br>Abiertas</h1>
-                                        <p class="animated fadeInUp delay-2s">informacion general</p>
-                                        <a class="btn lg red-btn animated fadeInRight delay-3s" href="#"><i>+</i>Leer mas</a>
+                                        <h1 class="animated fadeInUp delay-1s">Convocatorias<br>Inscripciones<br>abiertas</h1>
+                                        <p class="animated fadeInUp delay-2s">para agregar texto</p>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s" href="#"><i>+</i>leer mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -84,13 +84,13 @@
 
             <!-- Itme -->
             <li>
-                <img src="{{asset('images/banner-bgs/img-03.jpg')}}" alt="">
+                <img src="images/banner-bgs/img-03.jpg" alt="">
                 <div class="video-banner-caption position-center-center p-white h-white">
-                    <h1>Continuous effort  not strength or<br> intelligence  is the key to unlocking our potential</h1>
-                    <p>Hart's short pass wasn't controlled by Fernando, and the Swedish striker's tackle<br> resulted in the ball rolling into the net. While the bulk</p>
+                    <h1>Futbol<br> con valores</h1>
+                    <p>para agregar texto titulo o mencion<br> texto en general</p>
                     <ul class="btn-list">
-                        <li><a class="btn lg red-btn" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]">watch video<i class="fa fa-play-circle"></i></a></li>
-                        <li><a class="btn lg red-btn" href="#">MOre videos<i class="fa fa-angle-right"></i></a></li>
+                        <li><a class="btn lg red-btn" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]">Ver video<i class="fa fa-play-circle"></i></a></li>
+                        <li><a class="btn lg red-btn" href="#">Mas videos<i class="fa fa-angle-right"></i></a></li>
                     </ul>
                 </div>
             </li>
@@ -98,24 +98,19 @@
 
             <!-- Itme -->
             <li>
-                <img src="{{asset('images/banner-bgs/img-01.jpg')}}" alt="">
+                <img src="images/banner-bgs/img-01.jpg" alt="">
             </li>
             <!-- Itme -->
 
             <!-- Itme -->
             <li>
-                <img src="{{asset('images/banner-bgs/img-02.jpg')}}" alt="">
+                <img src="images/banner-bgs/img-02.jpg" alt="">
                 <div class="position-center-center">
                     <div class="container theme-padding">
                         <div class="pager-heading match-detail h-white">
-                            <span class="pull-left win-tag">
-                                <img src="{{asset('images/Instituciones Logos/cumbres.gif')}}" alt="">
-                            </span>
-                            <div class="vs-match-heading position-center-center">
-                                <strong class="vs-match-result">3<span>Vs</span>1</strong>
-                                <span class="end-time"><i class="fa fa-clock-o"></i>13:57 min (IST)</span>
-                            </div>
-                            <span class="pull-right loss-tag"><img src="{{asset('images/Instituciones Logos/9999719-300x300e405.png')}}" alt=""></span>
+                            <span class="pull-left win-tag"><img src="images/Instituciones Logo/cropped-cvh-deportes-192x192e8e2.png" alt=""></span>
+                            <div class="vs-match-heading position-center-center"><strong class="vs-match-result">3<span>Vs</span>1</strong> <span class="end-time"><em class="fa fa-clock-o"></em>13:57 min</span></div>
+                            <span class="pull-right loss-tag"><img src="images/Instituciones Logo/photoa6e0.jpg" alt=""></span>
                         </div>
                     </div>
                 </div>
@@ -129,18 +124,10 @@
         <div class="main-slides-thumb">
             <div class="container">
                 <ul id="slides-thmnail" class="slides-thmnail">
-                    <li>
-                        <span><i class="fa fa-sliders"></i>Slides</span>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-play-circle"></i>Video</span>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-soccer-ball-o"></i>clasificados</span>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-bar-chart"></i>resultados</span>
-                    </li>
+                    <li><span><i class="fa fa-sliders"></i>Slides</span></li>
+                    <li> <span><i class="fa fa-play-circle"></i>Videos</span> </li>
+                    <li> <span><i class="fa fa-soccer-ball-o"></i>Destacados</span></li>
+                    <li><span><i class="fa fa-bar-chart"></i>Resultados</span></li>
                 </ul>
                 <ul class="thmnail-arrows">
                     <li class="prev-1"><span class="icon-arrow-01"></span></li>
@@ -162,17 +149,6 @@
 
                 <!-- Add Banners -->
                 <div class="add-banners">
-                    <ul id="add-banners-slider" class="add-banners-slider">
-                        <li>
-                            <a href="#"><img src="images/add-banners/img-01.jpg" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="images/add-banners/img-02.jpg" alt=""></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="images/add-banners/img-03.jpg" alt=""></a>
-                        </li>
-                    </ul>
                 </div>
                 <!-- Add Banners -->
 
@@ -184,12 +160,12 @@
 
                                 <!-- Next Matches -->
                                 <div class="col-sm-4 col-xs-5 r-full-width">
-                                    <div class="next-matches">
-                                        <h4>Proximo Partido</h4>
+                                    <div class="next-matches"><h4>prox partidos</h4>
+
                                         <div id="matches-detail-slider" class="matches-detail-slider">
 
                                             <!-- Item -->
-                                            <div class="item matches-detail" style="background: url(public/images/country-flags-bg.jpg);">
+                                            <div class="item matches-detail" style="background: url(images/country-flags-bg.jpg);">
                                                 <div class="time-left">
                                                     <ul id="countdown-1" class="countdown">
                                                         <li><span class="days">00</span>D:</li>
@@ -202,12 +178,12 @@
                                                 <div class="team-btw-match">
                                                     <ul>
                                                         <li>
-                                                            <img src="images/Instituciones Logos/cropped-cvh-deportes-192x192e8e2.png" alt="">
-                                                            <span>Vista<span>Hermosa</span></span>
+                                                            <img src="images/team-logos/img-01.png" alt="">
+                                                            <span>Footbal<span>Team</span></span>
                                                         </li>
                                                         <li>
-                                                            <img src="images/Instituciones Logos/photoa6e0.jpg" alt="">
-                                                            <span>Colegio<span>Aleman</span></span>
+                                                            <img src="images/team-logos/img-02.png" alt="">
+                                                            <span>Super Team<span>Club</span></span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -215,7 +191,7 @@
                                             <!-- Item -->
 
                                             <!-- Item -->
-                                            <div class="item matches-detail" style="background: url(public/images/country-flags-bg.jpg);">
+                                            <div class="item matches-detail" style="background: url(images/country-flags-bg.jpg);">
                                                 <div class="time-left">
                                                     <ul id="countdown-2" class="countdown">
                                                         <li><span class="days">00</span>D:</li>
@@ -228,8 +204,8 @@
                                                 <div class="team-btw-match">
                                                     <ul>
                                                         <li>
-                                                            <img src="images/Instituciones Logos/logo-britishb273.jpg" alt="">
-                                                            <span>Colegio<span>Americano</span></span>
+                                                            <img src="images/team-logos/img-01.png" alt="">
+                                                            <span>Footbal<span>Team</span></span>
                                                         </li>
                                                         <li>
                                                             <img src="images/team-logos/img-02.png" alt="">
@@ -247,7 +223,7 @@
 
                                 <!-- Upcoming Fixture -->
                                 <div class="col-sm-8 col-xs-7 r-full-width">
-                                    <h3><span><i class="red-color">PROXIMOS</i> PARTIDOS</span><a class="view-all pull-right" href="#">Ver mas<i class="fa fa-angle-double-right"></i></a></h3>
+                                    <h3><span><em class="red-color">JORNADAS </em>ACTUALES</span><a class="view-all pull-right" href="#">Ver mas<em class="fa fa-angle-double-right"></em></a></h3>
                                     <div class="upcoming-fixture">
                                         <div class="table-responsive">
                                             <table class="table table-bordered">
@@ -276,7 +252,7 @@
                                                     </td>
                                                     <td class="upcoming-fixture-date"><span>6 Feb 2016 15:00</span></td>
                                                     <td>
-                                                        <div class="logo-width-name w-icon"><img src="images/team-logos-small/img-06.png">Equipo 6</div>
+                                                        <div class="logo-width-name w-icon"><img src="images/team-logos-small/img-06.png" alt="">Equipo 6</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -297,90 +273,6 @@
 
                                 <!-- Latest News -->
                                 <div class="col-xs-12">
-                                    <div class="latest-news-holder">
-                                        <h3><span>Ultimas Noticias</span></h3>
-
-                                        <!-- latest-news Slider -->
-                                        <div class="row no-gutters white-bg">
-
-                                            <!-- Slider -->
-                                            <div class="col-sm-9">
-                                                <ul id="latest-news-slider" class="latest-news-slider">
-                                                    <li>
-                                                        <img src="images/latest-news/img-01.jpg" alt="">
-                                                        <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
-                                                    </li>
-                                                    <li>
-                                                        <img src="images/latest-news/img-02.jpg" alt="">
-                                                        <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
-                                                    </li>
-                                                    <li>
-                                                        <img src="images/latest-news/img-03.jpg" alt="">
-                                                        <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
-                                                    </li>
-                                                    <li>
-                                                        <img src="images/latest-news/img-04.jpg" alt="">
-                                                        <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
-                                                    </li>
-                                                    <li>
-                                                        <img src="images/latest-news/img-01.jpg" alt="">
-                                                        <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
-                                                    </li>
-                                                    <li>
-                                                        <img src="images/latest-news/img-02.jpg" alt="">
-                                                        <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
-                                                    </li>
-                                                    <li>
-                                                        <img src="images/latest-news/img-03.jpg" alt="">
-                                                        <p>Para agregar cualquier texto , descripcion, noticia relevante o voletin de alta importancia<a href="#">leer mas...</a></p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- Slider -->
-
-                                            <!-- Thumnail -->
-                                            <div class="col-sm-3">
-                                                <ul id="latest-news-thumb" class="latest-news-thumb">
-                                                    <li>
-                                                        <p>Noticia 1 informacion general</p>
-                                                        <span>Febrero 11, 2016</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>Noticia 2 informacion general</p>
-                                                        <span>Febrero 11, 2016</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>Noticia 3 informacion general</p>
-                                                        <span>Febrero 11, 2016</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>Noticia 4 informacion general</p>
-                                                        <span>Febrero 11, 2016</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>Noticia 5 informacion general</p>
-                                                        <span>Febrero 11, 2016</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>Noticia 6 informacion general</p>
-                                                        <span>Febrero 11, 2016</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>Noticia 7 informacion general</p>
-                                                        <span>Febrero 11, 2016</span>
-                                                    </li>
-                                                </ul>
-                                                <ul class="news-thumb-arrows">
-                                                    <li class="prev"><span class="fa fa-angle-up"></span></li>
-                                                    <li class="next"><span class="fa fa-angle-down"></span></li>
-                                                </ul>
-                                            </div>
-                                            <!-- Thumnail -->
-
-                                        </div>
-                                        <!-- latest-news Slider -->
-
-                                    </div>
                                 </div>
                                 <!-- Latest News -->
 
@@ -389,248 +281,11 @@
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <div class="row">
 
-                                <!-- Last Match -->
-                                <div class="col-lg-12 col-md-12 col-sm-5 col-xs-6 r-full-width">
-                                    <div class="last-matches theme-margin-bottom win-tag">
-                                        <h4>Ultimo Partido</h4>
-                                        <div class="matches-detail style-2" style="background: url(public/images/keper-img.jpg);">
-                                            <p>Campo 1 Sierra Nevada 12/02/2016 / 19:00</p>
-                                            <div class="team-btw-match">
-                                                <ul>
-                                                    <li>
-                                                        <img src="images/Instituciones Logos/9999719-300x300e405.png" alt="">
-                                                        <span>Northbridge<span>School</span></span>
-                                                    </li>
-                                                    <li>
-                                                        <img src="images/Instituciones Logos/cumbres.gif" alt="">
-                                                        <span>Instituto<span>Cumbres</span></span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="goals-detail">
-                                                <ul>
-                                                    <li>
-                                                        <span>C, Irlandes</span>
-                                                        <span>23 (FNA)</span>
-                                                    </li>
-                                                    <li>
-                                                        <span>C. Aleman</span>
-                                                        <span>41 (FNA)</span>
-                                                    </li>
-                                                    <li>
-                                                        <span>C. Americano</span>
-                                                        <span>59 (FNA)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Last Match -->
-
-                                <!-- Last Match -->
-                                <div class="col-lg-12 col-md-12 col-sm-7 col-xs-6 r-full-width">
-                                    <div class="last-matches styel-1">
-                                        <h3><span>TABLA DE PUNTAJE</span></h3>
-                                        <table class="table table-bordered table-hover">
-                                            <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Equipo</th>
-                                                <th>J</th>
-                                                <th>G</th>
-                                                <th>P</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Equipo 1</td>
-                                                <td>10</td>
-                                                <td>12</td>
-                                                <td>20</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Equipo 2</td>
-                                                <td>10</td>
-                                                <td>12</td>
-                                                <td>20</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Equipo 3</td>
-                                                <td>20</td>
-                                                <td>15</td>
-                                                <td>20</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Equipo 4</td>
-                                                <td>60</td>
-                                                <td>10</td>
-                                                <td>60</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Equipo 5</td>
-                                                <td>30</td>
-                                                <td>06</td>
-                                                <td>30</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Equipo 6</td>
-                                                <td>12</td>
-                                                <td>03</td>
-                                                <td>40</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Equipo 7</td>
-                                                <td>12</td>
-                                                <td>15</td>
-                                                <td>12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Equipo 8</td>
-                                                <td>12</td>
-                                                <td>15</td>
-                                                <td>12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>Equipo 9</td>
-                                                <td>22</td>
-                                                <td>14</td>
-                                                <td>22</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <!-- Last Match -->
+                                <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=370&amp;wkst=2&amp;bgcolor=%23ff0000&amp;src=ligaponiente.callendar%40gmail.com&amp;color=%231B887A&amp;src=es.mexican%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FMexico_City" style="border-width:1" width="200" height="370" frameborder="1" scrolling="si"></iframe>				<!-- Match Detail Content -->
 
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Match Detail Content -->
-
-            </div>
         </section>
         <!-- Match Detail -->
-
-        <!-- Player Features And History -->
-        <section class="red-section" style=" background: url( {{asset('images/red-bg.jpg')}} ) no-repeat;">
-
-            <!-- Red Section Heading -->
-            <div class="red-sec-heading">
-                <div class="container">
-                    <h5>Jugador goleador</h5>
-                </div>
-            </div>
-            <!-- Red Section Heading -->
-
-            <!-- Red saection Content -->
-            <div class="container">
-                <div class="row">
-
-                    <!-- Player Featuer -->
-                    <div class="col-sm-6">
-                        <div class="theme-padding top-profiler">
-                            <img class="player-img animate fadeInLeft" data-wow-delay="0.2s" src="images/player-img.png" alt="">
-                            <strong class="number-batch style-1">13</strong>
-                            <strong class="number-batch style-2">06</strong>
-                        </div>
-                    </div>
-                    <!-- Player Featuer -->
-
-                    <!-- Player History -->
-                    <div class="col-sm-6">
-                        <ul id="video-slider" class="video-slider">
-                            <li class="red-sec-widget player-history h-white p-white">
-                                <h3>Partido relacionado</h3>
-                                <p>Para agregar texto y descripcion del articulo, noticia o mencion</p>
-                                <div class="player-video-sec">
-                                    <div class="video video-post">
-                                        <img src="images/video-bg.jpg" alt="">
-                                        <span class="play-lable fa fa-video-camera"></span>
-                                        <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="red-sec-widget player-history h-white p-white">
-                                <h3>Related Match</h3>
-                                <p>The wait for a major title is weighing heavily on Argentina, and it showed as they lost again to Chile, Tim Vickery writes</p>
-                                <div class="player-video-sec">
-                                    <div class="video video-post">
-                                        <img src="images/video-bg-2.jpg" alt="">
-                                        <span class="play-lable fa fa-video-camera"></span>
-                                        <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="red-sec-widget player-history h-white p-white">
-                                <h3>Related Match</h3>
-                                <p>The wait for a major title is weighing heavily on Argentina, and it showed as they lost again to Chile, Tim Vickery writes</p>
-                                <div class="player-video-sec">
-                                    <div class="video video-post">
-                                        <img src="images/video-bg-3.jpg" alt="">
-                                        <span class="play-lable fa fa-video-camera"></span>
-                                        <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Player History -->
-
-                </div>
-            </div>
-            <!-- Red saection Content -->
-
-        </section>
-        <!-- Player Features And History -->
-
-        <!-- Facts Accounter -->
-        <div class="facts-acounter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 pull-right">
-                        <ul class="facts-list-acounter" id="tc-counters">
-                            <li>
-                                <strong class="facts-number" data-from="0" data-to="55" data-speed="1000"></strong>
-                                <span>Poseción</span>
-                            </li>
-                            <li>
-                                <strong class="facts-number" data-from="0" data-to="30" data-speed="2000"></strong>
-                                <span>Equipo</span>
-                            </li>
-                            <li>
-                                <strong class="facts-number" data-from="0" data-to="1" data-speed="3000"></strong>
-                                <span>Partidos ganados</span>
-                            </li>
-                            <li>
-                                <strong class="facts-number" data-from="0" data-to="19" data-speed="4000"></strong>
-                                <span>Tiros en el partido</span>
-                            </li>
-                            <li>
-                                <strong class="facts-number" data-from="0" data-to="1" data-speed="5000"></strong>
-                                <span>Expulsiones</span>
-                            </li>
-                            <li>
-                                <strong class="facts-number" data-from="0" data-to="3" data-speed="6000"></strong>
-                                <span>amonestaciones</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Facts Accounter -->
-
         <!-- Gallery And Team -->
         <div class="theme-padding gallery-holder">
 
@@ -639,7 +294,7 @@
                 <div class="container">
 
                     <!-- Main Heading -->
-                    <h3><span>Galeria de partidos</span></h3>
+                    <h3><span>Galeria</span></h3>
                     <!-- Main Heading -->
 
                     <!-- Gallery Columns -->
@@ -737,6 +392,116 @@
             </div>
             <!-- Gallery v-3 -->
 
+            <!-- Player Features And History -->
+            <section class="red-section" style=" background: url(images/red-bg.jpg) no-repeat;">
+
+                <!-- Red Section Heading -->
+                <div class="red-sec-heading">
+                    <div class="container">
+                        <h5>Jugador destacado</h5>
+                    </div>
+                </div>
+                <!-- Red Section Heading -->
+
+                <!-- Red saection Content -->
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Player Featuer -->
+                        <div class="col-sm-6">
+                            <div class="theme-padding top-profiler">
+                                <img class="player-img animate fadeInLeft" data-wow-delay="0.2s" src="images/player-img.png" alt="">
+                                <strong class="number-batch style-1">13</strong>
+                                <strong class="number-batch style-2">06</strong>
+                            </div>
+                        </div>
+                        <!-- Player Featuer -->
+
+                        <!-- Player History -->
+                        <div class="col-sm-6">
+                            <ul id="video-slider" class="video-slider">
+                                <li class="red-sec-widget player-history h-white p-white">
+                                    <h3>Partidos relacionados</h3>
+                                    <p>Para agregar texto, mencion o noticia</p>
+                                    <div class="player-video-sec">
+                                        <div class="video video-post">
+                                            <img src="images/video-bg.jpg" alt="">
+                                            <span class="play-lable fa fa-video-camera"></span>
+                                            <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="red-sec-widget player-history h-white p-white">
+                                    <h3>partidos relacionados</h3>
+                                    <p>Para agregar texto, mencion o noticia</p>
+                                    <div class="player-video-sec">
+                                        <div class="video video-post">
+                                            <img src="images/video-bg-2.jpg" alt="">
+                                            <span class="play-lable fa fa-video-camera"></span>
+                                            <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="red-sec-widget player-history h-white p-white">
+                                    <h3>Related Match</h3>
+                                    <p>Para agregar texto, mencion o noticia</p>
+                                    <div class="player-video-sec">
+                                        <div class="video video-post">
+                                            <img src="images/video-bg-3.jpg" alt="">
+                                            <span class="play-lable fa fa-video-camera"></span>
+                                            <a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Player History -->
+
+                    </div>
+                </div>
+                <!-- Red saection Content -->
+
+            </section>
+            <!-- Player Features And History -->
+
+            <!-- Facts Accounter -->
+            <div class="facts-acounter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 pull-right">
+                            <ul class="facts-list-acounter" id="tc-counters">
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="550" data-speed="1000"></strong>
+                                    <span>Posesion</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="30" data-speed="2000"></strong>
+                                    <span>Team Members</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="158" data-speed="3000"></strong>
+                                    <span>Partidos Ganados</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="199" data-speed="4000"></strong>
+                                    <span>tiros a gol</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="1254" data-speed="5000"></strong>
+                                    <span>expulciones</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="32" data-speed="6000"></strong>
+                                    <span>faltas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Facts Accounter -->
+
+
             <!-- Separator -->
             <div class="container text-center">
                 <span class="sprater"><i class="fa fa-futbol-o"></i></span>
@@ -751,7 +516,7 @@
                     <div class="main-heading-holder">
                         <div class="main-heading">
                             <h2>Jugadores destacados</h2>
-                            <p>Para agregar cualquier texto, descripcion y mencion</p>
+                            <p>para agregar texto y menciones</p>
                         </div>
                     </div>
                     <!-- Main Heading -->
@@ -763,30 +528,23 @@
                         <div class="item">
                             <div class="team-column">
                                 <img src="images/team/img-01.jpg" alt="">
-                                <span class="player-number">12</span>
+                                <span class="player-number">1</span>
                                 <div class="team-detail">
                                     <h5><a href="team-detail.html">Jugador 1</a></h5>
-                                    <span class="desination">Defenza</span>
+                                    <span class="desination">Defensa</span>
                                     <div class="detail-inner">
                                         <ul>
-                                            <li>Fecha de Nac</li>
-                                            <li>Posición</li>
-                                            <li>Numero</li>
                                             <li>Equipo</li>
-                                            <li>Siguelo en...</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
                                         </ul>
                                         <ul>
-                                            <li>Agosto 31, 1988</li>
-                                            <li>Medio</li>
-                                            <li>13</li>
                                             <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
                                             <li>
-                                                <ul class="social-icons">
-                                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
@@ -799,30 +557,24 @@
                         <div class="item">
                             <div class="team-column">
                                 <img src="images/team/img-02.jpg" alt="">
-                                <span class="player-number">12</span>
+                                <span class="player-number">2</span>
                                 <div class="team-detail">
-                                    <h5><a href="team-detail.html">Jugador 2</a></h5>
+                                    <h5><a href="team-detail.html">jugador 2</a></h5>
                                     <span class="desination">Medio</span>
                                     <div class="detail-inner">
                                         <ul>
-                                            <li>Fecha de Nac</li>
-                                            <li>Posición</li>
-                                            <li>Numero</li>
                                             <li>Equipo</li>
-                                            <li>Siguelo en...</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
                                         </ul>
                                         <ul>
-                                            <li>Agosto 31, 1988</li>
-                                            <li>Medio</li>
-                                            <li>13</li>
                                             <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
                                             <li>
-                                                <ul class="social-icons">
-                                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                                </ul>
+                                            </li>
                                             </li>
                                         </ul>
                                     </div>
@@ -835,32 +587,24 @@
                         <div class="item">
                             <div class="team-column">
                                 <img src="images/team/img-03.jpg" alt="">
-                                <span class="player-number">12</span>
+                                <span class="player-number">3</span>
                                 <div class="team-detail">
-                                    <h5><a href="team-detail.html">Jugador 3</a></h5>
+                                    <h5><a href="team-detail.html">jugador 3</a></h5>
                                     <span class="desination">Delantero</span>
                                     <div class="detail-inner">
                                         <ul>
-                                            <li>Fecha de Nac</li>
-                                            <li>Posición</li>
-                                            <li>Numero</li>
                                             <li>Equipo</li>
-                                            <li>Siguelo en...</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
                                         </ul>
                                         <ul>
-                                            <li>Agosto 31, 1988</li>
-                                            <li>Medio</li>
-                                            <li>13</li>
                                             <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
                                             <li>
-                                                <ul class="social-icons">
-                                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                                </ul>
                                             </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -871,32 +615,24 @@
                         <div class="item">
                             <div class="team-column">
                                 <img src="images/team/img-04.jpg" alt="">
-                                <span class="player-number">12</span>
+                                <span class="player-number">4</span>
                                 <div class="team-detail">
                                     <h5><a href="team-detail.html">Jugador 4</a></h5>
-                                    <span class="desination">Portero</span>
+                                    <span class="desination">portero</span>
                                     <div class="detail-inner">
                                         <ul>
-                                            <li>Fecha de Nac</li>
-                                            <li>Posición</li>
-                                            <li>Numero</li>
                                             <li>Equipo</li>
-                                            <li>Siguelo en...</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
                                         </ul>
                                         <ul>
-                                            <li>Agosto 31, 1988</li>
-                                            <li>Medio</li>
-                                            <li>13</li>
                                             <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
                                             <li>
-                                                <ul class="social-icons">
-                                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                                </ul>
                                             </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -923,11 +659,11 @@
                         <div class="product-img">
                             <img src="images/products/img-01.jpg" alt="">
                         </div>
-                        <h5><a href="shop-detail.html">Playera</a></h5>
-                        <span class="product-use">Playera deportiva Hombre</span>
+                        <h5><a href="shop-detail.html">playera deportiva</a></h5>
+                        <span class="product-use">para hombre</span>
                     </div>
                     <div class="btm">
-                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>agregar</a>
                         <span class="price">$39.00</span>
                     </div>
                 </div>
@@ -938,13 +674,13 @@
                     <div class="product-column-inner">
                         <div class="product-img">
                             <img src="images/products/img-02.jpg" alt="">
-                            <span class="sale-batch">sale</span>
+                            <span class="sale-batch">venta</span>
                         </div>
-                        <h5><a href="shop-detail.html">Copa</a></h5>
-                        <span class="product-use">Trofeo Dorado</span>
+                        <h5><a href="shop-detail.html">copa </a></h5>
+                        <span class="product-use">torneo de futbol</span>
                     </div>
                     <div class="btm">
-                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Agregar</a>
                         <span class="price">$39.00</span>
                     </div>
                 </div>
@@ -956,11 +692,11 @@
                         <div class="product-img">
                             <img src="images/products/img-03.jpg" alt="">
                         </div>
-                        <h5><a href="shop-detail.html">Tenis</a></h5>
-                        <span class="product-use">Tenis para Mujer Deportivos</span>
+                        <h5><a href="shop-detail.html">tenis sport</a></h5>
+                        <span class="product-use">para hombre</span>
                     </div>
                     <div class="btm">
-                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Agregar </a>
                         <span class="price">$39.00</span>
                     </div>
                 </div>
@@ -972,13 +708,10 @@
                         <div class="product-img">
                             <img src="images/products/img-04.jpg" alt="">
                         </div>
-                        <h5><a href="shop-detail.html">Playera</a></h5>
-                        <span class="product-use">Playera deportiva hombre</span>
+                        <h5><a href="shop-detail.html">playera deportiva</a></h5>
+                        <span class="product-use">para hombre</span>
                     </div>
-                    <div class="btm">
-                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-                        <span class="price">$39.00</span>
-                    </div>
+                    <div class="btm"><a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Agregar </a> <span class="price">$39.00</span></div>
                 </div>
                 <!-- Product Column -->
 
@@ -987,13 +720,13 @@
                     <div class="product-column-inner">
                         <div class="product-img">
                             <img src="images/products/img-05.jpg" alt="">
-                            <span class="sale-batch">sale</span>
+                            <span class="sale-batch">Venta</span>
                         </div>
-                        <h5><a href="shop-detail.html">Manopla</a></h5>
-                        <span class="product-use">Manopla beisball</span>
+                        <h5><a href="shop-detail.html">Guantes de portero</a></h5>
+                        <span class="product-use">para futbol</span>
                     </div>
                     <div class="btm">
-                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Agregar </a>
                         <span class="price">$39.00</span>
                     </div>
                 </div>
@@ -1005,8 +738,8 @@
                         <div class="product-img">
                             <img src="images/products/img-06.jpg" alt="">
                         </div>
-                        <h5><a href="shop-detail.html">Playera</a></h5>
-                        <span class="product-use">Playera deportiva hombre</span>
+                        <h5><a href="shop-detail.html">Sports T-Shirt</a></h5>
+                        <span class="product-use">Men’s Running Shirt</span>
                     </div>
                     <div class="btm">
                         <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
@@ -1021,11 +754,11 @@
                         <div class="product-img">
                             <img src="images/products/img-01.jpg" alt="">
                         </div>
-                        <h5><a href="shop-detail.html">Sports T-Shirt</a></h5>
-                        <span class="product-use">Men’s Running Shirt</span>
+                        <h5><a href="shop-detail.html">Playera Deportiva</a></h5>
+                        <span class="product-use">Para Hombre</span>
                     </div>
                     <div class="btm">
-                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                        <a class="btn" href="shop-detail.html"><i class="fa fa-shopping-cart"></i>Agregar</a>
                         <span class="price">$39.00</span>
                     </div>
                 </div>

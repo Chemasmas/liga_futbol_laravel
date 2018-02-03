@@ -58,14 +58,14 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseEquipos">
                         <li>
-                            <a class="nav-link" href="# ">
+                            <a class="nav-link" href="{{action('EquipoController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
                             </a>
                         </li>
                         <li>
                         <li>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{action('EquipoController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Crear</span>
                             </a>

@@ -29,9 +29,12 @@ Route::get("/admin/torneo",['middleware' => 'auth', 'uses' => "TorneoController@
 Route::get("/admin/torneo/create",['middleware' => 'auth', 'uses' => "TorneoController@create"]);
 Route::post("/admin/torneo/store",['middleware' => 'auth', 'uses' => "TorneoController@store"]);
 
+Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@index"]);
+Route::get('/admin/equipo/crear',['middleware' => 'auth', 'uses' => "EquipoController@create"]);
+Route::get('/admin/equipo/store',['middleware' => 'auth', 'uses' => "EquipoController@store"]);
 
 
 Route::get('/',"HomeController@index");
 Route::get('/test',"HomeController@ejemplo");
 
-Route::get('/admin/equipo/crear',['middleware' => 'auth', 'uses' => "EquipoController@create"]);
+

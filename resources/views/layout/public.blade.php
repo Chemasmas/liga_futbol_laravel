@@ -1,27 +1,26 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
 
-<!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:48:39 GMT -->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content=""/>
     <!-- Document Title -->
-    <title>Liga Poniente | @yield('titulo')</title>
+    <title>Liga Poniente</title>
     <!-- StyleSheets -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/transition.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/color.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- FontsOnline -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800|Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <!-- JavaScripts -->
-    <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
+    <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
 
@@ -43,20 +42,20 @@
 
                 <!-- User Login Option -->
                 <ul class="user-login-option pull-right">
+                    <li class="social-icon">
+                        <ul class="social-icons style-5">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        </ul>
+                    </li>
                     <li class="login-modal">
-
-                        @if( auth()->check() )
-                            <a href="{{action('AdminController@index')}}" class="login" >
-                                <i class="fa fa-user"></i>{{auth()->user()["username"]}}
-                            </a>
-
-                        @else
                         <a href="#" class="login" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>Login</a>
                         <div class="modal fade" id="login-modal">
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form method="POST" action="{{action('AdminController@login')}}">
-                                    {{ csrf_field() }}
+                                <form>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -78,11 +77,10 @@
                                 </form>
                             </div>
                         </div>
-                        @endif
                         <div class="modal fade" id="login-modal-2">
                             <div class="login-form position-center-center">
                                 <h2>Forgot password<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form>
+                                <form action = {{action("AdminController@login")}}>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -112,14 +110,14 @@
 
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="home-1.html"><img src="images/logo-4.png" alt="" width="215"></a>
+                        <a href="home-1.html"><img src="../../Downloads/LOGO2 copia.png" alt="" width="200"></a>
                     </div>
                     <!-- Logo -->
 
                     <!-- Search Bar -->
                     <div class="search-bar-holder pull-right">
                         <div class="search-bar">
-                            <input type="text" class="form-control" placeholder="Busqueda...">
+                            <input type="text" class="form-control" placeholder="Busquedas...">
                             <i class="fa fa-search"></i>
                         </div>
                     </div>
@@ -130,38 +128,30 @@
                         <li>
                             <a href="#">Inicio</a>
                             <ul>
-                                <li><a href="home-1.html">Home 1</a></li>
-                                <li><a href="home-2.html">Home 2</a></li>
+                                <li><a href="home-1.html">quienes somos</a></li>
+                                <li></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">Liga</a>
-                            <ul>
-                                <li><a href="home-1.html">Instituciones</a></li>
-                                <li><a href="home-2.html">Patrocinio</a></li>
-                            </ul>
 
                         <li>
                             <a href="team.html">directorio</a>
                             <ul>
-                                <li><a href="team.html">Programadores</a></li>
-                                <li><a href="team-detail.html">Arbitros</a></li>
-
+                                <li><a href="team.html">instituciones</a></li>
+                                <li><a href="team-detail.html">programadores</a></li>
                             </ul>
                         </li>
                         <li class="mega-dropdown">
+                            <a href="#">reglamento</a>
+
                             <ul>
                                 <li class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-3">
                                         <div class="blog-categories">
-                                            <h2>Blog Categories</h2>
+                                            <h2>Reglamento</h2>
                                             <ul class="blog-categories-list">
-                                                <li><a href="#">Blog 1 Column (Right Sidebar)</a></li>
-                                                <li><a href="#">Blog Medium With Right Sidebar</a></li>
-                                                <li><a href="#">Masonry (Right Sidebar)</a></li>
-                                                <li><a href="#">Blog 4 Columns</a></li>
-                                                <li><a href="#">Blog 1 Column (Right Sidebar)</a></li>
-                                                <li><a href="#">Masonry (Right Sidebar)</a></li>
-                                                <li><a href="#">Blog 1 Column (Right Sidebar)</a></li>
+                                                <li><a href="#">reglamento de competencia</a></li>
+                                                <li><a href="#">Anexo Tecnico</a></li>
+                                                <li><a href="#">categorias y formatos</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -179,8 +169,8 @@
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color">Englis FA Cup</span>
-                                                    <h2>Man United reunion for Ibrahimovic,</h2>
+                                                    <span class="red-color">Descargar</span>
+                                                    <h2>reglamento de competencia</h2>
                                                 </div>
                                                 <!-- Post Detail -->
 
@@ -192,14 +182,15 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-2.jpg" alt="">
+                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color">Englis FA Cup</span>
-                                                    <h2>Man United reunion for Ibrahimovic,</h2>
+                                                    <span class="red-color">descargar</span>
+                                                    <h2>anexo</h2>
+                                                    <h2>tecnico</h2>
                                                 </div>
                                                 <!-- Post Detail -->
 
@@ -211,14 +202,14 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-3.jpg" alt="">
+                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color">Englis FA Cup</span>
-                                                    <h2>Man United reunion for Ibrahimovic,</h2>
+                                                    <span class="red-color">descargar</span>
+                                                    <h2>categorias y formatos</h2>
                                                 </div>
                                                 <!-- Post Detail -->
 
@@ -229,16 +220,11 @@
                                             <div class="item">
 
                                                 <!-- Post Img -->
-                                                <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-4.jpg" alt="">
-                                                </div>
+
                                                 <!-- Post Img -->
 
                                                 <!-- Post Detail -->
-                                                <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color">Englis FA Cup</span>
-                                                    <h2>Man United reunion for Ibrahimovic,</h2>
-                                                </div>
+
                                                 <!-- Post Detail -->
 
                                             </div>
@@ -290,19 +276,8 @@
                         <li>
                             <a href="#">estadisticas</a>
                             <ul>
-                                <li><a href="match.html">Partido</a></li>
-                                <li><a href="match-detail.html">detalles de partido</a></li>
-                                <li><a href="match-result.html">resultados de partido</a></li>
-                                <li><a href="point-table.html">Tabla de Puntos</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Galeria</a>
-                            <ul>
-                                <li><a href="gallery.html">Momentos</a></li>
-                                <li><a href="blog.html">blog</a></li>
-                                <li><a href="blog-detail.html">detalles de blog</a></li>
-
+                                <li><a href="match.html">Femenil</a></li>
+                                <li><a href="match-detail.html">varonil</a></li>
                             </ul>
                         </li>
                         <li><a href="contact.html">contacto</a></li>
@@ -333,13 +308,13 @@
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
                             <div class="logo-column p-white">
-                                <img src="images/Instituciones Logos/logo_1a6b6.png" alt="" width="200" class="footer-logo">
+                                <img src="../../Downloads/LOGO2 copia.png" alt="" width="200" class="footer-logo">
                                 <ul class="address-list style-2">
-                                    <li><span>Dirección:</span>Dirección correspondiente</li>
-                                    <li><span>Telefono:</span>52 00000000</li>
-                                    <li><span>Email:</span>info@ligaponiente.com</li>
+                                    <li><span>Direccion:</span>Para agregar direccion</li>
+                                    <li><span>Telefono:</span>0000000000</li>
+                                    <li><span>E-mail:</span>info@ligaponiente.com</li>
                                 </ul>
-                                <span class="follow-us">Siguenos </span>
+                                <span class="follow-us">Siguenos</span>
                                 <ul class="social-icons">
                                     <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -355,7 +330,7 @@
                     <!-- Footer Column -->
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
-                            <h5>Anuncio</h5>
+                            <h5>anuncio</h5>
                             <a href="#"><img src="images/footer-add.jpg" alt=""></a>
                         </div>
                     </div>
@@ -397,7 +372,7 @@
         <!-- Copy Rights -->
         <div class="copy-rights">
             <div class="container">
-                <p>© Copyright by <i class="red-color">Liga Poniente</i> All rights reserved.</p>
+                <p>© Copyright by <i class="red-color"> Liga Poniente</i> All rights reserved.</p>
                 <a class="back-to-top scrollup" href="#"><i class="fa fa-angle-up"></i></a>
             </div>
         </div>
@@ -411,64 +386,35 @@
 
 <!-- Slide Menu -->
 <nav id="menu" class="responive-nav">
-    <a class="r-nav-logo" href="home-1.html"><img src="images/logo-1.png" alt=""></a>
+    <a class="r-nav-logo" href="home-1.html"><img src="../../Downloads/LOGO2 copia.png" alt="" width="180"></a>
     <ul class="respoinve-nav-list">
         <li>
-            <a data-toggle="collapse" href="#list-1"><i class="pull-right fa fa-angle-down"></i>Home</a>
+            <a data-toggle="collapse" href="#list-1"><i class="pull-right fa fa-angle-down"></i>Inicio</a>
             <ul class="collapse" id="list-1">
-                <li><a href="home-1.html">Home 1</a></li>
-                <li><a href="index-2.html">Home 2</a></li>
-                <li><a href="index-3.html">Home 3</a></li>
+                <li><a href="home-1.html">Quienes Somos</a></li>
             </ul>
         </li>
-        <li>
-            <a href="about.html">About</a>
-        </li>
-        <li>
-            <a data-toggle="collapse" href="#list-2"><i class="pull-right fa fa-angle-down"></i>Team</a>
+        <li><a data-toggle="collapse" href="#list-2"><em class="pull-right fa fa-angle-down"></em>Directorio</a>
             <ul class="collapse" id="list-2">
-                <li><a href="team.html">Team</a></li>
-                <li><a href="team-detail.html">Team Detail</a></li>
-                <li><a href="team-widthsidebar.html">team widthsidebar</a></li>
+                <li><a href="team.html">Instituciones</a></li>
+                <li><a href="team-detail.html">Programadores</a></li>
             </ul>
         </li>
         <li>
-            <a href="gallery.html">Gallery</a>
-        </li>
-        <li>
-            <a href="#">News</a>
-        </li>
-        <li>
-            <a data-toggle="collapse" href="#list-3"><i class="pull-right fa fa-angle-down"></i>Match</a>
+            <a data-toggle="collapse" href="#list-3"><i class="pull-right fa fa-angle-down"></i>Reglamento</a>
             <ul class="collapse" id="list-3">
-                <li><a href="match.html">match</a></li>
-                <li><a href="match-detail.html">match detail</a></li>
-                <li><a href="match-result.html">match result</a></li>
+                <li><a href="match.html">Reglamento de Competencia</a></li>
+                <li><a href="match-detail.html">Anexo Tecnico</a></li>
+                <li><a href="match-result.html">Documentos y Formatos</a></li>
             </ul>
         </li>
-        <li>
-            <a data-toggle="collapse" href="#list-4"><i class="pull-right fa fa-angle-down"></i>Shop</a>
+        <li><a data-toggle="collapse" href="#list-4"><em class="pull-right fa fa-angle-down"></em>Estadisticas</a>
             <ul class="collapse" id="list-4">
-                <li><a href="shop.html">shop</a></li>
-                <li><a href="cart.html">cart</a></li>
-                <li><a href="shop-detail.html">shop detail</a></li>
+                <li><a href="shop.html">Femenil</a></li>
+                <li><a href="cart.html">Varonil</a></li>
             </ul>
         </li>
-        <li>
-            <a data-toggle="collapse" href="#list-5"><i class="pull-right fa fa-angle-down"></i>Pages</a>
-            <ul class="collapse" id="list-5">
-                <li><a href="404.html">404</a></li>
-                <li><a href="underconstraction.html">underconstraction</a></li>
-            </ul>
-        </li>
-        <li>
-            <a data-toggle="collapse" href="#list-6"><i class="pull-right fa fa-angle-down"></i>Blog</a>
-            <ul class="collapse" id="list-6">
-                <li><a href="blog.html">blog</a></li>
-                <li><a href="blog-detail.html">blog detail</a></li>
-            </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contacto</a></li>
     </ul>
 </nav>
 <!-- Slide Menu -->
