@@ -33,7 +33,7 @@ class usuarios extends Model implements AuthenticatableContract,
      * 
      * @var bool
      */
-    public $incrementing = false;
+    public $incrementing = true;
 
     /**
      * @var array
