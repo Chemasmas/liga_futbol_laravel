@@ -247,6 +247,7 @@
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin.min.js') }}"></script>
+    <script src ="{{asset('js/bootstrap-filestyle.js')}}"></script>
 </div>
 </body>
 

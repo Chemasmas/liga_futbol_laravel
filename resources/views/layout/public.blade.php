@@ -51,11 +51,19 @@
                         </ul>
                     </li>
                     <li class="login-modal">
-                        <a href="#" class="login" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>Login</a>
+                        @if(auth()->check())
+
+
+                        @else
+
+                        <a href="#" class="login" data-toggle="modal" data-target="#login-modal">
+                            <i class="fa fa-user"></i>Login
+                        </a>
                         <div class="modal fade" id="login-modal">
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form>
+                                <form method="POST" action="{{action("AdminController@login")}}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -80,7 +88,7 @@
                         <div class="modal fade" id="login-modal-2">
                             <div class="login-form position-center-center">
                                 <h2>Forgot password<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form action = {{action("AdminController@login")}}>
+                                <form action = {{action("AdminController@login")}} method="POST">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -95,6 +103,8 @@
                                 </form>
                             </div>
                         </div>
+                        @endif
+
                     </li>
                 </ul>
                 <!-- User Login Option -->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\equipos;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -37,7 +38,22 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*
+        $equipo = new equipos();
+        $equipo->nombre = $request["nombre"];
+        $equipo->nombreCoach = $request["coach"];
+        $equipo->nombreCoachAsistente = $request["asistente"];
+        $equipo->idDivt = $request["plantilla"];
+
+        $equipo->save(['timestamps' => false]);
+
+        //TODO validacion exito de la insercion
+
+        return redirect()->action("EquipoController@create")->with(
+            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Insercion Exitosa"]]
+        );
+        */
+        return view("admin.equipo.crear");
     }
 
     /**
