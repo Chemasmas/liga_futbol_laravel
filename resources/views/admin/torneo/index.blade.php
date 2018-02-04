@@ -37,8 +37,9 @@
                         </td>
                         <td>
                             <button type="button" class="btn btn-info">Ver</button>
-                            <button type="button" class="btn btn-info">Editar</button>
-                            <button type="button" class="btn btn-primary">Agregar Equipos</button>
+                            <a type="button" class="btn btn-info">Editar</a>
+                            <a type="button" class="btn btn-primary" href="{{action("TorneoController@participantes",["idT"=>$torneo->id])}}">Agregar Equipos</a>
+
                         </td>
                     </tr>
                 @endforeach

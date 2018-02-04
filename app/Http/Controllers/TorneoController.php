@@ -168,7 +168,19 @@ class TorneoController extends Controller
     }
 
     public function remove_participante($idT,$idE){
-        $participante = participantes_torneo::where("");
+        $participante = participantes_torneo::where("Torneo_id",$idT)
+        ->where("Equipos_id",$idE)->delete();
+
+        debug($participante);
+        //$participante->delete();
+
+
+        return redirect()
+            ->action("TorneoController@participantes",["idT"=>$idT])
+            ->with([
+                ["message"=>["clase"=>"warning","mensaje"=>"Equipo Eliminado"]]
+            ]);
+
     }
 
 }

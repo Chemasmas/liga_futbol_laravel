@@ -17,7 +17,7 @@
 
                         <tr>
                             <td>
-                                {{$torneo->nombre}}
+                                {{$equipo->nombre}}
                             </td>
 
                             <td>

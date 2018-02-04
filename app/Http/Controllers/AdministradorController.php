@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\administradores;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
 
 class AdministradorController extends Controller
 {
@@ -16,7 +18,9 @@ class AdministradorController extends Controller
      */
     public function index()
     {
-        return view("admin.administrador.index");
+        return view("admin.administrador.index",[
+            "rutas" => []
+        ]);
     }
 
     /**
@@ -26,7 +30,12 @@ class AdministradorController extends Controller
      */
     public function create()
     {
-        return view("admin.administrador.crear");
+        return view("admin.administrador.crear",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Administrador"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -37,7 +46,16 @@ class AdministradorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nombre = $request["nombre"];
+        $correo = $request["correo"];
+        $telefono = $request["telefono"];
+
+        $username = $request[""];
+        $password = $request[""];
+
+        $administrador = new administradores();
+        $administrador->nombre = $nombre;
+        //$administrador->correo
     }
 
     /**

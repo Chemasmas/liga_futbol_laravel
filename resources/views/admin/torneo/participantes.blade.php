@@ -24,7 +24,7 @@
                             {{$participante->nombre}}
                         </td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{action('TorneoController@remove_participante',["idT"=>$torneo->id,"idE"=>$participante->id])}}" method="POST">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-danger">
                                     Quitar
@@ -35,6 +35,7 @@
                 @endforeach
             </table>
         </div>
+        @if(count($equipos)>0)
         <div class="col-sm-12">
             <form action="{{action('TorneoController@add_participante',['idT'=>$torneo->id])}}" class="form-inline" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -50,5 +51,6 @@
                 <button class="btn btn-success" type="submit" style="margin-left: 10px;">Agregar</button>
             </form>
         </div>
+        @endif
     </div>
 @endsection

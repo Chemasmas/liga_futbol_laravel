@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="offset-sm-3 col-sm-6">
-        <form method="POST" action="{{ action('TorneoController@store') }}">
+        <form method="POST" action="{{ action('AdminController@store') }}">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Administrador</label>

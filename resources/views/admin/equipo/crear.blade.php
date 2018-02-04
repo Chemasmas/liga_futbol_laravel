@@ -4,6 +4,8 @@
 
 @section('rol','Admin')
 
+<?php $rutas = [] ?>
+
 @section('content')
 
     <div class="offset-sm-3 col-sm-6">
