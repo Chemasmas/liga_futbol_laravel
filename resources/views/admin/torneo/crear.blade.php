@@ -9,7 +9,7 @@
         <form method="POST" action="{{ action('TorneoController@store') }}">
             {{csrf_field()}}
             <div class="form-group">
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre de Categoría</label>
                 <input type="text" name="nombre" class="form-control">
             </div>
             <div class="form-group">

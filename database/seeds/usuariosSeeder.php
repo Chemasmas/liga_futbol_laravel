@@ -45,5 +45,15 @@ class usuariosSeeder extends Seeder
                 "level" => 1
             ]
         );
+
+        DB::table('usuarios')->insert(
+            [
+                'id'=>3,
+                'username' => "Andy",
+                'password' => Hash::make("654321"),
+                'active' => 1,
+                "level" => 1
+            ]
+        );
     }
 }
