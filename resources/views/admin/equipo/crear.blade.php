@@ -26,10 +26,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="id_division">Division</label>
-                <select class="form-control" name="id_division">
-                    @foreach ($divisiones as $division)
-                        <option value ="{{$division->id}}">{{ $division->nombre }}</option>
+                <label for="id_institucion">Institucion</label>
+                <select class="form-control" name="id_institucion">
+                    @foreach ($instituciones as $institucion)
+                        <option value ="{{$institucion->id}}">{{ $institucion->nombre }}</option>
                     @endforeach
                 </select>
             </div>

@@ -27,8 +27,6 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             @if(auth()->user()["level"]<2)
-
-
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Torneos">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseTorneos" data-parent="#exampleAccordion">
                         <i class="fa fa-trophy"></i>
@@ -206,7 +204,26 @@
 
         <div class="row">
             <div class="col-12">
+                @if(Session::has('message'))
+                <div class="alert alert-{{Session::get('message')['clase']}}" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{Session::get("message")["mensaje"]}}
+                </div>
+                @endif
+
+
+                    <ol class="breadcrumb">
+                        @foreach( $rutas as $ruta )
+                            @if($ruta["active"]==0)
+                                <li class="{{$ruta["active"]}}">{{$ruta["etiqueta"]}}</li>
+                            @else
+                                <li><a href="{{$ruta["link"]}}" >{{$ruta["etiqueta"]}}</a></li> /
+                            @endif
+                        @endforeach
+                    </ol>
+
                 @yield('content')
+
             </div>
         </div>
     </div>

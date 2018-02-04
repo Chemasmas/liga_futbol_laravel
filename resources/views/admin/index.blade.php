@@ -4,6 +4,8 @@
 
 @section('rol','Admin')
 
+<?php $rutas = ["Home"=>["etiqueta"=>"Home", "active"=>"0","link"=>"#"] ] ?>
+
 @section('content')
 
     <div>

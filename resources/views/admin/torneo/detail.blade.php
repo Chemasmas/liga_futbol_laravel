@@ -4,11 +4,6 @@
 
 @section('rol',"")
 
-<?php $rutas = [
-    "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-    "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
-] ?>
-
 @section('content')
 
     <div class="row">
@@ -31,7 +26,10 @@
                             {{$torneo["nombre"]}}
                         </td>
                         <td>
-                            <a class="btn btn-primary" role="button" href="#">Ver</a>
+                            {{$torneo["tipo_torneo"]}}
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" role="button">Ver</a>
                             <a class="btn btn-success" role="button">Editar</a>
                         </td>
                     </tr>

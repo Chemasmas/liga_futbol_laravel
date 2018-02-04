@@ -67,9 +67,9 @@ class TorneoController extends Controller
         $torneo->save(['timestamps' => false]);
 
         //TODO validacion exito de la insercion
-
+        //success
         return redirect()->action("TorneoController@create")->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
 
         //return view('admin.torneo.index');

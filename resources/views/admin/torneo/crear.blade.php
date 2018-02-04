@@ -4,6 +4,12 @@
 
 @section('rol',"")
 
+<?php $rutas = [
+    "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+    "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
+    "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+] ?>
+
 @section('content')
     <div class="offset-sm-3 col-sm-6">
         <form method="POST" action="{{ action('TorneoController@store') }}">

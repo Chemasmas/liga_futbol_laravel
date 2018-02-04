@@ -18,7 +18,16 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        return view("admin.equipo.index");
+        $equiposG =equipos::all();
+
+
+        $divisiones = division::all();
+
+        return view('admin.equipo.index',[
+            "equiposG"=>$equiposG,
+            "divisiones"=>$divisiones
+        ]);
+
     }
 
     /**
@@ -51,6 +60,8 @@ class EquipoController extends Controller
         $equipo->nombreCoach = $request["coach"];
         $equipo->nombreCoachAsistente = $request["asistente"];
         $equipo->idDivt = $request["id_division"];
+        $equipo->idIst = $request["id_institucion"];
+
 
         $archi = $request->file('foto');
         Storage::put($archi->getFilename(),$archi);
