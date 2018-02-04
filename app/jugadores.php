@@ -31,7 +31,7 @@ class jugadores extends Model
      */
     public function institucione()
     {
-        return $this->belongsTo('App\Institucione', 'idInst');
+        return $this->belongsTo('App\instituciones', 'idInst');
     }
 
     /**
@@ -39,7 +39,7 @@ class jugadores extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo('App\Usuario', 'idUsr');
+        return $this->belongsTo('App\usuarios', 'idUsr');
     }
 
     /**
@@ -47,7 +47,7 @@ class jugadores extends Model
      */
     public function equipo()
     {
-        return $this->belongsTo('App\Equipo', 'equipos_id');
+        return $this->belongsTo('App\equipos', 'equipos_id');
     }
 
     /**
