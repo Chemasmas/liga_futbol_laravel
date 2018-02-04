@@ -36,6 +36,17 @@ class usuariosSeeder extends Seeder
             ]
         );
 
+        DB::table('administradores')->insert(
+            [
+                'id'=>1,
+                'idUsr'=>1,
+                'isSuper'=>1,
+                'nombre'=>"Chemasmas",
+                'correo'=>"eva.01.2015@gmail.com",
+                'telefono'=>"55555555",
+            ]
+        );
+
         DB::table('usuarios')->insert(
             [
                 'id'=>2,
@@ -45,5 +56,18 @@ class usuariosSeeder extends Seeder
                 "level" => 1
             ]
         );
+
+        DB::table('administradores')->insert(
+            [
+                'id'=>1,
+                'idUsr'=>2,
+                'isSuper'=>1,
+                'nombre'=>"IVAN GUZMAN",
+                'correo'=>"",
+                'telefono'=>"",
+            ]
+        );
+
+
     }
 }

@@ -19,8 +19,6 @@ class EquipoController extends Controller
     public function index()
     {
         $equiposG =equipos::all();
-
-
         $divisiones = division::all();
 
         return view('admin.equipo.index',[

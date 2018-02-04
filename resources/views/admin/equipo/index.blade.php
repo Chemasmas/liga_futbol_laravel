@@ -4,6 +4,8 @@
 
 @section('rol',"")
 
+<?php $rutas=[] ?>
+
 @section('content')
 
     <div class="row">
@@ -11,29 +13,18 @@
             <h3>Lista de Equipos</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    @foreach ($torneosG as $torneoG)
+                    @foreach ($equiposG as $equipo)
 
-                        <thead>
                         <tr>
-                            <th colspan="3">
-                                {{ $divisiones[$torneoG[0]["id_division"]]["nombre"] }}
-                            </th>
+                            <td>
+                                {{$torneo->nombre}}
+                            </td>
+
+                            <td>
+                                <a class="btn btn-primary" role="button">Ver</a>
+                                <a class="btn btn-success" role="button">Editar</a>
+                            </td>
                         </tr>
-                        </thead>
-                        @foreach ($torneoG as $torneo)
-                            <tr>
-                                <td>
-                                    {{$torneo["nombre"]}}
-                                </td>
-                                <td>
-                                    {{$torneo["tipo_torneo"]}}
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary" role="button">Ver</a>
-                                    <a class="btn btn-success" role="button">Editar</a>
-                                </td>
-                            </tr>
-                        @endforeach
 
                     @endforeach
                 </table>

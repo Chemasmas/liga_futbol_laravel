@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\division;
+use App\equipos;
+use App\participantes_torneo;
 use App\torneo;
 use Illuminate\Http\Request;
 
@@ -119,4 +121,54 @@ class TorneoController extends Controller
     {
         //
     }
+
+    public function participantes($idT){
+        $torneo = torneo::where("id",$idT)->first();
+        debug($torneo);
+        //TODO debe de evitar mostrar a los que ya estan
+        $participantes = participantes_torneo::all("Equipos_id");
+
+        $participantesE = equipos::whereIn("id",$participantes)->get();
+        $equipos = equipos::where("idDivt",$torneo->id_division)
+            ->whereNotIn("id",$participantes)
+            ->get();
+        //$eParticipantes = equipos::where("")
+
+        debug($participantes);
+        debug($participantesE);
+
+        return view("admin.torneo.participantes",[
+            "torneo"=>$torneo,
+            "equipos"=>$equipos,
+            "participantes"=>$participantesE
+        ]);
+    }
+
+    public function add_participante(Request $request,$idT){
+        debug($request);
+
+        $participante = new participantes_torneo();
+        $participante->Torneo_id = $idT;
+        $participante->Equipos_id = $request["Equipos_id"];
+        $participante->PartidosEmpatados = 0;
+        $participante->PartidosGanados = 0;
+        $participante->PartidosJugados = 0;
+        $participante->GolesContra = 0;
+        $participante->GolesFavor = 0;
+        $participante->DiferenciaGoles = 0;
+        $participante->Puntos = 0;
+
+        $participante->save(['timestamps' => false]);
+
+        return redirect()
+            ->action("TorneoController@participantes",["idT"=>$idT])
+            ->with([
+                ["message"=>["clase"=>"success","mensaje"=>"Equipo Agregado"]]
+            ]);
+    }
+
+    public function remove_participante($idT,$idE){
+        $participante = participantes_torneo::where("");
+    }
+
 }
