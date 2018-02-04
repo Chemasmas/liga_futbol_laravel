@@ -26,7 +26,9 @@ class AdministradorController extends Controller
      */
     public function create()
     {
-        return view("admin.administrador.crear");
+        return view("admin.administrador.crear",[
+            "rutas"=>[]
+        ]);
     }
 
     /**
