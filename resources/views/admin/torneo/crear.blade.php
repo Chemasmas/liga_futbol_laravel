@@ -15,7 +15,7 @@
         <form method="POST" action="{{ action('TorneoController@store') }}">
             {{csrf_field()}}
             <div class="form-group">
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre de Categoría</label>
                 <input type="text" name="nombre" class="form-control">
             </div>
             <div class="form-group">
@@ -43,7 +43,7 @@
                     <option value="14">Plantilla 14</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-success pull-right">Crear</button>
         </form>
     </div>
 

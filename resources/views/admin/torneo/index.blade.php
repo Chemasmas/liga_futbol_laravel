@@ -1,3 +1,4 @@
+
 @extends('layout.admin')
 
 @section('titulo','Torneos')
@@ -31,9 +32,13 @@
                             {{$torneo["nombre"]}}
                         </td>
                         <td>
-                            <a class="btn btn-primary" role="button" href="#">Ver</a>
-                            <a class="btn btn-success" role="button">Editar</a>
-                            <a class="btn btn-success" role="button" href="{{action('TorneoController@participantes',['id'=>$torneo->id])}}">Participantes</a>
+
+                            {{$torneo["tipo_torneo"]}}
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info">Ver</button>
+                            <button type="button" class="btn btn-info">Editar</button>
+                            <button type="button" class="btn btn-primary">Agregar Equipos</button>
                         </td>
                     </tr>
                 @endforeach

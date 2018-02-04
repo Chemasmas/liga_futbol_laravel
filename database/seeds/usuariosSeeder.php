@@ -68,6 +68,25 @@ class usuariosSeeder extends Seeder
             ]
         );
 
+        DB::table('usuarios')->insert(
+            [
+                'id'=>3,
+                'username' => "Andy",
+                'password' => Hash::make("654321"),
+                'active' => 1,
+                "level" => 1
+            ]
+        );
 
+        DB::table('administradores')->insert(
+            [
+                'id'=>1,
+                'idUsr'=>3,
+                'isSuper'=>1,
+                'nombre'=>"Andrea Aguilar",
+                'correo'=>"",
+                'telefono'=>"",
+            ]
+        );
     }
 }

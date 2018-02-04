@@ -78,16 +78,16 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseAdministradores">
                         <li>
-                            <a class="nav-link" href="# ">
+                            <a class="nav-link" href="{{action('AdministradorController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
                             </a>
                         </li>
                         <li>
                         <li>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{action('AdministradorController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                <span class="nav-link-text">Crear</span>
+                                <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
                         </li>
@@ -100,16 +100,16 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseJugadores">
                         <li>
-                            <a class="nav-link" href="# ">
+                            <a class="nav-link" href="{{action('JugadorController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
                             </a>
                         </li>
                         <li>
                         <li>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{action('JugadorController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                <span class="nav-link-text">Crear</span>
+                                <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
                         </li>
@@ -122,16 +122,16 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseArbitros">
                         <li>
-                            <a class="nav-link" href="# ">
+                            <a class="nav-link" href="{{action('ArbitroController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
                             </a>
                         </li>
                         <li>
                         <li>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{action('ArbitroController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                <span class="nav-link-text">Crear</span>
+                                <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
                         </li>
@@ -144,16 +144,16 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseProgramadores">
                         <li>
-                            <a class="nav-link" href="# ">
+                            <a class="nav-link" href="{{action('ProgramadorController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
                             </a>
                         </li>
                         <li>
                         <li>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{action('ProgramadorController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                <span class="nav-link-text">Crear</span>
+                                <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
                         </li>

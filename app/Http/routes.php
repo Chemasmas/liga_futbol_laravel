@@ -37,6 +37,17 @@ Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@
 Route::get('/admin/equipo/crear',['middleware' => 'auth', 'uses' => "EquipoController@create"]);
 Route::post('/admin/equipo/store',['middleware' => 'auth', 'uses' => "EquipoController@store"]);
 
+Route::get('/admin/administrador',['middleware' => 'auth', 'uses' => "AdministradorController@index"]);
+Route::get('/admin/administrador/crear',['middleware' => 'auth', 'uses' => "AdministradorController@create"]);
+
+Route::get('/admin/jugador',['middleware' => 'auth', 'uses' => "JugadorController@index"]);
+Route::get('/admin/jugador/crear',['middleware' => 'auth', 'uses' => "JugadorController@create"]);
+
+Route::get('/admin/arbitro',['middleware' => 'auth', 'uses' => "ArbitroController@index"]);
+Route::get('/admin/arbitro/crear',['middleware' => 'auth', 'uses' => "ArbitroController@create"]);
+
+Route::get('/admin/programador',['middleware' => 'auth', 'uses' => "ProgramadorController@index"]);
+Route::get('/admin/programador/crear',['middleware' => 'auth', 'uses' => "ProgramadorController@create"]);
 
 
 

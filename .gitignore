@@ -6,4 +6,4 @@ Homestead.json
 .idea/*
 ./.idea/*
 ./.idea/workspace.xml
-./vagrant/*
+./.vagrant/*
