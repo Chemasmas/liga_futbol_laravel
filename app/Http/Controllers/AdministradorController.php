@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\administradores;
+use App\usuarios;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 class AdministradorController extends Controller
@@ -18,8 +20,12 @@ class AdministradorController extends Controller
      */
     public function index()
     {
+        $admininistradores = administradores::where("isSuper",0)->get();
+        debug($admininistradores);
+
         return view("admin.administrador.index",[
-            "rutas" => []
+            "rutas" => [],
+            "administradores"=> $admininistradores,
         ]);
     }
 
@@ -50,12 +56,34 @@ class AdministradorController extends Controller
         $correo = $request["correo"];
         $telefono = $request["telefono"];
 
-        $username = $request[""];
-        $password = $request[""];
+        $username = $request["usuario"];
+        $password = $request["password"];
+
+
+        $usuario = new usuarios();
+        $usuario->active=1;
+        $usuario->level=1;
+        $usuario->password=Hash::make($password);
+        $usuario->username=$username;
+
+        $usuario->save(['timestamps' => false]);
+
+
+        debug($usuario);
 
         $administrador = new administradores();
         $administrador->nombre = $nombre;
-        //$administrador->correo
+        $administrador->correo = $correo;
+        $administrador->telefono = $telefono;
+        $administrador->idUsr = $usuario->id;
+        $administrador->isSuper=False;
+
+        $administrador->save(['timestamps' => false]);
+
+
+        return redirect()->action("AdministradorController@create")->with(
+            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+        );
     }
 
     /**
