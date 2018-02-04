@@ -25,7 +25,6 @@
                 <label for="correo">Correo</label>
                 <input type="text" name="correo" class="form-control" placeholder="Correo">
             </div>
-
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
                 <input type="text" name="telefono" class="form-control" placeholder="Telefono">
