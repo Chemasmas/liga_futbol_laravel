@@ -14,37 +14,37 @@ class divisionSeeder extends Seeder
     public function run()
     {
         DB::table('division')->insert([
-            "id"=>1,
+            "id"=>2,
             "nombre"=>"Femenil Menor",
             "genero"=>"F",
             "orden"=>1
         ]);
         DB::table('division')->insert([
-            "id"=>2,
+            "id"=>3,
             "nombre"=>"Femenil Intermedia",
             "genero"=>"F",
             "orden"=>2
         ]);
         DB::table('division')->insert([
-            "id"=>3,
+            "id"=>4,
             "nombre"=>"Femenil Mayor",
             "genero"=>"F",
             "orden"=>3
         ]);
         DB::table('division')->insert([
-            "id"=>4,
+            "id"=>5,
             "nombre"=>"Varonil Menor",
             "genero"=>"M",
             "orden"=>4
         ]);
         DB::table('division')->insert([
-            "id"=>5,
+            "id"=>6,
             "nombre"=>"Varonil Menor",
             "genero"=>"M",
             "orden"=>5
         ]);
         DB::table('division')->insert([
-            "id"=>6,
+            "id"=>7,
             "nombre"=>"Varonil Menor",
             "genero"=>"M",
             "orden"=>6
