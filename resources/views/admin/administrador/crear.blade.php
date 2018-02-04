@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="offset-sm-3 col-sm-6">
-        <form method="POST" action="{{ action('AdminController@store') }}">
+        <form method="POST" action="{{ action('AdministradorController@store') }}">
             {{csrf_field()}}
 
             <div class="form-group">
