@@ -37,7 +37,7 @@
                     <option value="14">Plantilla 14</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-success pull-right">Crear</button>
         </form>
     </div>
 
