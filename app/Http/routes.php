@@ -38,6 +38,9 @@ Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@
 Route::get('/admin/equipo/crear',['middleware' => 'auth', 'uses' => "EquipoController@create"]);
 Route::post('/admin/equipo/store',['middleware' => 'auth', 'uses' => "EquipoController@store"]);
 
+Route::get('/admin/instituciones',['middleware' => 'auth', 'uses' => "InstitucionController@index"]);
+Route::get('/admin/instituciones/crear',['middleware' => 'auth', 'uses' => "InstitucionController@create"]);
+
 Route::get('/admin/administrador',['middleware' => 'auth', 'uses' => "AdministradorController@index"]);
 Route::get('/admin/administrador/crear',['middleware' => 'auth', 'uses' => "AdministradorController@create"]);
 Route::post('/admin/administrador/store',['middleware' => 'auth', 'uses' => "AdministradorController@store"]);

@@ -21,8 +21,8 @@
                             </td>
 
                             <td>
-                                <a class="btn btn-primary" role="button">Ver</a>
-                                <a class="btn btn-success" role="button">Editar</a>
+                                <a class="btn btn-info" role="button">Ver</a>
+                                <a class="btn btn-info" role="button">Editar</a>
                             </td>
                         </tr>
 

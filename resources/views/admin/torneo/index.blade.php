@@ -21,14 +21,14 @@
             @foreach ($torneosG as $torneoG)
 
                     <thead>
-                        <tr class="active">
+                        <tr>
                             <th colspan="3">
                                 {{ $divisiones[$torneoG[0]["id_division"]]["nombre"] }}
                             </th>
                         </tr>
                     </thead>
                         <thead>
-                        <tr class="active">
+                        <tr >
                             <th>Nombre</th>
                             <th>Plantila</th>
                             <th>Acciones</th>
