@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Torneos')
+@section('titulo','CrearAdministrador')
 
 @section('rol',"")
 

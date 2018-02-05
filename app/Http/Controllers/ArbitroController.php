@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\arbitros;
+use App\usuarios;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class ArbitroController extends Controller
 {
@@ -16,7 +19,13 @@ class ArbitroController extends Controller
      */
     public function index()
     {
-        return view("admin.arbitro.index");
+        $arbitrosG =arbitros::all();
+       // $divisiones = division::all();
+
+        return view('admin.arbitro.index',[
+            "arbitrosG"=>$arbitrosG,
+            //"divisiones"=>$divisiones
+        ]);
     }
 
     /**
@@ -26,7 +35,9 @@ class ArbitroController extends Controller
      */
     public function create()
     {
-        return view("admin.arbitro.crear");
+        return view("admin.arbitro.crear",[
+            "rutas"=>[],
+        ]);
     }
 
     /**
@@ -37,7 +48,38 @@ class ArbitroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nombre = $request["nombre"];
+        $telefono = $request["telefono"];
+
+        $username = $request["usuario"];
+        $password = $request["password"];
+
+
+        $usuario = new usuarios();
+        $usuario->active=1;
+        $usuario->level=3;
+        $usuario->password=Hash::make($password);
+        $usuario->username=$username;
+
+        $usuario->save(['timestamps' => false]);
+
+
+        debug($usuario);
+
+        $arbitro = new arbitros();
+        $arbitro->nombre = $nombre;
+        $arbitro->telefono = $telefono;
+        $arbitro->idUsr = $usuario->id;
+        $ruta = "arbitros";
+        $request->file('foto')->move($ruta, $arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension());
+        $arbitro->foto = $ruta."/".$arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension();
+
+        $arbitro->save(['timestamps' => false]);
+
+
+        return redirect()->action("ArbitroController@create")->with(
+            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+        );
     }
 
     /**
