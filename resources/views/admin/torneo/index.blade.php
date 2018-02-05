@@ -17,15 +17,23 @@
             <h3>Lista de Torneos</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
+
             @foreach ($torneosG as $torneoG)
 
                     <thead>
-                        <tr>
+                        <tr class="active">
                             <th colspan="3">
                                 {{ $divisiones[$torneoG[0]["id_division"]]["nombre"] }}
                             </th>
                         </tr>
                     </thead>
+                        <thead>
+                        <tr class="active">
+                            <th>Nombre</th>
+                            <th>Plantila</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
                 @foreach ($torneoG as $torneo)
                     <tr>
                         <td>
@@ -36,7 +44,7 @@
                             {{$torneo["tipo_torneo"]}}
                         </td>
                         <td>
-                            <button type="button" class="btn btn-info">Ver</button>
+                            <a type="button" class="btn btn-info">Ver</a>
                             <a type="button" class="btn btn-info">Editar</a>
                             <a type="button" class="btn btn-primary" href="{{action("TorneoController@participantes",["idT"=>$torneo->id])}}">Agregar Equipos</a>
 

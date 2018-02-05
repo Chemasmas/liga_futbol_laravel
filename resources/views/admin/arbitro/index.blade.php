@@ -7,8 +7,7 @@
 <?php $rutas = [] ?>
 
 @section('content')
-
-    <div class="row">
+        <div class="row">
         <div class="col-sm-12">
             <h3>Lista de Arbitros</h3>
             <div class="col-sm-12">

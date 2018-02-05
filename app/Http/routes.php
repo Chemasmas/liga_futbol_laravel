@@ -21,6 +21,7 @@
 
 Route::get("/auth/login",function (){return redirect("/");});
 
+Route::get("/admin",['middleware' => 'auth', 'uses' => "AdminController@index"]);
 Route::get("/admin/dashboard",['middleware' => 'auth', 'uses' => "AdminController@index"]);
 Route::post("/admin/login","AdminController@login");
 Route::get("/admin/logout","AdminController@logout");
