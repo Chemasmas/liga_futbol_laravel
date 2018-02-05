@@ -7,6 +7,7 @@ use App\equipos;
 use App\instituciones;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class EquipoController extends Controller
@@ -52,6 +53,7 @@ class EquipoController extends Controller
     public function store(Request $request)
     {
         debug($request->file('foto'));
+        debug( File::extension($request->file('foto')->getFilename()) );
 
         $equipo = new equipos();
         $equipo->nombre = $request["nombre"];
@@ -61,10 +63,12 @@ class EquipoController extends Controller
         $equipo->idIst = $request["id_institucion"];
 
 
-        $archi = $request->file('foto');
-        Storage::put($archi->getFilename(),$archi);
+        //$archi = $request->file('foto');
+        //Storage::put($archi->getFilename(),$archi);
 
-        $equipo->foto = $archi->getFilename();
+        $ruta = "equipos";
+        $request->file('foto')->move($ruta,$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension());
+        $equipo->foto = $ruta."/".$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension();
 
         $equipo->save(['timestamps' => false]);
 

@@ -11,6 +11,28 @@
             <h3>Lista de Jugadores</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
+                    @foreach ($jugadores as $jugador)
+
+                        <tr>
+                            <td>
+                                {{$jugador->nombre}}
+                            </td>
+                            <td>
+                                Dorsal: {{$jugador->numero}}
+                            </td>
+                            <td>
+                                Institucion: {{$jugador->institucione->nombre}}
+                            </td>
+                            <td>
+                                Equipo: {{$jugador->equipo->nombre}}
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" role="button">Ver</a>
+                                <a class="btn btn-success" role="button">Editar</a>
+                            </td>
+                        </tr>
+
+                    @endforeach
                 </table>
             </div>
         </div>
