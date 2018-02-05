@@ -17,7 +17,9 @@ class ProgramadorController extends Controller
      */
     public function index()
     {
-        return view("admin.programador.index");
+        return view("admin.programador.index",[
+            "rutas"=>[]
+        ]);
     }
 
     /**
@@ -29,7 +31,8 @@ class ProgramadorController extends Controller
     {
         $instituciones = instituciones::all();
         return view("admin.programador.crear", [
-            "instituciones" => $instituciones
+            "rutas"=>[],
+            "instituciones" => $instituciones,
         ]);
     }
 

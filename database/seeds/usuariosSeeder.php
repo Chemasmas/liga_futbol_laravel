@@ -17,15 +17,6 @@ class usuariosSeeder extends Seeder
     public function run()
     {
 
-        /*
-         * @property int $id
- * @property string $username
- * @property string $password
- * @property string $createdAt
- * @property boolean $active
- * @property int $level   1 admin 2 programador 3 arbitro 4 jugador
-         * */
-
         DB::table('usuarios')->insert(
             [
                 'id'=>1,
@@ -71,7 +62,7 @@ class usuariosSeeder extends Seeder
         DB::table('usuarios')->insert(
             [
                 'id'=>3,
-                'username' => "Andy",
+                'username' => "Andrea",
                 'password' => Hash::make("654321"),
                 'active' => 1,
                 "level" => 1
