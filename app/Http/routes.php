@@ -44,6 +44,7 @@ Route::post('/admin/administrador/store',['middleware' => 'auth', 'uses' => "Adm
 
 Route::get('/admin/jugador',['middleware' => 'auth', 'uses' => "JugadorController@index"]);
 Route::get('/admin/jugador/crear',['middleware' => 'auth', 'uses' => "JugadorController@create"]);
+Route::post('/admin/jugador/store',['middleware' => 'auth', 'uses' => "JugadorController@store"]);
 
 Route::get('/admin/arbitro',['middleware' => 'auth', 'uses' => "ArbitroController@index"]);
 Route::get('/admin/arbitro/crear',['middleware' => 'auth', 'uses' => "ArbitroController@create"]);
