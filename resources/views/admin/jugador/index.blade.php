@@ -11,6 +11,15 @@
             <h3>Lista de Jugadores</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Dorsal</th>
+                        <th>Escuela</th>
+                        <th>Equipo</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
                     @foreach ($jugadores as $jugador)
 
                         <tr>

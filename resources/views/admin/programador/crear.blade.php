@@ -12,7 +12,14 @@
                 <label for="nombre">Nombre del Programador</label>
                 <input type="text" name="nombre" class="form-control">
             </div>
-
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" name="usuario" class="form-control" placeholder="Usuario">
+            </div>
+            <div class="form-group">
+                <label for="Password1">Password</label>
+                <input type="password" class="form-control" id="Password1" placeholder="Password" name="password">
+            </div>
             <div class="form-group">
                 <label for="correo">Correo</label>
                 <input type="text" name="correo" class="form-control">
