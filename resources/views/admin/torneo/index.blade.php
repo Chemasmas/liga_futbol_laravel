@@ -5,11 +5,6 @@
 
 @section('rol',"")
 
-<?php $rutas = [
-    "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-    "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
-] ?>
-
 @section('content')
 
     <div class="row">
@@ -18,7 +13,7 @@
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
 
-            @forelse ($torneosG as $torneoG)
+            @forelse ($torneos as $torneo)
                         <thead>
                         <tr>
                             <th colspan="3">
@@ -35,7 +30,11 @@
                         </thead>
 
             @empty
-
+                <tr>
+                    <th>
+                        No hay torneos <a class="btn btn-primary" href="{{action('TorneoController@create')}}">Agregar uno.</a>
+                    </th>
+                </tr>
             @endforelse
                 </table>
             </div>

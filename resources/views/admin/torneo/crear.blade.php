@@ -4,12 +4,6 @@
 
 @section('rol',"")
 
-<?php $rutas = [
-    "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-    "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
-    "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
-] ?>
-
 @section('content')
     <div class="offset-sm-3 col-sm-6">
         <form method="POST" action="{{ action('TorneoController@store') }}">
@@ -17,14 +11,6 @@
             <div class="form-group">
                 <label for="nombre">Nombre de Categoría</label>
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre">
-            </div>
-            <div class="form-group">
-                <label for="id_division">Division</label>
-                <select class="form-control" name="id_division">
-                    @foreach ($divisiones as $division)
-                        <option value ="{{$division->id}}">{{ $division->nombre }}</option>
-                    @endforeach
-                </select>
             </div>
             <!--TODO Esto podria tener una tabla-->
             <div class="form-group">
@@ -41,6 +27,15 @@
                     <option value="12">Plantilla 12</option>
                     <option value="13">Plantilla 13</option>
                     <option value="14">Plantilla 14</option>
+                </select>
+
+
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <select class="form-control" name="genero">
+                    <option value="M">Varonil</option>
+                    <option value="F">Femenil</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-success pull-right">Crear</button>
