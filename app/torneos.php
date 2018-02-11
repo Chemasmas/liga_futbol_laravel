@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $id
- * @property int $id_division
  * @property string $nombre
  * @property int $tipo_torneo
  * @property boolean $activo
- * @property Division $division
+ * @property string $genero
+ * @property boolean $es_liga
  * @property ParticipantesTorneo[] $participantesTorneos
  * @property Partido[] $partidos
  */
-class torneo extends Model
+class torneos extends Model
 {
     /**
      * The table associated with the model.
@@ -26,15 +26,7 @@ class torneo extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nombre', 'tipo_torneo', 'activo'];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function division()
-    {
-        return $this->belongsTo('App\Division', 'id_division');
-    }
+    protected $fillable = ['nombre', 'tipo_torneo', 'activo', 'genero', 'es_liga'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

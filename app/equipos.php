@@ -8,22 +8,21 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property int $idIst
  * @property string $nombre
- * @property string $foto
- * @property int $idDivt
  * @property string $nombreCoach
  * @property string $nombreCoachAsistente
+ * @property string $genero
  * @property Institucione $institucione
- * @property Division $division
+ * @property Jugadore[] $jugadores
  * @property ParticipantesTorneo[] $participantesTorneos
- * @property Partido[] $partidosL
- * @property Partido[] $partidosV
+ * @property Partido[] $partidos
+ * @property Partido[] $partidos
  */
 class equipos extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['nombre', 'foto', 'nombreCoach', 'nombreCoachAsistente'];
+    protected $fillable = ['nombre', 'nombreCoach', 'nombreCoachAsistente', 'genero'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -34,11 +33,11 @@ class equipos extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function division()
+    public function jugadores()
     {
-        return $this->belongsTo('App\Division', 'idDivt');
+        return $this->hasMany('App\Jugadore', 'equipos_id');
     }
 
     /**
@@ -52,7 +51,7 @@ class equipos extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function partidosL()
+    public function partidos()
     {
         return $this->hasMany('App\Partido', 'Local');
     }
@@ -60,7 +59,7 @@ class equipos extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function partidosV()
+    public function partidos()
     {
         return $this->hasMany('App\Partido', 'Visitante');
     }
