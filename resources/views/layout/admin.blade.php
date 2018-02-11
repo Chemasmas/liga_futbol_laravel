@@ -71,6 +71,28 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instituciones">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstituciones" data-parent="#exampleAccordion">
+                        <i class="fa fa-university"></i>
+                        <span class="nav-link-text">Instituciones</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseInstituciones">
+                        <li>
+                            <a class="nav-link" href="{{action('InstitucionController@index')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a class="nav-link" href="{{action('InstitucionController@create')}}">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span class="nav-link-text">Crear</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administradores">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAdministradores" data-parent="#exampleAccordion">
                         <i class="fa fa-user"></i>
@@ -86,7 +108,7 @@
                         <li>
                         <li>
                             <a class="nav-link" href="{{action('AdministradorController@create')}}">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
@@ -108,7 +130,7 @@
                         <li>
                         <li>
                             <a class="nav-link" href="{{action('JugadorController@create')}}">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
@@ -130,7 +152,7 @@
                         <li>
                         <li>
                             <a class="nav-link" href="{{action('ArbitroController@create')}}">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
@@ -152,13 +174,14 @@
                         <li>
                         <li>
                             <a class="nav-link" href="{{action('ProgramadorController@create')}}">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
                         </li>
                         </li>
                     </ul>
                 </li>
+
             @endif
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Juegos">
                 <a class="nav-link" href="juegos.html">

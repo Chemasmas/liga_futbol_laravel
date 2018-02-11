@@ -16,7 +16,7 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre de Categoría</label>
-                <input type="text" name="nombre" class="form-control">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre">
             </div>
             <div class="form-group">
                 <label for="id_division">Division</label>
