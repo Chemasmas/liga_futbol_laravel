@@ -2,7 +2,13 @@
 
 namespace App;
 
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 /**
  * @property int $id
@@ -11,15 +17,24 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $createdAt
  * @property boolean $active
  * @property int $level
- * @property string $remember_token
- * @property string $updated_at
  * @property Administradore[] $administradores
  * @property Arbitro[] $arbitros
  * @property Jugadore[] $jugadores
  * @property Programadore[] $programadores
  */
-class usuarios extends Model implements Authenticatable
+class usuarios extends Model implements AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract
 {
+
+    use Authenticatable, Authorizable, CanResetPassword;
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     * 
+     * @var bool
+     */
+    public $incrementing = true;
+
     /**
      * @var array
      */
