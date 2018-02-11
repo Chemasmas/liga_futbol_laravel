@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\division;
 use App\equipos;
 use App\instituciones;
 use Illuminate\Http\Request;
@@ -20,11 +19,9 @@ class EquipoController extends Controller
     public function index()
     {
         $equiposG =equipos::all();
-        $divisiones = division::all();
 
         return view('admin.equipo.index',[
             "equiposG"=>$equiposG,
-            "divisiones"=>$divisiones
         ]);
 
     }
@@ -36,10 +33,8 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        $divisiones = division::all();
         $instituciones = instituciones::all();
         return view("admin.equipo.crear",[
-            "divisiones"=>$divisiones,
             "instituciones" => $instituciones
         ]);
     }

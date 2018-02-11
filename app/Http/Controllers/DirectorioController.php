@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\instituciones;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class InstitucionController extends Controller
+class DirectorioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,13 @@ class InstitucionController extends Controller
      */
     public function index()
     {
-        return view("admin.institucion.index");
+        //
     }
 
+    public function programador(){
+
+        return view('admin.directorio.programador');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +30,7 @@ class InstitucionController extends Controller
      */
     public function create()
     {
-        return view("admin.institucion.crear");
+        //
     }
 
     /**
@@ -38,20 +41,7 @@ class InstitucionController extends Controller
      */
     public function store(Request $request)
     {
-        $institucion = new instituciones();
-        $institucion->nombre = $request["nombre"];
-        $institucion->dir = $request["direccion"];
-        $institucion->mapa = $request["mapa"];
-
-        $ruta = "instituciones";
-        $imagen = $request->file('foto');
-        $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
-        $imagen->move($ruta,$nvoNombre);
-        $institucion->escudo = $ruta."/".$nvoNombre;
-        $institucion->save();
-
-        return redirect()->action("InstitucionController@create")->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
-        );
+        //
     }
 
     /**

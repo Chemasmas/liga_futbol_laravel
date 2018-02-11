@@ -181,7 +181,20 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Directorio">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseDirectorio" data-parent="#exampleAccordion">
+                        <i class="fa fa-address-book"></i>
+                        <span class="nav-link-text">Directorio</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseDirectorio">
+                        <li>
+                            <a class="nav-link" href="{{action('DirectorioController@programador')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Programadores</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             @endif
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Juegos">
                 <a class="nav-link" href="juegos.html">

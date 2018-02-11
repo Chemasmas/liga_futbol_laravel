@@ -1,4 +1,4 @@
-?php
+<?php
 
 namespace App;
 
@@ -20,6 +20,8 @@ class instituciones extends Model
      * @var array
      */
     protected $fillable = ['nombre', 'dir', 'mapa', 'escudo'];
+
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

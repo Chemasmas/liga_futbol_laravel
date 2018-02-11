@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Jugadore[] $jugadores
  * @property ParticipantesTorneo[] $participantesTorneos
  * @property Partido[] $partidos
- * @property Partido[] $partidos
+
  */
 class equipos extends Model
 {
@@ -59,8 +59,4 @@ class equipos extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function partidos()
-    {
-        return $this->hasMany('App\Partido', 'Visitante');
-    }
 }

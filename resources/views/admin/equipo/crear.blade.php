@@ -16,19 +16,6 @@
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre">
             </div>
             <div class="form-group">
-                <label for="foto">Escudo</label>
-                <input type="file" name="foto" class="form-control filestyle" data-input="false" data-buttonText="Selecciona la imagen" data-buttonName="btn-info" data-badge="true">
-            </div>
-            <div class="form-group">
-                <label for="id_division">División</label>
-                <select class="form-control" name="id_division">
-                    @foreach ($divisiones as $division)
-                        <option value ="{{$division->id}}">{{ $division->nombre }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="form-group">
                 <label for="id_institucion">Institución</label>
                 <select class="form-control" name="id_institucion">
                     @foreach ($instituciones as $institucion)
