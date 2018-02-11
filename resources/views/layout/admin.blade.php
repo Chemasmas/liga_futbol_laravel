@@ -40,6 +40,12 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('TorneoController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Historico</span>
+                            </a>
+                        </li>
+                        <li>
                         <li>
                             <a class="nav-link" href="{{action('TorneoController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>

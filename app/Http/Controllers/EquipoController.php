@@ -62,8 +62,14 @@ class EquipoController extends Controller
         //Storage::put($archi->getFilename(),$archi);
 
         $ruta = "equipos";
-        $request->file('foto')->move($ruta,$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension());
-        $equipo->foto = $ruta."/".$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension();
+        $imagen = $request->file('foto'); //Obtiene el Archivo Subido
+        $nvoNombre = $equipo->nombre.".".$imagen->getClientOriginalExtension();  //GEnera un nuevo Nombre con la misma extension
+        $imagen->move($ruta,$nvoNombre);    //Muevo el archivo a la ruta, con el nuevo nombre
+        $equipo->foto = $ruta."/".$nvoNombre;  //Asigna la ruta a donde fue movido al archivo al registro
+
+
+        //->move($ruta,$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension());
+        //$equipo->foto = $ruta."/".$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension();
 
         $equipo->save(['timestamps' => false]);
 

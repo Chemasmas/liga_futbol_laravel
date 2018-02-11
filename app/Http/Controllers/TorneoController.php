@@ -21,12 +21,28 @@ class TorneoController extends Controller
     {
         $torneosG = torneos::all()
                     ->filter( function($t) { return $t->activo; } )
+                    ->sortBy("genero")
                     ;
         return view('admin.torneo.index',[
             "torneos"=>$torneosG,
             "rutas" => [
             "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
             "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
+    public function all()
+    {
+        $torneosG = torneos::all()
+            ->sortBy("genero")
+            ->sortByDesc( "id"  )
+        ;
+        return view('admin.torneo.index',[
+            "torneos"=>$torneosG,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -59,10 +75,10 @@ class TorneoController extends Controller
 
 
 
-        $torneo = new torneo();
+        $torneo = new torneos();
         $torneo->nombre = $request["nombre"];
-        $torneo->id_division = $request["id_division"];
         $torneo->tipo_torneo = $request["tipo_torneo"];
+        $torneo->genero = $request["genero"];
         $torneo->activo = true;
 
         $torneo->save(['timestamps' => false]);
@@ -95,7 +111,7 @@ class TorneoController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -180,6 +196,17 @@ class TorneoController extends Controller
                 ["message"=>["clase"=>"warning","mensaje"=>"Equipo Eliminado"]]
             ]);
 
+    }
+
+    public function activate(Request $request,$idT){
+        $torneo = torneos::where("id",$idT)->update(["activo"=>true]);
+        return redirect()->back();
+    }
+
+
+    public function deactivate(Request $request,$idT){
+        $torneo = torneos::where("id",$idT)->update(["activo"=>false]);
+        return redirect()->back();
     }
 
 }
