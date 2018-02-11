@@ -32,6 +32,21 @@ class TorneoController extends Controller
         ]);
     }
 
+    public function all()
+    {
+        $torneosG = torneos::all()
+            ->sortBy("genero")
+            ->sortByDesc( "id"  )
+        ;
+        return view('admin.torneo.index',[
+            "torneos"=>$torneosG,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -181,6 +196,17 @@ class TorneoController extends Controller
                 ["message"=>["clase"=>"warning","mensaje"=>"Equipo Eliminado"]]
             ]);
 
+    }
+
+    public function activate(Request $request,$idT){
+        $torneo = torneos::where("id",$idT)->update(["activo"=>true]);
+        return redirect()->back();
+    }
+
+
+    public function deactivate(Request $request,$idT){
+        $torneo = torneos::where("id",$idT)->update(["activo"=>false]);
+        return redirect()->back();
     }
 
 }

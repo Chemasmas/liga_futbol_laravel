@@ -23,6 +23,8 @@ class torneos extends Model
      */
     protected $table = 'torneo';
 
+    public $timestamps  = false;
+
     /**
      * @var array
      */
