@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $documento_identidad
  * @property int $numero
  * @property string $foto
+ * @property string $genero
  * @property Institucione $institucione
  * @property Usuario $usuario
  * @property Equipo $equipo
@@ -24,14 +25,14 @@ class jugadores extends Model
     /**
      * @var array
      */
-    protected $fillable = ['equipos_id', 'nombre', 'fechaNac', 'documento_identidad', 'numero', 'foto'];
+    protected $fillable = ['equipos_id', 'nombre', 'fechaNac', 'documento_identidad', 'numero', 'foto', 'genero'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function institucione()
     {
-        return $this->belongsTo('App\instituciones', 'idInst');
+        return $this->belongsTo('App\Institucione', 'idInst');
     }
 
     /**
@@ -39,7 +40,7 @@ class jugadores extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo('App\usuarios', 'idUsr');
+        return $this->belongsTo('App\Usuario', 'idUsr');
     }
 
     /**
@@ -47,7 +48,7 @@ class jugadores extends Model
      */
     public function equipo()
     {
-        return $this->belongsTo('App\equipos', 'equipos_id');
+        return $this->belongsTo('App\Equipo', 'equipos_id');
     }
 
     /**

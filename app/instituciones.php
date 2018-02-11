@@ -1,4 +1,4 @@
-<?php
+?php
 
 namespace App;
 
@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $nombre
  * @property string $dir
  * @property string $mapa
+ * @property string $escudo
  * @property Equipo[] $equipos
  * @property Jugadore[] $jugadores
  * @property Programadore[] $programadores
@@ -18,7 +19,7 @@ class instituciones extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nombre', 'dir', 'mapa'];
+    protected $fillable = ['nombre', 'dir', 'mapa', 'escudo'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
