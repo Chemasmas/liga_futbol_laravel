@@ -21,6 +21,7 @@ class TorneoController extends Controller
     {
         $torneosG = torneos::all()
                     ->filter( function($t) { return $t->activo; } )
+                    ->sortBy("genero")
                     ;
         return view('admin.torneo.index',[
             "torneos"=>$torneosG,
@@ -59,10 +60,10 @@ class TorneoController extends Controller
 
 
 
-        $torneo = new torneo();
+        $torneo = new torneos();
         $torneo->nombre = $request["nombre"];
-        $torneo->id_division = $request["id_division"];
         $torneo->tipo_torneo = $request["tipo_torneo"];
+        $torneo->genero = $request["genero"];
         $torneo->activo = true;
 
         $torneo->save(['timestamps' => false]);

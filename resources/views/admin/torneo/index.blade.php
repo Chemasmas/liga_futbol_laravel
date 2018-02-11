@@ -12,23 +12,33 @@
             <h3>Lista de Torneos</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-
+            @if($torneos)
+                <thead>
+                    <tr >
+                        <th>Nombre</th>
+                        <th>Plantila</th>
+                        <th>Genero</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+            @endif
             @forelse ($torneos as $torneo)
-                        <thead>
-                        <tr>
-                            <th colspan="3">
-                                {{ $divisiones[$torneoG[0]["id_division"]]["nombre"] }}
-                            </th>
-                        </tr>
-                        </thead>
-                        <thead>
-                        <tr >
-                            <th>Nombre</th>
-                            <th>Plantila</th>
-                            <th>Acciones</th>
-                        </tr>
-                        </thead>
-
+                <tr>
+                    <td>
+                        {{ $torneo->nombre }}
+                    </td>
+                    <td>
+                        {{ $torneo->tipo_torneo }}
+                    </td>
+                    <td>
+                        {{ $torneo->genero }}
+                    </td>
+                    <td>
+                        <a class="btn"></a>
+                        <a class="btn"><i class="fa fa-edit"></i></a>
+                        <a class="btn">Agregar<br>Jugador</a>
+                    </td>
+                </tr>
             @empty
                 <tr>
                     <th>
