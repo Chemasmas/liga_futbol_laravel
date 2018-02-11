@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Jugadore[] $jugadores
  * @property Programadore[] $programadores
  */
-class usuarios extends Model
+class usuarios extends Model implements Authenticatable
 {
     /**
      * @var array

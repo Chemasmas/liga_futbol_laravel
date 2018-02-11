@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\division;
 use App\equipos;
 use App\participantes_torneo;
-use App\torneo;
+use App\torneos;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -20,17 +19,17 @@ class TorneoController extends Controller
      */
     public function index()
     {
-        $torneosG = torneo::all()->filter( function($t) { return $t->activo; } )
-                    ->groupBy('id_division');
+        $torneosG = torneos::all()
+                    ->filter( function($t) { return $t->activo; } )
+                    ;
 
 
-        $divisiones = division::all();
+        //$divisiones = division::all();
 
-        debug($divisiones);
+        //debug($divisiones);
 
         return view('admin.torneo.index',[
-            "torneosG"=>$torneosG,
-            "divisiones"=>$divisiones
+            "torneos"=>$torneosG,
         ]);
     }
 
