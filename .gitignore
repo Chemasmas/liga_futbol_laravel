@@ -7,3 +7,5 @@ Homestead.json
 ./.idea/*
 ./.idea/workspace.xml
 ./.vagrant/*
+.idea/deployment.xml
+.idea/php.xml

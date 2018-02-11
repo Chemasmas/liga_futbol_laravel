@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="ligaponiente">
+  <component name="PublishConfigData" serverName="scotchLiga">
     <serverData>
-      <paths name="ligaponiente">
+      <paths name="scotchLiga">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/var/www" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
