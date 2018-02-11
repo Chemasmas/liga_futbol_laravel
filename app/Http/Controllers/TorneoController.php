@@ -111,7 +111,7 @@ class TorneoController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
