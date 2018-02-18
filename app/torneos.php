@@ -35,7 +35,7 @@ class torneos extends Model
      */
     public function participantesTorneos()
     {
-        return $this->hasMany('App\ParticipantesTorneo', 'Torneo_id');
+        return $this->hasMany('App\participantes_torneo', 'Torneo_id');
     }
 
     /**

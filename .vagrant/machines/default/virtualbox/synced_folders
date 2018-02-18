@@ -1,1 +1,1 @@
-{"virtualbox":{"/var/www":{"mount_options":["dmode=777","fmode=666","uid=1000","gid=1000"],"guestpath":"/var/www","hostpath":"D:/Documents/GitHub/liga_futbol_laravel","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/var/www":{"mount_options":["dmode=777","fmode=666","uid=1000","gid=1000"],"guestpath":"/var/www","hostpath":"C:/Users/eva_0.DESKTOP-VMPSCP2/Desktop/andrea/copiaR","disabled":false,"__vagrantfile":true}}}

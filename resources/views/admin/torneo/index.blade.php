@@ -37,7 +37,7 @@
                         <a class="btn btn-info" data-toggle="tooltip" title="Ver Torneo." href="{{action("TorneoController@show",["id"=>$torneo->id])}}">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                         </a>
-                        <a class="btn btn-info" data-toggle="tooltip" title="Editar Torneo">
+                        <a class="btn btn-info" data-toggle="tooltip" title="Editar Torneo" href="{{action("TorneoController@edit",["id"=>$torneo->id])}}">
                             <i class="fa fa-edit" aria-hidden="true"></i>
                         </a>
                         <a class="btn btn-primary" data-toggle="tooltip" title="Agregar Jugador" href='{{ action("TorneoController@participantes",["idT"=>$torneo->id])}}'>

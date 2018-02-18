@@ -10,23 +10,23 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre de Categoría</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre"  value="{{!empty($torneo)?$torneo->nombre:''}}">
             </div>
             <!--TODO Esto podria tener una tabla-->
             <div class="form-group">
                 <label for="tipo_torneo">Tipo</label>
                 <select class="form-control" name="tipo_torneo">
-                    <option value="5">Plantilla 5</option>
-                    <option value="6">Plantilla 6</option>
-                    <option value="7">Plantilla 7</option>
-                    <option value="1">Plantilla 7 2V</option>
-                    <option value="8">Plantilla 8</option>
-                    <option value="9">Plantilla 9</option>
-                    <option value="10">Plantilla 10</option>
-                    <option value="11">Plantilla 11</option>
-                    <option value="12">Plantilla 12</option>
-                    <option value="13">Plantilla 13</option>
-                    <option value="14">Plantilla 14</option>
+                    <option value="5" {{!empty($torneo)&&5==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 5</option>
+                    <option value="6" {{!empty($torneo)&&6==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 6</option>
+                    <option value="7" {{!empty($torneo)&&7==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 7</option>
+                    <option value="1" {{!empty($torneo)&&1==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 7 2V</option>
+                    <option value="8" {{!empty($torneo)&&9==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 8</option>
+                    <option value="9" {{!empty($torneo)&&9==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 9</option>
+                    <option value="10" {{!empty($torneo)&&10==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 10</option>
+                    <option value="11" {{!empty($torneo)&&11==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 11</option>
+                    <option value="12" {{!empty($torneo)&&12==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 12</option>
+                    <option value="13" {{!empty($torneo)&&13==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 13</option>
+                    <option value="14" {{!empty($torneo)&&14==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 14</option>
                 </select>
 
 

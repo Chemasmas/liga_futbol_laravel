@@ -73,8 +73,6 @@ class TorneoController extends Controller
     {
         debug($request["nombre"]);
 
-
-
         $torneo = new torneos();
         $torneo->nombre = $request["nombre"];
         $torneo->tipo_torneo = $request["tipo_torneo"];
@@ -100,7 +98,20 @@ class TorneoController extends Controller
      */
     public function show($id)
     {
-        //
+        $torneo = torneos::findOrFail($id);
+
+
+        debug($torneo);
+        debug($torneo->participantesTorneos());
+
+        //Todo , retrieve info form torneo
+        return view('admin.torneo.crear',[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -111,7 +122,16 @@ class TorneoController extends Controller
      */
     public function edit($id)
     {
-
+        $torneo = torneos::findOrFail($id);
+        debug($torneo);
+        return view('admin.torneo.crear',[
+            "torneo"=>$torneo,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**

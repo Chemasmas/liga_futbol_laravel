@@ -26,16 +26,17 @@ Route::get("/admin/dashboard",['middleware' => 'auth', 'uses' => "AdminControlle
 Route::post("/admin/login","AdminController@login");
 Route::get("/admin/logout","AdminController@logout");
 
-Route::get("/admin/torneo",['middleware' => 'auth', 'uses' => "TorneoController@index"]);
-Route::get("/admin/torneo/all",['middleware' => 'auth', 'uses' => "TorneoController@all"]);
-Route::get("/admin/torneo/{id}",['middleware' => 'auth', 'uses' => "TorneoController@show"]);
-Route::get("/admin/torneo/create",['middleware' => 'auth', 'uses' => "TorneoController@create"]);
+Route::get( "/admin/torneo",['middleware' => 'auth', 'uses' => "TorneoController@index"]);
+Route::get( "/admin/torneo/all",['middleware' => 'auth', 'uses' => "TorneoController@all"]);
+Route::get( "/admin/torneo/create",['middleware' => 'auth', 'uses' => "TorneoController@create"]);
 Route::post("/admin/torneo/store",['middleware' => 'auth', 'uses' => "TorneoController@store"]);
-Route::get("/admin/torneo/{idT}/participantes",['middleware' => 'auth', 'uses' => "TorneoController@participantes"]);
+Route::get( "/admin/torneo/{id}",['middleware' => 'auth', 'uses' => "TorneoController@show"]);
+Route::get( "/admin/torneo/{id}/edit",['middleware' => 'auth', 'uses' => "TorneoController@edit"]);
+Route::get( "/admin/torneo/{idT}/participantes",['middleware' => 'auth', 'uses' => "TorneoController@participantes"]);
 Route::post("/admin/torneo/{idT}/add",['middleware' => 'auth', 'uses' => "TorneoController@add_participante"]);
 Route::post("/admin/torneo/{idT}/removec/{idE}",['middleware' => 'auth', 'uses' => "TorneoController@remove_participante"]);
-Route::get("/admin/torneo/{idT}/activate",['middleware' => 'auth', 'uses' => "TorneoController@activate"] );
-Route::get("/admin/torneo/{idT}/deactivate",['middleware' => 'auth', 'uses' => "TorneoController@deactivate"] );
+Route::get( "/admin/torneo/{idT}/activate",['middleware' => 'auth', 'uses' => "TorneoController@activate"] );
+Route::get( "/admin/torneo/{idT}/deactivate",['middleware' => 'auth', 'uses' => "TorneoController@deactivate"] );
 
 
 Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@index"]);

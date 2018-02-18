@@ -13,7 +13,7 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Equipo</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" >
             </div>
             <div class="form-group">
                 <label for="id_institucion">Institución</label>
