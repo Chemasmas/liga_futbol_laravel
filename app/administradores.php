@@ -25,6 +25,7 @@ class administradores extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo('App\Usuario', 'idUsr');
+        return $this->belongsTo('App\usuarios', 'idUsr');
     }
+    public $timestamps  = false;
 }

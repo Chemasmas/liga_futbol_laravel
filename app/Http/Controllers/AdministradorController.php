@@ -105,7 +105,16 @@ class AdministradorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $administrador  = administradores::findOrFail($id);
+        debug($administrador);
+        return view('admin.administrador.crear',[
+            "administrador"=>$administrador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Administrador"=>["etiqueta"=>"Administrador", "active"=>"1","link"=>"/admin/administrador"],
+                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -117,7 +126,31 @@ class AdministradorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        debug($request["nombre"]);
+
+        $administrador = administradores::findOrFail($id);
+
+        $administrador->nombre = $request["nombre"];
+        //$administrador->usuario = $request["usuario"];
+        //$administrador->password = $request["password"];
+        $administrador->correo = $request["correo"];
+        $administrador->telefono = $request["telefono"];
+        //$administrador->activo = true;
+        $usuario = $administrador->usuario;
+        debug($usuario);
+        $usuario->username = $request["usuario"];
+        
+        debug($request["password"]);
+        debug(strlen($request["password"]));
+        $administrador->update();
+        $usuario->update();
+
+        debug($administrador);
+        //TODO validacion exito de la insercion
+        //success
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+        );
     }
 
     /**
