@@ -24,6 +24,13 @@
                 </select>
             </div>
             <div class="form-group">
+                <label>Genero</label>
+                <select class="form-control" name="genero">
+                    <option value="M" {{!empty($equipo)&&"M"==$equipo->genero?'"selected"':''}} >Varonil</option>
+                    <option value="F" {{!empty($equipo)&&"F"==$equipo->genero?'"selected"':''}}>Femenil</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="coach">Nombre Coach</label>
                 <input type="text" name="coach" class="form-control" placeholder="Nombre Completo">
             </div>

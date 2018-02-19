@@ -83,7 +83,7 @@ class TorneoController extends Controller
 
         //TODO validacion exito de la insercion
         //success
-        return redirect()->action("TorneoController@create")->with(
+        return redirect()->back()->with(
             ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
 
@@ -143,7 +143,23 @@ class TorneoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        debug($request["nombre"]);
+
+        $torneo = torneos::findOrFail($id);
+
+        $torneo->nombre = $request["nombre"];
+        $torneo->tipo_torneo = $request["tipo_torneo"];
+        $torneo->genero = $request["genero"];
+        $torneo->activo = true;
+
+        $torneo->update();
+
+        debug($torneo);
+        //TODO validacion exito de la insercion
+        //success
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+        );
     }
 
     /**
@@ -158,13 +174,13 @@ class TorneoController extends Controller
     }
 
     public function participantes($idT){
-        $torneo = torneo::where("id",$idT)->first();
+        $torneo = torneos::where("id",$idT)->first();
         debug($torneo);
         //TODO debe de evitar mostrar a los que ya estan
-        $participantes = participantes_torneo::all("Equipos_id");
+        $participantes = participantes_torneo::where("Torneo_id",$idT)->get("Equipos_id");
 
         $participantesE = equipos::whereIn("id",$participantes)->get();
-        $equipos = equipos::where("idDivt",$torneo->id_division)
+        $equipos = equipos::where("genero",$torneo->genero)
             ->whereNotIn("id",$participantes)
             ->get();
         //$eParticipantes = equipos::where("")

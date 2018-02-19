@@ -48,30 +48,34 @@ class EquipoController extends Controller
     public function store(Request $request)
     {
         debug($request->file('foto'));
-        debug( File::extension($request->file('foto')->getFilename()) );
+        //debug( File::extension($request->file('foto')->getFilename()) );
 
         $equipo = new equipos();
         $equipo->nombre = $request["nombre"];
         $equipo->nombreCoach = $request["coach"];
         $equipo->nombreCoachAsistente = $request["asistente"];
-        $equipo->idDivt = $request["id_division"];
+        $equipo->genero = $request["genero"];
         $equipo->idIst = $request["id_institucion"];
+
+
+        //$equipo->idDivt = $request["id_division"];
+        //$equipo->idIst = $request["id_institucion"];
 
 
         //$archi = $request->file('foto');
         //Storage::put($archi->getFilename(),$archi);
 
-        $ruta = "equipos";
-        $imagen = $request->file('foto'); //Obtiene el Archivo Subido
-        $nvoNombre = $equipo->nombre.".".$imagen->getClientOriginalExtension();  //GEnera un nuevo Nombre con la misma extension
-        $imagen->move($ruta,$nvoNombre);    //Muevo el archivo a la ruta, con el nuevo nombre
-        $equipo->foto = $ruta."/".$nvoNombre;  //Asigna la ruta a donde fue movido al archivo al registro
+        //$ruta = "equipos";
+        //$imagen = $request->file('foto'); //Obtiene el Archivo Subido
+        //$nvoNombre = $equipo->nombre.".".$imagen->getClientOriginalExtension();  //GEnera un nuevo Nombre con la misma extension
+        //$imagen->move($ruta,$nvoNombre);    //Muevo el archivo a la ruta, con el nuevo nombre
+        //$equipo->foto = $ruta."/".$nvoNombre;  //Asigna la ruta a donde fue movido al archivo al registro
 
 
         //->move($ruta,$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension());
         //$equipo->foto = $ruta."/".$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension();
 
-        $equipo->save(['timestamps' => false]);
+        $equipo->save();
 
 
         //TODO validacion exito de la insercion

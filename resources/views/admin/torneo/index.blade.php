@@ -40,7 +40,7 @@
                         <a class="btn btn-info" data-toggle="tooltip" title="Editar Torneo" href="{{action("TorneoController@edit",["id"=>$torneo->id])}}">
                             <i class="fa fa-edit" aria-hidden="true"></i>
                         </a>
-                        <a class="btn btn-primary" data-toggle="tooltip" title="Agregar Jugador" href='{{ action("TorneoController@participantes",["idT"=>$torneo->id])}}'>
+                        <a class="btn btn-primary" data-toggle="tooltip" title="Agregar Equipo" href='{{ action("TorneoController@participantes",["idT"=>$torneo->id])}}'>
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         </a>
                         @if($torneo->activo)

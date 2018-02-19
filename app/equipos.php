@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class equipos extends Model
 {
+
+    public $timestamps  = false;
     /**
      * @var array
      */

@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="offset-sm-3 col-sm-6">
-        <form method="POST" action="{{ action('TorneoController@store') }}">
+        <form method="POST" action="{{!empty($torneo)?action('TorneoController@update',["id"=>$torneo->id]):action('TorneoController@store')}}">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre de Categoría</label>
@@ -34,11 +34,11 @@
             <div class="form-group">
                 <label>Genero</label>
                 <select class="form-control" name="genero">
-                    <option value="M">Varonil</option>
-                    <option value="F">Femenil</option>
+                    <option value="M" {{!empty($torneo)&&"M"==$torneo->genero?'"selected"':''}} >Varonil</option>
+                    <option value="F" {{!empty($torneo)&&"F"==$torneo->genero?'"selected"':''}}>Femenil</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success pull-right">Crear</button>
+            <button type="submit" class="btn btn-success pull-right"> {{!empty($torneo)?'Guardar':'Crear'}}</button>
         </form>
     </div>
 
