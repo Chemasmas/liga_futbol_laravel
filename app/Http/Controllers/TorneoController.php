@@ -252,8 +252,9 @@ class TorneoController extends Controller
 
         $participantes = participantes_torneo::where('Torneo_id',$idT)->get();
         $plantilla = new Plantillas($participantes);
+        debug($plantilla->getParticipantes());
         return redirect()
-            ->action("TorneoController@participantes",["idT"=>$idT])
+            ->action("TorneoController@show",["idT"=>$idT])
             ->with([
                 ["message"=>["clase"=>"warning","mensaje"=>"Equipo Eliminado"]]
             ]);
