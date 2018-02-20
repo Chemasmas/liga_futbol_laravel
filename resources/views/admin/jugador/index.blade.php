@@ -21,16 +21,15 @@
                     </tr>
                     </thead>
                     @foreach ($jugadores as $jugador)
-
                         <tr>
                             <td>
-                                {{$jugador->nombre}}
+                               Nombre: {{$jugador->nombre}}
                             </td>
                             <td>
                                 Dorsal: {{$jugador->numero}}
                             </td>
                             <td>
-                                Institucion: {{$jugador->institucione->nombre}}
+                                Institucion: {{$jugador->institucione()->nombre}}
                             </td>
                             <td>
                                 Equipo: {{$jugador->equipo->nombre}}
@@ -40,7 +39,6 @@
                                 <a class="btn btn-success" role="button">Editar</a>
                             </td>
                         </tr>
-
                     @endforeach
                 </table>
             </div>

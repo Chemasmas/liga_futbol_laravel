@@ -54,7 +54,7 @@ class jugadores extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function estadisticasJugadors()
+    public function estadisticasJugadores()
     {
         return $this->hasMany('App\EstadisticasJugador', 'idJugador');
     }

@@ -10,7 +10,14 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Jugador</label>
-                <input type="text" name="nombre" class="form-control">
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo">
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <select class="form-control" name="genero">
+                    <option value="M" {{!empty($torneo)&&"M"==$torneo->genero?'"selected"':''}} >Varonil</option>
+                    <option value="F" {{!empty($torneo)&&"F"==$torneo->genero?'"selected"':''}}>Femenil</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="usuario">Usuario</label>
@@ -31,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="telefono">CURP</label>
-                <input type="text" name="curp" class="form-control">
+                <input type="text" name="curp" class="form-control" placeholder="Identificador">
             </div>
 
             <!--TODO Filtrar solo debe ser exitoso si conciden-->
@@ -54,7 +61,7 @@
 
             <div class="form-group">
                 <label for="dorsal">Número Dorsal</label>
-                <input type="text" name="dorsal" class="form-control">
+                <input type="text" name="dorsal" class="form-control" placeholder="#">
             </div>
             <button type="submit" class="btn btn-success pull-right">Agregar</button>
         </form>
