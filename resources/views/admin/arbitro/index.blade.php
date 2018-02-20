@@ -16,7 +16,6 @@
                         <thead>
                         <tr >
                             <th>Nombre</th>
-                            <th>Telefono</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
@@ -25,9 +24,6 @@
                         <tr>
                             <td>
                                 {{ $arbitro->nombre }}
-                            </td>
-                            <td>
-                                {{ $arbitro->telefono }}
                             </td>
                             <td>
                                 <a class="btn btn-info" data-toggle="tooltip" title="Ver Arbitro" href="{{action("ArbitroController@show",["id"=>$arbitro->id])}}">
