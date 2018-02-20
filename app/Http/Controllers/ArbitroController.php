@@ -20,11 +20,9 @@ class ArbitroController extends Controller
     public function index()
     {
         $arbitrosG =arbitros::all();
-       // $divisiones = division::all();
 
         return view('admin.arbitro.index',[
             "arbitrosG"=>$arbitrosG,
-            //"divisiones"=>$divisiones
         ]);
     }
 
