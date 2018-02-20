@@ -31,7 +31,7 @@ class equipos extends Model
      */
     public function institucione()
     {
-        return $this->belongsTo('App\Institucione', 'idIst');
+        return $this->belongsTo('App\instituciones', 'idIst');
     }
 
     /**

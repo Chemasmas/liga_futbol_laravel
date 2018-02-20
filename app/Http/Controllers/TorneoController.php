@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\equipos;
 use App\participantes_torneo;
 use App\torneos;
+use App\util\Plantillas;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -102,10 +103,12 @@ class TorneoController extends Controller
 
 
         debug($torneo);
-        debug($torneo->participantesTorneos());
+        debug($torneo->participantesTorneos()->get());
 
         //Todo , retrieve info form torneo
-        return view('admin.torneo.crear',[
+        return view('admin.torneo.info',[
+            "torneo" => $torneo,
+            "participantes" => $torneo->participantesTorneos()->get(),
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
@@ -177,7 +180,7 @@ class TorneoController extends Controller
         $torneo = torneos::where("id",$idT)->first();
         debug($torneo);
         //TODO debe de evitar mostrar a los que ya estan
-        $participantes = participantes_torneo::where("Torneo_id",$idT)->get("Equipos_id");
+        $participantes = participantes_torneo::select("Equipos_id")->where("Torneo_id",$idT)->get();
 
         $participantesE = equipos::whereIn("id",$participantes)->get();
         $equipos = equipos::where("genero",$torneo->genero)
@@ -243,6 +246,17 @@ class TorneoController extends Controller
     public function deactivate(Request $request,$idT){
         $torneo = torneos::where("id",$idT)->update(["activo"=>false]);
         return redirect()->back();
+    }
+
+    public function generarRotacion($idT){
+
+        $participantes = participantes_torneo::where('Torneo_id',$idT)->get();
+        $plantilla = new Plantillas($participantes);
+        return redirect()
+            ->action("TorneoController@participantes",["idT"=>$idT])
+            ->with([
+                ["message"=>["clase"=>"warning","mensaje"=>"Equipo Eliminado"]]
+            ]);
     }
 
 }

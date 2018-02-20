@@ -1,0 +1,64 @@
+
+@extends('layout.admin')
+
+@section('titulo','Torneos')
+
+@section('rol',"")
+
+@section('content')
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Torneo : {{ $torneo->nombre }} </h3>
+            <h4>Plantilla : {{ $torneo->tipo_torneo }} </h4>
+            <div class="container">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Equipo</th>
+                        <th>Institucion</th>
+                        <th>Partidos Jugados</th>
+                        <th>Partidos Ganados</th>
+                        <th>Partidos Empatados</th>
+                        <th>Goles a Favor</th>
+                        <th>Goles en Contra</th>
+                        <th>Diferencia de Goles</th>
+                        <th>Puntos</th>
+                    </thead>
+                    @forelse( $participantes as $participante )
+                        <tr>
+                            <td>
+                                {{$participante->equipo()->get()[0]->nombre}}
+                            </td>
+                            <td>
+                                {{$participante->equipo()->get()[0]->institucione->get()[0]->nombre}}
+                            </td>
+                            <td>
+                                {{$participante->PartidosJugados}}
+                            </td>
+                            <td>
+                                {{$participante->PartidosGanados}}
+                            </td>
+                            <td>
+                                {{$participante->PartidosEmpatados}}
+                            </td>
+                            <td>
+                                {{$participante->GolesFavor}}
+                            </td>
+                            <td>
+                                {{$participante->GolesContra}}
+                            </td>
+                            <td>
+                                {{$participante->DiferenciaGoles}}
+                            </td>
+                            <td>
+                                {{$participante->Puntos}}
+                            </td>
+                        </tr>
+                    @empty
+                        No hay equipos!!!
+                    @endforelse
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection
