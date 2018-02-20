@@ -39,7 +39,10 @@ class Plantillas
 {
     function __construct($participantes) {
         $this->participantes = $participantes;
-        debug($participantes);
+    }
+
+    function getParticipantes(){
+        return $this->participantes;
     }
 
 
