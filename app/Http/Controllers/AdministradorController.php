@@ -139,7 +139,7 @@ class AdministradorController extends Controller
         $usuario = $administrador->usuario;
         debug($usuario);
         $usuario->username = $request["usuario"];
-        
+
         debug($request["password"]);
         debug(strlen($request["password"]));
         $administrador->update();
