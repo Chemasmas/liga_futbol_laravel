@@ -36,7 +36,7 @@ class participantes_torneo extends Model
      */
     public function equipo()
     {
-        return $this->belongsTo('App\Equipo', 'Equipos_id');
+        return $this->belongsTo('App\equipos', 'Equipos_id');
     }
 
     /**
