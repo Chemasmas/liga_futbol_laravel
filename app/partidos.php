@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $horaDeJuego
  * @property string $notas
  * @property string $campo
- * @property Equipo $equipo
- * @property Equipo $equipo
+ * @property Equipo $equipol
+ * @property Equipo $equipov
  * @property Torneo $torneo
  */
 class partidos extends Model
@@ -23,22 +23,22 @@ class partidos extends Model
     /**
      * @var array
      */
-    protected $fillable = ['marcadorLocal', 'marcadorVisitante', 'horaDeJuego', 'notas', 'campo'];
+    protected $fillable = ['Local','Visitante','Torneo_id','marcadorLocal', 'marcadorVisitante', 'horaDeJuego', 'notas', 'campo'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function equipo()
+    public function equipol()
     {
-        return $this->belongsTo('App\Equipo', 'Local');
+        return $this->belongsTo('App\equipos', 'Local');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function equipo()
+    public function equipov()
     {
-        return $this->belongsTo('App\Equipo', 'Visitante');
+        return $this->belongsTo('App\equipos', 'Visitante');
     }
 
     /**
@@ -46,6 +46,6 @@ class partidos extends Model
      */
     public function torneo()
     {
-        return $this->belongsTo('App\Torneo', 'Torneo_id');
+        return $this->belongsTo('App\torneos', 'Torneo_id');
     }
 }

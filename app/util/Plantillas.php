@@ -27,6 +27,7 @@
 
 namespace App\util;
 use App\participantes_torneo;
+use App\partidos;
 
 
 /**
@@ -34,16 +35,89 @@ use App\participantes_torneo;
  * @package App\util
  *
  * @property participantes_torneo participantes
+ * @property int plantilla
+ * @property int torneo_id
  */
 class Plantillas
 {
-    function __construct($participantes) {
+    function __construct($torneo_id,$participantes,$plantilla) {
+        $this->torneo_id = $torneo_id;
         $this->participantes = $participantes;
+        $this->plantilla = $plantilla;
     }
 
-    function getParticipantes(){
-        return $this->participantes;
+    function validar(){
+        //TODO reglas para considerar valido generar una rotacion
+        return true;
+    }
+
+    function generar(){
+        if($this->validar()){
+            switch ($this->plantilla){
+                case 5 : $this->plantilla5(); break;
+            }
+        }
     }
 
 
+    function plantilla5(){
+        //debug( count($this->participantes) );
+        debug( $this->participantes );
+        //Debe generar 20 partidos
+        $partidosT = [];
+        $rotaciones = [
+            [ 'L' => 1 , 'V' => 4],
+            [ 'L' => 2 , 'V' => 3],
+            [ 'L' => 4 , 'V' => 2],
+            [ 'L' => 0 , 'V' => 1],
+
+            [ 'L' => 2 , 'V' => 0],
+            [ 'L' => 3 , 'V' => 4],
+            [ 'L' => 0 , 'V' => 3],
+            [ 'L' => 1 , 'V' => 2],
+
+            [ 'L' => 3 , 'V' => 1],
+            [ 'L' => 4 , 'V' => 0],
+            [ 'L' => 4 , 'V' => 1],
+            [ 'L' => 3 , 'V' => 2],
+
+            [ 'L' => 2 , 'V' => 4],
+            [ 'L' => 1 , 'V' => 0],
+            [ 'L' => 0 , 'V' => 2],
+            [ 'L' => 4 , 'V' => 3],
+
+            [ 'L' => 3 , 'V' => 0],
+            [ 'L' => 2 , 'V' => 1],
+            [ 'L' => 1 , 'V' => 3],
+            [ 'L' => 0 , 'V' => 4],
+        ];
+
+
+        foreach ($rotaciones as $rotacion){
+            array_push($partidosT,$this->generarPartido( $this->getID($rotacion['L']),$this->getID($rotacion['V']) ) );
+        }
+
+        partidos::insert($rotaciones);
+
+        debug($partidosT);
+    }
+
+    private function getID($offset){
+        if(isset($this->participantes[$offset])){
+            return $this->participantes[$offset]->Equipos_id;
+        }
+        return 0;
+    }
+
+    private function generarPartido($idEL,$idEV){
+        $partido = new partidos();
+        $partido->Torneo_id=$this->torneo_id;
+        $partido->Local = $idEL;
+        $partido->Visitante = $idEV;
+
+        $partido->marcadorLocal = 0;
+        $partido->marcadorVisitante = 0;
+
+        return $partido;
+    }
 }
