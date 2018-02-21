@@ -20,11 +20,9 @@ class ArbitroController extends Controller
     public function index()
     {
         $arbitrosG =arbitros::all();
-       // $divisiones = division::all();
 
         return view('admin.arbitro.index',[
             "arbitrosG"=>$arbitrosG,
-            //"divisiones"=>$divisiones
         ]);
     }
 
@@ -101,7 +99,16 @@ class ArbitroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $arbitro  = arbitro::findOrFail($id);
+        debug($arbitro);
+        return view('admin.arbitro.crear',[
+            "arbitro"=>$arbitro,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Arbitro"=>["etiqueta"=>"Arbitro", "active"=>"1","link"=>"/admin/arbitro"],
+                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**

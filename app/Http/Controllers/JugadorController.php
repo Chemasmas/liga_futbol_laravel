@@ -60,6 +60,7 @@ class JugadorController extends Controller
         $idI = $request["id_institucion"];
         $dorsal = $request["dorsal"];
         $idE = $request["id_equipo"];
+        //$genero = $request[""];
 
         $username = $request["usuario"];
         $password = $request["password"];

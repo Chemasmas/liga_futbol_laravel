@@ -12,74 +12,47 @@
             <h3>Lista de Arbitros</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Telefono</th>
-                        <th>Acciones</th>
-                    </tr>
-                    </thead>
-                    @foreach ($arbitrosG as $arbitro)
-
+                    @if(count($arbitrosG)>0)
+                        <thead>
+                        <tr >
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                    @endif
+                    @forelse ($arbitrosG as $arbitro)
                         <tr>
                             <td>
-                                {{$arbitro->nombre}}
+                                {{ $arbitro->nombre }}
                             </td>
                             <td>
-                                {{$arbitro->telefono}}
-                            </td>
-                            <td>
-                                <a class="btn btn-primary" role="button">Ver</a>
-                                <a class="btn btn-success" role="button">Editar</a>
+                                <a class="btn btn-info" data-toggle="tooltip" title="Ver Arbitro" href="{{action("ArbitroController@show",["id"=>$arbitro->id])}}">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <a class="btn btn-info" data-toggle="tooltip" title="Editar Arbitro" href="{{action("ArbitroController@edit",["id"=>$arbitro->id])}}">
+                                    <i class="fa fa-edit" aria-hidden="true"></i>
+                                </a>
+                                @if($arbitro->activo)
+                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Arbitro" href='{{ action("ArbitroController@deactivate",["idA"=>$arbitro->id])}}'>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </a>
+                                @else
+                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Arbitro" href='{{ action("ArbitroController@activate",["idA"=>$arbitro->id])}}'>
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
-
-                    @endforeach
+                    @empty
+                        <tr>
+                            <th>
+                                No hay Usuario Arbitro <a class="btn btn-primary" href="{{action('ArbitroController@create')}}">Agregar uno.</a>
+                            </th>
+                        </tr>
+                    @endforelse
                 </table>
             </div>
         </div>
     </div>
 @endsection
 
-
-
-<table class="table table-hover table-bordered">
-    @if(count($administradores)>0)
-        <thead>
-        <tr >
-            <th>Nombre</th>
-            <th>Acciones</th>
-        </tr>
-        </thead>
-    @endif
-    @forelse ($administradores as $administrador)
-        <tr>
-            <td>
-                {{ $administrador->nombre }}
-            </td>
-            <td>
-                <a class="btn btn-info" data-toggle="tooltip" title="Ver Admin" href="{{action("AdministradorController@show",["id"=>$administrador->id])}}">
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                </a>
-                <a class="btn btn-info" data-toggle="tooltip" title="Editar Admin" href="{{action("AdministradorController@edit",["id"=>$administrador->id])}}">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                </a>
-                @if($administrador->activo)
-                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Admin" href='{{ action("AdministradorController@deactivate",["idA"=>$administrador->id])}}'>
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                    </a>
-                @else
-                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Admin" href='{{ action("AdministradorController@activate",["idA"=>$administrador->id])}}'>
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </a>
-                @endif
-            </td>
-        </tr>
-    @empty
-        <tr>
-            <th>
-                No hay Usuario Admin <a class="btn btn-primary" href="{{action('AdministradorController@create')}}">Agregar uno.</a>
-            </th>
-        </tr>
-    @endforelse
-</table>
