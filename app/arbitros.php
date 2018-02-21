@@ -24,7 +24,7 @@ class arbitros extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo('App\Usuario', 'idUsr');
+        return $this->belongsTo('App\Usuarios', 'idUsr');
     }
     public $timestamps  = false;
 }

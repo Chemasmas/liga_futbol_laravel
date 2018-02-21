@@ -131,11 +131,8 @@ class AdministradorController extends Controller
         $administrador = administradores::findOrFail($id);
 
         $administrador->nombre = $request["nombre"];
-        //$administrador->usuario = $request["usuario"];
-        //$administrador->password = $request["password"];
         $administrador->correo = $request["correo"];
         $administrador->telefono = $request["telefono"];
-        //$administrador->activo = true;
         $usuario = $administrador->usuario;
         debug($usuario);
         $usuario->username = $request["usuario"];

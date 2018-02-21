@@ -99,7 +99,7 @@ class ArbitroController extends Controller
      */
     public function edit($id)
     {
-        $arbitro  = arbitro::findOrFail($id);
+        $arbitro  = arbitros::findOrFail($id);
         debug($arbitro);
         return view('admin.arbitro.crear',[
             "arbitro"=>$arbitro,
@@ -120,7 +120,28 @@ class ArbitroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        debug($request["nombre"]);
+
+        $arbitro  = arbitros::findOrFail($id);
+
+        $arbitro->nombre = $request["nombre"];
+        $arbitro->telefono = $request["telefono"];
+        $arbitro->foto = $request["foto"];
+        $usuario = $arbitro->usuario;
+        debug($usuario);
+        $usuario->username = $request["usuario"];
+
+        debug($request["password"]);
+        debug(strlen($request["password"]));
+        $arbitro->update();
+        $usuario->update();
+
+        debug($arbitro);
+        //TODO validacion exito de la insercion
+        //success
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+        );
     }
 
     /**
