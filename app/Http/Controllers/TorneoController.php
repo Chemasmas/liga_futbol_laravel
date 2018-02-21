@@ -251,8 +251,11 @@ class TorneoController extends Controller
     public function generarRotacion($idT){
 
         $participantes = participantes_torneo::where('Torneo_id',$idT)->get();
-        $plantilla = new Plantillas($participantes);
-        debug($plantilla->getParticipantes());
+        $torneo = torneos::where("id",$idT)->first();
+        debug($torneo);
+        $plantilla = new Plantillas($torneo->id,$participantes,$torneo->tipo_torneo);
+        $plantilla->plantilla5();
+
         return redirect()
             ->action("TorneoController@show",["idT"=>$idT])
             ->with([
