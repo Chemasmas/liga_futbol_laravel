@@ -9,3 +9,4 @@ Homestead.json
 ./.vagrant/*
 .idea/deployment.xml
 .idea/php.xml
+public/instituciones/*

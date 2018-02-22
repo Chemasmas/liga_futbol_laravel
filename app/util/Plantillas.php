@@ -28,6 +28,7 @@
 namespace App\util;
 use App\participantes_torneo;
 use App\partidos;
+use App\torneos;
 
 
 /**
@@ -40,10 +41,10 @@ use App\partidos;
  */
 class Plantillas
 {
-    function __construct($torneo_id,$participantes,$plantilla) {
+    function __construct($torneo_id,$participantes) {
         $this->torneo_id = $torneo_id;
         $this->participantes = $participantes;
-        $this->plantilla = $plantilla;
+        //$this->plantilla = $plantilla;
     }
 
     function validar(){
@@ -52,11 +53,14 @@ class Plantillas
     }
 
     function generar(){
+        $this->torneo = torneos::where('id',$this->torneo_id)->firstOrFail();
+
         if($this->validar()){
-            switch ($this->plantilla){
+            switch ($this->torneo->tipo_torneo){
                 case 5 : $this->plantilla5(); break;
             }
         }
+
     }
 
 
@@ -97,7 +101,8 @@ class Plantillas
             array_push($partidosT,$this->generarPartido( $this->getID($rotacion['L']),$this->getID($rotacion['V']) ) );
         }
 
-        partidos::insert($rotaciones);
+
+        //partidos::insert($partidosT);
 
         debug($partidosT);
     }
@@ -106,7 +111,7 @@ class Plantillas
         if(isset($this->participantes[$offset])){
             return $this->participantes[$offset]->Equipos_id;
         }
-        return 0;
+        return 1;
     }
 
     private function generarPartido($idEL,$idEV){

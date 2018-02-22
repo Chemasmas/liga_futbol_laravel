@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property boolean $activo
  * @property string $genero
  * @property boolean $es_liga
+ * @property boolean $generado
  * @property ParticipantesTorneo[] $participantesTorneos
  * @property Partido[] $partidos
  */
@@ -28,7 +29,7 @@ class torneos extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nombre', 'tipo_torneo', 'activo', 'genero', 'es_liga'];
+    protected $fillable = ['nombre', 'tipo_torneo', 'activo', 'genero', 'es_liga','generado'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

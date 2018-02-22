@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $horaDeJuego
  * @property string $notas
  * @property string $campo
+ * @property int $jornada
  * @property Equipo $equipol
  * @property Equipo $equipov
  * @property Torneo $torneo
@@ -23,7 +24,7 @@ class partidos extends Model
     /**
      * @var array
      */
-    protected $fillable = ['Local','Visitante','Torneo_id','marcadorLocal', 'marcadorVisitante', 'horaDeJuego', 'notas', 'campo'];
+    protected $fillable = ['Local','Visitante','Torneo_id','marcadorLocal', 'marcadorVisitante', 'horaDeJuego', 'notas', 'campo','jornada'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
