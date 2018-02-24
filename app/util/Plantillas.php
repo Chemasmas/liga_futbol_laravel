@@ -116,7 +116,7 @@ class Plantillas
         if(isset($this->participantes[$offset])){
             return $this->participantes[$offset]->Equipos_id;
         }
-        return 1;
+            return 1;
     }
 
     private function generarPartido($idEL,$idEV){

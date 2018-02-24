@@ -29,10 +29,10 @@
                                 Dorsal: {{$jugador->numero}}
                             </td>
                             <td>
-                                Institucion: {{$jugador->institucione()->nombre}}
+                                Institucion: {{$jugador->institucione()->first()->nombre }}
                             </td>
                             <td>
-                                Equipo: {{$jugador->equipo->nombre}}
+                                Equipo: {{$jugador->equipo()->first()->nombre}}
                             </td>
                             <td>
                                 <a class="btn btn-primary" role="button">Ver</a>
