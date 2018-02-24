@@ -54,6 +54,8 @@ class Plantillas
 
     function generar(){
         $this->torneo = torneos::where('id',$this->torneo_id)->firstOrFail();
+        if($this->torneo->generado)
+            return;
 
         if($this->validar()){
             switch ($this->torneo->tipo_torneo){
@@ -100,10 +102,13 @@ class Plantillas
         foreach ($rotaciones as $rotacion){
             array_push($partidosT,$this->generarPartido( $this->getID($rotacion['L']),$this->getID($rotacion['V']) ) );
         }
-
+        foreach ($partidosT as $partidoT){
+          $partidoT->save();
+        }
 
         //partidos::insert($partidosT);
-
+        $this->torneo->generado = true;
+        $this->torneo->save();
         debug($partidosT);
     }
 
