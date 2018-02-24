@@ -264,6 +264,8 @@ class TorneoController extends Controller
             ]);
     }
 
-    public function jornadas($idT)
+    public function jornadas($idT){
+        
+    }
 
 }
