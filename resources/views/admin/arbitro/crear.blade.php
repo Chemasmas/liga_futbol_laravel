@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="offset-sm-3 col-sm-6">
-        <form method="POST" action="{{!empty($arbitro)?action('ArbitroController@update',["id"=>$arbitro  ->id]):action('ArbitroController@store')}}">
+        <form method="POST" action="{{!empty($arbitro)?action('ArbitroController@update',["id"=>$arbitro  ->id]):action('ArbitroController@store')}}" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Árbitro</label>

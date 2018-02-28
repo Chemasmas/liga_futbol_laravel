@@ -69,6 +69,8 @@ class ArbitroController extends Controller
         $arbitro->telefono = $telefono;
         $arbitro->idUsr = $usuario->id;
         $ruta = "arbitros";
+        //debug($request);
+        debug($request->files);
         $request->file('foto')->move($ruta, $arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension());
         $arbitro->foto = $ruta."/".$arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension();
 
