@@ -17,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label for="usuario">Dirección</label>
-                <input type="text" name="direccion" class="form-control" placeholder="">
+                <input type="text" name="direccion" class="form-control" placeholder="" value="{{!empty($institucion)?$institucion->dir:''}}">
             </div>
             <div class="form-group">
                 <label for="foto">Escudo de la Institución</label>
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="usuario">Mapa</label>
-                <input type="text" name="mapa" class="form-control" placeholder="">
+                <input type="text" name="mapa" class="form-control" placeholder="" value="{{!empty($institucion)?$institucion->mapa:''}}">
             </div>
             <button type="submit" class="btn btn-success pull-right">Crear</button>
         </form>

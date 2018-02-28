@@ -82,7 +82,12 @@ class InstitucionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $institucion = instituciones::find($id);
+        debug($id);
+        debug($institucion);
+        return view("admin.institucion.crear",[
+            "institucion"=>$institucion
+        ]);
     }
 
     /**
@@ -94,7 +99,26 @@ class InstitucionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $institucion = instituciones::find($id);
+        if(isset($request["nombre"]) && $request["nombre"]!="")
+            $institucion->nombre = $request["nombre"];
+        if(isset($request["direccion"]) && $request["direccion"]!="")
+            $institucion->dir = $request["direccion"];
+        if(isset($request["mapa"]) && $request["mapa"]!="")
+            $institucion->mapa = $request["mapa"];
+
+        if($request->file("foto")!= null )
+        {
+            $ruta = "instituciones";
+            $imagen = $request->file('foto');
+            $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
+            $imagen->move($ruta,$nvoNombre);
+            $institucion->escudo = $ruta."/".$nvoNombre;
+        }
+        $institucion->save();
+
+        return redirect()->back()->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        );
     }
 
     /**
