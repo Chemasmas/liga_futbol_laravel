@@ -29,7 +29,6 @@
                     <option value="14" {{!empty($torneo)&&14==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 14</option>
                 </select>
 
-
             </div>
             <div class="form-group">
                 <label>Género</label>
