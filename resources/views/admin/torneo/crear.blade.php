@@ -9,8 +9,8 @@
         <form method="POST" action="{{!empty($torneo)?action('TorneoController@update',["id"=>$torneo->id]):action('TorneoController@store')}}">
             {{csrf_field()}}
             <div class="form-group">
-                <label for="nombre">Nombre de Categoría</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre"  value="{{!empty($torneo)?$torneo->nombre:''}}">
+                <label for="nombre">Nombre del Torneo</label>
+                <input type="text" name="nombre" class="form-control" placeholder=""  value="{{!empty($torneo)?$torneo->nombre:''}}">
             </div>
             <!--TODO Esto podria tener una tabla-->
             <div class="form-group">
@@ -20,7 +20,7 @@
                     <option value="6" {{!empty($torneo)&&6==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 6</option>
                     <option value="7" {{!empty($torneo)&&7==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 7</option>
                     <option value="1" {{!empty($torneo)&&1==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 7 2V</option>
-                    <option value="8" {{!empty($torneo)&&9==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 8</option>
+                    <option value="8" {{!empty($torneo)&&8==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 8</option>
                     <option value="9" {{!empty($torneo)&&9==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 9</option>
                     <option value="10" {{!empty($torneo)&&10==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 10</option>
                     <option value="11" {{!empty($torneo)&&11==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 11</option>
@@ -32,13 +32,13 @@
 
             </div>
             <div class="form-group">
-                <label>Genero</label>
+                <label>Género</label>
                 <select class="form-control" name="genero">
                     <option value="M" {{!empty($torneo)&&"M"==$torneo->genero?'"selected"':''}} >Varonil</option>
                     <option value="F" {{!empty($torneo)&&"F"==$torneo->genero?'"selected"':''}}>Femenil</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success pull-right"> {{!empty($torneo)?'Guardar':'Crear'}}</button>
+            <button type="submit" class="btn btn-success pull-right"> {{!empty($torneo)?'Guardar Edición':'Crear'}}</button>
         </form>
     </div>
 

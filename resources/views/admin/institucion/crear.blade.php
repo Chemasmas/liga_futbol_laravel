@@ -13,21 +13,21 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre de la Institución</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo">
+                <input type="text" name="nombre" class="form-control" placeholder="">
             </div>
             <div class="form-group">
                 <label for="usuario">Dirección</label>
-                <input type="text" name="direccion" class="form-control" placeholder="Direccion">
+                <input type="text" name="direccion" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label for="foto">Escudo</label>
+                <label for="foto">Escudo de la Institución</label>
                 <input type="file" name="foto" class="form-control filestyle" data-input="false" data-buttonText="Selecciona la imagen" data-buttonName="btn-info" data-badge="true">
             </div>
             <div class="form-group">
                 <label for="usuario">Mapa</label>
-                <input type="text" name="mapa" class="form-control" placeholder="Mapa">
+                <input type="text" name="mapa" class="form-control" placeholder="">
             </div>
-            <button type="submit" class="btn btn-success pull-right">Guardar</button>
+            <button type="submit" class="btn btn-success pull-right">Crear</button>
         </form>
     </div>
 
