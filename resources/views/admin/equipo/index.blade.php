@@ -21,8 +21,8 @@
                             </td>
 
                             <td>
-                                <a class="btn btn-info" role="button">Ver</a>
-                                <a class="btn btn-info" role="button">Editar</a>
+                                <a class="btn btn-info" role="button" href="{{action('EquipoController@show',['id'=>$equipo->id])}}">Ver</a>
+                                <a class="btn btn-info" role="button" href="{{action('EquipoController@edit',['id'=>$equipo->id])}}">Editar</a>
                             </td>
                         </tr>
 
