@@ -44,8 +44,15 @@ Route::get( "/admin/torneo/{idT}/rotacion",['middleware' => 'auth', 'uses' => "T
 Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@index"]);
 Route::get('/admin/equipo/crear',['middleware' => 'auth', 'uses' => "EquipoController@create"]);
 Route::post('/admin/equipo/store',['middleware' => 'auth', 'uses' => "EquipoController@store"]);
-Route::get('/admin/equipo/show/{id}',['middleware' => 'auth', 'uses' => "EquipoController@show"]);
-Route::get('/admin/equipo/edit/{id}',['middleware' => 'auth', 'uses' => "EquipoController@edit"]);
+Route::get('/admin/equipo/{id}',['middleware' => 'auth', 'uses' => "EquipoController@show"]);
+Route::get('/admin/equipo/{id}/edit',['middleware' => 'auth', 'uses' => "EquipoController@edit"]);
+Route::post( "/admin/equipo/{id}/update",['middleware' => 'auth', 'uses' => "EquipoController@update"]);
+Route::get( "/admin/equipo/{idE}/participantes",['middleware' => 'auth', 'uses' => "EquipoController@participantes"]);
+Route::post("/admin/equipo/{idE}/add",['middleware' => 'auth', 'uses' => "EquipoController@add_participante"]);
+Route::post("/admin/equipo/{idE}/removec/{idE}",['middleware' => 'auth', 'uses' => "EquipoController@remove_participante"]);
+Route::get('/admin/equipo/{idE}/activate',['middleware' => 'auth', 'uses' => "EquipoController@activate"]);
+Route::get('/admin/equipo/{idE}/deactivate',['middleware' => 'auth', 'uses' => "EquipoController@deactivate"]);
+
 
 Route::get('/admin/instituciones',['middleware' => 'auth', 'uses' => "InstitucionController@index"]);
 Route::get('/admin/instituciones/crear',['middleware' => 'auth', 'uses' => "InstitucionController@create"]);
