@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\instituciones;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,8 +17,27 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('publica.index');
     }
+    public function about()
+    {
+        return view('publica.about');
+    }
+
+    public function directory()
+    {
+        return view('publica.directory');
+    }
+    public function institutions()
+    {
+        $instituciones = instituciones::offset(1)->limit(100)->get();
+        debug($instituciones);
+        return view('publica.institutions',[
+            "instituciones" => $instituciones
+        ]);
+    }
+
+
 
     public function ejemplo()
     {

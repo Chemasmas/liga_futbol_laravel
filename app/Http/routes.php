@@ -88,9 +88,16 @@ Route::get('/admin/programador/crear',['middleware' => 'auth', 'uses' => "Progra
 
 
 
-
+//Web Muplica
 Route::get('/',"HomeController@index");
+Route::get('/about',"HomeController@about");
+Route::get('/directory',"HomeController@directory");
+Route::get('/institutions',"HomeController@institutions");
+
+
+
 Route::get('/test',"HomeController@ejemplo");
+
 
 
 
