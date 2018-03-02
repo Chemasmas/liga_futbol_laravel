@@ -39,23 +39,6 @@
 
 			</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
 		@endforeach
-
-		
-		
-
-<h2 class="wsite-content-title" style="text-align:left;"><font size="3">CLUB IDEA SPORT</font></h2>
-<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Seminario 24, Olivar de los Padres,<br /> 01780 Ciudad de México, CDMX</font></div>
-
-<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.6822880478426!2d-99.2227352846097!3d19.339588086937223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2007726df4a53%3A0xbd5216e6f7877da5!2sideaSPORT!5e0!3m2!1ses-419!2smx!4v1518761587559" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
-
-<div><div style="height: 0px; overflow: hidden; width: 100%;"></div>
-<hr class="styled-hr" style="width:100%;"></hr>
-<div style="height: 0px; overflow: hidden; width: 100%;"></div></div>
-
-</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
-
-		
-		
 		
 <h2 class="wsite-content-title" style="text-align:left;"><font size="3">CLUB MUNDET</font></h2>
 <div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Av Ejército Nacional 1125, Col. Irrigación <br />11500 Ciudad de México, CDMX</font></div>
