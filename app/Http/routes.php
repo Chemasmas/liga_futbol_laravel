@@ -100,6 +100,8 @@ Route::get('/',"HomeController@index");
 Route::get('/about',"HomeController@about");
 Route::get('/directory',"HomeController@directory");
 Route::get('/institutions',"HomeController@institutions");
+Route::get('/contact',"HomeController@contact");
+Route::get('/programers',"HomeController@programers");
 
 
 

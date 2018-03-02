@@ -35,7 +35,7 @@
 					 <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
 					  <h1></h1>
-					  <h4><a class="btn red-btn" href="programers.html">Programadores</a></h4>
+					  <h4><a class="btn red-btn" href="programers.blade.php">Programadores</a></h4>
 					  <img src="images/gallery-v3/programadores.jpeg" alt="">
 						<a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
 					</div>

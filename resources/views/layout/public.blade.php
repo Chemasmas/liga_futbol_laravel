@@ -131,7 +131,7 @@
                             <a href="/directory">directorio</a>
                             <ul>
                                 <li><a href="/institutions">instituciones</a></li>
-                                <li><a href="programers.html">programadores</a></li>
+                                <li><a href="/programers">programadores</a></li>
                             </ul>
                         </li>
                         <li class="mega-dropdown">
@@ -270,11 +270,11 @@
                         <li>
                             <a href="#">estadisticas</a>
                             <ul>
-                                <li><a href="match.html">Femenil</a></li>
-                                <li><a href="match-detail.html">varonil</a></li>
+                                <li><a href="#">Femenil</a></li>
+                                <li><a href="#">varonil</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">contacto</a></li>
+                        <li><a href="/contact">contacto</a></li>
                     </ul>
                     <!-- Nav List -->
 

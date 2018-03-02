@@ -23,6 +23,14 @@ class HomeController extends Controller
     {
         return view('publica.about');
     }
+    public function programers()
+    {
+        return view('publica.programers');
+    }
+    public function contact()
+    {
+        return view('publica.contact');
+    }
 
     public function directory()
     {
