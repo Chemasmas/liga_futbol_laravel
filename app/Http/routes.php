@@ -49,7 +49,7 @@ Route::get('/admin/equipo/{id}/edit',['middleware' => 'auth', 'uses' => "EquipoC
 Route::post( "/admin/equipo/{id}/update",['middleware' => 'auth', 'uses' => "EquipoController@update"]);
 Route::get( "/admin/equipo/{idE}/participantes",['middleware' => 'auth', 'uses' => "EquipoController@participantes"]);
 Route::post("/admin/equipo/{idE}/add",['middleware' => 'auth', 'uses' => "EquipoController@add_participante"]);
-Route::post("/admin/equipo/{idE}/removec/{idE}",['middleware' => 'auth', 'uses' => "EquipoController@remove_participante"]);
+Route::post("/admin/equipo/{idE}/removec/{idJ}",['middleware' => 'auth', 'uses' => "EquipoController@remove_participante"]);
 Route::get('/admin/equipo/{idE}/activate',['middleware' => 'auth', 'uses' => "EquipoController@activate"]);
 Route::get('/admin/equipo/{idE}/deactivate',['middleware' => 'auth', 'uses' => "EquipoController@deactivate"]);
 
