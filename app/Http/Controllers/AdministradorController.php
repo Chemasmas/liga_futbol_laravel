@@ -94,7 +94,16 @@ class AdministradorController extends Controller
      */
     public function show($id)
     {
-        //
+        $administrador = administradores::find($id);
+        $usuario = $administrador->usuario;
+        debug($administrador);
+        debug($usuario);
+
+        return view("admin.administrador.show",[
+            "usuario" => $usuario,
+            "administradores" => $administrador
+        ]);
+
     }
 
     /**
