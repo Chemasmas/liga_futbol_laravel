@@ -118,7 +118,17 @@ class JugadorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jugador = jugadores::find($id);
+
+        $instituciones = instituciones::all();
+        $equipos = equipos::all();
+        return view("admin.jugador.crear", [
+            "jugador" => $jugador,
+            "usuario" => $jugador->usuario,
+            "instituciones" => $instituciones,
+            "equipos" => $equipos,
+            "rutas" => [],
+        ]);
     }
 
     /**

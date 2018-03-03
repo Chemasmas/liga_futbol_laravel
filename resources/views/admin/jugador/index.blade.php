@@ -12,30 +12,22 @@
                 <table class="table table-hover table-bordered">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Dorsal</th>
-                        <th>Escuela</th>
-                        <th>Equipo</th>
+                        <th>Nombre(numero)</th>
+                        <th>Equipo/Escuela</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
                     @foreach ($jugadores as $jugador)
                         <tr>
                             <td>
-                                Nombre: {{$jugador->nombre}}
+                                {{$jugador->nombre}} <span style="font-weight: bold;">{{$jugador->numero}}</span>
                             </td>
                             <td>
-                                Dorsal: {{$jugador->numero}}
-                            </td>
-                            <td>
-                                Institucion: {{$jugador->institucione()->first()->nombre }}
-                            </td>
-                            <td>
-                                Equipo: {{$jugador->equipo()->first()->nombre}}
+                                <span style="font-weight: bold;">[{{$jugador->equipo()->first()->nombre}}]</span>{{$jugador->institucione()->first()->nombre }}
                             </td>
                             <td>
                                 <a class="btn btn-primary" role="button">Ver</a>
-                                <a class="btn btn-success" role="button">Editar</a>
+                                <a class="btn btn-success" role="button" href="{{action("JugadorController@edit",["id"=>$jugador->id])}}">Editar</a>
                             </td>
                         </tr>
                     @endforeach
