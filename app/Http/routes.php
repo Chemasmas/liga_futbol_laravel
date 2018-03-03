@@ -49,7 +49,7 @@ Route::get('/admin/equipo/{id}/edit',['middleware' => 'auth', 'uses' => "EquipoC
 Route::post( "/admin/equipo/{id}/update",['middleware' => 'auth', 'uses' => "EquipoController@update"]);
 Route::get( "/admin/equipo/{idE}/participantes",['middleware' => 'auth', 'uses' => "EquipoController@participantes"]);
 Route::post("/admin/equipo/{idE}/add",['middleware' => 'auth', 'uses' => "EquipoController@add_participante"]);
-Route::post("/admin/equipo/{idE}/removec/{idE}",['middleware' => 'auth', 'uses' => "EquipoController@remove_participante"]);
+Route::post("/admin/equipo/{idE}/removec/{idJ}",['middleware' => 'auth', 'uses' => "EquipoController@remove_participante"]);
 Route::get('/admin/equipo/{idE}/activate',['middleware' => 'auth', 'uses' => "EquipoController@activate"]);
 Route::get('/admin/equipo/{idE}/deactivate',['middleware' => 'auth', 'uses' => "EquipoController@deactivate"]);
 
@@ -64,7 +64,7 @@ Route::post('/admin/instituciones/{id}/update',['middleware' => 'auth', 'uses' =
 Route::get('/admin/administrador',['middleware' => 'auth', 'uses' => "AdministradorController@index"]);
 Route::get('/admin/administrador/crear',['middleware' => 'auth', 'uses' => "AdministradorController@create"]);
 Route::post('/admin/administrador/store',['middleware' => 'auth', 'uses' => "AdministradorController@store"]);
-Route::post( "/admin/administrador/{id}",['middleware' => 'auth', 'uses' => "AdministradorController@show"]);
+Route::get( "/admin/administrador/{id}",['middleware' => 'auth', 'uses' => "AdministradorController@show"]);
 Route::get( "/admin/administrador/{id}/edit",['middleware' => 'auth', 'uses' => "AdministradorController@edit"]);
 Route::post( "/admin/administrador/{id}/update",['middleware' => 'auth', 'uses' => "AdministradorController@update"]);
 Route::get('/admin/administrador/{idA}/activate',['middleware' => 'auth', 'uses' => "AdministradorController@activate"]);
