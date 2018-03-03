@@ -10,10 +10,10 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Jugador</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo">
+                <input type="text" name="nombre" class="form-control" placeholder="">
             </div>
             <div class="form-group">
-                <label>Genero</label>
+                <label>Género</label>
                 <select class="form-control" name="genero">
                     <option value="M" {{!empty($torneo)&&"M"==$torneo->genero?'"selected"':''}} >Varonil</option>
                     <option value="F" {{!empty($torneo)&&"F"==$torneo->genero?'"selected"':''}}>Femenil</option>
@@ -21,11 +21,11 @@
             </div>
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" class="form-control" placeholder="Usuario">
+                <input type="text" name="usuario" class="form-control" placeholder="">
             </div>
             <div class="form-group">
                 <label for="Password1">Password</label>
-                <input type="password" class="form-control" id="Password1" placeholder="Password" name="password">
+                <input type="password" class="form-control" id="Password1" placeholder="" name="password">
             </div>
             <div class="form-group">
                 <label for="correo">Fecha de Nacimiento</label>
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="telefono">CURP</label>
-                <input type="text" name="curp" class="form-control" placeholder="Identificador">
+                <input type="text" name="curp" class="form-control" placeholder="">
             </div>
 
             <!--TODO Filtrar solo debe ser exitoso si conciden-->
@@ -61,7 +61,7 @@
 
             <div class="form-group">
                 <label for="dorsal">Número Dorsal</label>
-                <input type="text" name="dorsal" class="form-control" placeholder="#">
+                <input type="text" name="dorsal" class="form-control" placeholder="">
             </div>
             <button type="submit" class="btn btn-success pull-right">Agregar</button>
         </form>

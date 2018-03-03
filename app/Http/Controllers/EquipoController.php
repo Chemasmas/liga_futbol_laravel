@@ -22,8 +22,16 @@ class EquipoController extends Controller
 
         return view('admin.equipo.index',[
             "equiposG"=>$equiposG,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Equipo"=>["etiqueta"=>"Equipo", "active"=>"0","link"=>""]
+            ]
         ]);
 
+    }
+
+    public function all(){
+        //
     }
 
     /**

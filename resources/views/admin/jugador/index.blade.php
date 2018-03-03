@@ -5,7 +5,6 @@
 @section('rol',"")
 
 @section('content')
-
     <div class="row">
         <div class="col-sm-12">
             <h3>Lista de Jugadores</h3>
@@ -23,7 +22,7 @@
                     @foreach ($jugadores as $jugador)
                         <tr>
                             <td>
-                               Nombre: {{$jugador->nombre}}
+                                Nombre: {{$jugador->nombre}}
                             </td>
                             <td>
                                 Dorsal: {{$jugador->numero}}
@@ -45,3 +44,4 @@
         </div>
     </div>
 @endsection
+

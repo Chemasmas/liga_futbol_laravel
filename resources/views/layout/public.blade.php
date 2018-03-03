@@ -42,27 +42,13 @@
 
                 <!-- User Login Option -->
                 <ul class="user-login-option pull-right">
-                    <li class="social-icon">
-                        <ul class="social-icons style-5">
-                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                            <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                    </li>
+
                     <li class="login-modal">
-                        @if(auth()->check())
-
-
-                        @else
-
-                        <a href="#" class="login" data-toggle="modal" data-target="#login-modal">
-                            <i class="fa fa-user"></i>Login
-                        </a>
+                        <a href="#" class="login" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>Login</a>
                         <div class="modal fade" id="login-modal">
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form method="POST" action="{{action("AdminController@login")}}">
+                                <form action="{{action("AdminController@login")}}" method="POST">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
@@ -88,7 +74,7 @@
                         <div class="modal fade" id="login-modal-2">
                             <div class="login-form position-center-center">
                                 <h2>Forgot password<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form action = {{action("AdminController@login")}} method="POST">
+                                <form>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -103,8 +89,6 @@
                                 </form>
                             </div>
                         </div>
-                        @endif
-
                     </li>
                 </ul>
                 <!-- User Login Option -->
@@ -120,7 +104,7 @@
 
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="home-1.html"><img src="../../Downloads/LOGO2 copia.png" alt="" width="200"></a>
+                        <a href="index.blade.php"><img src="images/LOGo final.png" alt="" width="250"></a>
                     </div>
                     <!-- Logo -->
 
@@ -136,22 +120,22 @@
                     <!-- Nav List -->
                     <ul class="nav-list pull-right">
                         <li>
-                            <a href="#">Inicio</a>
+                            <a href="/">Inicio</a>
                             <ul>
-                                <li><a href="home-1.html">quienes somos</a></li>
+                                <li><a href="/about">quienes somos</a></li>
                                 <li></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="team.html">directorio</a>
+                            <a href="/directory">directorio</a>
                             <ul>
-                                <li><a href="team.html">instituciones</a></li>
-                                <li><a href="team-detail.html">programadores</a></li>
+                                <li><a href="/institutions">instituciones</a></li>
+                                <li><a href="/programers">programadores</a></li>
                             </ul>
                         </li>
                         <li class="mega-dropdown">
-                            <a href="#">reglamento</a>
+                            <a href="regulation.html">reglamento</a>
 
                             <ul>
                                 <li class="row">
@@ -159,9 +143,9 @@
                                         <div class="blog-categories">
                                             <h2>Reglamento</h2>
                                             <ul class="blog-categories-list">
-                                                <li><a href="#">reglamento de competencia</a></li>
-                                                <li><a href="#">Anexo Tecnico</a></li>
-                                                <li><a href="#">categorias y formatos</a></li>
+                                                <li><a href="docs/competitionregulation.pdf">reglamento de competencia</a></li>
+                                                <li><a href="docs/technicalannex.pdf">Anexo Tecnico</a></li>
+                                                <li><a href="docs/formatsanddocuments.pdf">categorias y formatos</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -179,7 +163,7 @@
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color">Descargar</span>
+                                                    <span class="red-color"></span><a href="docs/competitionregulation.pdf" download="competitionregulation">DESCARGAR</a>
                                                     <h2>reglamento de competencia</h2>
                                                 </div>
                                                 <!-- Post Detail -->
@@ -198,7 +182,7 @@
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color">descargar</span>
+                                                    <span class="red-color"></span><a href="docs/technicalannex.pdf" download="technicalannex">DESCARGAR</a>
                                                     <h2>anexo</h2>
                                                     <h2>tecnico</h2>
                                                 </div>
@@ -218,7 +202,7 @@
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color">descargar</span>
+                                                    <span class="red-color"></span><a href="docs/formatsanddocuments.pdf" download="formatsanddocuments">DESCARGAR</a>
                                                     <h2>categorias y formatos</h2>
                                                 </div>
                                                 <!-- Post Detail -->
@@ -286,11 +270,11 @@
                         <li>
                             <a href="#">estadisticas</a>
                             <ul>
-                                <li><a href="match.html">Femenil</a></li>
-                                <li><a href="match-detail.html">varonil</a></li>
+                                <li><a href="#">Femenil</a></li>
+                                <li><a href="#">varonil</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">contacto</a></li>
+                        <li><a href="/contact">contacto</a></li>
                     </ul>
                     <!-- Nav List -->
 
@@ -300,7 +284,6 @@
         <!-- Nav -->
 
     </header>
-    <!-- Header -->
 
     @yield('content')
 
@@ -318,19 +301,12 @@
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
                             <div class="logo-column p-white">
-                                <img src="../../Downloads/LOGO2 copia.png" alt="" width="200" class="footer-logo">
+                                <img src="images/LOGo final.png" alt="" width="300" class="footer-logo">
                                 <ul class="address-list style-2">
-                                    <li><span>Direccion:</span>Para agregar direccion</li>
-                                    <li><span>Telefono:</span>0000000000</li>
+                                    <li><span>Direccion:</span>Calle granjas No.45 Col. Palo Alto, Cuajimalpa C.P. 05110</li>
+                                    <li><span>Telefono:</span>5539441545</li>
+                                    <li><span>Telefono:</span>5523738571</li>
                                     <li><span>E-mail:</span>info@ligaponiente.com</li>
-                                </ul>
-                                <span class="follow-us">Siguenos</span>
-                                <ul class="social-icons">
-                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                    <li><a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -340,8 +316,8 @@
                     <!-- Footer Column -->
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
-                            <h5>anuncio</h5>
-                            <a href="#"><img src="images/footer-add.jpg" alt=""></a>
+                            <h5>Mediva Sport</h5>
+                            <a href="https://medicasport01.wixsite.com/misitio"><img src="images/Anuncio.jpeg" alt=""></a>
                         </div>
                     </div>
                     <!-- Footer Column -->
@@ -396,32 +372,31 @@
 
 <!-- Slide Menu -->
 <nav id="menu" class="responive-nav">
-    <a class="r-nav-logo" href="home-1.html"><img src="../../Downloads/LOGO2 copia.png" alt="" width="180"></a>
+    <a class="r-nav-logo" href="home-1.html"><img src="images/LOGo final.png" alt="" width="1921"></a>
     <ul class="respoinve-nav-list">
-        <li>
-            <a data-toggle="collapse" href="#list-1"><i class="pull-right fa fa-angle-down"></i>Inicio</a>
+        <li><a data-toggle="collapse" href="#list-1"><em class="pull-right fa fa-angle-down"></em>Inicio</a>
             <ul class="collapse" id="list-1">
-                <li><a href="home-1.html">Quienes Somos</a></li>
+                <li><a href="about.html">Quienes Somos</a></li>
             </ul>
         </li>
         <li><a data-toggle="collapse" href="#list-2"><em class="pull-right fa fa-angle-down"></em>Directorio</a>
             <ul class="collapse" id="list-2">
-                <li><a href="team.html">Instituciones</a></li>
-                <li><a href="team-detail.html">Programadores</a></li>
+                <li><a href="institutions.html">Instituciones</a></li>
+                <li><a href="programers.html">Programadores</a></li>
             </ul>
         </li>
         <li>
             <a data-toggle="collapse" href="#list-3"><i class="pull-right fa fa-angle-down"></i>Reglamento</a>
             <ul class="collapse" id="list-3">
-                <li><a href="match.html">Reglamento de Competencia</a></li>
-                <li><a href="match-detail.html">Anexo Tecnico</a></li>
-                <li><a href="match-result.html">Documentos y Formatos</a></li>
+                <li><a href="reglament.html">Reglamento de Competencia</a></li>
+                <li><a href="Technicalannex.html">Anexo Tecnico</a></li>
+                <li><a href="formatsanddocuments.html">Documentos y Formatos</a></li>
             </ul>
         </li>
         <li><a data-toggle="collapse" href="#list-4"><em class="pull-right fa fa-angle-down"></em>Estadisticas</a>
             <ul class="collapse" id="list-4">
-                <li><a href="shop.html">Femenil</a></li>
-                <li><a href="cart.html">Varonil</a></li>
+                <li><a href="female.html">Femenil</a></li>
+                <li><a href="male.html">Varonil</a></li>
             </ul>
         </li>
         <li><a href="contact.html">Contacto</a></li>
@@ -451,5 +426,5 @@
 <script src="js/main.js"></script>
 </body>
 
-<!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:51:22 GMT -->
+<!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
 </html>

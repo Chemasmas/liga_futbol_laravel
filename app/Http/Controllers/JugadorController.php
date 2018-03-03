@@ -144,3 +144,4 @@ class JugadorController extends Controller
         //
     }
 }
+

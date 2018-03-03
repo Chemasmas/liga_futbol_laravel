@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 class InstitucionController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +18,10 @@ class InstitucionController extends Controller
      */
     public function index()
     {
-        return view("admin.institucion.index");
+        $instituciones = instituciones::all();
+        return view("admin.institucion.index",[
+            "instituciones" => $instituciones
+        ]);
     }
 
     /**
@@ -33,7 +37,7 @@ class InstitucionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -62,7 +66,12 @@ class InstitucionController extends Controller
      */
     public function show($id)
     {
-        //
+        $institucion = instituciones::find($id);
+        debug($id);
+        debug($institucion);
+        return view("admin.institucion.detail",[
+            "institucion"=>$institucion
+        ]);
     }
 
     /**
@@ -73,7 +82,12 @@ class InstitucionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $institucion = instituciones::find($id);
+        debug($id);
+        debug($institucion);
+        return view("admin.institucion.crear",[
+            "institucion"=>$institucion
+        ]);
     }
 
     /**
@@ -85,7 +99,26 @@ class InstitucionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $institucion = instituciones::find($id);
+        if(isset($request["nombre"]) && $request["nombre"]!="")
+            $institucion->nombre = $request["nombre"];
+        if(isset($request["direccion"]) && $request["direccion"]!="")
+            $institucion->dir = $request["direccion"];
+        if(isset($request["mapa"]) && $request["mapa"]!="")
+            $institucion->mapa = $request["mapa"];
+
+        if($request->file("foto")!= null )
+        {
+            $ruta = "instituciones";
+            $imagen = $request->file('foto');
+            $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
+            $imagen->move($ruta,$nvoNombre);
+            $institucion->escudo = $ruta."/".$nvoNombre;
+        }
+        $institucion->save();
+
+        return redirect()->back()->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        );
     }
 
     /**
