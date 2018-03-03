@@ -24,6 +24,10 @@ class JugadorController extends Controller
     {
         $jugadores = jugadores::all();
         debug($jugadores);
+        foreach ($jugadores as $jugador){
+            debug($jugador->institucione()->get());
+            debug($jugador->equipo());
+        }
         return view("admin.jugador.index",[
             "rutas"=>[],
             "jugadores"=>$jugadores,

@@ -21,6 +21,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class partidos extends Model
 {
+
+    public $timestamps  = false;
+
     /**
      * @var array
      */

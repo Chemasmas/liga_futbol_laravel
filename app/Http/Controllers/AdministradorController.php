@@ -100,8 +100,9 @@ class AdministradorController extends Controller
         debug($usuario);
 
         return view("admin.administrador.show",[
+            "rutas" => [],
             "usuario" => $usuario,
-            "administradores" => $administrador
+            "administrador" => $administrador
         ]);
 
     }

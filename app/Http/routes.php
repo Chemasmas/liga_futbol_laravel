@@ -38,7 +38,10 @@ Route::post("/admin/torneo/{idT}/add",['middleware' => 'auth', 'uses' => "Torneo
 Route::post("/admin/torneo/{idT}/removec/{idE}",['middleware' => 'auth', 'uses' => "TorneoController@remove_participante"]);
 Route::get( "/admin/torneo/{idT}/activate",['middleware' => 'auth', 'uses' => "TorneoController@activate"] );
 Route::get( "/admin/torneo/{idT}/deactivate",['middleware' => 'auth', 'uses' => "TorneoController@deactivate"] );
+
+/*De la generacino de roles*/
 Route::get( "/admin/torneo/{idT}/rotacion",['middleware' => 'auth', 'uses' => "TorneoController@generarRotacion"] );
+Route::get( "/admin/torneo/{idT}/jornadas",['middleware' => 'auth', 'uses' => "TorneoController@jornadas"] );
 
 
 Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@index"]);

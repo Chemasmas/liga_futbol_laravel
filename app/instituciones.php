@@ -36,7 +36,7 @@ class instituciones extends Model
      */
     public function jugadores()
     {
-        return $this->hasMany('App\Jugadore', 'idInst');
+        return $this->hasMany('App\jugadores', 'idInst');
     }
 
     /**
