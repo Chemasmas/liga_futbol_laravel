@@ -207,29 +207,28 @@
                     </ul>
                 </li>
             @endif
-            <!--
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Juegos">
-                <a class="nav-link" href="juegos.html">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="nav-link-text">Juegos</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
-                <a class="nav-link" href="equipos.html">
-                    <i class="fa fa-list-ol" aria-hidden="true"></i>
-                    <span class="nav-link-text">Equipos</span>
-                </a>
-            </li>
-            -->
             @if(auth()->user()["level"]<3)
-
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Programacion">
-                <a class="nav-link" href="programacion.html">
-                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
-                    <span class="nav-link-text">Programación</span>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Programacion">
+                    <a class="nav-link" href="{{action('ProgramadorController@programacion')}}">
+                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                        <span class="nav-link-text">Programación</span>
+                    </a>
+                </li>
+            @endif
+            @if(auth()->user()["level"]<3)
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Partidos">
+                <a class="nav-link" href="{{action('ProgramadorController@partidos')}}">
+                    <i class="fa fa-list-ol"></i>
+                    <span class="nav-link-text">Partidos</span>
                 </a>
             </li>
             @endif
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
+                <a class="nav-link" href="{{action('ProgramadorController@perfil')}}">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span class="nav-link-text">Perfil</span>
+                </a>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
