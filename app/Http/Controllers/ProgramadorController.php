@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\instituciones;
+use App\programadores;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,8 +18,10 @@ class ProgramadorController extends Controller
      */
     public function index()
     {
+        $programadores = programadores::all();
         return view("admin.programador.index",[
-            "rutas"=>[]
+            "rutas"=>[],
+            "programadores" => $programadores,
         ]);
     }
 
@@ -44,7 +47,12 @@ class ProgramadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //$programador = new programadores();
+        //$programador->
+        debug($request);
+
+        return redirect()->back();
     }
 
     /**

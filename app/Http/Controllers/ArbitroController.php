@@ -97,7 +97,16 @@ class ArbitroController extends Controller
      */
     public function show($id)
     {
-        //
+        $arbitro = arbitros::findOrFail($id);
+        $usuario = $arbitro->usuario;
+
+        debug($arbitro);
+        debug($usuario);
+        return view("admin.arbitro.detail",[
+            "arbitro" => $arbitro,
+            "usuario" => $usuario,
+            "rutas" => [],
+        ]);
     }
 
     /**
@@ -135,13 +144,22 @@ class ArbitroController extends Controller
 
         $arbitro->nombre = $request["nombre"];
         $arbitro->telefono = $request["telefono"];
-        $arbitro->foto = $request["foto"];
+        //$arbitro->foto = $request["foto"];
         $usuario = $arbitro->usuario;
         debug($usuario);
         $usuario->username = $request["usuario"];
 
-        debug($request["password"]);
-        debug(strlen($request["password"]));
+        $ruta = "arbitros";
+        $foto = $request->file('foto');
+        debug($foto);
+        if($foto!=null){
+            $request->file('foto')->move($ruta, $arbitro->nombre.".".$foto->getClientOriginalExtension());
+            $arbitro->foto = $ruta."/".$arbitro->nombre.".".$foto->getClientOriginalExtension();
+        }
+
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
         $arbitro->update();
         $usuario->update();
 
