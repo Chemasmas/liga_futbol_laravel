@@ -201,7 +201,7 @@
                         <li>
                             <a class="nav-link" href="{{action('DirectorioController@arbitro')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
-                                <span class="nav-link-text">Arbitros</span>
+                                <span class="nav-link-text">Árbitros</span>
                             </a>
                         </li>
                     </ul>
