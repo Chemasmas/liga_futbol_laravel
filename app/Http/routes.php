@@ -100,6 +100,7 @@ Route::get('/admin/arbitro/{idA}/deactivate',['middleware' => 'auth', 'uses' => 
 
 Route::get('/admin/programador',['middleware' => 'auth', 'uses' => "ProgramadorController@index"]);
 Route::get('/admin/programador/crear',['middleware' => 'auth', 'uses' => "ProgramadorController@create"]);
+Route::post('/admin/programador/store',['middleware' => 'auth', 'uses' => "ProgramadorController@store"]);
 
 
 
