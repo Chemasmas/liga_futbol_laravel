@@ -4,8 +4,6 @@
 
 @section('rol','Admin')
 
-<?php $rutas = [] ?>
-
 @section('content')
 
     <div class="offset-sm-3 col-sm-6">
@@ -27,7 +25,7 @@
                 <label for="usuario">Mapa</label>
                 <input type="text" name="mapa" class="form-control" placeholder="" value="{{!empty($institucion)?$institucion->mapa:''}}">
             </div>
-            <button type="submit" class="btn btn-success pull-right">Crear</button>
+            <button type="submit" class="btn btn-success pull-right"> {{!empty($institucion)?'Guardar Edición':'Crear'}}</button>
         </form>
     </div>
 

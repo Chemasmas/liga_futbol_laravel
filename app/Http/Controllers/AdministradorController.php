@@ -24,8 +24,11 @@ class AdministradorController extends Controller
         debug($admininistradores);
 
         return view("admin.administrador.index",[
-            "rutas" => [],
             "administradores"=> $admininistradores,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Administrador", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -39,7 +42,8 @@ class AdministradorController extends Controller
         return view("admin.administrador.crear",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Administrador"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+                "Administrador"=>["etiqueta"=>"Administrador", "active"=>"1","link"=>"/admin/administrador"],
+                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -102,7 +106,12 @@ class AdministradorController extends Controller
         return view("admin.administrador.show",[
             "rutas" => [],
             "usuario" => $usuario,
-            "administrador" => $administrador
+            "administrador" => $administrador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Administrador"=>["etiqueta"=>"Administrador", "active"=>"1","link"=>"/admin/administrador"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
         ]);
 
     }
@@ -122,7 +131,7 @@ class AdministradorController extends Controller
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Administrador"=>["etiqueta"=>"Administrador", "active"=>"1","link"=>"/admin/administrador"],
-                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
     }

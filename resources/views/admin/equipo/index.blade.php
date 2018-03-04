@@ -4,8 +4,6 @@
 
 @section('rol',"")
 
-<?php $rutas=[] ?>
-
 @section('content')
 
     <div class="row">
@@ -13,18 +11,22 @@
             <h3>Lista de Equipos</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    @if(count($equiposG)>0)
+                    @if(count($equipos)>0)
                         <thead>
                         <tr >
                             <th>Nombre</th>
+                            <th>Institución</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
                     @endif
-                    @forelse ($equiposG as $equipo)
+                    @forelse ($equipos as $equipo)
                         <tr>
                             <td>
                                 {{ $equipo->nombre }}
+                            </td>
+                            <td>
+                                {{ $equipo->institucione->nombre }}
                             </td>
                             <td>
                                 <a class="btn btn-info" data-toggle="tooltip" title="Ver Equipo" href="{{action("EquipoController@show",["id"=>$equipo->id])}}">

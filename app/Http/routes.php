@@ -63,6 +63,8 @@ Route::post('/admin/instituciones/store',['middleware' => 'auth', 'uses' => "Ins
 Route::get('/admin/instituciones/{id}',['middleware' => 'auth', 'uses' => "InstitucionController@show"]);
 Route::get('/admin/instituciones/{id}/edit',['middleware' => 'auth', 'uses' => "InstitucionController@edit"]);
 Route::post('/admin/instituciones/{id}/update',['middleware' => 'auth', 'uses' => "InstitucionController@update"]);
+Route::get('/admin/instituciones/{idI}/activate',['middleware' => 'auth', 'uses' => "InstitucionController@activate"]);
+Route::get('/admin/instituciones/{idI}/deactivate',['middleware' => 'auth', 'uses' => "InstitucionController@deactivate"]);
 
 Route::get('/admin/administrador',['middleware' => 'auth', 'uses' => "AdministradorController@index"]);
 Route::get('/admin/administrador/crear',['middleware' => 'auth', 'uses' => "AdministradorController@create"]);
