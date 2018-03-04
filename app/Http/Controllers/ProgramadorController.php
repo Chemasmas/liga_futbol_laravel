@@ -86,7 +86,6 @@ class ProgramadorController extends Controller
     {
         $programador = programadores::findOrFail($id);
         return view("admin.programador.detail",[
-            "rutas" => [],
             "programador" => $programador,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
@@ -155,5 +154,35 @@ class ProgramadorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function programacion(){
+        return view("admin.verProgramador.programacion",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
+    public function partidos(){
+        return view("admin.verArbitro.partidos",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Partidos", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
+    public function perfil($id){
+        $programador = programadores::findOrFail($id);
+        Auth::user()->id;
+        return view("admin.verProgramador.perfilJ",[
+            "programador" => $programador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 }
