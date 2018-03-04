@@ -155,8 +155,9 @@ class AdministradorController extends Controller
         debug($usuario);
         $usuario->username = $request["usuario"];
 
-        debug($request["password"]);
-        debug(strlen($request["password"]));
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
         $administrador->update();
         $usuario->update();
 

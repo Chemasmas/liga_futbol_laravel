@@ -138,7 +138,8 @@ class InstitucionController extends Controller
         }
         $institucion->save();
 
-        return redirect()->back()->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
         );
     }
 

@@ -188,17 +188,22 @@ class JugadorController extends Controller
         $jugador->numero=$dorsal;
 
         $ruta = "jugadores";
-        if($request->file('foto')!=null){
-            $request->file('foto')->move($ruta,$jugador->nombre.".".$request->file('foto')->getClientOriginalExtension());
-            $jugador->foto = $ruta."/".$jugador->nombre.".".$request->file('foto')->getClientOriginalExtension();
+        $foto = $request->file('foto');
+        debug($foto);
+        if($foto!=null){
+            $request->file('foto')->move($ruta, $jugador->nombre.".".$foto->getClientOriginalExtension());
+            $jugador->foto = $ruta."/".$jugador->nombre.".".$foto->getClientOriginalExtension();
         }
 
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
 
         $jugador->genero = $genero;
         $jugador->update();
 
         return redirect()->back()->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
         );
     }
 
