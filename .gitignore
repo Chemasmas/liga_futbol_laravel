@@ -10,4 +10,6 @@ Homestead.json
 .idea/deployment.xml
 .idea/php.xml
 public/instituciones/*
+public/jugadores/*
+public/equipos/*
 .vagrant/*

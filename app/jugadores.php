@@ -22,6 +22,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class jugadores extends Model
 {
+
+    public $timestamps  = false;
+
     /**
      * @var array
      */
@@ -41,7 +44,7 @@ class jugadores extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo('App\Usuario', 'idUsr');
+        return $this->belongsTo('App\usuarios', 'idUsr');
     }
 
     /**
@@ -57,6 +60,6 @@ class jugadores extends Model
      */
     public function estadisticasJugadores()
     {
-        return $this->hasMany('App\EstadisticasJugador', 'idJugador');
+        return $this->hasMany('App\estadisticas_jugador', 'idJugador');
     }
 }
