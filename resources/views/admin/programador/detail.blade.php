@@ -5,12 +5,20 @@
 @section('rol',"")
 
 @section('content')
-    <div class="offset-sm-3 col-sm-6">
-        <h3>{{$programador->nombre}}</h3>
-        <h3>{{$programador->correo}}</h3>
-        <h3>{{$programador->telefono}}</h3>
-        <h3>{{$programador->usuario->username}}</h3>
-        {{$programador->institucione}}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="{{ asset($programador->institucione->escudo)}}" alt="" style="width: 100%">
+            </div>
+            <div class="col-sm-6">
+                <h3>{{$programador->nombre}} <span>({{$programador->usuario->username}})</span></h3>
+                <h6>{{$programador->correo}}</h6>
+                <h6>{{$programador->telefono}}</h6>
+                <h6>{{$programador->institucione->nombre}}</h6>
+            </div>
+        </div>
+        <br><br>
+        <a href="{{action("ProgramadorController@index")}}" class="btn btn-primary">Volver</a>
     </div>
 
 @endsection

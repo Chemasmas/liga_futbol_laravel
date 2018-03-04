@@ -16,7 +16,7 @@
                 <label for="id_institucion">Institución</label>
                 <select class="form-control" name="id_institucion">
                     @foreach ($instituciones as $institucion)
-                        <option value ="{{$institucion->id}}">{{ $institucion->nombre }}</option>
+                        <option value ="{{$institucion->id}}" {{!empty($equipo)&&$equipo->idIst==$institucion->id?'selected':''}} >{{ $institucion->nombre }}</option>
                     @endforeach
                 </select>
             </div>
