@@ -59,7 +59,7 @@ class TorneoController extends Controller
             "rutas" => [
             "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
             "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
-            "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+            "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -112,7 +112,7 @@ class TorneoController extends Controller
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
-                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -132,7 +132,7 @@ class TorneoController extends Controller
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
-                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
     }

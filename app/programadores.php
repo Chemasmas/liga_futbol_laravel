@@ -11,11 +11,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $nombre
  * @property string $correo
  * @property string $telefono
- * @property Institucione $institucione
- * @property Usuario $usuario
+ * @property instituciones $institucione
+ * @property usuarios $usuario
  */
 class programadores extends Model
 {
+    public $timestamps  = false;
+
     /**
      * @var array
      */
@@ -26,7 +28,7 @@ class programadores extends Model
      */
     public function institucione()
     {
-        return $this->belongsTo('App\Institucione', 'idInst');
+        return $this->belongsTo('App\instituciones', 'idInst');
     }
 
     /**
@@ -34,6 +36,6 @@ class programadores extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo('App\Usuario', 'idUsr');
+        return $this->belongsTo('App\usuarios', 'idUsr');
     }
 }

@@ -10,6 +10,7 @@
     <title>@yield('rol') | @yield('titulo')</title>
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -25,7 +26,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion" style="overflow: auto;">
             @if(auth()->user()["level"]<2)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Torneos">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseTorneos" data-parent="#exampleAccordion">
@@ -178,12 +179,10 @@
                             </a>
                         </li>
                         <li>
-                        <li>
                             <a class="nav-link" href="{{action('ProgramadorController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -197,6 +196,12 @@
                             <a class="nav-link" href="{{action('DirectorioController@programador')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Programadores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{action('DirectorioController@arbitro')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Arbitros</span>
                             </a>
                         </li>
                     </ul>
@@ -241,7 +246,7 @@
     </div>
 </nav>
 <div class="content-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-left: 30px;">
         <!-- Breadcrumbs-->
 
         <div class="row">
@@ -307,6 +312,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin.min.js') }}"></script>
     <script src ="{{asset('js/bootstrap-filestyle.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 </div>
 </body>
 

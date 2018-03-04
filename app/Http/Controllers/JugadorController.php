@@ -29,8 +29,11 @@ class JugadorController extends Controller
             debug($jugador->equipo());
         }
         return view("admin.jugador.index",[
-            "rutas"=>[],
             "jugadores"=>$jugadores,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Jugador", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -46,7 +49,11 @@ class JugadorController extends Controller
         return view("admin.jugador.crear", [
             "instituciones" => $instituciones,
             "equipos" => $equipos,
-            "rutas" => [],
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -64,7 +71,7 @@ class JugadorController extends Controller
         $idI = $request["id_institucion"];
         $dorsal = $request["dorsal"];
         $idE = $request["id_equipo"];
-        //$genero = $request[""];
+        $genero = $request["genero"];
 
         $username = $request["usuario"];
         $password = $request["password"];
@@ -86,6 +93,7 @@ class JugadorController extends Controller
         $jugador->idInst = $idI;
         $jugador->equipos_id = $idE;
         $jugador->numero=$dorsal;
+        $jugador->genero = $genero;
 
 
         $ruta = "jugadores";
@@ -94,8 +102,8 @@ class JugadorController extends Controller
 
         $jugador->save( ['timestamps' => false]);
 
-        return redirect()->action("JugadorController@create")->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 
@@ -107,7 +115,14 @@ class JugadorController extends Controller
      */
     public function show($id)
     {
-        //
+        return view("admin.jugador.detail",[
+            "jugador" => jugadores::findOrFail($id),
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -118,7 +133,21 @@ class JugadorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jugador = jugadores::find($id);
+
+        $instituciones = instituciones::all();
+        $equipos = equipos::all();
+        return view("admin.jugador.crear", [
+            "jugador" => $jugador,
+            "usuario" => $jugador->usuario,
+            "instituciones" => $instituciones,
+            "equipos" => $equipos,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -130,7 +159,52 @@ class JugadorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nombre = $request["nombre"];
+        $nacimiento = $request["nacimiento"];
+        $curp = $request["curp"];
+        $idI = $request["id_institucion"];
+        $dorsal = $request["dorsal"];
+        $idE = $request["id_equipo"];
+        $genero = $request["genero"];
+
+        $username = $request["usuario"];
+        $password = $request["password"];
+
+
+        $jugador = jugadores::findOrFail($id);
+        $usuario = $jugador->usuario;
+
+        if($password!=null || $password!="")
+            $usuario->password=Hash::make($password);
+        $usuario->username=$username;
+
+        $usuario->update();
+
+        $jugador->nombre = $nombre;
+        $jugador->fechaNac = $nacimiento;
+        $jugador->documento_identidad = $curp;
+        $jugador->idInst = $idI;
+        $jugador->equipos_id = $idE;
+        $jugador->numero=$dorsal;
+
+        $ruta = "jugadores";
+        $foto = $request->file('foto');
+        debug($foto);
+        if($foto!=null){
+            $request->file('foto')->move($ruta, $jugador->nombre.".".$foto->getClientOriginalExtension());
+            $jugador->foto = $ruta."/".$jugador->nombre.".".$foto->getClientOriginalExtension();
+        }
+
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
+
+        $jugador->genero = $genero;
+        $jugador->update();
+
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+        );
     }
 
     /**
@@ -142,6 +216,10 @@ class JugadorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function back(){
+        return redirect()->back();
     }
 }
 

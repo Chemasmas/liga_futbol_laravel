@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\instituciones;
+use App\programadores;
+use App\usuarios;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,8 +19,10 @@ class ProgramadorController extends Controller
      */
     public function index()
     {
+        $programadores = programadores::all();
         return view("admin.programador.index",[
-            "rutas"=>[]
+            "rutas"=>[],
+            "programadores" => $programadores,
         ]);
     }
 
@@ -44,7 +48,23 @@ class ProgramadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $usuario = new  usuarios();
+        $usuario->password = Hash::make($request["password"]);
+        $usuario->username = $request["usuario"];
+        $usuario->level = 2;
+
+        $usuario->save();
+
+        $programador = new programadores();
+        $programador->nombre = $request["nombre"];
+        $programador->idUsr = $usuario->id;
+        $programador->correo = $request["correo"];
+        $programador->telefono = $request["telefono"];
+        $programador->idInst = $request["id_institucion"];
+
+        $programador->save();
+        return redirect()->back();
     }
 
     /**
@@ -55,7 +75,11 @@ class ProgramadorController extends Controller
      */
     public function show($id)
     {
-        //
+        $programador = programadores::findOrFail($id);
+        return view("admin.programador.detail",[
+            "rutas" => [],
+            "programador" => $programador,
+        ]);
     }
 
     /**
@@ -66,7 +90,13 @@ class ProgramadorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $programador = programadores::findOrFail($id);
+        $instituciones = instituciones::all();
+        return view("admin.programador.crear", [
+            "rutas"=>[],
+            "instituciones" => $instituciones,
+            "programador" => $programador,
+        ]);
     }
 
     /**
@@ -78,7 +108,23 @@ class ProgramadorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $programador = programadores::findOrFail($id);
+        $programador->nombre = $request["nombre"];
+        $programador->correo = $request["correo"];
+        $programador->telefono = $request["telefono"];
+        $programador->idInst = $request["id_institucion"];
+
+        $usuario = $programador->usuario;
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
+        $usuario->username = $request["usuario"];
+        $usuario->level = 2;
+
+        $usuario->save();
+        $programador->save();
+        return redirect()->back();
     }
 
     /**

@@ -21,7 +21,7 @@ class EquipoController extends Controller
         $equiposG =equipos::all();
 
         return view('admin.equipo.index',[
-            "equiposG"=>$equiposG,
+            "equipos"=>$equiposG,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Equipo"=>["etiqueta"=>"Equipo", "active"=>"0","link"=>""]
@@ -43,7 +43,12 @@ class EquipoController extends Controller
     {
         $instituciones = instituciones::all();
         return view("admin.equipo.crear",[
-            "instituciones" => $instituciones
+            "instituciones" => $instituciones,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Equipo"=>["etiqueta"=>"Equipo", "active"=>"1","link"=>"/admin/equipo"],
+                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -55,8 +60,6 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
-        debug($request->file('foto'));
-        //debug( File::extension($request->file('foto')->getFilename()) );
 
         $equipo = new equipos();
         $equipo->nombre = $request["nombre"];
@@ -64,37 +67,18 @@ class EquipoController extends Controller
         $equipo->nombreCoachAsistente = $request["asistente"];
         $equipo->genero = $request["genero"];
         $equipo->idIst = $request["id_institucion"];
-
-
-        //$equipo->idDivt = $request["id_division"];
-        //$equipo->idIst = $request["id_institucion"];
-
-
-        //$archi = $request->file('foto');
-        //Storage::put($archi->getFilename(),$archi);
-
-        //$ruta = "equipos";
-        //$imagen = $request->file('foto'); //Obtiene el Archivo Subido
-        //$nvoNombre = $equipo->nombre.".".$imagen->getClientOriginalExtension();  //GEnera un nuevo Nombre con la misma extension
-        //$imagen->move($ruta,$nvoNombre);    //Muevo el archivo a la ruta, con el nuevo nombre
-        //$equipo->foto = $ruta."/".$nvoNombre;  //Asigna la ruta a donde fue movido al archivo al registro
-
-
-        //->move($ruta,$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension());
-        //$equipo->foto = $ruta."/".$equipo->nombre.".".$request->file('foto')->getClientOriginalExtension();
+        $equipo->activo = true;
 
         $equipo->save();
-
 
         //TODO validacion exito de la insercion
 
 
-        return redirect()->action("EquipoController@create")->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Insercion Exitosa"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
         //return view("admin.equipo.crear");
     }
-
     /**
      * Display the specified resource.
      *
@@ -103,7 +87,32 @@ class EquipoController extends Controller
      */
     public function show($id)
     {
-        //
+        /*
+        $equipo = equipos::findOrFail($id);
+
+        debug($equipo->participantesEquipos()->get());
+
+        //Todo , retrieve info form torneo
+        return view('admin.equipo.info',[
+            "equipo" => $equipo,
+            "participantes" => $equipo->participantesEquipos()->get(),
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Equipo"=>["etiqueta"=>"Equipo", "active"=>"1","link"=>"/admin/equipo"],
+                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+            ]
+        ]);*/
+        $equipo = equipos::find($id);
+        debug($equipo);
+
+        return view("admin.equipo.show",[
+            "equipo" => $equipo,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Equipo"=>["etiqueta"=>"Equipo", "active"=>"1","link"=>"/admin/equipo"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -114,7 +123,18 @@ class EquipoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $equipo = equipos::findOrFail($id);
+        $institucione = instituciones::all();
+        debug($equipo);
+        return view('admin.equipo.crear',[
+            "equipo"=>$equipo,
+            "instituciones"=>$institucione,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Equipo"=>["etiqueta"=>"Equipo", "active"=>"1","link"=>"/admin/equipo"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -126,7 +146,25 @@ class EquipoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        debug($request["nombre"]);
+
+        $equipo = equipos::findOrFail($id);
+
+        $equipo->nombre = $request["nombre"];
+        $equipo->nombreCoach = $request["coach"];
+        $equipo->nombreCoachAsistente = $request["asistente"];
+        $equipo->genero = $request["genero"];
+        $equipo->idIst = $request["id_institucion"];
+        $equipo->activo = true;
+
+        $equipo->update();
+
+        //TODO validacion exito de la insercion
+        //success
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+        );
+
     }
 
     /**

@@ -20,7 +20,11 @@ class InstitucionController extends Controller
     {
         $instituciones = instituciones::all();
         return view("admin.institucion.index",[
-            "instituciones" => $instituciones
+            "instituciones" => $instituciones,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Institucion"=>["etiqueta"=>"Institucion", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -31,7 +35,13 @@ class InstitucionController extends Controller
      */
     public function create()
     {
-        return view("admin.institucion.crear");
+        return view("admin.institucion.crear",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Instituciones"=>["etiqueta"=>"Instituciones", "active"=>"1","link"=>"/admin/instituciones"],
+                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -54,7 +64,8 @@ class InstitucionController extends Controller
         $institucion->escudo = $ruta."/".$nvoNombre;
         $institucion->save();
 
-        return redirect()->action("InstitucionController@create")->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 
@@ -70,7 +81,12 @@ class InstitucionController extends Controller
         debug($id);
         debug($institucion);
         return view("admin.institucion.detail",[
-            "institucion"=>$institucion
+            "institucion"=>$institucion,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Instituciones"=>["etiqueta"=>"Instituciones", "active"=>"1","link"=>"/admin/instituciones"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -86,7 +102,12 @@ class InstitucionController extends Controller
         debug($id);
         debug($institucion);
         return view("admin.institucion.crear",[
-            "institucion"=>$institucion
+            "institucion"=>$institucion,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Instituciones"=>["etiqueta"=>"Instituciones", "active"=>"1","link"=>"/admin/instituciones"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -117,7 +138,8 @@ class InstitucionController extends Controller
         }
         $institucion->save();
 
-        return redirect()->back()->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
         );
     }
 
