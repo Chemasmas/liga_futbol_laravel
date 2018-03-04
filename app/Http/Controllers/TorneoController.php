@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\equipos;
 use App\participantes_torneo;
+use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
 use Illuminate\Http\Request;
@@ -265,7 +266,11 @@ class TorneoController extends Controller
     }
 
     public function jornadas($idT){
-        
+        $partidos = partidos::where("Torneo_id",$idT)->get();
+        return view("admin.torneo.jornadas",[
+            "rutas" => [],
+           "partidos"=>$partidos,
+        ]);
     }
 
 }
