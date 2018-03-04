@@ -4,15 +4,13 @@
 
 @section('rol',"")
 
-<?php $rutas = [] ?>
-
 @section('content')
         <div class="row">
         <div class="col-sm-12">
             <h3>Lista de Arbitros</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    @if(count($arbitrosG)>0)
+                    @if(count($arbitros)>0)
                         <thead>
                         <tr >
                             <th>Nombre</th>
@@ -20,7 +18,7 @@
                         </tr>
                         </thead>
                     @endif
-                    @forelse ($arbitrosG as $arbitro)
+                    @forelse ($arbitros as $arbitro)
                         <tr>
                             <td>
                                 {{ $arbitro->nombre }}
