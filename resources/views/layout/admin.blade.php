@@ -207,6 +207,7 @@
                     </ul>
                 </li>
             @endif
+            <!--
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Juegos">
                 <a class="nav-link" href="juegos.html">
                     <i class="fa fa-list-ol"></i>
@@ -219,13 +220,16 @@
                     <span class="nav-link-text">Equipos</span>
                 </a>
             </li>
+            -->
+            @if(auth()->user()["level"]<3)
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Programacion">
                 <a class="nav-link" href="programacion.html">
                     <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
                     <span class="nav-link-text">Programación</span>
                 </a>
             </li>
-
+            @endif
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
