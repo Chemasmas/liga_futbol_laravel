@@ -103,6 +103,7 @@ Route::get('/admin/programador/crear',['middleware' => 'auth', 'uses' => "Progra
 Route::post('/admin/programador/store',['middleware' => 'auth', 'uses' => "ProgramadorController@store"]);
 Route::get("/admin/programador/{id}",['middleware' => 'auth', 'uses' => "ProgramadorController@show"]);
 Route::get( "/admin/programador/{id}/edit",['middleware' => 'auth', 'uses' => "ProgramadorController@edit"]);
+Route::put( "/admin/programador/{id}/update",['middleware' => 'auth', 'uses' => "ProgramadorController@update"]);
 
 
 //Web Muplica

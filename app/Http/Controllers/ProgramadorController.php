@@ -90,7 +90,13 @@ class ProgramadorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $programador = programadores::findOrFail($id);
+        $instituciones = instituciones::all();
+        return view("admin.programador.crear", [
+            "rutas"=>[],
+            "instituciones" => $instituciones,
+            "programador" => $programador,
+        ]);
     }
 
     /**
@@ -102,7 +108,23 @@ class ProgramadorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $programador = programadores::findOrFail($id);
+        $programador->nombre = $request["nombre"];
+        $programador->correo = $request["correo"];
+        $programador->telefono = $request["telefono"];
+        $programador->idInst = $request["id_institucion"];
+
+        $usuario = $programador->usuario;
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
+        $usuario->username = $request["usuario"];
+        $usuario->level = 2;
+
+        $usuario->save();
+        $programador->save();
+        return redirect()->back();
     }
 
     /**
