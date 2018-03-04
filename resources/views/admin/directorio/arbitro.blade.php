@@ -4,30 +4,28 @@
 
 @section('rol','Admin')
 
-<?php $rutas = [] ?>
-
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <h3>Directorio Programadores</h3>
+            <h3>Directorio Arbitros</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    <thead>
-                    <tr >
-                        <th>Nombre</th>
-                        <th>Teléfono</th>
-                    </tr>
-                    </thead>
-                    @foreach ($programadores as $programador)
+                        <thead>
+                        <tr >
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                        </tr>
+                        </thead>
+                    @foreach ($arbitros as $arbitro)
                         <tr>
                             <td>
-                                {{ $programador->nombre }}
+                                {{ $arbitro->nombre }}
                             </td>
                             <td>
-                                {{ $programador->telefono }}
+                                {{ $arbitro->telefono }}
                             </td>
                         </tr>
-                    @endforeach
+                        @endforeach
                 </table>
             </div>
         </div>

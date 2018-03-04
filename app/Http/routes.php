@@ -75,8 +75,8 @@ Route::post( "/admin/administrador/{id}/update",['middleware' => 'auth', 'uses' 
 Route::get('/admin/administrador/{idA}/activate',['middleware' => 'auth', 'uses' => "AdministradorController@activate"]);
 Route::get('/admin/administrador/{idA}/deactivate',['middleware' => 'auth', 'uses' => "AdministradorController@deactivate"]);
 
-Route::get('/admin/directorio',['middleware' => 'auth', 'uses' => "DirectorioController@programador"]);
-
+Route::get('/admin/directorioP',['middleware' => 'auth', 'uses' => "DirectorioController@programador"]);
+Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioController@arbitro"]);
 
 Route::get('/admin/jugador',['middleware' => 'auth', 'uses' => "JugadorController@index"]);
 Route::get('/admin/jugador/back',['middleware' => 'auth', 'uses' => "JugadorController@back"]);

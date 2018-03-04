@@ -179,12 +179,10 @@
                             </a>
                         </li>
                         <li>
-                        <li>
                             <a class="nav-link" href="{{action('ProgramadorController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -198,6 +196,12 @@
                             <a class="nav-link" href="{{action('DirectorioController@programador')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Programadores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{action('DirectorioController@arbitro')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Arbitros</span>
                             </a>
                         </li>
                     </ul>
