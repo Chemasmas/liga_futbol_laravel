@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\arbitros;
+use App\programadores;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -21,13 +23,37 @@ class DirectorioController extends Controller
 
     public function programador(){
 
-        return view('admin.directorio.programador');
+        $programadores =programadores::all();
+        return view('admin.directorio.programador',[
+            "programadores"=>$programadores,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Programadores", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function arbitro(){
+
+        $arbitros =arbitros::all();
+        return view('admin.directorio.arbitro',[
+            "arbitros"=>$arbitros,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Arbitros", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
     public function create()
     {
         //

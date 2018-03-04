@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class ProgramadorController extends Controller
 {
@@ -21,8 +22,11 @@ class ProgramadorController extends Controller
     {
         $programadores = programadores::all();
         return view("admin.programador.index",[
-            "rutas"=>[],
             "programadores" => $programadores,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Programadores", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -37,6 +41,11 @@ class ProgramadorController extends Controller
         return view("admin.programador.crear", [
             "rutas"=>[],
             "instituciones" => $instituciones,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -79,6 +88,11 @@ class ProgramadorController extends Controller
         return view("admin.programador.detail",[
             "rutas" => [],
             "programador" => $programador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -90,7 +104,18 @@ class ProgramadorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $programador = programadores::findOrFail($id);
+        $instituciones = instituciones::all();
+        return view("admin.programador.crear", [
+            "rutas"=>[],
+            "instituciones" => $instituciones,
+            "programador" => $programador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -102,7 +127,23 @@ class ProgramadorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $programador = programadores::findOrFail($id);
+        $programador->nombre = $request["nombre"];
+        $programador->correo = $request["correo"];
+        $programador->telefono = $request["telefono"];
+        $programador->idInst = $request["id_institucion"];
+
+        $usuario = $programador->usuario;
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
+        $usuario->username = $request["usuario"];
+        $usuario->level = 2;
+
+        $usuario->save();
+        $programador->save();
+        return redirect()->back();
     }
 
     /**
