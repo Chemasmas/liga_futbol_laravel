@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $numero
  * @property string $foto
  * @property string $genero
+ * @property boolean $activo
  * @property Institucione $institucione
  * @property Usuario $usuario
  * @property Equipo $equipo
@@ -28,7 +29,7 @@ class jugadores extends Model
     /**
      * @var array
      */
-    protected $fillable = ['equipos_id', 'nombre', 'fechaNac', 'documento_identidad', 'numero', 'foto', 'genero'];
+    protected $fillable = ['equipos_id', 'nombre', 'fechaNac', 'documento_identidad', 'numero', 'foto', 'genero','activo'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
