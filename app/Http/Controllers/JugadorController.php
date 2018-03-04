@@ -94,6 +94,7 @@ class JugadorController extends Controller
         $jugador->equipos_id = $idE;
         $jugador->numero=$dorsal;
         $jugador->genero = $genero;
+        $jugador->activo = true;
 
 
         $ruta = "jugadores";
@@ -218,8 +219,23 @@ class JugadorController extends Controller
         //
     }
 
-    public function back(){
-        return redirect()->back();
+
+    public function activate($id){
+        $jugador = jugadores::findOrFail($id);
+        $jugador->activo= true;
+        $jugador->save();
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>$jugador->nombre." Activado"]]
+        );
+    }
+    public function deactivate($id)
+    {
+        $jugador = jugadores::findOrFail($id);
+        $jugador->activo = false;
+        $jugador->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "warning", "mensaje" => $jugador->nombre . " desactivado"]]
+        );
     }
 }
 
