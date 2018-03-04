@@ -84,9 +84,8 @@ class AdministradorController extends Controller
 
         $administrador->save(['timestamps' => false]);
 
-
-        return redirect()->action("AdministradorController@create")->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 
@@ -156,8 +155,9 @@ class AdministradorController extends Controller
         debug($usuario);
         $usuario->username = $request["usuario"];
 
-        debug($request["password"]);
-        debug(strlen($request["password"]));
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
         $administrador->update();
         $usuario->update();
 
