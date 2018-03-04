@@ -26,7 +26,7 @@
                                 <span style="font-weight: bold;">[{{$jugador->equipo()->first()->nombre}}]</span>{{$jugador->institucione()->first()->nombre }}
                             </td>
                             <td>
-                                <a class="btn btn-primary" role="button">Ver</a>
+                                <a class="btn btn-primary" role="button" href="{{action("JugadorController@show",["id"=>$jugador->id])}}">Ver</a>
                                 <a class="btn btn-success" role="button" href="{{action("JugadorController@edit",["id"=>$jugador->id])}}">Editar</a>
                             </td>
                         </tr>

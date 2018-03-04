@@ -22,6 +22,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class jugadores extends Model
 {
+
+    public $timestamps  = false;
+
     /**
      * @var array
      */

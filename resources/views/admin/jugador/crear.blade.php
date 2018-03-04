@@ -54,16 +54,16 @@
                 <label for="id_equipo">Equipo</label>
                 <select class="form-control" name="id_equipo">
                     @foreach ($equipos as $equipo )
-                        <option value ="{{$equipo->id}}"  {{!empty($jugador)&&$jugador->==$equipo->id?'selected':''}}>{{ $equipo->nombre }}</option>
+                        <option value ="{{$equipo->id}}"  {{!empty($jugador)&&$jugador->equipos_id==$equipo->id?'selected':''}}>{{ $equipo->nombre }}</option>
                     @endforeach
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="dorsal">Número Dorsal</label>
-                <input type="text" name="dorsal" class="form-control" placeholder="">
+                <input type="text" name="dorsal" class="form-control" placeholder="" value="{{!empty($jugador)?$jugador->numero:"" }}">
             </div>
-            <button type="submit" class="btn btn-success pull-right">Agregar</button>
+            <button type="submit" class="btn btn-success pull-right">{{!empty($jugador)?'Guardar Edición':'Crear'}}</button>
         </form>
     </div>
 

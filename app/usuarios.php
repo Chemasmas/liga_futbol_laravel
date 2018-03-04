@@ -27,6 +27,8 @@ class usuarios extends Model implements AuthenticatableContract,
     CanResetPasswordContract
 {
 
+    public $timestamps  = false;
+
     use Authenticatable, Authorizable, CanResetPassword;
     /**
      * Indicates if the IDs are auto-incrementing.
