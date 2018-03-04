@@ -37,7 +37,7 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn btn-success pull-right">Agregar</button>
+            <button type="submit" class="btn btn-success pull-right">{{!empty($programador)?'Guardar Edición':'Crear'}}</button>
         </form>
     </div>
 
