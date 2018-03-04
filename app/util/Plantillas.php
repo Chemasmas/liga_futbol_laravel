@@ -72,35 +72,35 @@ class Plantillas
         //Debe generar 20 partidos
         $partidosT = [];
         $rotaciones = [
-            [ 'L' => 1 , 'V' => 4],
-            [ 'L' => 2 , 'V' => 3],
-            [ 'L' => 4 , 'V' => 2],
-            [ 'L' => 0 , 'V' => 1],
+            [ 'L' => 1 , 'V' => 4 , 'J' => 1],
+            [ 'L' => 2 , 'V' => 3 , 'J' => 1],
+            [ 'L' => 4 , 'V' => 2 , 'J' => 1],
+            [ 'L' => 0 , 'V' => 1 , 'J' => 1],
 
-            [ 'L' => 2 , 'V' => 0],
-            [ 'L' => 3 , 'V' => 4],
-            [ 'L' => 0 , 'V' => 3],
-            [ 'L' => 1 , 'V' => 2],
+            [ 'L' => 2 , 'V' => 0 , 'J' => 2],
+            [ 'L' => 3 , 'V' => 4 , 'J' => 2],
+            [ 'L' => 0 , 'V' => 3 , 'J' => 2],
+            [ 'L' => 1 , 'V' => 2 , 'J' => 2],
 
-            [ 'L' => 3 , 'V' => 1],
-            [ 'L' => 4 , 'V' => 0],
-            [ 'L' => 4 , 'V' => 1],
-            [ 'L' => 3 , 'V' => 2],
+            [ 'L' => 3 , 'V' => 1 , 'J' => 3],
+            [ 'L' => 4 , 'V' => 0 , 'J' => 3],
+            [ 'L' => 4 , 'V' => 1 , 'J' => 3],
+            [ 'L' => 3 , 'V' => 2 , 'J' => 3],
 
-            [ 'L' => 2 , 'V' => 4],
-            [ 'L' => 1 , 'V' => 0],
-            [ 'L' => 0 , 'V' => 2],
-            [ 'L' => 4 , 'V' => 3],
+            [ 'L' => 2 , 'V' => 4 , 'J' => 4],
+            [ 'L' => 1 , 'V' => 0 , 'J' => 4],
+            [ 'L' => 0 , 'V' => 2 , 'J' => 4],
+            [ 'L' => 4 , 'V' => 3 , 'J' => 4],
 
-            [ 'L' => 3 , 'V' => 0],
-            [ 'L' => 2 , 'V' => 1],
-            [ 'L' => 1 , 'V' => 3],
-            [ 'L' => 0 , 'V' => 4],
+            [ 'L' => 3 , 'V' => 0 , 'J' => 5],
+            [ 'L' => 2 , 'V' => 1 , 'J' => 5],
+            [ 'L' => 1 , 'V' => 3 , 'J' => 5],
+            [ 'L' => 0 , 'V' => 4 , 'J' => 5],
         ];
 
 
         foreach ($rotaciones as $rotacion){
-            array_push($partidosT,$this->generarPartido( $this->getID($rotacion['L']),$this->getID($rotacion['V']) ) );
+            array_push($partidosT,$this->generarPartido( $this->getID($rotacion['L']),$this->getID($rotacion['V']),$rotacion['J'] ) );
         }
         foreach ($partidosT as $partidoT){
           $partidoT->save();
@@ -119,7 +119,7 @@ class Plantillas
             return 1;
     }
 
-    private function generarPartido($idEL,$idEV){
+    private function generarPartido($idEL,$idEV,$jornada){
         $partido = new partidos();
         $partido->Torneo_id=$this->torneo_id;
         $partido->Local = $idEL;
@@ -127,7 +127,7 @@ class Plantillas
 
         $partido->marcadorLocal = 0;
         $partido->marcadorVisitante = 0;
-
+        $partido->jornada= $jornada;
         return $partido;
     }
 }

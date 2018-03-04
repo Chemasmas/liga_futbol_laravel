@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\equipos;
 use App\participantes_torneo;
+use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class TorneoController extends Controller
 {
@@ -100,10 +102,6 @@ class TorneoController extends Controller
     public function show($id)
     {
         $torneo = torneos::findOrFail($id);
-
-
-        debug($torneo);
-        debug($torneo->participantesTorneos()->get());
 
         //Todo , retrieve info form torneo
         return view('admin.torneo.info',[
@@ -265,7 +263,22 @@ class TorneoController extends Controller
     }
 
     public function jornadas($idT){
-        //Terminar
+        $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
+
+        return view("admin.torneo.jornadas",[
+            "rutas" => [],
+           "idT" => $idT,
+           "partidos"=>$partidos,
+        ]);
+    }
+
+    public function asignar_jornada(Request $request,$idP){
+        $partido = partidos::findOrFail($idP);
+        $partido->jornada = $request["jornada"];
+        $partido->save();
+
+        return redirect()->back();
     }
 
 }
+

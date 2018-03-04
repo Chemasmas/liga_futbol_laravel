@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class ProgramadorController extends Controller
 {
@@ -21,8 +22,11 @@ class ProgramadorController extends Controller
     {
         $programadores = programadores::all();
         return view("admin.programador.index",[
-            "rutas"=>[],
             "programadores" => $programadores,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Programadores", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -37,6 +41,11 @@ class ProgramadorController extends Controller
         return view("admin.programador.crear", [
             "rutas"=>[],
             "instituciones" => $instituciones,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -77,8 +86,12 @@ class ProgramadorController extends Controller
     {
         $programador = programadores::findOrFail($id);
         return view("admin.programador.detail",[
-            "rutas" => [],
             "programador" => $programador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -96,6 +109,11 @@ class ProgramadorController extends Controller
             "rutas"=>[],
             "instituciones" => $instituciones,
             "programador" => $programador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -136,5 +154,35 @@ class ProgramadorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function programacion(){
+        return view("admin.verProgramador.programacion",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
+    public function partidos(){
+        return view("admin.verArbitro.partidos",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Partidos", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
+    public function perfil($id){
+        $programador = programadores::findOrFail($id);
+        Auth::user()->id;
+        return view("admin.verProgramador.perfilJ",[
+            "programador" => $programador,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 }
