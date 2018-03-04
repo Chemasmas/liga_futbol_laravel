@@ -64,7 +64,8 @@ class InstitucionController extends Controller
         $institucion->escudo = $ruta."/".$nvoNombre;
         $institucion->save();
 
-        return redirect()->action("InstitucionController@create")->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 

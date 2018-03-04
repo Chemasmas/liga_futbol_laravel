@@ -36,11 +36,11 @@
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                 @if($institucion->activo)
-                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Equipo" href='{{ action("InstitucionController@deactivate",["idI"=>$institucion->id])}}'>
+                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Institucion" href='{{ action("InstitucionController@deactivate",["idI"=>$institucion->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
                                 @else
-                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Equipo" href='{{ action("InstitucionController@activate",["idI"=>$institucion->id])}}'>
+                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Institucion" href='{{ action("InstitucionController@activate",["idI"=>$institucion->id])}}'>
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                     </a>
                                 @endif

@@ -50,5 +50,7 @@
                         </tr>
                     @endforelse
                 </table>
+            </div>
+        </div>
     </div>
 @endsection

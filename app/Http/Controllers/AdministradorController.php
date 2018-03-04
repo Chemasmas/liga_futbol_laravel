@@ -84,9 +84,8 @@ class AdministradorController extends Controller
 
         $administrador->save(['timestamps' => false]);
 
-
-        return redirect()->action("AdministradorController@create")->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 

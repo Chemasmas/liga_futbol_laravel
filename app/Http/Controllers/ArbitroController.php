@@ -23,6 +23,10 @@ class ArbitroController extends Controller
 
         return view('admin.arbitro.index',[
             "arbitrosG"=>$arbitrosG,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Arbitro", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -34,7 +38,11 @@ class ArbitroController extends Controller
     public function create()
     {
         return view("admin.arbitro.crear",[
-            "rutas"=>[],
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Arbitro", "active"=>"1","link"=>"/admin/arbitro"],
+                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -76,9 +84,8 @@ class ArbitroController extends Controller
 
         $arbitro->save(['timestamps' => false]);
 
-
-        return redirect()->action("ArbitroController@create")->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 

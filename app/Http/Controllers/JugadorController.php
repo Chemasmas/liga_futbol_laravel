@@ -29,8 +29,11 @@ class JugadorController extends Controller
             debug($jugador->equipo());
         }
         return view("admin.jugador.index",[
-            "rutas"=>[],
             "jugadores"=>$jugadores,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Jugador", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -46,7 +49,11 @@ class JugadorController extends Controller
         return view("admin.jugador.crear", [
             "instituciones" => $instituciones,
             "equipos" => $equipos,
-            "rutas" => [],
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -96,7 +103,7 @@ class JugadorController extends Controller
         $jugador->save( ['timestamps' => false]);
 
         return redirect()->back()->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 
@@ -109,8 +116,12 @@ class JugadorController extends Controller
     public function show($id)
     {
         return view("admin.jugador.detail",[
-            "rutas" => [],
             "jugador" => jugadores::findOrFail($id),
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -131,7 +142,11 @@ class JugadorController extends Controller
             "usuario" => $jugador->usuario,
             "instituciones" => $instituciones,
             "equipos" => $equipos,
-            "rutas" => [],
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
