@@ -242,7 +242,7 @@
     </div>
 </nav>
 <div class="content-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-left: 30px;">
         <!-- Breadcrumbs-->
 
         <div class="row">

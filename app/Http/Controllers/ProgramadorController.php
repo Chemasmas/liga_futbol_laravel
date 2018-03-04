@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\instituciones;
 use App\programadores;
+use App\usuarios;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -48,10 +49,21 @@ class ProgramadorController extends Controller
     public function store(Request $request)
     {
 
-        //$programador = new programadores();
-        //$programador->
-        debug($request);
+        $usuario = new  usuarios();
+        $usuario->password = Hash::make($request["password"]);
+        $usuario->username = $request["usuario"];
+        $usuario->level = 2;
 
+        $usuario->save();
+
+        $programador = new programadores();
+        $programador->nombre = $request["nombre"];
+        $programador->idUsr = $usuario->id;
+        $programador->correo = $request["correo"];
+        $programador->telefono = $request["telefono"];
+        $programador->idInst = $request["id_institucion"];
+
+        $programador->save();
         return redirect()->back();
     }
 
@@ -63,7 +75,11 @@ class ProgramadorController extends Controller
      */
     public function show($id)
     {
-        //
+        $programador = programadores::findOrFail($id);
+        return view("admin.programador.detail",[
+            "rutas" => [],
+            "programador" => $programador,
+        ]);
     }
 
     /**
