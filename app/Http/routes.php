@@ -30,6 +30,7 @@ Route::get( "/admin/torneo",['middleware' => 'auth', 'uses' => "TorneoController
 Route::get( "/admin/torneo/all",['middleware' => 'auth', 'uses' => "TorneoController@all"]);
 Route::get( "/admin/torneo/create",['middleware' => 'auth', 'uses' => "TorneoController@create"]);
 Route::post("/admin/torneo/store",['middleware' => 'auth', 'uses' => "TorneoController@store"]);
+Route::post("/admin/torneo/jornada/{idP}",['middleware' => 'auth', 'uses' => "TorneoController@asignar_jornada"]);
 Route::get( "/admin/torneo/{id}",['middleware' => 'auth', 'uses' => "TorneoController@show"]);
 Route::get( "/admin/torneo/{id}/edit",['middleware' => 'auth', 'uses' => "TorneoController@edit"]);
 Route::post( "/admin/torneo/{id}/update",['middleware' => 'auth', 'uses' => "TorneoController@update"]);

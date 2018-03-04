@@ -47,7 +47,7 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function administradores()
     {
-        return $this->hasMany('App\Administradore', 'idUsr');
+        return $this->hasMany('App\administradores', 'idUsr');
     }
 
     /**

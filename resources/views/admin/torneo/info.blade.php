@@ -11,11 +11,14 @@
         <div class="col-sm-5">
             <h3>Torneo : {{ $torneo->nombre }} </h3>
             <h4>Plantilla : {{ $torneo->tipo_torneo }} </h4>
-            <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"  @if($torneo->generado) {{'disabled'}} @endif>Generar</button>
-            <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
-                Roles
-            </a>
+            <div class="btn-group" role="group" aria-label="...">
+
+                <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"  @if($torneo->generado) {{'disabled'}} @endif>Generar</button>
+                <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
+                    Roles
+                </a>
+            </div>
             <br><br>
             <div class="container">
                 <table class="table table-bordered col-md-4">
