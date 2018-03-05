@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\equipos;
 use App\instituciones;
+use App\participantes_torneo;
+use App\partidos;
 use App\programadores;
+use App\torneos;
 use App\usuarios;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ProgramadorController extends Controller
@@ -157,12 +162,68 @@ class ProgramadorController extends Controller
     }
 
     public function programacion(){
+
+        $user = Auth::user();
+        $torneos = [];
+        switch ($user->level){
+            case 1: //ES Admin
+                $torneos = torneos::where("activo",1)->get();
+                break;
+            case 2: //Es Programadore
+                $programador = $user->programadores[0];
+                $equipos = equipos::where("idIst",$programador->idInst)->where("activo",1)->select("id")->get();
+                $torneosIds = participantes_torneo::whereIn("Equipos_id",$equipos)->groupBy("Torneo_Id")->select("Torneo_Id")->get();
+                $torneos = torneos::whereIn("id",$torneosIds)->get();
+                debug($programador);
+                debug($torneosIds);
+                break;
+            default: return redirect()->action("AdminController@index")->with(
+                ["message"=>["clase"=>"danger","mensaje"=>"No puedes Acceder a esa seccion"]]
+            );
+        }
+
+        debug($torneos);
+
         return view("admin.verProgramador.programacion",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
-            ]
+            ],
+            "torneos" => $torneos,
         ]);
+    }
+
+    //TODO los partidos del torneo que le corresponden al administrador
+    public function rol($idT){
+        $user = Auth::user();
+        $partidos = [];
+        switch ($user->level){
+            case 1: //ES Admin
+                $partidos = partidos::where("Torneo_id",$idT)->groupBy("jornada")->get();
+                break;
+            case 2: //Es Programadore
+                $programador = $user->programadores[0];
+                $equipos = equipos::where("idIst",$programador->idInst)->where("activo",1)->select("id")->get();
+                $partidos = partidos::where("Torneo_id",$idT)->whereIn("Local",$equipos)
+                                ->orWhereIn("Visitante",$equipos)->where("Torneo_id",$idT)
+                                ->get()->groupBy("jornada");
+                break;
+            default: return redirect()->action("AdminController@index")->with(
+
+                ["message"=>["clase"=>"danger","mensaje"=>"No puedes Acceder a esa seccion"]]
+            );
+        }
+        debug($user->level);
+        debug($partidos);
+
+        return view("admin.verProgramador.partidos",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
+            ],
+            "partidosG" => $partidos,
+        ]);
+
     }
 
     public function partidos(){

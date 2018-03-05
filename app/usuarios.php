@@ -55,7 +55,7 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function arbitros()
     {
-        return $this->hasMany('App\Arbitro', 'idUsr');
+        return $this->hasMany('App\arbitros', 'idUsr');
     }
 
     /**
@@ -63,7 +63,7 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function jugadores()
     {
-        return $this->hasMany('App\Jugadore', 'idUsr');
+        return $this->hasMany('App\jugadores', 'idUsr');
     }
 
     /**
@@ -71,6 +71,6 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function programadores()
     {
-        return $this->hasMany('App\Programadore', 'idUsr');
+        return $this->hasMany('App\programadores', 'idUsr');
     }
 }

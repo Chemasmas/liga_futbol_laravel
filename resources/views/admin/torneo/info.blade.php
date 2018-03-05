@@ -17,6 +17,12 @@
                 <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
                     Jornadas
                 </a>
+                <a class="btn btn-primary" href="{{action("TorneoController@jornadasXLS",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-primary" href="{{action("TorneoController@jornadasPDF",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                </a>
             </div>
             <br><br>
             <div class="container">
