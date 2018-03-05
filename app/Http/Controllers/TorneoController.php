@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class TorneoController extends Controller
 {
@@ -271,6 +273,25 @@ class TorneoController extends Controller
            "partidos"=>$partidos,
         ]);
     }
+
+    public function jornadasXLS($idT){
+        $torneo = torneos::findOrFail($idT);
+        return Excel::create($torneo->nombre, function($excel) use ($idT) {
+
+
+            $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
+            $participantes = participantes_torneo::select("Equipos_id")->where("Torneo_id",$idT)->get();
+            $participantesE = equipos::whereIn("id",$participantes)->get();
+
+            $excel->sheet('Rol de Juegos', function($sheet) use ($idT,$partidos,$participantesE) {
+
+                $sheet->loadView('excel.base',["partidos"=>$partidos,"participantes"=>$participantesE] );
+
+            });
+
+        })->download('xls');
+    }
+
 
     public function asignar_jornada(Request $request,$idP){
         $partido = partidos::findOrFail($idP);
