@@ -43,6 +43,7 @@ Route::get( "/admin/torneo/{idT}/deactivate",['middleware' => 'auth', 'uses' => 
 /*De la generacino de roles*/
 Route::get( "/admin/torneo/{idT}/rotacion",['middleware' => 'auth', 'uses' => "TorneoController@generarRotacion"] );
 Route::get( "/admin/torneo/{idT}/jornadas",['middleware' => 'auth', 'uses' => "TorneoController@jornadas"] );
+Route::get( "/admin/torneo/{idT}/jornadasXLS",['middleware' => 'auth', 'uses' => "TorneoController@jornadasXLS"] );
 
 
 Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@index"]);
@@ -113,6 +114,7 @@ Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioCo
 Route::get('/admin/verJugador/{idJ}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 Route::get('/admin/verProgramador/programacion',['middleware' => 'auth', 'uses' => "ProgramadorController@programacion"]);
+Route::get('/admin/verProgramador/{idT}/rol',['middleware' => 'auth', 'uses' => "ProgramadorController@rol"]);
 Route::get('/admin/verProgramador/{idP}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 Route::get('/admin/verArbitro/partidos',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);

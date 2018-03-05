@@ -14,9 +14,14 @@
             <div class="btn-group" role="group" aria-label="...">
 
                 <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"  @if($torneo->generado) {{'disabled'}} @endif>Generar</button>
                 <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
-                    Roles
+                    Jornadas
+                </a>
+                <a class="btn btn-primary" href="{{action("TorneoController@jornadasXLS",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-primary" href="{{action("TorneoController@jornadasPDF",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
                 </a>
             </div>
             <br><br>
