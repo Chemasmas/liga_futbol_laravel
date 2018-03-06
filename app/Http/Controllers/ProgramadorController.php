@@ -235,15 +235,36 @@ class ProgramadorController extends Controller
         ]);
     }
 
-    public function perfil($id){
-        $programador = programadores::findOrFail($id);
-        Auth::user()->id;
-        return view("admin.verProgramador.perfilJ",[
-            "programador" => $programador,
-            "rutas" => [
-                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
-            ]
-        ]);
+    public function perfil(){
+        $user=Auth::user();
+
+        switch ($user->level){
+            case 1://ADmin
+                return view("admin.administrador.show",[
+                    "usuario" => $user,
+                    "administrador" => $user->administradores[0],
+                    "rutas" => [
+                        "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                        "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+                    ]
+                ]);
+                break;
+            case 2: //Programador
+                $programador = $user->programadores[0];
+                debug($programador);
+                return view("admin.verProgramador.perfilP",[
+                    "programador" => $programador,
+                    "rutas" => [
+                        "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                        "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+                    ]
+                ]);
+                break;
+            case 3: //Arbitro
+                break;
+            case 4: // Jugdor
+                break;
+        }
+
     }
 }

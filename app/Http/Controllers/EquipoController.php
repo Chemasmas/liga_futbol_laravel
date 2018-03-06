@@ -215,9 +215,8 @@ class EquipoController extends Controller
 
         $equipo = equipos::findOrFail($id);
 
-        $jugadoresEquipo = jugadores::where("equipos_id", $id)->where("activo", 1)->get();
+        $jugadoresEquipo = jugadores::where("equipos_id", $id)->get();
         $prospectos = jugadores::where("equipos_id", 1)
-            ->where("activo", 1)
             ->where("idInst", $equipo->idIst)
             ->where("genero", $equipo->genero)
             ->get();
@@ -230,6 +229,11 @@ class EquipoController extends Controller
             "equipo" => $equipo,
             "integrantes" => $jugadoresEquipo,
             "prospectos" => $prospectos,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Equipo" => ["etiqueta" => "Equipo", "active" => "1", "link" => "/admin/equipo"],
+                "crear" => ["etiqueta" => "AgregarJugadores", "active" => "0", "link" => ""]
+            ]
         ]);
     }
 
