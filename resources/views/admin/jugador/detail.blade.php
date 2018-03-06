@@ -5,32 +5,27 @@
 @section('rol',"")
 
 @section('content')
-
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-4 col-sm-offset-1">
-                    <img src="{{asset($jugador->foto)}}" class="img-responsive" style="width: 100%;">
-                </div>
-                <div class="col-sm-6">
-                    <h2>{{$jugador->nombre}}</h2>
-                    <h6>Fecha de Nacimiento: {{$jugador->fechaNac}}</h6>
-                    <h7>Doc. Identidad: {{$jugador->documento_identidad}}</h7>
-                    <br>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            {{ $jugador->equipo->nombre}}
-                        </div>
-                        <div class="col-sm-5">
-                            {{ $jugador->institucione->nombre}}
-                            <br>
-                            <img src="{{ asset($jugador->institucione->escudo) }}" alt="" class="img-responsive" style="width: 100%;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="{{action("JugadorController@index")}}" class="btn btn-primary">Volver </a>
-        </div>
+    <div class="offset-sm-2 col-sm-8">
+        <h3>Información de Jugador</h3>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <td rowspan="5"><img src="{{ asset($jugador->foto) }}" alt="" class="img-responsive" style="max-height: 20em; max-width: 20em;"></td>
+                <td colspan="2"><h4>Nombre : {{$jugador->nombre}}</h4></td>
+            </tr>
+            <tr>
+                <td colspan="3"><h4>Fecha de Nacimiento: {{$jugador->fechaNac}}</h4></>
+            </tr>
+            <tr>
+                <td colspan="3"><h4>Doc. Identidad: {{$jugador->documento_identidad}}</h4></td>
+            </tr>
+            <tr>
+                <td colspan="3"><h4>Equipo: {{ $jugador->equipo->nombre}}</h4></td>
+            </tr>
+            <tr>
+                <td><h4>Institucione: {{ $jugador->institucione->nombre}}</h4></td>
+                <td><img src="{{ asset($jugador->institucione->escudo) }}" alt="" class="img-responsive" style="width: 100%;"></td>
+            </tr>
+        </table>
+        <a class="btn btn-success" href="{{action("JugadorController@index")}}">Volver</a>
     </div>
 @endsection

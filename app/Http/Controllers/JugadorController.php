@@ -94,7 +94,6 @@ class JugadorController extends Controller
         $jugador->equipos_id = $idE;
         $jugador->numero=$dorsal;
         $jugador->genero = $genero;
-        $jugador->activo = true;
 
 
         $ruta = "jugadores";

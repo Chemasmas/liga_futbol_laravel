@@ -5,17 +5,25 @@
 @section('rol',"")
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <h3>Información</h3>
-            <div class="offset-sm-3 col-sm-6">
-                <h3> Nombre del Equipo: {{ $equipo->nombre }} </h3>
-                <h3> Institución: {{ $equipo->institucione->nombre }} </h3>
-                <h3> Género: {{ $equipo->genero }} </h3>
-                <h3> Nombre del Coach: {{ $equipo->nombreCoach }} </h3>
-                <h3> Nombre del Asistente: {{ $equipo->nombreCoachAsistente }} </h3>
-            </div>
+            <div class="offset-sm-2 col-sm-8">
+            <h3>Información del Equipo</h3>
+            <table class="table table-hover table-bordered">
+                    <tr>
+                    <td><h4> Nombre: {{ $equipo->nombre }} </h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4> Institución: {{ $equipo->institucione->nombre }} </h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4> Género: {{ $equipo->genero }} </h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4> Nombre del Coach: {{ $equipo->nombreCoach }} </h4></td>
+                    </tr>
+                    <tr>
+                        <td><h4> Nombre del Asistente: {{ $equipo->nombreCoachAsistente }} </h4></td>
+                    </tr>
+            </table>
+            <a class="btn btn-success" href="{{action("EquipoController@index")}}">Volver</a>
         </div>
-    </div>
-
 @endsection
