@@ -5,26 +5,21 @@
 @section('rol',"")
 
 @section('content')
+    <div class="offset-sm-2 col-sm-8">
+        <h3>Información de Jugador</h3>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <td rowspan="5"><img src="{{ asset($arbitro->foto) }}" alt="" class="img-responsive" style="width: 100%;"></td>
+                <td colspan="2"><h4>Nombre : {{$arbitro->nombre}}</h4></td>
+            </tr>
+            <tr>
+                <td colspan="3"><h4>Teléfono : {{$arbitro->telefono}}</h4></>
+            </tr>
+            <tr>
+                <td colspan="3"><h4>Nombre de Usuario : {{$arbitro->usuario->username}}</h4></td>
+            </tr>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Arbitro</h1>
-            <div class="row">
-                <div class="col-sm-offset-1 col-sm-4">
-                    <img src="{{asset("$arbitro->foto")}}" alt="" class="img-responsive" style="width: 100%">
-                </div>
-                <div class="col-sm-4">
-                    <h4>Nombre:</h4>
-                    <h5>{{$arbitro->nombre}}</h5>
-                    <h4>Telefono</h4>
-                    <h5>{{$arbitro->telefono}}</h5>
-                    <h4>Nombre de Usuario</h4>
-                    <h5>{{$arbitro->usuario->username}}</h5>
-                </div>
-            </div>
-            <br>
-            <br>
-            <a href="{{action('ArbitroController@index')}}" class="btn btn-primary">Volver</a>
-        </div>
+        </table>
+        <a class="btn btn-success btn btn-primary" href="{{action("ArbitroController@index")}}">Volver</a>
     </div>
 @endsection

@@ -9,8 +9,9 @@
 
     <div class="row">
         <div class="col-sm-5">
-            <h3>Torneo : {{ $torneo->nombre }} </h3>
-            <h4>Plantilla : {{ $torneo->tipo_torneo }} </h4>
+            <h3>Información de Torneo</h3>
+            <h4>Nombre : {{ $torneo->nombre }} </h4>
+            <h4>Número de plantilla : {{ $torneo->tipo_torneo }} </h4>
             <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"  @if($torneo->generado) {{'disabled'}} @endif>Generar</button>
             <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>

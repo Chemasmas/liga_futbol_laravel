@@ -51,7 +51,7 @@ Route::post('/admin/equipo/store',['middleware' => 'auth', 'uses' => "EquipoCont
 Route::get('/admin/equipo/{id}',['middleware' => 'auth', 'uses' => "EquipoController@show"]);
 Route::get('/admin/equipo/{id}/edit',['middleware' => 'auth', 'uses' => "EquipoController@edit"]);
 Route::post("/admin/equipo/{id}/update",['middleware' => 'auth', 'uses' => "EquipoController@update"]);
-Route::get( "/admin/equipo/{idE}/participantes",['middleware' => 'auth', 'uses' => "EquipoController@participantes"]);
+Route::get("/admin/equipo/{idE}/participantes",['middleware' => 'auth', 'uses' => "EquipoController@participantes"]);
 Route::get("/admin/equipo/{idE}/add/{idJ}",['middleware' => 'auth', 'uses' => "EquipoController@add_participante"]);
 Route::get("/admin/equipo/remove/{idJ}",['middleware' => 'auth', 'uses' => "EquipoController@remove_participante"]);
 Route::get('/admin/equipo/{idE}/activate',['middleware' => 'auth', 'uses' => "EquipoController@activate"]);
@@ -109,13 +109,13 @@ Route::get('/admin/programador/{idP}/deactivate',['middleware' => 'auth', 'uses'
 Route::get('/admin/directorioP',['middleware' => 'auth', 'uses' => "DirectorioController@programador"]);
 Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioController@arbitro"]);
 
-Route::get('/admin/verJugador/{idJ}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
+Route::get('/admin/verJugador/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 Route::get('/admin/verProgramador/programacion',['middleware' => 'auth', 'uses' => "ProgramadorController@programacion"]);
-Route::get('/admin/verProgramador/{idP}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
+//Route::get('/admin/verProgramador/{idP}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 Route::get('/admin/verArbitro/partidos',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
-Route::get('/admin/verArbitro/{idA}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
+Route::get('/admin/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 
 //Web Muplica
