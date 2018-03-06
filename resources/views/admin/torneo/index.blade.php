@@ -50,10 +50,6 @@
                             <a class="btn btn-info" data-toggle="tooltip" title="XLS" href='{{ action("TorneoController@jornadasXLS",["idT"=>$torneo->id])}}'>
                                 XLS
                             </a>
-                        @else
-                            <a class="btn btn-info" data-toggle="tooltip" title="Generar Rotacion" href='{{ action("TorneoController@generarRotacion",["idT"=>$torneo->id])}}'>
-                                Generar Rotacion
-                            </a>
                         @endif
                         @if($torneo->activo)
                             <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Torneo" href='{{ action("TorneoController@deactivate",["idT"=>$torneo->id])}}'>
