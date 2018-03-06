@@ -16,7 +16,6 @@
                             Jornada {{$j}}
                         </a>
                         <div class="collapse col-sm-12" id="{{'tabla'.$j}}">
-                            
                             {{$partidos}}
                         </div>
                     </div>

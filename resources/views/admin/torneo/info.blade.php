@@ -9,21 +9,10 @@
 
     <div class="row">
         <div class="col-sm-5">
-            <h3>Torneo : {{ $torneo->nombre }} </h3>
-            <h4>Plantilla : {{ $torneo->tipo_torneo }} </h4>
-            <div class="btn-group" role="group" aria-label="...">
-
-                <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
-                <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
-                    Jornadas
-                </a>
-                <a class="btn btn-primary" href="{{action("TorneoController@jornadasXLS",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
-                    <i class="fa fa-table" aria-hidden="true"></i>
-                </a>
-                <a class="btn btn-primary" href="{{action("TorneoController@jornadasPDF",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
-                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-                </a>
-            </div>
+            <h3>Información de Torneo</h3>
+            <h4>Nombre : {{ $torneo->nombre }} </h4>
+            <h4>Número de plantilla : {{ $torneo->tipo_torneo }} </h4>
+            <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
             <br><br>
             <div class="container">
                 <table class="table table-bordered col-md-4">
