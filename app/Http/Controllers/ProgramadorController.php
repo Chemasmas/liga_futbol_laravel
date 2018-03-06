@@ -199,7 +199,7 @@ class ProgramadorController extends Controller
         $partidos = [];
         switch ($user->level){
             case 1: //ES Admin
-                $partidos = partidos::where("Torneo_id",$idT)->groupBy("jornada")->get();
+                $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
                 break;
             case 2: //Es Programadore
                 $programador = $user->programadores[0];
