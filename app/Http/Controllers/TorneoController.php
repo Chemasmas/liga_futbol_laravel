@@ -161,7 +161,7 @@ class TorneoController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 
@@ -197,7 +197,7 @@ class TorneoController extends Controller
             "participantes"=>$participantesE,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Equipo" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/equipo"],
+                "Equipo" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/torneo"],
                 "crear" => ["etiqueta" => "AgregarEquipos", "active" => "0", "link" => ""]
             ]
         ]);
@@ -263,9 +263,9 @@ class TorneoController extends Controller
         //$plantilla->plantilla5();
 
         return redirect()
-            ->action("TorneoController@show",["idT"=>$idT])
+            ->action("TorneoController@participantes",["idT"=>$idT])
             ->with([
-                ["message"=>["clase"=>"warning","mensaje"=>"Equipo Eliminado"]]
+                ["message"=>["clase"=>"success","mensaje"=>"Rol Generado"]]
             ]);
     }
 
@@ -273,9 +273,14 @@ class TorneoController extends Controller
         $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
 
         return view("admin.torneo.jornadas",[
-            "rutas" => [],
            "idT" => $idT,
            "partidos"=>$partidos,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Lista" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/torneo"],
+                "agregarE" => ["etiqueta" => "AgregarEquipos", "active" => "1", "link" => "/admin/torneo/".$idT."/participantes"],
+                "jornada" => ["etiqueta" => "Jornadas", "active" => "0", "link" => ""]
+            ]
         ]);
     }
 

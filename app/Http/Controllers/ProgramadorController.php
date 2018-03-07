@@ -261,8 +261,26 @@ class ProgramadorController extends Controller
                 ]);
                 break;
             case 3: //Arbitro
+                $arbitro = $user->arbitros[0];
+                debug($arbitro);
+                return view("admin.arbitro.detail",[
+                    "arbitro" => $arbitro,
+                    "rutas" => [
+                        "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                        "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+                    ]
+                ]);
                 break;
             case 4: // Jugdor
+                $jugador = $user->jugadores[0];
+                debug($jugador);
+                return view("admin.jugador.detail",[
+                    "jugador" => $jugador,
+                    "rutas" => [
+                        "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                        "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+                    ]
+                ]);
                 break;
         }
 

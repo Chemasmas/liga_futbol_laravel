@@ -16,7 +16,7 @@
                 <thead>
                     <tr >
                         <th>Nombre</th>
-                        <th>Plantila</th>
+                        <th>Plantilla</th>
                         <th>Género</th>
                         <th>Acciones</th>
                     </tr>

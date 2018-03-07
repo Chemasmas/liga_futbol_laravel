@@ -7,10 +7,7 @@
 
 @section('content')
 
-    <div class="row">
-        <a href="{{action("TorneoController@show",['id'=>$idT])}}" class="btn btn-success">Volver</a>
-    </div>
-    <br>
+
     <div class="row">
         <div class="col-sm-8">
             @foreach($partidos as $j => $jornada)

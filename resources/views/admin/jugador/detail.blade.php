@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Jugador')
+@section('titulo','Ver Jugador')
 
 @section('rol',"")
 
@@ -26,6 +26,5 @@
                 <td><img src="{{ asset($jugador->institucione->escudo) }}" alt="" class="img-responsive" style="width: 100%;"></td>
             </tr>
         </table>
-        <a class="btn btn-success" href="{{action("JugadorController@index")}}">Volver</a>
     </div>
 @endsection
