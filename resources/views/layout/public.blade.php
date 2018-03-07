@@ -105,7 +105,7 @@
 
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.blade.php"><img src="images/LOGo final.png" alt="" width="250"></a>
+                        <a href="index.blade.php"><img src="images/LOGo final full.png" alt="" width="250"></a>
                     </div>
                     <!-- Logo -->
 
