@@ -95,7 +95,7 @@
                         <li>
                             <a class="nav-link" href="{{action('InstitucionController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
-                                <span class="nav-link-text">Lista</span>
+                                <span class="nav-link-text">Histórico</span>
                             </a>
                         </li>
                         <li>

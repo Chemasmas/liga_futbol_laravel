@@ -31,7 +31,11 @@
                         {{ $torneo->tipo_torneo }}
                     </td>
                     <td>
-                        {{ $torneo->genero }}
+                        @if($torneo->genero=='M')
+                            Varonil
+                            @else
+                            Femenil
+                        @endif
                     </td>
                     <td>
                         <a class="btn btn-info" data-toggle="tooltip" title="Ver Torneo" href="{{action("TorneoController@show",["id"=>$torneo->id])}}">
