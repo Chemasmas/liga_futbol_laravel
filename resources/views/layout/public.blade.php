@@ -135,7 +135,7 @@
                             </ul>
                         </li>
                         <li class="mega-dropdown">
-                            <a href="regulation.html">reglamento</a>
+                            <a href="/regulation">reglamento</a>
 
                             <ul>
                                 <li class="row">
@@ -146,6 +146,7 @@
                                                 <li><a href="docs/competitionregulation.pdf">reglamento de competencia</a></li>
                                                 <li><a href="docs/technicalannex.pdf">Anexo Tecnico</a></li>
                                                 <li><a href="docs/formatsanddocuments.pdf">categorias y formatos</a></li>
+                                                <li><a href="docs/calls.pdf">Nuestra Convocatoria</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -210,6 +211,24 @@
                                             </div>
                                             <!-- Post Img -->
 
+                                            <div class="item">
+
+                                                <!-- Post Img -->
+                                                <div class="large-post-img">
+                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                </div>
+                                                <!-- Post Img -->
+
+                                                <!-- Post Detail -->
+                                                <div class="large-post-detail style-3 p-0">
+                                                    <span class="red-color"></span><a href="docs/calls.pdf" download="calls">DESCARGAR</a>
+                                                    <h2>Nuestras </h2>
+                                                    <h2>Convocatorias</h2>
+                                                </div>
+                                                <!-- Post Detail -->
+
+                                            </div>
+
                                             <!-- Post Img -->
                                             <div class="item">
 
@@ -268,10 +287,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">estadisticas</a>
+                            <a href="/statistics">estadisticas</a>
                             <ul>
-                                <li><a href="#">Femenil</a></li>
-                                <li><a href="#">varonil</a></li>
+                                <li><a href="/next_match">Femenil</a></li>
+                                <li><a href="/next_match">varonil</a></li>
                             </ul>
                         </li>
                         <li><a href="/contact">contacto</a></li>

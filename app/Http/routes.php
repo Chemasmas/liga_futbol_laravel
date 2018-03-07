@@ -133,6 +133,10 @@ Route::get('/directory',"HomeController@directory");
 Route::get('/institutions',"HomeController@institutions");
 Route::get('/contact',"HomeController@contact");
 Route::get('/programers',"HomeController@programers");
+Route::get('/gallery',"HomeController@gallery");
+Route::get('/next_match',"HomeController@nextMatch");
+Route::get('/regulation',"HomeController@regulation");
+Route::get('/statistics',"HomeController@statistics");
 
 
 
