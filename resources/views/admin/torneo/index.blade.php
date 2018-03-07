@@ -43,6 +43,14 @@
                         <a class="btn btn-info" data-toggle="tooltip" title="Agregar Equipos" href='{{ action("TorneoController@participantes",["idT"=>$torneo->id])}}'>
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         </a>
+                        @if($torneo->generado)
+                            <a class="btn btn-info" data-toggle="tooltip" title="Ver Jornadas" href='{{ action("TorneoController@jornadas",["idT"=>$torneo->id])}}'>
+                                Jornadas
+                            </a>
+                            <a class="btn btn-info" data-toggle="tooltip" title="XLS" href='{{ action("TorneoController@jornadasXLS",["idT"=>$torneo->id])}}'>
+                                XLS
+                            </a>
+                        @endif
                         @if($torneo->activo)
                             <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Torneo" href='{{ action("TorneoController@deactivate",["idT"=>$torneo->id])}}'>
                                 <i class="fa fa-times" aria-hidden="true"></i>
