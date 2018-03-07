@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\equipos;
 use App\participantes_torneo;
+use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class TorneoController extends Controller
 {
@@ -28,7 +32,7 @@ class TorneoController extends Controller
             "torneos"=>$torneosG,
             "rutas" => [
             "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-            "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+            "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -39,11 +43,11 @@ class TorneoController extends Controller
             ->sortBy("genero")
             ->sortByDesc( "id"  )
         ;
-        return view('admin.torneo.index',[
+        return view('admin.torneo.all',[
             "torneos"=>$torneosG,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+                "Torneo"=>["etiqueta"=>"Torneos-Historico", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -58,8 +62,8 @@ class TorneoController extends Controller
         return view('admin.torneo.crear',[
             "rutas" => [
             "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-            "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
-            "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+            "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
+            "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -101,18 +105,14 @@ class TorneoController extends Controller
     {
         $torneo = torneos::findOrFail($id);
 
-
-        debug($torneo);
-        debug($torneo->participantesTorneos()->get());
-
         //Todo , retrieve info form torneo
         return view('admin.torneo.info',[
             "torneo" => $torneo,
             "participantes" => $torneo->participantesTorneos()->get(),
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
-                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -131,8 +131,8 @@ class TorneoController extends Controller
             "torneo"=>$torneo,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
-                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -161,7 +161,7 @@ class TorneoController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 
@@ -194,7 +194,12 @@ class TorneoController extends Controller
         return view("admin.torneo.participantes",[
             "torneo"=>$torneo,
             "equipos"=>$equipos,
-            "participantes"=>$participantesE
+            "participantes"=>$participantesE,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Equipo" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/torneo"],
+                "crear" => ["etiqueta" => "AgregarEquipos", "active" => "0", "link" => ""]
+            ]
         ]);
     }
 
@@ -258,14 +263,53 @@ class TorneoController extends Controller
         //$plantilla->plantilla5();
 
         return redirect()
-            ->action("TorneoController@show",["idT"=>$idT])
+            ->action("TorneoController@participantes",["idT"=>$idT])
             ->with([
-                ["message"=>["clase"=>"warning","mensaje"=>"Equipo Eliminado"]]
+                ["message"=>["clase"=>"success","mensaje"=>"Rol Generado"]]
             ]);
     }
 
     public function jornadas($idT){
-        //Terminar
+        $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
+
+        return view("admin.torneo.jornadas",[
+           "idT" => $idT,
+           "partidos"=>$partidos,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Lista" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/torneo"],
+                "agregarE" => ["etiqueta" => "AgregarEquipos", "active" => "1", "link" => "/admin/torneo/".$idT."/participantes"],
+                "jornada" => ["etiqueta" => "Jornadas", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
+    public function jornadasXLS($idT){
+        $torneo = torneos::findOrFail($idT);
+        return Excel::create($torneo->nombre, function($excel) use ($idT) {
+
+
+            $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
+            $participantes = participantes_torneo::select("Equipos_id")->where("Torneo_id",$idT)->get();
+            $participantesE = equipos::whereIn("id",$participantes)->get();
+
+            $excel->sheet('Rol de Juegos', function($sheet) use ($idT,$partidos,$participantesE) {
+
+                $sheet->loadView('excel.base',["partidos"=>$partidos,"participantes"=>$participantesE] );
+
+            });
+
+        })->download('xls');
+    }
+
+
+    public function asignar_jornada(Request $request,$idP){
+        $partido = partidos::findOrFail($idP);
+        $partido->jornada = $request["jornada"];
+        $partido->save();
+
+        return redirect()->back();
     }
 
 }
+

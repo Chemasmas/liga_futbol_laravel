@@ -11,10 +11,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $Visitante
  * @property int $marcadorLocal
  * @property int $marcadorVisitante
- * @property string $horaDeJuego
+ * @property string $hora
+ * @property string $fecha
  * @property string $notas
  * @property string $campo
  * @property int $jornada
+ * @property int $status
+ * @property int $verifica
  * @property Equipo $equipol
  * @property Equipo $equipov
  * @property Torneo $torneo
@@ -27,7 +30,7 @@ class partidos extends Model
     /**
      * @var array
      */
-    protected $fillable = ['Local','Visitante','Torneo_id','marcadorLocal', 'marcadorVisitante', 'horaDeJuego', 'notas', 'campo','jornada'];
+    protected $fillable = ['Local','Visitante','Torneo_id','marcadorLocal', 'marcadorVisitante', 'hora', 'fecha' , 'notas', 'campo','jornada','status','verifica'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

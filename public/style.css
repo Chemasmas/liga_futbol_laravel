@@ -695,7 +695,15 @@ position: relative;}
 .team-column{ text-align: center; position: relative; border: 1px solid #e8e8e8; overflow: hidden;}
 .player-number{ height: 63px; width: 63px; text-align: center; line-height: 60px; font-size: 24px; position: absolute; color: #fff;
 left: 20px; top: 20px; border-radius: 100%; border: 1px solid #434144; font-weight: bold; background: rgba(32,32,32,0.7);}
-.team-detail{ text-align: left; position: absolute; padding: 20px 10px; bottom: -128px; left: 0; width: 100%; background: rgba(32,32,32,0.7);}
+.team-detail{
+	text-align: left;
+	position: absolute;
+	padding: 20px 10px;
+	bottom: -430px;
+	left: 1px;
+	width: 100%;
+	background: rgba(32,32,32,0.7);
+}
 .team-detail h5{ padding: 0 0 10px; margin: 0 0 10px; border-bottom: 1px solid rgba(255,255,255,0.2); position: relative; font-weight: 700;}
 .team-detail h5 a{ color: #fff;}
 .team-detail h5::before{ content: ""; position: absolute; width: 30px; border-bottom: 1px solid; bottom: -1px;}

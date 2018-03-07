@@ -19,10 +19,14 @@ class ArbitroController extends Controller
      */
     public function index()
     {
-        $arbitrosG =arbitros::all();
+        $arbitros =arbitros::all();
 
         return view('admin.arbitro.index',[
-            "arbitrosG"=>$arbitrosG,
+            "arbitros"=>$arbitros,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "crear"=>["etiqueta"=>"Arbitros-Lista", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -33,8 +37,12 @@ class ArbitroController extends Controller
      */
     public function create()
     {
-        return view("admin.arbitro.crear",[
-            "rutas"=>[],
+        return view('admin.arbitro.crear',[
+                "rutas" => [
+                    "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                    "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
+                    "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+                ]
         ]);
     }
 
@@ -76,9 +84,8 @@ class ArbitroController extends Controller
 
         $arbitro->save(['timestamps' => false]);
 
-
-        return redirect()->action("ArbitroController@create")->with(
-            ["Mensaje"=>["clase"=>"succes","mensaje"=>"Usuario Creado.!!"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 
@@ -90,7 +97,20 @@ class ArbitroController extends Controller
      */
     public function show($id)
     {
-        //
+        $arbitro = arbitros::findOrFail($id);
+        $usuario = $arbitro->usuario;
+
+        debug($arbitro);
+        debug($usuario);
+        return view("admin.arbitro.detail",[
+            "arbitro" => $arbitro,
+            "usuario" => $usuario,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -107,8 +127,8 @@ class ArbitroController extends Controller
             "arbitro"=>$arbitro,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Arbitro"=>["etiqueta"=>"Arbitro", "active"=>"1","link"=>"/admin/arbitro"],
-                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
+                "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -128,13 +148,21 @@ class ArbitroController extends Controller
 
         $arbitro->nombre = $request["nombre"];
         $arbitro->telefono = $request["telefono"];
-        $arbitro->foto = $request["foto"];
         $usuario = $arbitro->usuario;
         debug($usuario);
         $usuario->username = $request["usuario"];
 
-        debug($request["password"]);
-        debug(strlen($request["password"]));
+        $ruta = "arbitros";
+        $foto = $request->file('foto');
+        debug($foto);
+        if($foto!=null){
+            $request->file('foto')->move($ruta, $arbitro->nombre.".".$foto->getClientOriginalExtension());
+            $arbitro->foto = $ruta."/".$arbitro->nombre.".".$foto->getClientOriginalExtension();
+        }
+
+        if(strlen($request["password"])>6){
+            $usuario->password = Hash::make($request["password"]);
+        }
         $arbitro->update();
         $usuario->update();
 

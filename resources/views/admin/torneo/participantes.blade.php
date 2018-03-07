@@ -4,19 +4,26 @@
 
 @section('rol',"")
 
-<?php $rutas = [] ?>
-
 @section('content')
 
     <div class="row">
         <div class="col-sm-12">
             <h3>Participantes de {{$torneo->nombre}}</h3>
+            <div class="btn-group" role="group" aria-label="...">
+            <a class="btn btn-success" href="{{action("TorneoController@index")}}"> Volver </a>
+            <a class="btn btn-primary" href="{{action("TorneoController@generarRotacion",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
+                Generar Rol
+            </a>
+            <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if(!$torneo->generado) {{'disabled'}} @endif>
+                Jornadas
+            </a>
+            </div>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
                 </table>
             </div>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-4">
             <table class="table table-hover table-bordered">
                 @foreach ($participantes as $participante)
                     <tr>

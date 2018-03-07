@@ -27,6 +27,8 @@ class usuarios extends Model implements AuthenticatableContract,
     CanResetPasswordContract
 {
 
+    public $timestamps  = false;
+
     use Authenticatable, Authorizable, CanResetPassword;
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -45,7 +47,7 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function administradores()
     {
-        return $this->hasMany('App\Administradore', 'idUsr');
+        return $this->hasMany('App\administradores', 'idUsr');
     }
 
     /**
@@ -53,7 +55,7 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function arbitros()
     {
-        return $this->hasMany('App\Arbitro', 'idUsr');
+        return $this->hasMany('App\arbitros', 'idUsr');
     }
 
     /**
@@ -61,7 +63,7 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function jugadores()
     {
-        return $this->hasMany('App\Jugadore', 'idUsr');
+        return $this->hasMany('App\jugadores', 'idUsr');
     }
 
     /**
@@ -69,6 +71,6 @@ class usuarios extends Model implements AuthenticatableContract,
      */
     public function programadores()
     {
-        return $this->hasMany('App\Programadore', 'idUsr');
+        return $this->hasMany('App\programadores', 'idUsr');
     }
 }

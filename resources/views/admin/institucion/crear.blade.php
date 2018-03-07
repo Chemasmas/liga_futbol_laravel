@@ -4,12 +4,10 @@
 
 @section('rol','Admin')
 
-<?php $rutas = [] ?>
-
 @section('content')
 
     <div class="offset-sm-3 col-sm-6">
-        <form method="POST" action="{{!empty($institucion)?action('InstitucionController@update',["id"=>$institucion->id]):action('InstitucionController@store')}}" enctype="multipart/form-data">>
+        <form method="POST" action="{{!empty($institucion)?action('InstitucionController@update',["id"=>$institucion->id]):action('InstitucionController@store')}}" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre de la Institución</label>
@@ -27,7 +25,7 @@
                 <label for="usuario">Mapa</label>
                 <input type="text" name="mapa" class="form-control" placeholder="" value="{{!empty($institucion)?$institucion->mapa:''}}">
             </div>
-            <button type="submit" class="btn btn-success pull-right">Crear</button>
+            <button type="submit" class="btn btn-success pull-right"> {{!empty($institucion)?'Guardar Edición':'Crear'}}</button>
         </form>
     </div>
 

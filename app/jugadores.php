@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $numero
  * @property string $foto
  * @property string $genero
+ * @property boolean $activo
  * @property Institucione $institucione
  * @property Usuario $usuario
  * @property Equipo $equipo
@@ -22,10 +23,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class jugadores extends Model
 {
+
+    public $timestamps  = false;
+
     /**
      * @var array
      */
-    protected $fillable = ['equipos_id', 'nombre', 'fechaNac', 'documento_identidad', 'numero', 'foto', 'genero'];
+    protected $fillable = ['equipos_id', 'nombre', 'fechaNac', 'documento_identidad', 'numero', 'foto', 'genero','activo'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -41,7 +45,7 @@ class jugadores extends Model
      */
     public function usuario()
     {
-        return $this->belongsTo('App\Usuario', 'idUsr');
+        return $this->belongsTo('App\usuarios', 'idUsr');
     }
 
     /**
@@ -57,6 +61,6 @@ class jugadores extends Model
      */
     public function estadisticasJugadores()
     {
-        return $this->hasMany('App\EstadisticasJugador', 'idJugador');
+        return $this->hasMany('App\estadisticas_jugador', 'idJugador');
     }
 }

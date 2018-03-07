@@ -10,6 +10,7 @@
     <title>@yield('rol') | @yield('titulo')</title>
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -25,7 +26,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <ul class="navbar-nav navbar-sidenav" id="exampleAccordion" style="overflow: auto;">
             @if(auth()->user()["level"]<2)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Torneos">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseTorneos" data-parent="#exampleAccordion">
@@ -42,16 +43,14 @@
                         <li>
                             <a class="nav-link" href="{{action('TorneoController@all')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
-                                <span class="nav-link-text">Historico</span>
+                                <span class="nav-link-text">Histórico</span>
                             </a>
                         </li>
-                        <li>
                         <li>
                             <a class="nav-link" href="{{action('TorneoController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Crear</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -68,12 +67,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('EquipoController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('EquipoController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Crear</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -90,6 +93,11 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('InstitucionController@index')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('InstitucionController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
@@ -178,12 +186,10 @@
                             </a>
                         </li>
                         <li>
-                        <li>
                             <a class="nav-link" href="{{action('ProgramadorController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -199,28 +205,37 @@
                                 <span class="nav-link-text">Programadores</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="nav-link" href="{{action('DirectorioController@arbitro')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Árbitros</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             @endif
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Juegos">
-                <a class="nav-link" href="juegos.html">
+            @if(auth()->user()["level"]<3)
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Programacion">
+                    <a class="nav-link" href="{{action('ProgramadorController@programacion')}}">
+                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                        <span class="nav-link-text">Programación</span>
+                    </a>
+                </li>
+            @endif
+            @if(auth()->user()["level"]<3)
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Partidos">
+                <a class="nav-link" href="{{action('ProgramadorController@partidos')}}">
                     <i class="fa fa-list-ol"></i>
-                    <span class="nav-link-text">Juegos</span>
+                    <span class="nav-link-text">Partidos</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Equipos">
-                <a class="nav-link" href="equipos.html">
-                    <i class="fa fa-list-ol" aria-hidden="true"></i>
-                    <span class="nav-link-text">Equipos</span>
+            @endif
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
+                <a class="nav-link" href="{{action('ProgramadorController@perfil')}}">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span class="nav-link-text">Perfil</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Programacion">
-                <a class="nav-link" href="programacion.html">
-                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
-                    <span class="nav-link-text">Programación</span>
-                </a>
-            </li>
-
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
@@ -241,7 +256,7 @@
     </div>
 </nav>
 <div class="content-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-left: 30px;">
         <!-- Breadcrumbs-->
 
         <div class="row">
@@ -307,6 +322,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin.min.js') }}"></script>
     <script src ="{{asset('js/bootstrap-filestyle.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 </div>
 </body>
 

@@ -20,9 +20,27 @@ class InstitucionController extends Controller
     {
         $instituciones = instituciones::all();
         return view("admin.institucion.index",[
-            "instituciones" => $instituciones
+            "instituciones" => $instituciones,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Institucion"=>["etiqueta"=>"Instituciones-Lista", "active"=>"0","link"=>""]
+            ]
         ]);
     }
+
+    public function all()
+    {
+        $institucion = instituciones::whereNotIn("id", [1])->get();
+
+        return view('admin.institucion.all', [
+            "instituciones" => $institucion,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Institucion" => ["etiqueta" => "Instituciones-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -31,7 +49,13 @@ class InstitucionController extends Controller
      */
     public function create()
     {
-        return view("admin.institucion.crear");
+        return view("admin.institucion.crear",[
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Instituciones"=>["etiqueta"=>"Instituciones-Lista", "active"=>"1","link"=>"/admin/instituciones"],
+                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+            ]
+        ]);
     }
 
     /**
@@ -52,9 +76,11 @@ class InstitucionController extends Controller
         $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
         $imagen->move($ruta,$nvoNombre);
         $institucion->escudo = $ruta."/".$nvoNombre;
+        $institucion->activo = true;
         $institucion->save();
 
-        return redirect()->action("InstitucionController@create")->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
         );
     }
 
@@ -70,7 +96,12 @@ class InstitucionController extends Controller
         debug($id);
         debug($institucion);
         return view("admin.institucion.detail",[
-            "institucion"=>$institucion
+            "institucion"=>$institucion,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Instituciones"=>["etiqueta"=>"Instituciones-Lista", "active"=>"1","link"=>"/admin/instituciones"],
+                "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -86,7 +117,12 @@ class InstitucionController extends Controller
         debug($id);
         debug($institucion);
         return view("admin.institucion.crear",[
-            "institucion"=>$institucion
+            "institucion"=>$institucion,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Instituciones"=>["etiqueta"=>"Instituciones-Lista", "active"=>"1","link"=>"/admin/instituciones"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
         ]);
     }
 
@@ -117,7 +153,8 @@ class InstitucionController extends Controller
         }
         $institucion->save();
 
-        return redirect()->back()->with(["Mensaje"=>["clase"=>"succes","mensaje"=>"Inserceion Exitosa"]]
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
         );
     }
 
@@ -130,5 +167,25 @@ class InstitucionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function activate($id)
+    {
+        $institucion = instituciones::find($id);
+        $institucion->activo = true;
+        $institucion->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => $institucion->nombre . " Activado"]]
+        );
+    }
+
+    public function deactivate($id)
+    {
+        $institucion = instituciones::find($id);
+        $institucion->activo = false;
+        $institucion->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "warning", "mensaje" => $institucion->nombre . " desactivado"]]
+        );
     }
 }
