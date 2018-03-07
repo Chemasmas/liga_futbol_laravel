@@ -1,7 +1,7 @@
 
 @extends('layout.admin')
 
-@section('titulo','Torneos')
+@section('titulo','Ver Torneos')
 
 @section('rol',"")
 
@@ -18,7 +18,7 @@
                 <table class="table table-bordered col-md-4">
                     <thead>
                         <th>Equipo</th>
-                        <th>Institucion</th>
+                        <th>Institución</th>
                     </thead>
                     @forelse( $participantes as $participante )
                         <tr>
