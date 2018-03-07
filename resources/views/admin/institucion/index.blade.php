@@ -15,7 +15,6 @@
                         <thead>
                         <tr >
                             <th>Nombre</th>
-                            <th>Escudo</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
@@ -24,9 +23,6 @@
                         <tr>
                             <td>
                                 {{ $institucion->nombre }}
-                            </td>
-                            <td>
-                                {{ $institucion->escudo }}
                             </td>
                             <td>
                                 <a class="btn btn-info" data-toggle="tooltip" title="Ver Institucion" href="{{action("InstitucionController@show",["id"=>$institucion->id])}}">
