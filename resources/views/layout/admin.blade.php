@@ -93,9 +93,9 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{action('InstitucionController@all')}}">
+                            <a class="nav-link" href="{{action('InstitucionController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
-                                <span class="nav-link-text">Histórico</span>
+                                <span class="nav-link-text">Lista</span>
                             </a>
                         </li>
                         <li>
@@ -103,6 +103,7 @@
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Crear</span>
                             </a>
+                        </li>
                         </li>
                     </ul>
                 </li>
