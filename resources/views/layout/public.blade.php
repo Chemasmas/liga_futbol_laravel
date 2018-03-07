@@ -49,6 +49,7 @@
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
                                 <form action="{{action("AdminController@login")}}" method="POST">
+                                    {{csrf_field()}}
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
@@ -104,7 +105,7 @@
 
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.blade.php"><img src="images/LOGo final.png" alt="" width="250"></a>
+                        <a href="index.blade.php"><img src="images/LOGo final full.png" alt="" width="250"></a>
                     </div>
                     <!-- Logo -->
 
