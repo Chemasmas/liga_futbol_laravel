@@ -4,8 +4,6 @@
 
 @section('rol',"")
 
-<?php $rutas = [] ?>
-
 @section('content')
 
     <div class="row">
