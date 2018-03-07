@@ -45,6 +45,25 @@ class HomeController extends Controller
         ]);
     }
 
+    public function gallery(){
+        return view('publica.gallery',[
+        ]);
+    }
+
+    public function nextMatch(){
+        return view('publica.nextmatchs',[
+        ]);
+    }
+
+    public function regulation(){
+        return view('publica.regulation',[
+        ]);
+    }
+
+    public function statistics(){
+        return view('publica.statistics',[
+        ]);
+    }
 
 
     public function ejemplo()

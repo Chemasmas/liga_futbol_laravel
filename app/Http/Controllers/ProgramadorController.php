@@ -324,12 +324,13 @@ class ProgramadorController extends Controller
                 if($partido->hora = $hora && $partido->fecha == $fecha){ //Son iguales
                     debug("Acuerdo");
                     $partido->status = 2; //llegaron aun acuerdo
-                    $partido->verfica = null;
+                    $partido->verifica = null;
                 }else{
                     debug("No Acuerdo");
                     //No hay acuerdo , borro la propuesta
                     $partido->hora = null;
                     $partido->fecha = null;
+                    $partido->verifica = null;
                     $partido->status = 0;
                 }
             }else if($partido->status == 0) { // Nueva propuesta
@@ -337,7 +338,8 @@ class ProgramadorController extends Controller
                 $partido->hora = $hora;
                 $partido->fecha = $fecha;
                 $partido->status = 1; //Aceptado
-                $partido->verfica = Auth::user()->id;
+                $partido->verifica = Auth::user()->id;
+
             }
             else{
                 debug("NADA");
@@ -345,8 +347,9 @@ class ProgramadorController extends Controller
             }
 
         }
-        $partido->save();
         debug($partido);
+        $partido->save();
+
         return redirect()->back();  //Exito
     }
 
