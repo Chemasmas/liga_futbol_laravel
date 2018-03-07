@@ -30,7 +30,7 @@ class ProgramadorController extends Controller
             "programadores" => $programadores,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programadores", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Programadores-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -48,7 +48,7 @@ class ProgramadorController extends Controller
             "instituciones" => $instituciones,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
                 "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
             ]
         ]);
@@ -94,7 +94,7 @@ class ProgramadorController extends Controller
             "programador" => $programador,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
                 "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
@@ -116,7 +116,7 @@ class ProgramadorController extends Controller
             "programador" => $programador,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
                 "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);

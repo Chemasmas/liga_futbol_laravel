@@ -25,7 +25,7 @@ class ArbitroController extends Controller
             "arbitros"=>$arbitros,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Arbitro", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Arbitros-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -40,7 +40,7 @@ class ArbitroController extends Controller
         return view('admin.arbitro.crear',[
                 "rutas" => [
                     "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                    "Arbitro"=>["etiqueta"=>"Arbitro", "active"=>"1","link"=>"/admin/arbitro"],
+                    "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
                     "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
                 ]
         ]);
@@ -107,7 +107,7 @@ class ArbitroController extends Controller
             "usuario" => $usuario,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Arbitro"=>["etiqueta"=>"Arbitro", "active"=>"1","link"=>"/admin/arbitro"],
+                "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
                 "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
@@ -127,7 +127,7 @@ class ArbitroController extends Controller
             "arbitro"=>$arbitro,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Arbitro"=>["etiqueta"=>"Arbitro", "active"=>"1","link"=>"/admin/arbitro"],
+                "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
                 "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
