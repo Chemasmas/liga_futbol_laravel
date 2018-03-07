@@ -109,6 +109,10 @@ Route::get('/admin/programador/{idP}/activate',['middleware' => 'auth', 'uses' =
 Route::get('/admin/programador/{idP}/deactivate',['middleware' => 'auth', 'uses' => "ProgramadorController@deactivate"]);
 Route::get('/admin/programador/{idT}/rol',['middleware' => 'auth', 'uses' => "ProgramadorController@rol"]);
 
+Route::post('/admin/partido/{idP}/proponer',['middleware' => 'auth', 'uses' => "ProgramadorController@propuesta"]);
+Route::get('/admin/partido/{idP}/liberar',['middleware' => 'auth', 'uses' => "ProgramadorController@habilitar_edicion_partido"]);
+
+
 Route::get('/admin/directorioP',['middleware' => 'auth', 'uses' => "DirectorioController@programador"]);
 Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioController@arbitro"]);
 

@@ -68,7 +68,7 @@ class Plantillas
 
     function plantilla5(){
         //debug( count($this->participantes) );
-        debug( $this->participantes );
+        //debug( $this->participantes );
         //Debe generar 20 partidos
         $partidosT = [];
         $rotaciones = [
