@@ -32,7 +32,7 @@ class TorneoController extends Controller
             "torneos"=>$torneosG,
             "rutas" => [
             "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-            "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+            "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -43,11 +43,11 @@ class TorneoController extends Controller
             ->sortBy("genero")
             ->sortByDesc( "id"  )
         ;
-        return view('admin.torneo.index',[
+        return view('admin.torneo.all',[
             "torneos"=>$torneosG,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"0","link"=>""]
+                "Torneo"=>["etiqueta"=>"Torneos-Historico", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -62,7 +62,7 @@ class TorneoController extends Controller
         return view('admin.torneo.crear',[
             "rutas" => [
             "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-            "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
+            "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
             "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
             ]
         ]);
@@ -111,7 +111,7 @@ class TorneoController extends Controller
             "participantes" => $torneo->participantesTorneos()->get(),
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
                 "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
@@ -131,7 +131,7 @@ class TorneoController extends Controller
             "torneo"=>$torneo,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Torneo"=>["etiqueta"=>"Torneo", "active"=>"1","link"=>"/admin/torneo"],
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
                 "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
@@ -194,7 +194,12 @@ class TorneoController extends Controller
         return view("admin.torneo.participantes",[
             "torneo"=>$torneo,
             "equipos"=>$equipos,
-            "participantes"=>$participantesE
+            "participantes"=>$participantesE,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Equipo" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/equipo"],
+                "crear" => ["etiqueta" => "AgregarEquipos", "active" => "0", "link" => ""]
+            ]
         ]);
     }
 

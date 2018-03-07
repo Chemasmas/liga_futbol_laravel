@@ -62,6 +62,7 @@ Route::get('/admin/equipo/{idE}/deactivate',['middleware' => 'auth', 'uses' => "
 
 Route::get('/admin/instituciones',['middleware' => 'auth', 'uses' => "InstitucionController@index"]);
 Route::get('/admin/instituciones/crear',['middleware' => 'auth', 'uses' => "InstitucionController@create"]);
+Route::get('/admin/instituciones/historico',['middleware' => 'auth', 'uses' => "InstitucionController@all"]);
 Route::post('/admin/instituciones/store',['middleware' => 'auth', 'uses' => "InstitucionController@store"]);
 Route::get('/admin/instituciones/{id}',['middleware' => 'auth', 'uses' => "InstitucionController@show"]);
 Route::get('/admin/instituciones/{id}/edit',['middleware' => 'auth', 'uses' => "InstitucionController@edit"]);
@@ -108,6 +109,10 @@ Route::post( "/admin/programador/{id}/update",['middleware' => 'auth', 'uses' =>
 Route::get('/admin/programador/{idP}/activate',['middleware' => 'auth', 'uses' => "ProgramadorController@activate"]);
 Route::get('/admin/programador/{idP}/deactivate',['middleware' => 'auth', 'uses' => "ProgramadorController@deactivate"]);
 Route::get('/admin/programador/{idT}/rol',['middleware' => 'auth', 'uses' => "ProgramadorController@rol"]);
+
+Route::post('/admin/partido/{idP}/proponer',['middleware' => 'auth', 'uses' => "ProgramadorController@propuesta"]);
+Route::get('/admin/partido/{idP}/liberar',['middleware' => 'auth', 'uses' => "ProgramadorController@habilitar_edicion_partido"]);
+
 
 Route::get('/admin/directorioP',['middleware' => 'auth', 'uses' => "DirectorioController@programador"]);
 Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioController@arbitro"]);

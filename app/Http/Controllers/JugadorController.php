@@ -32,7 +32,7 @@ class JugadorController extends Controller
             "jugadores"=>$jugadores,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Jugador", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Jugadores-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -51,7 +51,7 @@ class JugadorController extends Controller
             "equipos" => $equipos,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "Jugador"=>["etiqueta"=>"Jugadores-Lista", "active"=>"1","link"=>"/admin/jugador"],
                 "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
             ]
         ]);
@@ -119,7 +119,7 @@ class JugadorController extends Controller
             "jugador" => jugadores::findOrFail($id),
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "Jugador"=>["etiqueta"=>"Jugadores-Lista", "active"=>"1","link"=>"/admin/jugador"],
                 "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
@@ -144,7 +144,7 @@ class JugadorController extends Controller
             "equipos" => $equipos,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "Jugador"=>["etiqueta"=>"Jugadores-Lista", "active"=>"1","link"=>"/admin/jugador"],
                 "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);

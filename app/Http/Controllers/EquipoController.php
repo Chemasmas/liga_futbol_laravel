@@ -25,7 +25,7 @@ class EquipoController extends Controller
             "equipos" => $equiposG,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Equipo" => ["etiqueta" => "Equipo", "active" => "0", "link" => ""]
+                "Equipo" => ["etiqueta" => "Equipos-Lista", "active" => "0", "link" => ""]
             ]
         ]);
 
@@ -35,11 +35,11 @@ class EquipoController extends Controller
     {
         $equiposG = equipos::whereNotIn("id", [1])->get();
 
-        return view('admin.equipo.index', [
+        return view('admin.equipo.all', [
             "equipos" => $equiposG,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Equipo" => ["etiqueta" => "Equipo", "active" => "0", "link" => ""]
+                "Equipo" => ["etiqueta" => "Equipos-Historico", "active" => "0", "link" => ""]
             ]
         ]);
     }
@@ -56,7 +56,7 @@ class EquipoController extends Controller
             "instituciones" => $instituciones,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Equipo" => ["etiqueta" => "Equipo", "active" => "1", "link" => "/admin/equipo"],
+                "Equipo" => ["etiqueta" => "Equipos-Lista", "active" => "1", "link" => "/admin/equipo"],
                 "crear" => ["etiqueta" => "Crear", "active" => "0", "link" => ""]
             ]
         ]);
@@ -120,7 +120,7 @@ class EquipoController extends Controller
             "equipo" => $equipo,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Equipo" => ["etiqueta" => "Equipo", "active" => "1", "link" => "/admin/equipo"],
+                "Equipo" => ["etiqueta" => "Equipos-Lista", "active" => "1", "link" => "/admin/equipo"],
                 "crear" => ["etiqueta" => "Ver", "active" => "0", "link" => ""]
             ]
         ]);
@@ -142,7 +142,7 @@ class EquipoController extends Controller
             "instituciones" => $institucione,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Equipo" => ["etiqueta" => "Equipo", "active" => "1", "link" => "/admin/equipo"],
+                "Equipo" => ["etiqueta" => "Equipos-Lista", "active" => "1", "link" => "/admin/equipo"],
                 "crear" => ["etiqueta" => "Editar", "active" => "0", "link" => ""]
             ]
         ]);
@@ -231,7 +231,7 @@ class EquipoController extends Controller
             "prospectos" => $prospectos,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Equipo" => ["etiqueta" => "Equipo", "active" => "1", "link" => "/admin/equipo"],
+                "Equipo" => ["etiqueta" => "Equipos-Lista", "active" => "1", "link" => "/admin/equipo"],
                 "crear" => ["etiqueta" => "AgregarJugadores", "active" => "0", "link" => ""]
             ]
         ]);

@@ -30,7 +30,7 @@ class ProgramadorController extends Controller
             "programadores" => $programadores,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programadores", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Programadores-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -48,7 +48,7 @@ class ProgramadorController extends Controller
             "instituciones" => $instituciones,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
                 "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
             ]
         ]);
@@ -94,7 +94,7 @@ class ProgramadorController extends Controller
             "programador" => $programador,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
                 "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
@@ -116,7 +116,7 @@ class ProgramadorController extends Controller
             "programador" => $programador,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Programador"=>["etiqueta"=>"Programador", "active"=>"1","link"=>"/admin/programador"],
+                "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
                 "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
@@ -267,4 +267,81 @@ class ProgramadorController extends Controller
         }
 
     }
+
+    public function propuesta(Request $request,$idP){
+
+        debug("Propuesta");
+
+        $partido = partidos::findOrFail($idP);
+        debug($partido);
+        debug($partido->status == 2);
+
+        if( $partido->status == 2 && Auth::user()->level > 1 ) // Ya asignada y no eres admin
+            return redirect()->back();
+
+            $hora = $request["hora"];
+
+            $fecha = $request["fecha"];
+
+        debug($request["fecha"]);
+        debug($request["hora"]);
+        debug(Auth::user()->level);
+        debug(Auth::user()->level<2);
+
+        if( Auth::user()->level < 2 ) // es admin
+        {
+            debug("Admin");
+            $partido->hora = $hora;
+            $partido->fecha = $fecha;
+            $partido->status = 2; //Aceptado
+        }else{
+            debug("Programador");
+            //Es un Programador
+            if($partido->status == 1) //propuesta
+            {
+                if(Auth::user()->id==$partido->verifica){
+                    return redirect()->back();  //No debe de enviarlo dos veces
+                }
+                debug("Propuesta");
+                if($partido->hora = $hora && $partido->fecha == $fecha){ //Son iguales
+                    debug("Acuerdo");
+                    $partido->status = 2; //llegaron aun acuerdo
+                    $partido->verfica = null;
+                }else{
+                    debug("No Acuerdo");
+                    //No hay acuerdo , borro la propuesta
+                    $partido->hora = null;
+                    $partido->fecha = null;
+                    $partido->status = 0;
+                }
+            }else if($partido->status == 0) { // Nueva propuesta
+                debug("Nueva Propuesta");
+                $partido->hora = $hora;
+                $partido->fecha = $fecha;
+                $partido->status = 1; //Aceptado
+                $partido->verfica = Auth::user()->id;
+            }
+            else{
+                debug("NADA");
+                return redirect()->back();  //Ya no se puede modificar
+            }
+
+        }
+        $partido->save();
+        debug($partido);
+        return redirect()->back();  //Exito
+    }
+
+
+    public function habilitar_edicion_partido($idP){
+        $partido = partidos::findOrFail($idP);
+        if(Auth::user()->level > 1){
+            return redirect()->back(); //No debes de editarlo
+        }
+        $partido->status = 1;
+        $partido->save();
+        return redirect()->back(); //No debes de editarlo
+
+    }
 }
+
