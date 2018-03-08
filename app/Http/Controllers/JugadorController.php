@@ -103,7 +103,7 @@ class JugadorController extends Controller
         $jugador->save( ['timestamps' => false]);
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Jugador Creado"]]
         );
     }
 

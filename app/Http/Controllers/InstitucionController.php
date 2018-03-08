@@ -18,7 +18,7 @@ class InstitucionController extends Controller
      */
     public function index()
     {
-        $instituciones = instituciones::all();
+        $instituciones = instituciones::whereNotIn("id", [1])->where("activo",1)->get();
         return view("admin.institucion.index",[
             "instituciones" => $instituciones,
             "rutas" => [
@@ -30,10 +30,10 @@ class InstitucionController extends Controller
 
     public function all()
     {
-        $institucion = instituciones::whereNotIn("id", [1])->get();
+        $instituciones = instituciones::whereNotIn("id", [1])->get();
 
         return view('admin.institucion.all', [
-            "instituciones" => $institucion,
+            "instituciones" => $instituciones,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
                 "Institucion" => ["etiqueta" => "Instituciones-Historico", "active" => "0", "link" => ""]
@@ -80,7 +80,7 @@ class InstitucionController extends Controller
         $institucion->save();
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Institución Creada"]]
         );
     }
 
@@ -154,7 +154,7 @@ class InstitucionController extends Controller
         $institucion->save();
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 

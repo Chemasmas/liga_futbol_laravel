@@ -120,9 +120,8 @@ Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioCo
 Route::get('/admin/verJugador/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 Route::get('/admin/verProgramador/programacion',['middleware' => 'auth', 'uses' => "ProgramadorController@programacion"]);
-//Route::get('/admin/verProgramador/{idP}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
-Route::get('/admin/verArbitro/partidos',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
+Route::get('/admin/verArbitro/partidosP',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
 Route::get('/admin/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 

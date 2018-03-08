@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{action('InstitucionController@index')}}">
+                            <a class="nav-link" href="{{action('InstitucionController@all')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Histórico</span>
                             </a>

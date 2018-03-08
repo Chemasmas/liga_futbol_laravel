@@ -7,7 +7,7 @@
 @section('content')
         <div class="row">
         <div class="col-sm-12">
-            <h3>Lista de Arbitros</h3>
+            <h3>Lista de Árbitros</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
                     @if(count($arbitros)>0)
@@ -44,7 +44,7 @@
                     @empty
                         <tr>
                             <th>
-                                No hay Usuario Arbitro <a class="btn btn-primary" href="{{action('ArbitroController@create')}}">Agregar uno.</a>
+                                No hay Usuario Árbitro <a class="btn btn-primary" href="{{action('ArbitroController@create')}}">Agregar uno.</a>
                             </th>
                         </tr>
                     @endforelse

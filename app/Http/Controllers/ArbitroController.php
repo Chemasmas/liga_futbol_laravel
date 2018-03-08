@@ -41,7 +41,7 @@ class ArbitroController extends Controller
                 "rutas" => [
                     "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                     "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
-                    "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+                    "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
                 ]
         ]);
     }
@@ -85,7 +85,7 @@ class ArbitroController extends Controller
         $arbitro->save(['timestamps' => false]);
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Árbitro Creado"]]
         );
     }
 
@@ -170,7 +170,7 @@ class ArbitroController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 

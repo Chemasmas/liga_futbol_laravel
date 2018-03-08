@@ -43,7 +43,7 @@ class AdministradorController extends Controller
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Administrador"=>["etiqueta"=>"Administradores-Lista", "active"=>"1","link"=>"/admin/administrador"],
-                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -85,7 +85,7 @@ class AdministradorController extends Controller
         $administrador->save(['timestamps' => false]);
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Administrador Creado"]]
         );
     }
 
@@ -165,7 +165,7 @@ class AdministradorController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 

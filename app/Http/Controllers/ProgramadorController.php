@@ -49,7 +49,7 @@ class ProgramadorController extends Controller
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
-                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -78,7 +78,9 @@ class ProgramadorController extends Controller
         $programador->idInst = $request["id_institucion"];
 
         $programador->save();
-        return redirect()->back();
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Árbitro Creado"]]
+        );
     }
 
     /**
@@ -147,7 +149,9 @@ class ProgramadorController extends Controller
 
         $usuario->save();
         $programador->save();
-        return redirect()->back();
+                return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => "Actualización Exitosa"]]
+        );
     }
 
     /**
@@ -187,7 +191,7 @@ class ProgramadorController extends Controller
         return view("admin.verProgramador.programacion",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Programación-Lista", "active"=>"0","link"=>""]
             ],
             "torneos" => $torneos,
         ]);
@@ -216,12 +220,14 @@ class ProgramadorController extends Controller
         debug($user->level);
         debug($partidos);
 
-        return view("admin.verProgramador.partidos",[
+        return view("admin.verProgramador.partidosP",[
+            "partidosG" => $partidos,
+
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
-            ],
-            "partidosG" => $partidos,
+                "agregarE" => ["etiqueta" => "Programación-Lista", "active" => "1", "link" => "/admin/verProgramador/programacion"],
+                "jornada" => ["etiqueta" => "Jornadas", "active" => "0", "link" => ""]
+            ]
         ]);
 
     }

@@ -48,7 +48,7 @@
                     @empty
                         <tr>
                             <th>
-                                No hay Usuario Admin <a class="btn btn-primary" href="{{action('JugadorController@create')}}">Agregar uno.</a>
+                                No hay Usuario Jugador <a class="btn btn-primary" href="{{action('JugadorController@create')}}">Agregar uno.</a>
                             </th>
                         </tr>
                     @endforelse
