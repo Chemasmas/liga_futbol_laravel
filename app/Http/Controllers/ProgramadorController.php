@@ -252,7 +252,7 @@ class ProgramadorController extends Controller
             case 2: //Programador
                 $programador = $user->programadores[0];
                 debug($programador);
-                return view("admin.verProgramador.perfilP",[
+                return view("admin.programador.detail",[
                     "programador" => $programador,
                     "rutas" => [
                         "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
@@ -261,8 +261,26 @@ class ProgramadorController extends Controller
                 ]);
                 break;
             case 3: //Arbitro
+                $arbitro = $user->arbitros[0];
+                debug($arbitro);
+                return view("admin.arbitro.detail",[
+                    "arbitro" => $arbitro,
+                    "rutas" => [
+                        "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                        "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+                    ]
+                ]);
                 break;
             case 4: // Jugdor
+                $jugador = $user->jugadores[0];
+                debug($jugador);
+                return view("admin.jugador.detail",[
+                    "jugador" => $jugador,
+                    "rutas" => [
+                        "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                        "crear"=>["etiqueta"=>"Pefil", "active"=>"0","link"=>""]
+                    ]
+                ]);
                 break;
         }
 
@@ -306,12 +324,13 @@ class ProgramadorController extends Controller
                 if($partido->hora = $hora && $partido->fecha == $fecha){ //Son iguales
                     debug("Acuerdo");
                     $partido->status = 2; //llegaron aun acuerdo
-                    $partido->verfica = null;
+                    $partido->verifica = null;
                 }else{
                     debug("No Acuerdo");
                     //No hay acuerdo , borro la propuesta
                     $partido->hora = null;
                     $partido->fecha = null;
+                    $partido->verifica = null;
                     $partido->status = 0;
                 }
             }else if($partido->status == 0) { // Nueva propuesta
@@ -319,7 +338,8 @@ class ProgramadorController extends Controller
                 $partido->hora = $hora;
                 $partido->fecha = $fecha;
                 $partido->status = 1; //Aceptado
-                $partido->verfica = Auth::user()->id;
+                $partido->verifica = Auth::user()->id;
+
             }
             else{
                 debug("NADA");
@@ -327,8 +347,9 @@ class ProgramadorController extends Controller
             }
 
         }
-        $partido->save();
         debug($partido);
+        $partido->save();
+
         return redirect()->back();  //Exito
     }
 
