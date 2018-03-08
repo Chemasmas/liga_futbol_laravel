@@ -935,10 +935,11 @@ class Plantillas
 
 
     private function getID($offset){
+        $offset = $offset-1;
         if(isset($this->participantes[$offset])){
             return $this->participantes[$offset]->Equipos_id;
         }
-            return 1;
+        return 1;
     }
 
     private function generarPartido($idEL,$idEV,$jornada){
