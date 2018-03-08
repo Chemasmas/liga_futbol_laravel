@@ -28,7 +28,7 @@
 		<div class="theme-padding white-bg">
 			<div class="container">
 			
-				<!-- Main Heading -->
+				<!-- Main Heading -->55
 				<div class="main-heading-holder">
 					<div class="main-heading">
 						<h2>contactanos</h2>
@@ -44,7 +44,7 @@
 							<span class="address-icon"><i class="fa fa-phone"></i></span>
 							<h5>nuestros numeros</h5>
 							<p>5539441545<span class="red-color">Oficinas</span></p>
-							<p>5523738571<span class="red-color">Extenciones</span></p>
+							<p>5585712373<span class="red-color">Extenciones</span></p>
 							<p>  </p>
 						</div>
 					</li>

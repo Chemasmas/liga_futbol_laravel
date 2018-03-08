@@ -325,7 +325,7 @@
                                 <ul class="address-list style-2">
                                     <li><span>Direccion:</span>Calle granjas No.45 Col. Palo Alto, Cuajimalpa C.P. 05110</li>
                                     <li><span>Telefono:</span>5539441545</li>
-                                    <li><span>Telefono:</span>5523738571</li>
+                                    <li><span>Telefono:</span>5585712373</li>
                                     <li><span>E-mail:</span>info@ligaponiente.com</li>
                                 </ul>
                             </div>
