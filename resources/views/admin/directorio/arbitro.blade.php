@@ -7,7 +7,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <h3>Directorio Arbitros</h3>
+            <h3>Directorio Árbitros</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
                         <thead>

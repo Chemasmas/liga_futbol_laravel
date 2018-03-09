@@ -24,12 +24,6 @@
                                 {{ $arbitro->nombre }}
                             </td>
                             <td>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Ver Árbitro" href="{{action("ArbitroController@show",["id"=>$arbitro->id])}}">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Editar Árbitro" href="{{action("ArbitroController@edit",["id"=>$arbitro->id])}}">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
                                 @if($arbitro->usuario->active)
                                     <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Árbitro" href='{{ action("ArbitroController@deactivate",["idA"=>$arbitro->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>

@@ -85,7 +85,7 @@ class EquipoController extends Controller
 
 
         return redirect()->back()->with(
-            ["message" => ["clase" => "success", "mensaje" => "Insercion Exitosa"]]
+            ["message" => ["clase" => "success", "mensaje" => "Equipo Creado"]]
         );
         //return view("admin.equipo.crear");
     }
@@ -98,21 +98,6 @@ class EquipoController extends Controller
      */
     public function show($id)
     {
-        /*
-        $equipo = equipos::findOrFail($id);
-
-        debug($equipo->participantesEquipos()->get());
-
-        //Todo , retrieve info form torneo
-        return view('admin.equipo.info',[
-            "equipo" => $equipo,
-            "participantes" => $equipo->participantesEquipos()->get(),
-            "rutas" => [
-                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Equipo"=>["etiqueta"=>"Equipo", "active"=>"1","link"=>"/admin/equipo"],
-                "crear"=>["etiqueta"=>"crear", "active"=>"0","link"=>""]
-            ]
-        ]);*/
         $equipo = equipos::find($id);
         debug($equipo);
 
@@ -173,7 +158,7 @@ class EquipoController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message" => ["clase" => "success", "mensaje" => "Actualizacion Exitosa"]]
+            ["message" => ["clase" => "success", "mensaje" => "Actualización Exitosa"]]
         );
 
     }
@@ -206,7 +191,7 @@ class EquipoController extends Controller
         $equipo->activo = false;
         $equipo->save();
         return redirect()->back()->with(
-            ["message" => ["clase" => "warning", "mensaje" => $equipo->nombre . " desactivado"]]
+            ["message" => ["clase" => "warning", "mensaje" => $equipo->nombre . " Desactivado"]]
         );
     }
 

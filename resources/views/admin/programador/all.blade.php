@@ -24,12 +24,6 @@
                                 {{$programador->nombre}}
                             </td>
                             <td>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Ver Programador" href="{{action("ProgramadorController@show",["id"=>$programador->id])}}">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Editar Programador" href="{{action("ProgramadorController@edit",["id"=>$programador->id])}}">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
                                 @if($programador->usuario->active)
                                     <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Programador" href='{{ action("ProgramadorController@deactivate",["idP"=>$programador->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>

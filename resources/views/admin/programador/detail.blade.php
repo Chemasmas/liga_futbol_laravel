@@ -18,7 +18,7 @@
                 <td colspan="3"><h4>Teléfono : {{$programador->telefono}}</h4></td>
             </tr>
             <tr>
-                <td><h4>Institucione: {{ $programador->institucione->nombre}}</h4></td>
+                <td><h4>Institución: {{ $programador->institucione->nombre}}</h4></td>
                 <td><img src="{{ asset($programador->institucione->escudo) }}" alt="" class="img-responsive" style="width: 100%;"></td>
             </tr>
         </table>

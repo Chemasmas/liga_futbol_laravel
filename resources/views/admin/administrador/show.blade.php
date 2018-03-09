@@ -15,12 +15,11 @@
                 <td><h4>Correo : {{ $administrador->correo }}</h4></td>
             </tr>
             <tr>
-                <td><h4>Telefono: {{ $administrador->telefono }}</h4></td>
+                <td><h4>Teléfono: {{ $administrador->telefono }}</h4></td>
             </tr>
             <tr>
                 <td><h4>Username: {{ $usuario->username }}</h4></td>
             </tr>
         </table>
-        <a class="btn btn-success" href="{{action("AdministradorController@index")}}">Volver</a>
     </div>
 @endsection
