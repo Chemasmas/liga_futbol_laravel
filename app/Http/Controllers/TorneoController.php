@@ -242,16 +242,20 @@ class TorneoController extends Controller
 
     }
 
-    public function activate(Request $request,$idT){
-        $torneo = torneos::where("id",$idT)->update(["activo"=>true]);
+    public function activate($idT){
+        $torneo = torneos::find($idT);
+        $torneo->activo = true;
+        $torneo->save();
         return redirect()->back()->with(
             ["message" => ["clase" => "success", "mensaje" => $torneo->nombre . " Activado"]]
         );
     }
 
 
-    public function deactivate(Request $request,$idT){
-        $torneo = torneos::where("id",$idT)->update(["activo"=>false]);
+    public function deactivate($idT){
+        $torneo = torneos::find($idT);
+        $torneo->activo = false;
+        $torneo->save();
         return redirect()->back()->with(
             ["message" => ["clase" => "warning", "mensaje" => $torneo->nombre . " Desactivado"]]
         );

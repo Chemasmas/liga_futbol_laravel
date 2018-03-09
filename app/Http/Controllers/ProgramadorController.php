@@ -79,7 +79,7 @@ class ProgramadorController extends Controller
 
         $programador->save();
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Árbitro Creado"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Programador Creado"]]
         );
     }
 
@@ -225,7 +225,7 @@ class ProgramadorController extends Controller
 
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "agregarE" => ["etiqueta" => "Programación-Lista", "active" => "1", "link" => "/admin/verProgramador/programacion"],
+                "agregarE" => ["etiqueta" => "Programacion-Lista", "active" => "1", "link" => "/admin/verProgramador/programacion"],
                 "jornada" => ["etiqueta" => "Jornadas", "active" => "0", "link" => ""]
             ]
         ]);
@@ -236,7 +236,7 @@ class ProgramadorController extends Controller
         return view("admin.verArbitro.partidos",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Partidos", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Partidos-Lista   ", "active"=>"0","link"=>""]
             ]
         ]);
     }
