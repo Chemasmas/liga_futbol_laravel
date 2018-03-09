@@ -146,12 +146,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('JugadorController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('JugadorController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -168,12 +172,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('ArbitroController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('ArbitroController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -187,6 +195,12 @@
                             <a class="nav-link" href="{{action('ProgramadorController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{action('ProgramadorController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
                             </a>
                         </li>
                         <li>

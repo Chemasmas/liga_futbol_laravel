@@ -22,8 +22,10 @@ class JugadorController extends Controller
      */
     public function index()
     {
-        $jugadores = jugadores::all();
-        debug($jugadores);
+        $jugadores = jugadores::all()->filter( function($x){
+            return $x->usuario->active;
+        });
+
         foreach ($jugadores as $jugador){
             debug($jugador->institucione()->get());
             debug($jugador->equipo());
@@ -219,21 +221,38 @@ class JugadorController extends Controller
     }
 
 
+    public function all()
+    {
+
+        $jugador = jugadores::all();
+
+        return view('admin.jugador.all', [
+            "jugadores" => $jugador,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Juga" => ["etiqueta" => "Jugadores-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
     public function activate($id){
-        $jugador = jugadores::findOrFail($id);
-        $jugador->activo= true;
-        $jugador->save();
+        $jugador = jugadores::find($id);
+        $usuario = $jugador->usuario;
+        $usuario->active = true;
+        $usuario->save();
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>$jugador->nombre." Activado"]]
+            ["message" => ["clase" => "success", "mensaje" => $jugador->nombre . " Activado"]]
         );
     }
-    public function deactivate($id)
-    {
-        $jugador = jugadores::findOrFail($id);
-        $jugador->activo = false;
-        $jugador->save();
+
+
+    public function deactivate($id){
+        $jugador = jugadores::find($id);
+        $usuario = $jugador->usuario;
+        $usuario->active = false;
+        $usuario->update();
         return redirect()->back()->with(
-            ["message" => ["clase" => "warning", "mensaje" => $jugador->nombre . " desactivado"]]
+            ["message" => ["clase" => "warning", "mensaje" => $jugador->nombre . " Desactivado"]]
         );
     }
 }

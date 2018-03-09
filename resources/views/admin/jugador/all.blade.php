@@ -28,12 +28,6 @@
                                 <span style="font-weight: bold;">[{{$jugador->equipo()->first()->nombre}}]</span>{{$jugador->institucione()->first()->nombre }}
                             </td>
                             <td>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Ver Jugador" href="{{action("JugadorController@show",["id"=>$jugador->id])}}">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Editar Jugador" href="{{action("JugadorController@edit",["id"=>$jugador->id])}}">
-                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                </a>
                                 @if($jugador->usuario->active)
                                     <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Jugador" href='{{ action("JugadorController@deactivate",["idJ"=>$jugador->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>

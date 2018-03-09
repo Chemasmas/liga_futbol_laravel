@@ -270,11 +270,9 @@ class TorneoController extends Controller
         $plantilla->generar();
         //$plantilla->plantilla5();
 
-        return redirect()
-            ->action("TorneoController@participantes",["idT"=>$idT])
-            ->with([
+        return redirect()->back()->with(
                 ["message"=>["clase"=>"success","mensaje"=>"Rol Generado"]]
-            ]);
+            );
     }
 
     public function jornadas($idT){
