@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Mostrar Programacion')
+@section('titulo','Propuesta de Partidos')
 
 @section('rol',"")
 
