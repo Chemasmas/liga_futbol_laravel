@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Jugador')
+@section('titulo',!empty($torneo)?'Editar Jugador':'Crear Jugador')
 
 @section('rol',"")
 
@@ -63,7 +63,7 @@
                 <label for="dorsal">Número Dorsal</label>
                 <input type="text" name="dorsal" class="form-control" placeholder="" value="{{!empty($jugador)?$jugador->numero:"" }}">
             </div>
-            <button type="submit" class="btn btn-success pull-right">{{!empty($jugador)?'Guardar Edición':'Crear'}}</button>
+            <button type="submit" class="btn btn-success pull-right">{{!empty($jugador)?'Guardar Edición':'Agregar'}}</button>
         </form>
     </div>
 

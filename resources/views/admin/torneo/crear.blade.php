@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Torneos')
+@section('titulo',!empty($torneo)?'Editar Torneo':'Crear Torneo')
 
 @section('rol',"")
 
