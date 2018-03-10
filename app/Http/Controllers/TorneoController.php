@@ -212,17 +212,20 @@ class TorneoController extends Controller
         debug($torneo->tipo_torneo);
         if($torneo->tipo_torneo!=1)//No es una doble vuelta
         {
-            if($torneo->tipo_torneo >= $nparticipantes){
+            debug("NO es de doble Vuelta");
+            if($torneo->tipo_torneo <= $nparticipantes){
+                debug("Ya te pasaste ");
                 return redirect()
                     ->action("TorneoController@participantes",["idT"=>$idT])
                     ->with([
                         ["message"=>["clase"=>"error","mensaje"=>"No se puede agregar mas equipos"]]
                     ]);
             }
-        }
-        if($torneo->tipo_torneo==1){
+        } else if($torneo->tipo_torneo==1){
+            debug("Es de doble Vuelta");
             //Torneo 7 v2
-            if($torneo->tipo_torneo >= 7){
+            if($nparticipantes >= 7){
+                debug("Te pasase en la doble");
                 return redirect()
                     ->action("TorneoController@participantes",["idT"=>$idT])
                     ->with([
@@ -245,6 +248,7 @@ class TorneoController extends Controller
 
         $participante->save(['timestamps' => false]);
 
+        debug("Exito!!");
         return redirect()
             ->action("TorneoController@participantes",["idT"=>$idT])
             ->with([
