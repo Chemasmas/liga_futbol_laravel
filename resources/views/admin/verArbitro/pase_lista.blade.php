@@ -18,9 +18,7 @@
                     @forelse($jugadores as $jugador)
                         <tr class='@if(in_array($jugador->id,$asistencias)) danger @else success @endif'>
                             <td>
-
-                                    <img src="{{$jugador->foto}}" class="img-responsive img-thumbnail" alt="">
-                                
+                                <img src='{{asset("$jugador->foto")}}' class="img-responsive img-thumbnail" alt="" style="max-height: 200px;">
                             </td>
                             <td>{{$jugador->numero}}</td>
                             <td>{{$jugador->nombre}}</td>

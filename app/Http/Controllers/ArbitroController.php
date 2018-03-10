@@ -265,6 +265,7 @@ class ArbitroController extends Controller
                 "asistencias"=>$asistencias->pluck("jugadores_id")->toArray() ,
                 "rutas" => [
                     "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                    "Parti" => ["etiqueta"=>"Partidos del Dia", "active" => "1" ,"link"=>"/admin/arbitro/partidos"],
                     "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
                 ]
             ]);
