@@ -20,7 +20,9 @@ class AdministradorController extends Controller
      */
     public function index()
     {
-        $admininistradores = administradores::where("isSuper",0)->get();
+        $admininistradores = administradores::where("isSuper",0)->get()->filter( function($x){
+            return $x->usuario->active;
+        });
         debug($admininistradores);
 
         return view("admin.administrador.index",[
@@ -180,3 +182,4 @@ class AdministradorController extends Controller
         //
     }
 }
+
