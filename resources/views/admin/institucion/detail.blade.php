@@ -18,9 +18,12 @@
                     <td><h4>Mapa: {{$institucion->mapa}}</h4></td>
                 </tr>
                 <tr>
-                <td><img src="{{ asset($institucion->escudo)}}"  class="offset-sm-2 col-sm-8 img-responsive"></td>
+                        <td>
+                                <div>
+                                        <img src="{{ asset($institucion->escudo)}}" alt="" class="img-responsive img-thumbnail" style="width: 100%;">
+                                </div>
+                        </td>
                 </tr>
         </table>
-        <a class="btn btn-success" href="{{action("InstitucionController@index")}}">Volver</a>
         </div>
 @endsection

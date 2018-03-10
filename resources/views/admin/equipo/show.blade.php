@@ -24,6 +24,5 @@
                         <td><h4> Nombre del Asistente: {{ $equipo->nombreCoachAsistente }} </h4></td>
                     </tr>
             </table>
-            <a class="btn btn-success" href="{{action("EquipoController@index")}}">Volver</a>
         </div>
 @endsection
