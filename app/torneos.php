@@ -13,8 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property boolean $es_liga
  * @property boolean $generado
  * @property int $jornada
- * @property ParticipantesTorneo[] $participantesTorneos
- * @property Partido[] $partidos
+ * @property participantes_torneo[] $participantesTorneos
+ * @property partidos[] $partidos
  */
 class torneos extends Model
 {
@@ -45,6 +45,6 @@ class torneos extends Model
      */
     public function partidos()
     {
-        return $this->hasMany('App\Partido', 'Torneo_id');
+        return $this->hasMany('App\partidos', 'Torneo_id');
     }
 }

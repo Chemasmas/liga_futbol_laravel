@@ -239,4 +239,5 @@ class EquipoController extends Controller
 
         return redirect()->back();
     }
+
 }

@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $GolesContra
  * @property int $DiferenciaGoles
  * @property int $Puntos
- * @property Equipo $equipo
- * @property Torneo $torneo
+ * @property equipos $equipo
+ * @property torneos $torneo
  */
 class participantes_torneo extends Model
 {
@@ -44,6 +44,6 @@ class participantes_torneo extends Model
      */
     public function torneo()
     {
-        return $this->belongsTo('App\Torneo', 'Torneo_id');
+        return $this->belongsTo('App\torneos', 'Torneo_id');
     }
 }
