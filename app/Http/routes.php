@@ -97,11 +97,14 @@ Route::get('/admin/arbitro',['middleware' => 'auth', 'uses' => "ArbitroControlle
 Route::get('/admin/arbitro/crear',['middleware' => 'auth', 'uses' => "ArbitroController@create"]);
 Route::get('/admin/arbitro/historico',['middleware' => 'auth', 'uses' => "ArbitroController@all"]);
 Route::post('/admin/arbitro/store',['middleware' => 'auth', 'uses' => "ArbitroController@store"]);
+Route::get('/admin/arbitro/partidos',['middleware' => 'auth', 'uses' => "ArbitroController@lista_partidos"]);
+Route::get('/admin/arbitro/{idE}/lista/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@pasar_lista"]);
 Route::get("/admin/arbitro/{id}",['middleware' => 'auth', 'uses' => "ArbitroController@show"]);
 Route::get("/admin/arbitro/{id}/edit",['middleware' => 'auth', 'uses' => "ArbitroController@edit"]);
 Route::post("/admin/arbitro/{id}/update",['middleware' => 'auth', 'uses' => "ArbitroController@update"]);
 Route::get('/admin/arbitro/{idA}/activate',['middleware' => 'auth', 'uses' => "ArbitroController@activate"]);
 Route::get('/admin/arbitro/{idA}/deactivate',['middleware' => 'auth', 'uses' => "ArbitroController@deactivate"]);
+
 
 Route::get('/admin/programador',['middleware' => 'auth', 'uses' => "ProgramadorController@index"]);
 Route::get('/admin/programador/crear',['middleware' => 'auth', 'uses' => "ProgramadorController@create"]);

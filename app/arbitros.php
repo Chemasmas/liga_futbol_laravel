@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $nombre
  * @property string $telefono
  * @property string $foto
- * @property Usuario $usuario
+ * @property usuarios $usuario
  */
 class arbitros extends Model
 {

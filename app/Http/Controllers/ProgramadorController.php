@@ -9,6 +9,7 @@ use App\partidos;
 use App\programadores;
 use App\torneos;
 use App\usuarios;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -299,20 +300,22 @@ class ProgramadorController extends Controller
         debug("Propuesta");
 
         $partido = partidos::findOrFail($idP);
-        debug($partido);
-        debug($partido->status == 2);
+        //debug($partido);
+        //debug($partido->status == 2);
 
         if( $partido->status == 2 && Auth::user()->level > 1 ) // Ya asignada y no eres admin
             return redirect()->back();
 
-            $hora = $request["hora"];
+            $hora = (new Carbon($request["hora"]) )->toTimeString();
 
             $fecha = $request["fecha"];
 
-        debug($request["fecha"]);
-        debug($request["hora"]);
-        debug(Auth::user()->level);
-        debug(Auth::user()->level<2);
+        //debug($request["fecha"]);
+        //debug($request["hora"]);
+        //debug(strtotime($request["hora"]));
+
+        //debug(Auth::user()->level);
+        //debug(Auth::user()->level<2);
 
         if( Auth::user()->level < 2 ) // es admin
         {
@@ -329,7 +332,12 @@ class ProgramadorController extends Controller
                     return redirect()->back();  //No debe de enviarlo dos veces
                 }
                 debug("Propuesta");
-                if($partido->hora = $hora && $partido->fecha == $fecha){ //Son iguales
+                debug($hora);
+                debug($partido->hora);
+                debug($fecha);
+                debug($partido->fecha);
+
+                if($partido->hora == $hora && $partido->fecha == $fecha){ //Son iguales
                     debug("Acuerdo");
                     $partido->status = 2; //llegaron aun acuerdo
                     $partido->verifica = null;
@@ -343,6 +351,11 @@ class ProgramadorController extends Controller
                 }
             }else if($partido->status == 0) { // Nueva propuesta
                 debug("Nueva Propuesta");
+                debug($hora);
+                debug($partido->hora);
+                debug($fecha);
+                debug($partido->fecha);
+
                 $partido->hora = $hora;
                 $partido->fecha = $fecha;
                 $partido->status = 1; //Aceptado

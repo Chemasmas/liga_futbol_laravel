@@ -18,9 +18,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $jornada
  * @property int $status
  * @property int $verifica
- * @property Equipo $equipol
- * @property Equipo $equipov
- * @property Torneo $torneo
+ * @property equipos $equipol
+ * @property equipos $equipov
+ * @property torneos $torneo
  */
 class partidos extends Model
 {

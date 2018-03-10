@@ -16,10 +16,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $foto
  * @property string $genero
  * @property boolean $activo
- * @property Institucione $institucione
- * @property Usuario $usuario
- * @property Equipo $equipo
- * @property EstadisticasJugador[] $estadisticasJugadors
+ * @property instituciones $institucione
+ * @property usuarios $usuario
+ * @property equipos $equipo
+ * @property estadisticas_jugador[] $estadisticasJugadors
  */
 class jugadores extends Model
 {

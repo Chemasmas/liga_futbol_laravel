@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $dir
  * @property string $mapa
  * @property string $escudo
- * @property Equipo[] $equipos
- * @property Jugadore[] $jugadores
- * @property Programadore[] $programadores
+ * @property equipos[] $equipos
+ * @property jugadores[] $jugadores
+ * @property programadores[] $programadores
  */
 class instituciones extends Model
 {
