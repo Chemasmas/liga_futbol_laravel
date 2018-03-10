@@ -242,7 +242,7 @@
             @endif
             @if(auth()->user()["level"]<3)
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Partidos">
-                <a class="nav-link" href="{{action('ProgramadorController@partidos')}}">
+                <a class="nav-link" href="{{action('ArbitroController@lista_partidos')}}">
                     <i class="fa fa-list-ol"></i>
                     <span class="nav-link-text">Partidos</span>
                 </a>
