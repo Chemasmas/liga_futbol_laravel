@@ -244,28 +244,45 @@ class ArbitroController extends Controller
             "partidos" => $partidos,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Juga" => ["etiqueta" => "Arbitros-Historico", "active" => "0", "link" => ""]
+                "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
             ]
         ]);
     }
 
-        public function pasar_lista($idE,$idP){
+    public function pasar_lista($idE,$idP){
 
-            $jugadores = jugadores::where("equipos_id",$idE)->get();
-            $asistencias = asistencia::where("partidos_id",$idP)->get();
+        $jugadores = jugadores::where("equipos_id",$idE)->get();
+        $asistencias = asistencia::where("partidos_id",$idP)->select("jugadores_id")->get();
 
-            debug("$jugadores");
-            debug($asistencias);
-            return view('admin.arbitro.pase_lista',
-                [
-                    "jugadores"=> $jugadores,
-                    "idP" => $idP,
-                    "asistencias"=>$asistencias,
-                    "rutas" => [
-                        "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                        "Juga" => ["etiqueta" => "Arbitros-Historico", "active" => "0", "link" => ""]
-                    ]
-                ]);
+        debug("$jugadores");
+        debug($asistencias);
+        debug($asistencias->pluck("jugadores_id"));
+        debug($idP);
+        return view('admin.arbitro.pase_lista',
+            [
+                "jugadores"=> $jugadores,
+                "idP" => $idP,
+                "asistencias"=>$asistencias->pluck("jugadores_id")->toArray() ,
+                "rutas" => [
+                    "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                    "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
+                ]
+            ]);
+    }
+
+    public function asistio(Request $request,$idP,$idJ){
+        debug($request["asistio"]);
+        if($request["asistio"]==1){
+            $asistencia = new asistencia();
+            $asistencia->partidos_id=$idP;
+            $asistencia->jugadores_id=$idJ;
+            $asistencia->save();
         }
+        else{
+            $asistencia = asistencia::where("partidos_id",$idP)->where("jugadores_id",$idJ)->delete();
+        }
+
+        return redirect()->back();
+    }
 }
 
