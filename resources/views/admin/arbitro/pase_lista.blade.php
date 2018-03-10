@@ -15,7 +15,15 @@
                         <th>Asistencia</th>
                     </thead>
                     @forelse($jugadores as $jugador)
-
+                        <tr>
+                            <td>{{$jugador->nombre}}</td>
+                            <td>
+                                <form action="{{action("ArbitroController@asistio",["idP"=>$idP,"idJ"=>$jugador->id])}}" method="POST">
+                                    <input type="hidden" name="asistio">
+                                    <input type="submit" value="Asistio">
+                                </form>
+                            </td>
+                        </tr>
                     @empty
                         No hay Jugadores en Este Equipo!!!!
                     @endforelse
