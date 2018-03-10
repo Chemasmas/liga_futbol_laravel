@@ -239,7 +239,7 @@ class ArbitroController extends Controller
         debug($partidos);
         //debug($partidos2);
 
-        return view('admin.arbitro.lista_partidos',
+        return view('admin.verArbitro.lista_partidos',
             [
             "partidos" => $partidos,
             "rutas" => [
@@ -258,7 +258,7 @@ class ArbitroController extends Controller
         debug($asistencias);
         debug($asistencias->pluck("jugadores_id"));
         debug($idP);
-        return view('admin.arbitro.pase_lista',
+        return view('admin.verArbitro.pase_lista',
             [
                 "jugadores"=> $jugadores,
                 "idP" => $idP,
