@@ -104,7 +104,6 @@
                                 <span class="nav-link-text">Crear</span>
                             </a>
                         </li>
-                        </li>
                     </ul>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Administradores">
@@ -264,7 +263,9 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="navbar-brand" href="#"><i class="fa fa-user"></i>{{auth()->user()["username"]}}</a>
+                <a class="navbar-brand" href="#">
+                    <i class="fa fa-user"></i>{{auth()->user()["username"]}}
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
