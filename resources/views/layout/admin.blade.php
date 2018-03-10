@@ -21,7 +21,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Liga Poniente</a>
+    <a class="navbar-brand" href="{{action('AdminController@index')}}">Liga Poniente</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -93,12 +93,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('InstitucionController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('InstitucionController@create')}}">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Crear</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -115,12 +119,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('AdministradorController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('AdministradorController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -137,12 +145,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('JugadorController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('JugadorController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -159,12 +171,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" href="{{action('ArbitroController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
+                            </a>
+                        </li>
                         <li>
                             <a class="nav-link" href="{{action('ArbitroController@create')}}">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="nav-link-text">Agregar</span>
                             </a>
-                        </li>
                         </li>
                     </ul>
                 </li>
@@ -178,6 +194,12 @@
                             <a class="nav-link" href="{{action('ProgramadorController@index')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Lista</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{action('ProgramadorController@all')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                <span class="nav-link-text">Histórico</span>
                             </a>
                         </li>
                         <li>
@@ -241,7 +263,9 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="navbar-brand" href="#"><i class="fa fa-user"></i>{{auth()->user()["username"]}}</a>
+                <a class="navbar-brand" href="#">
+                    <i class="fa fa-user"></i>{{auth()->user()["username"]}}
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">

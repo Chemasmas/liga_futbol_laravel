@@ -7,6 +7,7 @@ use App\equipos;
 use App\instituciones;
 use App\jugadores;
 use App\usuarios;
+use App\util\Imagenes;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Hash;
 
 class JugadorController extends Controller
 {
+    private $ruta = "jugadores";
+
+
     /**
      * Display a listing of the resource.
      *
@@ -22,8 +26,10 @@ class JugadorController extends Controller
      */
     public function index()
     {
-        $jugadores = jugadores::all();
-        debug($jugadores);
+        $jugadores = jugadores::all()->filter( function($x){
+            return $x->usuario->active;
+        });
+
         foreach ($jugadores as $jugador){
             debug($jugador->institucione()->get());
             debug($jugador->equipo());
@@ -32,7 +38,7 @@ class JugadorController extends Controller
             "jugadores"=>$jugadores,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Jugador", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Jugadores-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -51,7 +57,7 @@ class JugadorController extends Controller
             "equipos" => $equipos,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "Jugador"=>["etiqueta"=>"Jugadores-Lista", "active"=>"1","link"=>"/admin/jugador"],
                 "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
             ]
         ]);
@@ -94,16 +100,11 @@ class JugadorController extends Controller
         $jugador->equipos_id = $idE;
         $jugador->numero=$dorsal;
         $jugador->genero = $genero;
-
-
-        $ruta = "jugadores";
-        $request->file('foto')->move($ruta,$jugador->nombre.".".$request->file('foto')->getClientOriginalExtension());
-        $jugador->foto = $ruta."/".$jugador->nombre.".".$request->file('foto')->getClientOriginalExtension();
-
+        $jugador->foto = Imagenes::uploadImage($this->ruta,$request->file('foto'),$jugador->nombre);
         $jugador->save( ['timestamps' => false]);
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Jugador Creado"]]
         );
     }
 
@@ -119,7 +120,7 @@ class JugadorController extends Controller
             "jugador" => jugadores::findOrFail($id),
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "Jugador"=>["etiqueta"=>"Jugadores-Lista", "active"=>"1","link"=>"/admin/jugador"],
                 "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
@@ -144,7 +145,7 @@ class JugadorController extends Controller
             "equipos" => $equipos,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Jugador"=>["etiqueta"=>"Jugador", "active"=>"1","link"=>"/admin/jugador"],
+                "Jugador"=>["etiqueta"=>"Jugadores-Lista", "active"=>"1","link"=>"/admin/jugador"],
                 "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
@@ -186,13 +187,8 @@ class JugadorController extends Controller
         $jugador->idInst = $idI;
         $jugador->equipos_id = $idE;
         $jugador->numero=$dorsal;
-
-        $ruta = "jugadores";
-        $foto = $request->file('foto');
-        debug($foto);
-        if($foto!=null){
-            $request->file('foto')->move($ruta, $jugador->nombre.".".$foto->getClientOriginalExtension());
-            $jugador->foto = $ruta."/".$jugador->nombre.".".$foto->getClientOriginalExtension();
+        if($request->file('foto')!=null){
+            $jugador->foto = Imagenes::uploadImage($this->ruta,$request->file('foto'),$jugador->nombre);
         }
 
         if(strlen($request["password"])>6){
@@ -203,7 +199,7 @@ class JugadorController extends Controller
         $jugador->update();
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 
@@ -219,21 +215,38 @@ class JugadorController extends Controller
     }
 
 
+    public function all()
+    {
+
+        $jugador = jugadores::all();
+
+        return view('admin.jugador.all', [
+            "jugadores" => $jugador,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Juga" => ["etiqueta" => "Jugadores-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
     public function activate($id){
-        $jugador = jugadores::findOrFail($id);
-        $jugador->activo= true;
-        $jugador->save();
+        $jugador = jugadores::find($id);
+        $usuario = $jugador->usuario;
+        $usuario->active = true;
+        $usuario->save();
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>$jugador->nombre." Activado"]]
+            ["message" => ["clase" => "success", "mensaje" => $jugador->nombre . " Activado"]]
         );
     }
-    public function deactivate($id)
-    {
-        $jugador = jugadores::findOrFail($id);
-        $jugador->activo = false;
-        $jugador->save();
+
+
+    public function deactivate($id){
+        $jugador = jugadores::find($id);
+        $usuario = $jugador->usuario;
+        $usuario->active = false;
+        $usuario->update();
         return redirect()->back()->with(
-            ["message" => ["clase" => "warning", "mensaje" => $jugador->nombre . " desactivado"]]
+            ["message" => ["clase" => "warning", "mensaje" => $jugador->nombre . " Desactivado"]]
         );
     }
 }

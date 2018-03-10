@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Programador')
+@section('titulo','Programadores')
 
 @section('rol',"")
 
@@ -30,7 +30,7 @@
                                 <a class="btn btn-info" data-toggle="tooltip" title="Editar Programador" href="{{action("ProgramadorController@edit",["id"=>$programador->id])}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                @if($programador->activo)
+                                @if($programador->usuario->active)
                                     <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Programador" href='{{ action("ProgramadorController@deactivate",["idP"=>$programador->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
@@ -44,7 +44,7 @@
                         @empty
                             <tr>
                                 <th>
-                                    No hay Usuario Admin <a class="btn btn-primary" href="{{action('ProgramadorController@create')}}">Agregar uno.</a>
+                                    No hay Usuario Programador <a class="btn btn-primary" href="{{action('ProgramadorController@create')}}">Agregar uno.</a>
                                 </th>
                             </tr>
                         @endforelse

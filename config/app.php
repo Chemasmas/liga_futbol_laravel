@@ -150,6 +150,10 @@ return [
         
         Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        //Excel Library
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
     ],
 
     /*

@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Programadores')
+@section('titulo',!empty($torneo)?'Editar Programador':'Crear Programador')
 
 @section('rol',"")
 
@@ -37,7 +37,7 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn btn-success pull-right">{{!empty($programador)?'Guardar Edición':'Crear'}}</button>
+            <button type="submit" class="btn btn-success pull-right">{{!empty($programador)?'Guardar Edición':'Agregar'}}</button>
         </form>
     </div>
 

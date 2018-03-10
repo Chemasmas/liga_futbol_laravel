@@ -7,7 +7,10 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "barryvdh/laravel-debugbar": "~2.4"
+        "barryvdh/laravel-debugbar": "~2.4",
+        "maatwebsite/excel": "~2.1.0",
+        "dompdf/dompdf": "^0.8.2",
+        "nesbot/carbon": "^1.24"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

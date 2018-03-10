@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $nombre
  * @property string $correo
  * @property string $telefono
- * @property Usuario $usuario
+ * @property usuarios $usuario
  */
 class administradores extends Model
 {

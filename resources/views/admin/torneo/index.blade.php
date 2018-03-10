@@ -16,7 +16,7 @@
                 <thead>
                     <tr >
                         <th>Nombre</th>
-                        <th>Plantila</th>
+                        <th>Plantilla</th>
                         <th>Género</th>
                         <th>Acciones</th>
                     </tr>
@@ -31,7 +31,11 @@
                         {{ $torneo->tipo_torneo }}
                     </td>
                     <td>
-                        {{ $torneo->genero }}
+                        @if($torneo->genero=='M')
+                            Varonil
+                            @else
+                            Femenil
+                        @endif
                     </td>
                     <td>
                         <a class="btn btn-info" data-toggle="tooltip" title="Ver Torneo" href="{{action("TorneoController@show",["id"=>$torneo->id])}}">
@@ -43,6 +47,14 @@
                         <a class="btn btn-info" data-toggle="tooltip" title="Agregar Equipos" href='{{ action("TorneoController@participantes",["idT"=>$torneo->id])}}'>
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         </a>
+                        @if($torneo->generado)
+                            <a class="btn btn-info" data-toggle="tooltip" title="Ver Jornadas" href='{{ action("TorneoController@jornadas",["idT"=>$torneo->id])}}'>
+                                Jornadas
+                            </a>
+                            <a class="btn btn-info" data-toggle="tooltip" title="XLS" href='{{ action("TorneoController@jornadasXLS",["idT"=>$torneo->id])}}'>
+                                XLS
+                            </a>
+                        @endif
                         @if($torneo->activo)
                             <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Torneo" href='{{ action("TorneoController@deactivate",["idT"=>$torneo->id])}}'>
                                 <i class="fa fa-times" aria-hidden="true"></i>

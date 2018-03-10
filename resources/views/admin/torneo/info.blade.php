@@ -1,7 +1,7 @@
 
 @extends('layout.admin')
 
-@section('titulo','Torneos')
+@section('titulo','Ver Torneos')
 
 @section('rol',"")
 
@@ -13,16 +13,12 @@
             <h4>Nombre : {{ $torneo->nombre }} </h4>
             <h4>Número de plantilla : {{ $torneo->tipo_torneo }} </h4>
             <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"  @if($torneo->generado) {{'disabled'}} @endif>Generar</button>
-            <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
-                Roles
-            </a>
             <br><br>
             <div class="container">
                 <table class="table table-bordered col-md-4">
                     <thead>
                         <th>Equipo</th>
-                        <th>Institucion</th>
+                        <th>Institución</th>
                     </thead>
                     @forelse( $participantes as $participante )
                         <tr>

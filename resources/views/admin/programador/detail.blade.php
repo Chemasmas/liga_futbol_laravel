@@ -1,24 +1,29 @@
 @extends('layout.admin')
 
-@section('titulo','Ver Admin')
+@section('titulo','Ver Programador')
 
 @section('rol',"")
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <img src="{{ asset($programador->institucione->escudo)}}" alt="" style="width: 100%">
-            </div>
-            <div class="col-sm-6">
-                <h3>{{$programador->nombre}} <span>({{$programador->usuario->username}})</span></h3>
-                <h6>{{$programador->correo}}</h6>
-                <h6>{{$programador->telefono}}</h6>
-                <h6>{{$programador->institucione->nombre}}</h6>
-            </div>
-        </div>
-        <br><br>
-        <a href="{{action("ProgramadorController@index")}}" class="btn btn-primary">Volver</a>
+    <div class="offset-sm-2 col-sm-8">
+        <h3>Información de Programador</h3>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <td colspan="2"><h4>Nombre : {{$programador->nombre}}</h4></td>
+            </tr>
+            <tr>
+                <td colspan="2"><h4>Usuario : {{$programador->usuario->username}}</h4></td>
+            </tr>
+            <tr>
+                <td colspan="3"><h4>Correo : {{$programador->correo}}</h4></>
+            </tr>
+            <tr>
+                <td colspan="3"><h4>Teléfono : {{$programador->telefono}}</h4></td>
+            </tr>
+            <tr>
+                <td><h4>Institución: {{ $programador->institucione->nombre}}</h4></td>
+                <td><img src="{{ asset($programador->institucione->escudo) }}" alt="" class="img-responsive" style="width: 100%;"></td>
+            </tr>
+        </table>
     </div>
-
 @endsection

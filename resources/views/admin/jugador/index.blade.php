@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Equipo')
+@section('titulo','Jugadores')
 
 @section('rol',"")
 
@@ -13,7 +13,7 @@
                     @if(count($jugadores)>0)
                         <thead>
                         <tr >
-                            <th>Nombre(numero)</th>
+                            <th>Nombre/Número</th>
                             <th>Equipo/Escuela</th>
                             <th>Acciones</th>
                         </tr>
@@ -34,7 +34,7 @@
                                 <a class="btn btn-info" data-toggle="tooltip" title="Editar Jugador" href="{{action("JugadorController@edit",["id"=>$jugador->id])}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
-                                @if($jugador->activo)
+                                @if($jugador->usuario->active)
                                     <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Jugador" href='{{ action("JugadorController@deactivate",["idJ"=>$jugador->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
@@ -48,7 +48,7 @@
                     @empty
                         <tr>
                             <th>
-                                No hay Usuario Admin <a class="btn btn-primary" href="{{action('JugadorController@create')}}">Agregar uno.</a>
+                                No hay Usuario Jugador <a class="btn btn-primary" href="{{action('JugadorController@create')}}">Agregar uno.</a>
                             </th>
                         </tr>
                     @endforelse

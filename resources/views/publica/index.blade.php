@@ -295,7 +295,7 @@
 
 					<!-- Main Heading -->
 						<br>
-					    <a href="gallery.html"><h4>Galeria</h4></a>
+					    <a href="/gallery"><h4>Galeria</h4></a>
 					    </br>
 
 					<!-- Main Heading -->

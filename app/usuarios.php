@@ -17,10 +17,10 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
  * @property string $createdAt
  * @property boolean $active
  * @property int $level
- * @property Administradore[] $administradores
- * @property Arbitro[] $arbitros
- * @property Jugadore[] $jugadores
- * @property Programadore[] $programadores
+ * @property administradores[] $administradores
+ * @property arbitros[] $arbitros
+ * @property jugadores[] $jugadores
+ * @property programadores[] $programadores
  */
 class usuarios extends Model implements AuthenticatableContract,
     AuthorizableContract,

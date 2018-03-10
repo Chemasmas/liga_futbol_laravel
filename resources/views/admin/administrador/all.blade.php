@@ -1,0 +1,50 @@
+@extends('layout.admin')
+
+@section('titulo','Administradores Historico')
+
+@section('rol',"")
+
+@section('content')
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Lista de Administradores</h3>
+            <div class="col-sm-12">
+                <table class="table table-hover table-bordered">
+                    @if(count($administradores)>0)
+                        <thead>
+                        <tr >
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                    @endif
+                    @forelse ($administradores as $administrador)
+                        <tr>
+                            <td>
+                                {{ $administrador->nombre }}
+                            </td>
+                            <td>
+                                @if($administrador->usuario->active)
+                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Admin" href='{{ action("AdministradorController@deactivate",["idA"=>$administrador->id])}}'>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </a>
+                                @else
+                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Admin" href='{{ action("AdministradorController@activate",["idA"=>$administrador->id])}}'>
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </a>
+                                @endif
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <th>
+                                No hay Usuario Administrador <a class="btn btn-primary" href="{{action('AdministradorController@create')}}">Agregar uno.</a>
+                            </th>
+                        </tr>
+                    @endforelse
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection

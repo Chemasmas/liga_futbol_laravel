@@ -11,10 +11,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $nombreCoach
  * @property string $nombreCoachAsistente
  * @property string $genero
- * @property Institucione $institucione
- * @property Jugadore[] $jugadores
- * @property ParticipantesTorneo[] $participantesTorneos
- * @property Partido[] $partidos
+ * @property instituciones $institucione
+ * @property jugadores[] $jugadores
+ * @property participantes_torneo[] $participantesTorneos
+ * @property partidos[] $partidos
  * @property boolean $activo
 
  */

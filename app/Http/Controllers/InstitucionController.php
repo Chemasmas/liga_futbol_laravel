@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\instituciones;
+use App\util\Imagenes;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,6 +12,8 @@ use App\Http\Controllers\Controller;
 class InstitucionController extends Controller
 {
 
+
+    private $ruta = "instituciones";
     /**
      * Display a listing of the resource.
      *
@@ -18,15 +21,29 @@ class InstitucionController extends Controller
      */
     public function index()
     {
-        $instituciones = instituciones::all();
+        $instituciones = instituciones::whereNotIn("id", [1])->where("activo",1)->get();
         return view("admin.institucion.index",[
             "instituciones" => $instituciones,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Institucion"=>["etiqueta"=>"Institucion", "active"=>"0","link"=>""]
+                "Institucion"=>["etiqueta"=>"Instituciones-Lista", "active"=>"0","link"=>""]
             ]
         ]);
     }
+
+    public function all()
+    {
+        $instituciones = instituciones::whereNotIn("id", [1])->get();
+
+        return view('admin.institucion.all', [
+            "instituciones" => $instituciones,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Institucion" => ["etiqueta" => "Instituciones-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +55,7 @@ class InstitucionController extends Controller
         return view("admin.institucion.crear",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Instituciones"=>["etiqueta"=>"Instituciones", "active"=>"1","link"=>"/admin/instituciones"],
+                "Instituciones"=>["etiqueta"=>"Instituciones-Lista", "active"=>"1","link"=>"/admin/instituciones"],
                 "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
             ]
         ]);
@@ -56,16 +73,12 @@ class InstitucionController extends Controller
         $institucion->nombre = $request["nombre"];
         $institucion->dir = $request["direccion"];
         $institucion->mapa = $request["mapa"];
-
-        $ruta = "instituciones";
-        $imagen = $request->file('foto');
-        $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
-        $imagen->move($ruta,$nvoNombre);
-        $institucion->escudo = $ruta."/".$nvoNombre;
+        $institucion->escudo = Imagenes::uploadImage($this->ruta,$request->file('foto'),$institucion->nombre);
+        $institucion->activo = true;
         $institucion->save();
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Institución Creada"]]
         );
     }
 
@@ -84,7 +97,7 @@ class InstitucionController extends Controller
             "institucion"=>$institucion,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Instituciones"=>["etiqueta"=>"Instituciones", "active"=>"1","link"=>"/admin/instituciones"],
+                "Instituciones"=>["etiqueta"=>"Instituciones-Lista", "active"=>"1","link"=>"/admin/instituciones"],
                 "crear"=>["etiqueta"=>"Ver", "active"=>"0","link"=>""]
             ]
         ]);
@@ -105,7 +118,7 @@ class InstitucionController extends Controller
             "institucion"=>$institucion,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Instituciones"=>["etiqueta"=>"Instituciones", "active"=>"1","link"=>"/admin/instituciones"],
+                "Instituciones"=>["etiqueta"=>"Instituciones-Lista", "active"=>"1","link"=>"/admin/instituciones"],
                 "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
             ]
         ]);
@@ -130,16 +143,12 @@ class InstitucionController extends Controller
 
         if($request->file("foto")!= null )
         {
-            $ruta = "instituciones";
-            $imagen = $request->file('foto');
-            $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
-            $imagen->move($ruta,$nvoNombre);
-            $institucion->escudo = $ruta."/".$nvoNombre;
+            $institucion->escudo = Imagenes::uploadImage($this->ruta,$request->file('foto'),$institucion->nombre);
         }
         $institucion->save();
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 
@@ -152,5 +161,25 @@ class InstitucionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function activate($id)
+    {
+        $institucion = instituciones::find($id);
+        $institucion->activo = true;
+        $institucion->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => $institucion->nombre . " Activado"]]
+        );
+    }
+
+    public function deactivate($id)
+    {
+        $institucion = instituciones::find($id);
+        $institucion->activo = false;
+        $institucion->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "warning", "mensaje" => $institucion->nombre . " desactivado"]]
+        );
     }
 }

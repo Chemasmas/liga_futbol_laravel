@@ -28,7 +28,7 @@ class DirectorioController extends Controller
             "programadores"=>$programadores,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programadores", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Directorio-Programadores", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -44,7 +44,7 @@ class DirectorioController extends Controller
             "arbitros"=>$arbitros,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Arbitros", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Directorio-Arbitros", "active"=>"0","link"=>""]
             ]
         ]);
     }

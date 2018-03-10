@@ -15,7 +15,6 @@
                         <thead>
                         <tr >
                             <th>Nombre</th>
-                            <th>Escudo</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
@@ -26,21 +25,18 @@
                                 {{ $institucion->nombre }}
                             </td>
                             <td>
-                                {{ $institucion->escudo }}
-                            </td>
-                            <td>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Ver Institucion" href="{{action("InstitucionController@show",["id"=>$institucion->id])}}">
+                                <a class="btn btn-info" data-toggle="tooltip" title="Ver Institución" href="{{action("InstitucionController@show",["id"=>$institucion->id])}}">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a>
-                                <a class="btn btn-info" data-toggle="tooltip" title="Editar Institucion" href="{{action("InstitucionController@edit",["id"=>$institucion->id])}}">
+                                <a class="btn btn-info" data-toggle="tooltip" title="Editar Institución" href="{{action("InstitucionController@edit",["id"=>$institucion->id])}}">
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                 </a>
                                 @if($institucion->activo)
-                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Institucion" href='{{ action("InstitucionController@deactivate",["idI"=>$institucion->id])}}'>
+                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Institución" href='{{ action("InstitucionController@deactivate",["idI"=>$institucion->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
                                 @else
-                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Institucion" href='{{ action("InstitucionController@activate",["idI"=>$institucion->id])}}'>
+                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Institución" href='{{ action("InstitucionController@activate",["idI"=>$institucion->id])}}'>
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                     </a>
                                 @endif
