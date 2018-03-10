@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','CrearAdministrador')
+@section('titulo',!empty($torneo)?'Editar Administrador':'Crear Admimnistrador')
 
 @section('rol',"")
 
@@ -29,7 +29,7 @@
                 <label for="telefono">Teléfono</label>
                 <input type="text" name="telefono" class="form-control" placeholder="" value="{{!empty($administrador)?$administrador->telefono:''}}">
             </div>
-            <button type="submit" class="btn btn-success pull-right">{{!empty($administrador)?'Guardar Edición':'Crear'}}</button>
+            <button type="submit" class="btn btn-success pull-right">{{!empty($administrador)?'Guardar Edición':'Agregar'}}</button>
         </form>
     </div>
 

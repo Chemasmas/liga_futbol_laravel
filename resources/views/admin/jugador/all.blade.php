@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Equipo')
+@section('titulo','Jugadores Historico')
 
 @section('rol',"")
 
@@ -13,7 +13,7 @@
                     @if(count($jugadores)>0)
                         <thead>
                         <tr >
-                            <th>Nombre(numero)</th>
+                            <th>Nombre/Número</th>
                             <th>Equipo/Escuela</th>
                             <th>Acciones</th>
                         </tr>
