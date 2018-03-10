@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\arbitros;
+use App\asistencia;
+use App\jugadores;
 use App\partidos;
 use App\usuarios;
 use Carbon\Carbon;
@@ -247,11 +249,23 @@ class ArbitroController extends Controller
         ]);
     }
 
-    public function pasar_lista($idP){
+        public function pasar_lista($idE,$idP){
 
-        $partido = partidos::where("id".$idP);
+            $jugadores = jugadores::where("equipos_id",$idE)->get();
+            $asistencias = asistencia::where("partidos_id",$idP)->get();
 
-        
-
-    }
+            debug("$jugadores");
+            debug($asistencias);
+            return view('admin.arbitro.pase_lista',
+                [
+                    "jugadores"=> $jugadores,
+                    "idP" => $idP,
+                    "asistencias"=>$asistencias,
+                    "rutas" => [
+                        "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                        "Juga" => ["etiqueta" => "Arbitros-Historico", "active" => "0", "link" => ""]
+                    ]
+                ]);
+        }
 }
+

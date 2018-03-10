@@ -19,6 +19,8 @@ class asistencia extends Model
      */
     protected $table = 'asistencia';
 
+    public $timestamps  = false;
+
     /**
      * @var array
      */
