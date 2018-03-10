@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\instituciones;
+use App\util\Imagenes;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,6 +12,8 @@ use App\Http\Controllers\Controller;
 class InstitucionController extends Controller
 {
 
+
+    private $ruta = "instituciones";
     /**
      * Display a listing of the resource.
      *
@@ -70,12 +73,7 @@ class InstitucionController extends Controller
         $institucion->nombre = $request["nombre"];
         $institucion->dir = $request["direccion"];
         $institucion->mapa = $request["mapa"];
-
-        $ruta = "instituciones";
-        $imagen = $request->file('foto');
-        $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
-        $imagen->move($ruta,$nvoNombre);
-        $institucion->escudo = $ruta."/".$nvoNombre;
+        $institucion->escudo = Imagenes::uploadImage($this->ruta,$request->file('foto'),$institucion->nombre);
         $institucion->activo = true;
         $institucion->save();
 
@@ -145,11 +143,7 @@ class InstitucionController extends Controller
 
         if($request->file("foto")!= null )
         {
-            $ruta = "instituciones";
-            $imagen = $request->file('foto');
-            $nvoNombre = $institucion->nombre.".".$imagen->getClientOriginalExtension();
-            $imagen->move($ruta,$nvoNombre);
-            $institucion->escudo = $ruta."/".$nvoNombre;
+            $institucion->escudo = Imagenes::uploadImage($this->ruta,$request->file('foto'),$institucion->nombre);
         }
         $institucion->save();
 
