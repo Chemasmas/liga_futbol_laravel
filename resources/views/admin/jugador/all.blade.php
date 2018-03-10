@@ -1,40 +1,39 @@
 @extends('layout.admin')
 
-@section('titulo','Equipo Historico')
+@section('titulo','Jugadores Historico')
 
 @section('rol',"")
 
 @section('content')
-
     <div class="row">
         <div class="col-sm-12">
-            <h3>Lista de Equipos</h3>
+            <h3>Lista de Jugadores</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    @if(count($equipos)>0)
+                    @if(count($jugadores)>0)
                         <thead>
                         <tr >
-                            <th>Nombre</th>
-                            <th>Institución</th>
+                            <th>Nombre/Número</th>
+                            <th>Equipo/Escuela</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
                     @endif
-                    @forelse ($equipos as $equipo)
+                    @forelse ($jugadores as $jugador)
                         <tr>
                             <td>
-                                {{ $equipo->nombre }}
+                                {{$jugador->nombre}} <span style="font-weight: bold;">{{$jugador->numero}}</span>
                             </td>
                             <td>
-                                {{ $equipo->institucione->nombre }}
+                                <span style="font-weight: bold;">[{{$jugador->equipo()->first()->nombre}}]</span>{{$jugador->institucione()->first()->nombre }}
                             </td>
                             <td>
-                                @if($equipo->activo)
-                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Equipo" href='{{ action("EquipoController@deactivate",["idE"=>$equipo->id])}}'>
+                                @if($jugador->usuario->active)
+                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Jugador" href='{{ action("JugadorController@deactivate",["idJ"=>$jugador->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
                                 @else
-                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Equipo" href='{{ action("EquipoController@activate",["idE"=>$equipo->id])}}'>
+                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Jugador" href='{{ action("JugadorController@activate",["idJ"=>$jugador->id])}}'>
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                     </a>
                                 @endif
@@ -43,7 +42,7 @@
                     @empty
                         <tr>
                             <th>
-                                No hay Equipos <a class="btn btn-primary" href="{{action('EquipoController@create')}}">Agregar uno.</a>
+                                No hay Usuario Jugador <a class="btn btn-primary" href="{{action('JugadorController@create')}}">Agregar uno.</a>
                             </th>
                         </tr>
                     @endforelse
@@ -51,5 +50,5 @@
             </div>
         </div>
     </div>
-
 @endsection
+

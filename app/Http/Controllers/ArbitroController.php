@@ -19,7 +19,9 @@ class ArbitroController extends Controller
      */
     public function index()
     {
-        $arbitros =arbitros::all();
+        $arbitros = arbitros::all()->filter( function($x){
+            return $x->usuario->active;
+        });
 
         return view('admin.arbitro.index',[
             "arbitros"=>$arbitros,
@@ -41,7 +43,7 @@ class ArbitroController extends Controller
                 "rutas" => [
                     "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                     "Arbitro"=>["etiqueta"=>"Arbitros-Lista", "active"=>"1","link"=>"/admin/arbitro"],
-                    "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+                    "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
                 ]
         ]);
     }
@@ -85,7 +87,7 @@ class ArbitroController extends Controller
         $arbitro->save(['timestamps' => false]);
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Árbitro Creado"]]
         );
     }
 
@@ -170,7 +172,7 @@ class ArbitroController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 
@@ -183,5 +185,40 @@ class ArbitroController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function all()
+    {
+
+        $arbitros = arbitros::all();
+
+        return view('admin.arbitro.all', [
+            "arbitros" => $arbitros,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Juga" => ["etiqueta" => "Arbitros-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
+    public function activate($id){
+        $arbitro = arbitros::find($id);
+        $usuario = $arbitro->usuario;
+        $usuario->active = true;
+        $usuario->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => $arbitro->nombre . " Activado"]]
+        );
+    }
+
+
+    public function deactivate($id){
+        $arbitro = arbitros::find($id);
+        $usuario = $arbitro->usuario;
+        $usuario->active = false;
+        $usuario->update();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "warning", "mensaje" => $arbitro->nombre . " Desactivado"]]
+        );
     }
 }

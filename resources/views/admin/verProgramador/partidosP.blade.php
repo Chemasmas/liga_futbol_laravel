@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Mostrar Programacion')
+@section('titulo','Propuesta de Partidos')
 
 @section('rol',"")
 
@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h3>Lista de Programación</h3>
+            <h3></h3>
                 @foreach($partidosG as $j=>$partidos)
                     <div class="row" style="padding-bottom: 5px;">
                         <a role="button" data-toggle="collapse" href="#{{'tabla'.$j}}" aria-expanded="false" aria-controls="collapseExample" class="col-sm-12 btn btn-primary" >

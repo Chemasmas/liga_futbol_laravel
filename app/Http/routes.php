@@ -72,6 +72,7 @@ Route::get('/admin/instituciones/{idI}/deactivate',['middleware' => 'auth', 'use
 
 Route::get('/admin/administrador',['middleware' => 'auth', 'uses' => "AdministradorController@index"]);
 Route::get('/admin/administrador/crear',['middleware' => 'auth', 'uses' => "AdministradorController@create"]);
+Route::get('/admin/administrador/historico',['middleware' => 'auth', 'uses' => "AdministradorController@all"]);
 Route::post('/admin/administrador/store',['middleware' => 'auth', 'uses' => "AdministradorController@store"]);
 Route::get( "/admin/administrador/{id}",['middleware' => 'auth', 'uses' => "AdministradorController@show"]);
 Route::get( "/admin/administrador/{id}/edit",['middleware' => 'auth', 'uses' => "AdministradorController@edit"]);
@@ -83,6 +84,7 @@ Route::get('/admin/administrador/{idA}/deactivate',['middleware' => 'auth', 'use
 Route::get('/admin/jugador',['middleware' => 'auth', 'uses' => "JugadorController@index"]);
 Route::get('/admin/jugador/back',['middleware' => 'auth', 'uses' => "JugadorController@back"]);
 Route::get('/admin/jugador/crear',['middleware' => 'auth', 'uses' => "JugadorController@create"]);
+Route::get('/admin/jugador/historico',['middleware' => 'auth', 'uses' => "JugadorController@all"]);
 Route::post('/admin/jugador/store',['middleware' => 'auth', 'uses' => "JugadorController@store"]);
 Route::get("/admin/jugador/{id}",['middleware' => 'auth', 'uses' => "JugadorController@show"]);
 Route::get("/admin/jugador/{id}/edit",['middleware' => 'auth', 'uses' => "JugadorController@edit"]);
@@ -93,6 +95,7 @@ Route::get('/admin/jugador/{idJ}/deactivate',['middleware' => 'auth', 'uses' => 
 
 Route::get('/admin/arbitro',['middleware' => 'auth', 'uses' => "ArbitroController@index"]);
 Route::get('/admin/arbitro/crear',['middleware' => 'auth', 'uses' => "ArbitroController@create"]);
+Route::get('/admin/arbitro/historico',['middleware' => 'auth', 'uses' => "ArbitroController@all"]);
 Route::post('/admin/arbitro/store',['middleware' => 'auth', 'uses' => "ArbitroController@store"]);
 Route::get("/admin/arbitro/{id}",['middleware' => 'auth', 'uses' => "ArbitroController@show"]);
 Route::get("/admin/arbitro/{id}/edit",['middleware' => 'auth', 'uses' => "ArbitroController@edit"]);
@@ -102,6 +105,7 @@ Route::get('/admin/arbitro/{idA}/deactivate',['middleware' => 'auth', 'uses' => 
 
 Route::get('/admin/programador',['middleware' => 'auth', 'uses' => "ProgramadorController@index"]);
 Route::get('/admin/programador/crear',['middleware' => 'auth', 'uses' => "ProgramadorController@create"]);
+Route::get('/admin/programador/historico',['middleware' => 'auth', 'uses' => "ProgramadorController@all"]);
 Route::post('/admin/programador/store',['middleware' => 'auth', 'uses' => "ProgramadorController@store"]);
 Route::get("/admin/programador/{id}",['middleware' => 'auth', 'uses' => "ProgramadorController@show"]);
 Route::get( "/admin/programador/{id}/edit",['middleware' => 'auth', 'uses' => "ProgramadorController@edit"]);
@@ -120,9 +124,8 @@ Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioCo
 Route::get('/admin/verJugador/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 Route::get('/admin/verProgramador/programacion',['middleware' => 'auth', 'uses' => "ProgramadorController@programacion"]);
-//Route::get('/admin/verProgramador/{idP}/pefil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
-Route::get('/admin/verArbitro/partidos',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
+Route::get('/admin/verArbitro/partidosP',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
 Route::get('/admin/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
 

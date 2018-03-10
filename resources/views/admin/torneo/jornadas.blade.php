@@ -1,7 +1,7 @@
 
 @extends('layout.admin')
 
-@section('titulo','Torneos')
+@section('titulo','Jornadas')
 
 @section('rol',"")
 

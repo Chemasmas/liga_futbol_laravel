@@ -89,7 +89,7 @@ class TorneoController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Torneo Creado"]]
         );
 
         //return view('admin.torneo.index');
@@ -242,15 +242,23 @@ class TorneoController extends Controller
 
     }
 
-    public function activate(Request $request,$idT){
-        $torneo = torneos::where("id",$idT)->update(["activo"=>true]);
-        return redirect()->back();
+    public function activate($idT){
+        $torneo = torneos::find($idT);
+        $torneo->activo = true;
+        $torneo->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => $torneo->nombre . " Activado"]]
+        );
     }
 
 
-    public function deactivate(Request $request,$idT){
-        $torneo = torneos::where("id",$idT)->update(["activo"=>false]);
-        return redirect()->back();
+    public function deactivate($idT){
+        $torneo = torneos::find($idT);
+        $torneo->activo = false;
+        $torneo->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "warning", "mensaje" => $torneo->nombre . " Desactivado"]]
+        );
     }
 
     public function generarRotacion($idT){
@@ -262,11 +270,9 @@ class TorneoController extends Controller
         $plantilla->generar();
         //$plantilla->plantilla5();
 
-        return redirect()
-            ->action("TorneoController@participantes",["idT"=>$idT])
-            ->with([
+        return redirect()->back()->with(
                 ["message"=>["clase"=>"success","mensaje"=>"Rol Generado"]]
-            ]);
+            );
     }
 
     public function jornadas($idT){

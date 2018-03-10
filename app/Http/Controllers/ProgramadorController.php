@@ -25,7 +25,9 @@ class ProgramadorController extends Controller
      */
     public function index()
     {
-        $programadores = programadores::all();
+        $programadores = programadores::all()->filter( function($x){
+            return $x->usuario->active;
+        });
         return view("admin.programador.index",[
             "programadores" => $programadores,
             "rutas" => [
@@ -49,7 +51,7 @@ class ProgramadorController extends Controller
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Programador"=>["etiqueta"=>"Programadores-Lista", "active"=>"1","link"=>"/admin/programador"],
-                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -62,11 +64,11 @@ class ProgramadorController extends Controller
      */
     public function store(Request $request)
     {
-
         $usuario = new  usuarios();
         $usuario->password = Hash::make($request["password"]);
         $usuario->username = $request["usuario"];
         $usuario->level = 2;
+        $usuario->active=1;
 
         $usuario->save();
 
@@ -78,7 +80,9 @@ class ProgramadorController extends Controller
         $programador->idInst = $request["id_institucion"];
 
         $programador->save();
-        return redirect()->back();
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Programador Creado"]]
+        );
     }
 
     /**
@@ -147,7 +151,9 @@ class ProgramadorController extends Controller
 
         $usuario->save();
         $programador->save();
-        return redirect()->back();
+                return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => "Actualización Exitosa"]]
+        );
     }
 
     /**
@@ -187,7 +193,7 @@ class ProgramadorController extends Controller
         return view("admin.verProgramador.programacion",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Programación-Lista", "active"=>"0","link"=>""]
             ],
             "torneos" => $torneos,
         ]);
@@ -216,12 +222,14 @@ class ProgramadorController extends Controller
         debug($user->level);
         debug($partidos);
 
-        return view("admin.verProgramador.partidos",[
+        return view("admin.verProgramador.partidosP",[
+            "partidosG" => $partidos,
+
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programacion", "active"=>"0","link"=>""]
-            ],
-            "partidosG" => $partidos,
+                "agregarE" => ["etiqueta" => "Programacion-Lista", "active" => "1", "link" => "/admin/verProgramador/programacion"],
+                "jornada" => ["etiqueta" => "Jornadas", "active" => "0", "link" => ""]
+            ]
         ]);
 
     }
@@ -230,7 +238,7 @@ class ProgramadorController extends Controller
         return view("admin.verArbitro.partidos",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Partidos", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Partidos-Lista   ", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -363,6 +371,40 @@ class ProgramadorController extends Controller
         $partido->save();
         return redirect()->back(); //No debes de editarlo
 
+    }
+
+    public function all()
+    {
+        $programador = programadores::all();
+
+        return view('admin.programador.all', [
+            "programadores" => $programador,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Juga" => ["etiqueta" => "Programadores-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
+    public function activate($id){
+        $programadores = programadores::find($id);
+        $usuario = $programadores->usuario;
+        $usuario->active = true;
+        $usuario->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => $programadores->nombre . " Activado"]]
+        );
+    }
+
+
+    public function deactivate($id){
+        $programadores = programadores::find($id);
+        $usuario = $programadores->usuario;
+        $usuario->active = false;
+        $usuario->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "warning", "mensaje" => $programadores->nombre . " Desactivado"]]
+        );
     }
 }
 

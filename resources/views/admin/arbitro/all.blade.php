@@ -1,40 +1,35 @@
 @extends('layout.admin')
 
-@section('titulo','Equipo Historico')
+@section('titulo','Arbitros Historico')
 
 @section('rol',"")
 
 @section('content')
-
-    <div class="row">
+        <div class="row">
         <div class="col-sm-12">
-            <h3>Lista de Equipos</h3>
+            <h3>Lista de Árbitros</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    @if(count($equipos)>0)
+                    @if(count($arbitros)>0)
                         <thead>
                         <tr >
                             <th>Nombre</th>
-                            <th>Institución</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
                     @endif
-                    @forelse ($equipos as $equipo)
+                    @forelse ($arbitros as $arbitro)
                         <tr>
                             <td>
-                                {{ $equipo->nombre }}
+                                {{ $arbitro->nombre }}
                             </td>
                             <td>
-                                {{ $equipo->institucione->nombre }}
-                            </td>
-                            <td>
-                                @if($equipo->activo)
-                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Equipo" href='{{ action("EquipoController@deactivate",["idE"=>$equipo->id])}}'>
+                                @if($arbitro->usuario->active)
+                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Árbitro" href='{{ action("ArbitroController@deactivate",["idA"=>$arbitro->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
                                 @else
-                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Equipo" href='{{ action("EquipoController@activate",["idE"=>$equipo->id])}}'>
+                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Árbitro" href='{{ action("ArbitroController@activate",["idA"=>$arbitro->id])}}'>
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                     </a>
                                 @endif
@@ -43,7 +38,7 @@
                     @empty
                         <tr>
                             <th>
-                                No hay Equipos <a class="btn btn-primary" href="{{action('EquipoController@create')}}">Agregar uno.</a>
+                                No hay Usuario Árbitro <a class="btn btn-primary" href="{{action('ArbitroController@create')}}">Agregar uno.</a>
                             </th>
                         </tr>
                     @endforelse
@@ -51,5 +46,5 @@
             </div>
         </div>
     </div>
-
 @endsection
+

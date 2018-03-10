@@ -1,7 +1,7 @@
 
 @extends('layout.admin')
 
-@section('titulo','Torneos')
+@section('titulo','Torneos Historico')
 
 @section('rol',"")
 
@@ -16,7 +16,7 @@
                 <thead>
                     <tr >
                         <th>Nombre</th>
-                        <th>Plantila</th>
+                        <th>Plantilla</th>
                         <th>Género</th>
                         <th>Acciones</th>
                     </tr>
@@ -31,7 +31,11 @@
                         {{ $torneo->tipo_torneo }}
                     </td>
                     <td>
-                        {{ $torneo->genero }}
+                        @if($torneo->genero=='M')
+                            Varonil
+                        @else
+                            Femenil
+                        @endif
                     </td>
                     <td>
                         @if($torneo->activo)

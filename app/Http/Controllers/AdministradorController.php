@@ -20,11 +20,11 @@ class AdministradorController extends Controller
      */
     public function index()
     {
-        $admininistradores = administradores::where("isSuper",0)->get();
-        debug($admininistradores);
-
+        $administradores = administradores::where("isSuper",0)->get()->filter( function($x){
+            return $x->usuario->active;
+        });
         return view("admin.administrador.index",[
-            "administradores"=> $admininistradores,
+            "administradores"=> $administradores,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "crear"=>["etiqueta"=>"Administradores-Lista", "active"=>"0","link"=>""]
@@ -43,7 +43,7 @@ class AdministradorController extends Controller
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Administrador"=>["etiqueta"=>"Administradores-Lista", "active"=>"1","link"=>"/admin/administrador"],
-                "crear"=>["etiqueta"=>"Crear", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Agregar", "active"=>"0","link"=>""]
             ]
         ]);
     }
@@ -85,7 +85,7 @@ class AdministradorController extends Controller
         $administrador->save(['timestamps' => false]);
 
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Insercion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Administrador Creado"]]
         );
     }
 
@@ -165,7 +165,7 @@ class AdministradorController extends Controller
         //TODO validacion exito de la insercion
         //success
         return redirect()->back()->with(
-            ["message"=>["clase"=>"success","mensaje"=>"Actualizacion Exitosa"]]
+            ["message"=>["clase"=>"success","mensaje"=>"Actualización Exitosa"]]
         );
     }
 
@@ -178,5 +178,40 @@ class AdministradorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function all()
+    {
+
+        $administrador = administradores::where("isSuper",0)->get();
+
+        return view('admin.administrador.all', [
+            "administradores" => $administrador,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Admin" => ["etiqueta" => "Administradores-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
+    public function activate($id){
+        $administrador = administradores::find($id);
+        $usuario = $administrador->usuario;
+        $usuario->active = true;
+        $usuario->save();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "success", "mensaje" => $administrador->nombre . " Activado"]]
+        );
+    }
+
+
+    public function deactivate($id){
+        $administrador = administradores::find($id);
+        $usuario = $administrador->usuario;
+        $usuario->active = false;
+        $usuario->update();
+        return redirect()->back()->with(
+            ["message" => ["clase" => "warning", "mensaje" => $administrador->nombre . " Desactivado"]]
+        );
     }
 }

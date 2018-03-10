@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@section('titulo','Equipo Historico')
+@section('titulo','Administradores Historico')
 
 @section('rol',"")
 
@@ -8,33 +8,29 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h3>Lista de Equipos</h3>
+            <h3>Lista de Administradores</h3>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
-                    @if(count($equipos)>0)
+                    @if(count($administradores)>0)
                         <thead>
                         <tr >
                             <th>Nombre</th>
-                            <th>Institución</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
                     @endif
-                    @forelse ($equipos as $equipo)
+                    @forelse ($administradores as $administrador)
                         <tr>
                             <td>
-                                {{ $equipo->nombre }}
+                                {{ $administrador->nombre }}
                             </td>
                             <td>
-                                {{ $equipo->institucione->nombre }}
-                            </td>
-                            <td>
-                                @if($equipo->activo)
-                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Equipo" href='{{ action("EquipoController@deactivate",["idE"=>$equipo->id])}}'>
+                                @if($administrador->usuario->active)
+                                    <a class="btn btn-danger" data-toggle="tooltip" title="Desactivar Admin" href='{{ action("AdministradorController@deactivate",["idA"=>$administrador->id])}}'>
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
                                 @else
-                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Equipo" href='{{ action("EquipoController@activate",["idE"=>$equipo->id])}}'>
+                                    <a class="btn btn-success" data-toggle="tooltip" title="Activar Admin" href='{{ action("AdministradorController@activate",["idA"=>$administrador->id])}}'>
                                         <i class="fa fa-check" aria-hidden="true"></i>
                                     </a>
                                 @endif
@@ -43,7 +39,7 @@
                     @empty
                         <tr>
                             <th>
-                                No hay Equipos <a class="btn btn-primary" href="{{action('EquipoController@create')}}">Agregar uno.</a>
+                                No hay Usuario Administrador <a class="btn btn-primary" href="{{action('AdministradorController@create')}}">Agregar uno.</a>
                             </th>
                         </tr>
                     @endforelse
@@ -51,5 +47,4 @@
             </div>
         </div>
     </div>
-
 @endsection
