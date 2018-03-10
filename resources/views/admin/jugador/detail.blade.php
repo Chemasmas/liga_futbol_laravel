@@ -9,7 +9,7 @@
         <h3>Información de Jugador</h3>
         <table class="table table-hover table-bordered">
             <tr>
-                <td rowspan="5"><img src="{{ asset($jugador->foto) }}" alt="" class="img-responsive" style="max-height: 20em; max-width: 20em;"></td>
+                <td rowspan="5"><div><img src="{{ asset($jugador->foto) }}" alt="" class="img-responsive img-thumbnail" style="max-height: 20em; max-width: 20em;"></div></td>
                 <td colspan="2"><h4>Nombre : {{$jugador->nombre}}</h4></td>
             </tr>
             <tr>
@@ -23,7 +23,11 @@
             </tr>
             <tr>
                 <td><h4>Institución: {{ $jugador->institucione->nombre}}</h4></td>
-                <td><img src="{{ asset($jugador->institucione->escudo) }}" alt="" class="img-responsive" style="width: 100%;"></td>
+                <td>
+                    <div>
+                    <img src="{{ asset($jugador->institucione->escudo) }}" alt="" class="img-responsive img-thumbnail" style="width: 100%;">
+                    </div>
+                </td>
             </tr>
         </table>
     </div>
