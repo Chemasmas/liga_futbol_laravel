@@ -19,9 +19,7 @@
                                 <thead>
                                     <th>Equipo 1</th>
                                     <th>Equipo 2</th>
-                                    <th>
-                                        Propuesta
-                                    </th>
+                                    <th>Propuesta</th>
                                 </thead>
                             @foreach($partidos as $partido)
                                 <tr>
