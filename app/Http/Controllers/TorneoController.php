@@ -206,6 +206,31 @@ class TorneoController extends Controller
     public function add_participante(Request $request,$idT){
         debug($request);
 
+        $torneo = torneos::findOrFail($idT);
+        $nparticipantes = participantes_torneo::where("Torneo_id",$idT)->count();
+        debug($nparticipantes);
+        debug($torneo->tipo_torneo);
+        if($torneo->tipo_torneo!=1)//No es una doble vuelta
+        {
+            debug("NO es de doble Vuelta");
+            if($torneo->tipo_torneo <= $nparticipantes){
+                debug("Ya te pasaste ");
+                    return redirect()->back()->with(
+                        ["message" => ["clase" => "danger", "mensaje" =>"¡No es posible agregar más equipos!"]]
+                    );
+            }
+        } else if($torneo->tipo_torneo==1){
+            debug("Es de doble Vuelta");
+            //Torneo 7 v2
+            if($nparticipantes >= 7){
+                debug("Te pasaste en la doble");
+                return redirect()->back()->with(
+                    ["message" => ["clase" => "danger", "mensaje" =>"¡No es posible agregar más equipos!"]]
+                );
+            }
+        }
+
+
         $participante = new participantes_torneo();
         $participante->Torneo_id = $idT;
         $participante->Equipos_id = $request["Equipos_id"];
@@ -219,6 +244,7 @@ class TorneoController extends Controller
 
         $participante->save(['timestamps' => false]);
 
+        debug("Exito!!");
         return redirect()
             ->action("TorneoController@participantes",["idT"=>$idT])
             ->with([

@@ -215,3 +215,4 @@ class AdministradorController extends Controller
         );
     }
 }
+

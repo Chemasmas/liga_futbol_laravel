@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $goles
  * @property int $t_rojas
  * @property int $t_amarillas
- * @property Jugadore $jugadore
+ * @property jugadores $jugadore
  */
 class estadisticas_jugador extends Model
 {

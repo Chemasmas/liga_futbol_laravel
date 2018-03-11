@@ -12,7 +12,6 @@
             <h3>Información de Torneo</h3>
             <h4>Nombre : {{ $torneo->nombre }} </h4>
             <h4>Número de plantilla : {{ $torneo->tipo_torneo }} </h4>
-            <a href="{{action("TorneoController@index")}}" class="btn btn-success">Volver</a>
             <br><br>
             <div class="container">
                 <table class="table table-bordered col-md-4">

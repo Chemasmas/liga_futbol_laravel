@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\arbitros;
+use App\asistencia;
+use App\jugadores;
+use App\partidos;
 use App\usuarios;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -221,4 +225,65 @@ class ArbitroController extends Controller
             ["message" => ["clase" => "warning", "mensaje" => $arbitro->nombre . " Desactivado"]]
         );
     }
+
+
+    public function lista_partidos(){
+        $partidos = partidos::whereDate('fecha',"=",Carbon::today()->toDateString())
+            ->where("status",2)->get();
+
+
+        $ayer = Carbon::yesterday();
+        $limite = Carbon::today()->addDay(4);
+        //$partidos2 = partidos::whereBetween( "fecha",array($ayer,$limite) )->get()->groupBy("fecha");
+        debug(partidos::all());
+        debug($partidos);
+        //debug($partidos2);
+
+        return view('admin.verArbitro.lista_partidos',
+            [
+            "partidos" => $partidos,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
+    public function pasar_lista($idE,$idP){
+
+        $jugadores = jugadores::where("equipos_id",$idE)->get();
+        $asistencias = asistencia::where("partidos_id",$idP)->select("jugadores_id")->get();
+
+        debug("$jugadores");
+        debug($asistencias);
+        debug($asistencias->pluck("jugadores_id"));
+        debug($idP);
+        return view('admin.verArbitro.pase_lista',
+            [
+                "jugadores"=> $jugadores,
+                "idP" => $idP,
+                "asistencias"=>$asistencias->pluck("jugadores_id")->toArray() ,
+                "rutas" => [
+                    "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                    "Parti" => ["etiqueta"=>"Partidos del Dia", "active" => "1" ,"link"=>"/admin/arbitro/partidos"],
+                    "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
+                ]
+            ]);
+    }
+
+    public function asistio(Request $request,$idP,$idJ){
+        debug($request["asistio"]);
+        if($request["asistio"]==1){
+            $asistencia = new asistencia();
+            $asistencia->partidos_id=$idP;
+            $asistencia->jugadores_id=$idJ;
+            $asistencia->save();
+        }
+        else{
+            $asistencia = asistencia::where("partidos_id",$idP)->where("jugadores_id",$idJ)->delete();
+        }
+
+        return redirect()->back();
+    }
 }
+

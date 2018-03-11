@@ -7,6 +7,7 @@ use App\equipos;
 use App\instituciones;
 use App\jugadores;
 use App\usuarios;
+use App\util\Imagenes;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Hash;
 
 class JugadorController extends Controller
 {
+    private $ruta = "jugadores";
+
+
     /**
      * Display a listing of the resource.
      *
@@ -96,12 +100,7 @@ class JugadorController extends Controller
         $jugador->equipos_id = $idE;
         $jugador->numero=$dorsal;
         $jugador->genero = $genero;
-
-
-        $ruta = "jugadores";
-        $request->file('foto')->move($ruta,$jugador->nombre.".".$request->file('foto')->getClientOriginalExtension());
-        $jugador->foto = $ruta."/".$jugador->nombre.".".$request->file('foto')->getClientOriginalExtension();
-
+        $jugador->foto = Imagenes::uploadImage($this->ruta,$request->file('foto'),$jugador->nombre);
         $jugador->save( ['timestamps' => false]);
 
         return redirect()->back()->with(
@@ -188,13 +187,8 @@ class JugadorController extends Controller
         $jugador->idInst = $idI;
         $jugador->equipos_id = $idE;
         $jugador->numero=$dorsal;
-
-        $ruta = "jugadores";
-        $foto = $request->file('foto');
-        debug($foto);
-        if($foto!=null){
-            $request->file('foto')->move($ruta, $jugador->nombre.".".$foto->getClientOriginalExtension());
-            $jugador->foto = $ruta."/".$jugador->nombre.".".$foto->getClientOriginalExtension();
+        if($request->file('foto')!=null){
+            $jugador->foto = Imagenes::uploadImage($this->ruta,$request->file('foto'),$jugador->nombre);
         }
 
         if(strlen($request["password"])>6){
