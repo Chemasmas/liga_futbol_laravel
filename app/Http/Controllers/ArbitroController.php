@@ -228,7 +228,7 @@ class ArbitroController extends Controller
 
 
     public function lista_partidos(){
-        
+
         $partidos = partidos::whereDate('fecha',"=",Carbon::today('America/Mexico_City')->toDateString())
             ->where("status",2)->get();
 
@@ -285,6 +285,10 @@ class ArbitroController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function MarcarGol(){
+        
     }
 }
 
