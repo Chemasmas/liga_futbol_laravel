@@ -19,9 +19,7 @@
                                 <thead>
                                     <th>Equipo 1</th>
                                     <th>Equipo 2</th>
-                                    <th>
-                                        Propuesta
-                                    </th>
+                                    <th>Propuesta</th>
                                 </thead>
                             @foreach($partidos as $partido)
                                 <tr>
@@ -36,11 +34,12 @@
                                         <form method="POST" action="{{action('ProgramadorController@propuesta',["idP"=>$partido->id])}}" class="form-inline">
                                             {{csrf_field()}}
                                             <input type="time" class="form-control" id="hora" name="hora" value="{{$partido->hora}}">
-                                                <input type="date" class="form-control" id="fecha" name="fecha" value="{{$partido->fecha}}">
-                                                <input type="submit" class="form-control btn btn-success" value="Proponer" >
+                                            <input type="date" class="form-control" id="fecha" name="fecha" value="{{$partido->fecha}}">
+                                            <input type="text" class="form-control" id="campo" name="campo" value="{{$partido->campo}}">
+                                            <input type="submit" class="form-control btn btn-success" value="Proponer" >
                                         </form>
                                         @else
-                                            {{$partido->fecha}} [{{$partido->hora}}]
+                                            {{$partido->fecha}} [{{$partido->hora}}] <span style="font-weight: bold">{{$partido->campo}}</span>
                                             <a href="{{action("ProgramadorController@habilitar_edicion_partido",["idP"=>$partido->id])}}">Modificar</a>
                                         @endif
                                     </td>

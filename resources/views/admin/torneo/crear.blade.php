@@ -10,12 +10,12 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Torneo</label>
-                <input type="text" name="nombre" class="form-control" placeholder=""  value="{{!empty($torneo)?$torneo->nombre:''}}">
+                <input type="text" name="nombre" class="form-control" placeholder=""  value="{{!empty($torneo)?$torneo->nombre:''}}" @if($torneo->generado) disabled @endif>
             </div>
             <!--TODO Esto podria tener una tabla-->
             <div class="form-group">
                 <label for="tipo_torneo">Tipo</label>
-                <select class="form-control" name="tipo_torneo">
+                <select class="form-control" name="tipo_torneo" @if($torneo->generado) disabled @endif>
                     <option value="5" {{!empty($torneo)&&5==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 5</option>
                     <option value="6" {{!empty($torneo)&&6==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 6</option>
                     <option value="7" {{!empty($torneo)&&7==$torneo->tipo_torneo?'"selected"':''}}>Plantilla 7</option>
@@ -32,12 +32,12 @@
             </div>
             <div class="form-group">
                 <label>Género</label>
-                <select class="form-control" name="genero">
+                <select class="form-control" name="genero" @if($torneo->generado) disabled @endif>
                     <option value="M" {{!empty($torneo)&&"M"==$torneo->genero?'"selected"':''}} >Varonil</option>
                     <option value="F" {{!empty($torneo)&&"F"==$torneo->genero?'"selected"':''}}>Femenil</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success pull-right"> {{!empty($torneo)?'Guardar Edición':'Crear'}}</button>
+            <button type="submit" class="btn btn-success pull-right" @if($torneo->generado) disabled @endif> {{!empty($torneo)?'Guardar Edición':'Crear'}}</button>
         </form>
     </div>
 

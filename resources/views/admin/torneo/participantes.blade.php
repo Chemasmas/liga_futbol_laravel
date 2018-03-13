@@ -11,9 +11,11 @@
             <h3>Participantes de {{$torneo->nombre}}</h3>
             <div class="btn-group" role="group" aria-label="...">
             <a class="btn btn-success" href="{{action("TorneoController@index")}}"> Volver </a>
+                @if(!$torneo->generado)
             <a class="btn btn-primary" href="{{action("TorneoController@generarRotacion",["idT"=>$torneo->id])}}" @if($torneo->generado) {{'disabled'}} @endif>
                 Generar Rol
             </a>
+                @endif
             <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if(!$torneo->generado) {{'disabled'}} @endif>
                 Jornadas
             </a>
@@ -33,7 +35,7 @@
                         <td>
                             <form action="{{action('TorneoController@remove_participante',["idT"=>$torneo->id,"idE"=>$participante->id])}}" method="POST">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" class="btn btn-danger" @if($torneo->generado) disabled @endif>
                                     Quitar
                                 </button>
                             </form>
@@ -48,14 +50,14 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="Equipos_id">Equipo</label>
-                    <select class="form-control" name="Equipos_id" style="margin-left: 10px;">
+                    <select class="form-control" name="Equipos_id" style="margin-left: 10px;" @if($torneo->generado) disabled @endif>
                         @foreach ($equipos as $equipo)
                             <option value ="{{$equipo->id}}">{{ $equipo->nombre }}</option>
                         @endforeach
                     </select>
 
                 </div>
-                <button class="btn btn-success" type="submit" style="margin-left: 10px;">Agregar</button>
+                <button class="btn btn-success" type="submit" style="margin-left: 10px;" @if($torneo->generado) disabled @endif>Agregar</button>
             </form>
         </div>
         @endif
