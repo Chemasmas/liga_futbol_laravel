@@ -97,6 +97,7 @@ Route::get('/admin/arbitro',['middleware' => 'auth', 'uses' => "ArbitroControlle
 Route::get('/admin/arbitro/crear',['middleware' => 'auth', 'uses' => "ArbitroController@create"]);
 Route::get('/admin/arbitro/historico',['middleware' => 'auth', 'uses' => "ArbitroController@all"]);
 Route::post('/admin/arbitro/store',['middleware' => 'auth', 'uses' => "ArbitroController@store"]);
+Route::get('/admin/arbitro/capturar/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@capturar"]);
 Route::get('/admin/arbitro/partidos',['middleware' => 'auth', 'uses' => "ArbitroController@lista_partidos"]);
 Route::get('/admin/arbitro/{idE}/lista/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@pasar_lista"]);
 Route::post('/admin/arbitro/{idP}/asistio/{idJ}',['middleware' => 'auth', 'uses' => "ArbitroController@asistio"]);
