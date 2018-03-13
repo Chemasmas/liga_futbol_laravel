@@ -48,9 +48,7 @@
                         <div class="modal fade" id="login-modal">
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form action="{{action("AdminController@login")}}" method="POST">
-                                    {{csrf_field()}}
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <form>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -61,10 +59,8 @@
                                     </div>
                                     <div class="form-group custom-checkbox">
                                         <label>
-                                            <input type="checkbox"> Stay login
                                         </label>
                                         <a class="pull-right forgot-password" href="#"></a>
-                                        <a href="#" class="pull-right forgot-password" data-toggle="modal" data-target="#login-modal-2">Forgot password?</a>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn full-width red-btn">Login</button>
@@ -104,8 +100,8 @@
                 <div class="maga-drop-wrap">
 
                     <!-- Logo -->
-                    <div class="logo">
-                        <a href="index.blade.php"><img src="images/LOGo final full.png" alt="" width="250"></a>
+                    <div class="logo" style="top: -20px; left: -35px;">
+                        <a href="home-1.html"><img src="images/LOGo final full.png" alt="" width="210"></a>
                     </div>
                     <!-- Logo -->
 
@@ -121,22 +117,22 @@
                     <!-- Nav List -->
                     <ul class="nav-list pull-right">
                         <li>
-                            <a href="/">Inicio</a>
+                            <a href="home-1.html">Inicio</a>
                             <ul>
-                                <li><a href="/about">quienes somos</a></li>
+                                <li><a href="about.html">quienes somos</a></li>
                                 <li></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="/directory">directorio</a>
+                            <a href="directory.html">directorio</a>
                             <ul>
-                                <li><a href="/institutions">instituciones</a></li>
-                                <li><a href="/programers">programadores</a></li>
+                                <li><a href="institutions.html">instituciones</a></li>
+                                <li><a href="programers.html">programadores</a></li>
                             </ul>
                         </li>
                         <li class="mega-dropdown">
-                            <a href="/regulation">reglamento</a>
+                            <a href="regulation.html">reglamento</a>
 
                             <ul>
                                 <li class="row">
@@ -205,13 +201,15 @@
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
                                                     <span class="red-color"></span><a href="docs/formatsanddocuments.pdf" download="formatsanddocuments">DESCARGAR</a>
-                                                    <h2>categorias y formatos</h2>
+                                                    <h2>categorias </h2>
+                                                    <h2>y formatos</h2>
                                                 </div>
                                                 <!-- Post Detail -->
 
                                             </div>
                                             <!-- Post Img -->
 
+                                            <!-- Post Img -->
                                             <div class="item">
 
                                                 <!-- Post Img -->
@@ -229,6 +227,9 @@
                                                 <!-- Post Detail -->
 
                                             </div>
+                                            <!-- Post Img -->
+
+
 
                                             <!-- Post Img -->
                                             <div class="item">
@@ -288,13 +289,22 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/statistics">estadisticas</a>
+                            <a href="#">estadisticas</a>
                             <ul>
-                                <li><a href="/next_match">Femenil</a></li>
-                                <li><a href="/next_match">varonil</a></li>
+                                <li><a href="statisticsfemale.html">Femenil</a></li>
+                                <li><a href="statisticsmale.html">varonil</a></li>
                             </ul>
                         </li>
-                        <li><a href="/contact">contacto</a></li>
+
+                        <li>
+                            <a href="#">Proximos</a>
+                            <ul>
+                                <li><a href="nextmatchsfemale.html">Femenil</a></li>
+                                <li><a href="nextmatchsmale.html">Varonil</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="contact.html">contacto</a></li>
                     </ul>
                     <!-- Nav List -->
 
@@ -304,10 +314,11 @@
         <!-- Nav -->
 
     </header>
+    <!-- Header -->
 
     @yield('content')
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="main-footer style-2">
 
         <!-- Footer Columns -->
@@ -446,5 +457,5 @@
 <script src="js/main.js"></script>
 </body>
 
-<!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
+<!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
 </html>
