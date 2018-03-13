@@ -14,15 +14,9 @@
                     <tr>
                         <td>{{$torneo->nombre}}</td>
                         <td>
-                            @if($torneo->generado)
-                            <a href="{{action("ProgramadorController@rol",["id"=>$torneo->id])}}" class="btn btn-info" data-toggle="tooltip" title="Ver Programación">
+                            <a href="{{$torneo->generado?action("ProgramadorController@rol",["id"=>$torneo->id]):"#"}}" class="btn btn-info" data-toggle="tooltip" title="{{$torneo->generado?"Ver Programación":"No hay programacion"}}" >
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                             </a>
-                            @else
-                            <a href="{{action("TorneoController@participantes",["id"=>$torneo->id])}}" class="btn btn-info" data-toggle="tooltip" title="Agregar Participantes">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                            </a>
-                            @endif
                         </td>
                     </tr>
                 @endforeach
