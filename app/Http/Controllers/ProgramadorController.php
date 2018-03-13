@@ -306,9 +306,11 @@ class ProgramadorController extends Controller
         if( $partido->status == 2 && Auth::user()->level > 1 ) // Ya asignada y no eres admin
             return redirect()->back();
 
-            $hora = (new Carbon($request["hora"]) )->toTimeString();
+        $hora = (new Carbon($request["hora"]) )->toTimeString();
 
-            $fecha = $request["fecha"];
+        $fecha = $request["fecha"];
+
+        $campo = $request["campo"];
 
         //debug($request["fecha"]);
         //debug($request["hora"]);
@@ -322,6 +324,7 @@ class ProgramadorController extends Controller
             debug("Admin");
             $partido->hora = $hora;
             $partido->fecha = $fecha;
+            $partido->campo = $campo;
             $partido->status = 2; //Aceptado
         }else{
             debug("Programador");
@@ -337,7 +340,7 @@ class ProgramadorController extends Controller
                 debug($fecha);
                 debug($partido->fecha);
 
-                if($partido->hora == $hora && $partido->fecha == $fecha){ //Son iguales
+                if($partido->hora == $hora && $partido->fecha == $fecha && $partido->campo == $campo){ //Son iguales
                     debug("Acuerdo");
                     $partido->status = 2; //llegaron aun acuerdo
                     $partido->verifica = null;
@@ -347,6 +350,7 @@ class ProgramadorController extends Controller
                     $partido->hora = null;
                     $partido->fecha = null;
                     $partido->verifica = null;
+                    $partido->campo=null;
                     $partido->status = 0;
                 }
             }else if($partido->status == 0) { // Nueva propuesta
@@ -359,6 +363,7 @@ class ProgramadorController extends Controller
                 $partido->hora = $hora;
                 $partido->fecha = $fecha;
                 $partido->status = 1; //Aceptado
+                $partido->campo = $campo;
                 $partido->verifica = Auth::user()->id;
 
             }
