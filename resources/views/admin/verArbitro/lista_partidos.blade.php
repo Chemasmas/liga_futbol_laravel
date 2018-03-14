@@ -9,9 +9,9 @@
         <div class="col-sm-12">
             <h3>Partidos del dia</h3>
             <div class="col-sm-12">
-                <table class="table">
+                <table class="table" style="text-align: center;">
                     <thead>
-                        <th colspan="6">Partido</th>
+                        <th colspan="5" >Partidos</th>
                         <th>Acciones</th>
                     </thead>
                 @forelse($partidos as $partido)
@@ -22,6 +22,9 @@
                                 </a>
                             </td>
                             <td>{{$partido->equipol->nombre}}</td>
+                            <td>
+                                {{$partido->hora}} <span>{{$partido->campo}}</span>
+                            </td>
                             <td>{{$partido->equipov->nombre}}</td>
                             <td>
                                 <a href="{{action('ArbitroController@pasar_lista',["idE"=>$partido->equipov->id,"idP"=>$partido->id])}}">
@@ -29,7 +32,9 @@
                                 </a>
                             </td>
                             <td>
-                                {{$partido->hora}}<span></span>
+                                <a href="{{action('ArbitroController@capturar',['idP'=>$partido->id])}}" class="btn btn-success">
+                                    Capturar
+                                </a>
                             </td>
                         </tr>
                 @empty

@@ -479,7 +479,12 @@ top: 50%; margin: -25px 0 0; opacity: 0; visibility: hidden;}
 
 /* header Style 3 */
 .header.style-3 .topbar-and-logobar{ background: #0c0c0c;}
-.header.style-3 .logo{ position: absolute; top: -32px; z-index: 100;}
+.header.style-3 .logo{
+	position: absolute;
+	top: -25px;
+	z-index: 100;
+	left: -48px;
+}
 .header.style-3 .nav-list > li > a{ padding: 23px 15px; font-weight: 600;}
 .header.style-3 .nav-list > li{ border: 0;}
 .header.style-3 .search-bar-holder .search-bar{ margin: 12px 0 12px 50px; min-width: 280px;}

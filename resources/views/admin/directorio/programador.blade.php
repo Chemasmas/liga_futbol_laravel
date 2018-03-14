@@ -13,6 +13,8 @@
                     <thead>
                     <tr >
                         <th>Nombre</th>
+                        <th>Institución</th>
+                        <th>Correo</th>
                         <th>Teléfono</th>
                     </tr>
                     </thead>
@@ -20,6 +22,12 @@
                         <tr>
                             <td>
                                 {{ $programador->nombre }}
+                            </td>
+                            <td>
+                                {{ $programador->institucione->nombre }}
+                            </td>
+                            <td>
+                                {{ $programador->correo }}
                             </td>
                             <td>
                                 {{ $programador->telefono }}

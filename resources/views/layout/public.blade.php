@@ -48,9 +48,8 @@
                         <div class="modal fade" id="login-modal">
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form action="{{action("AdminController@login")}}" method="POST">
-                                    {{csrf_field()}}
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <form method="POST" action="{{action('AdminController@login')}}">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>
@@ -61,10 +60,8 @@
                                     </div>
                                     <div class="form-group custom-checkbox">
                                         <label>
-                                            <input type="checkbox"> Stay login
                                         </label>
                                         <a class="pull-right forgot-password" href="#"></a>
-                                        <a href="#" class="pull-right forgot-password" data-toggle="modal" data-target="#login-modal-2">Forgot password?</a>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn full-width red-btn">Login</button>
@@ -104,8 +101,8 @@
                 <div class="maga-drop-wrap">
 
                     <!-- Logo -->
-                    <div class="logo">
-                        <a href="index.blade.php"><img src="images/LOGo final full.png" alt="" width="250"></a>
+                    <div class="logo" style="top: -20px; left: -35px;">
+                        <a href="{{action('HomeController@index')}}"><img src="images/LOGo final full.png" alt="" width="210"></a>
                     </div>
                     <!-- Logo -->
 
@@ -121,22 +118,22 @@
                     <!-- Nav List -->
                     <ul class="nav-list pull-right">
                         <li>
-                            <a href="/">Inicio</a>
+                            <a href="{{action('HomeController@index')}}">Inicio</a>
                             <ul>
-                                <li><a href="/about">quienes somos</a></li>
+                                <li><a href="{{action('HomeController@about')}}">quienes somos</a></li>
                                 <li></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="/directory">directorio</a>
+                            <a href="{{action('HomeController@directory')}}">directorio</a>
                             <ul>
-                                <li><a href="/institutions">instituciones</a></li>
-                                <li><a href="/programers">programadores</a></li>
+                                <li><a href="{{action('HomeController@institutions')}}">instituciones</a></li>
+                                <li><a href="{{action('HomeController@programers')}}">programadores</a></li>
                             </ul>
                         </li>
                         <li class="mega-dropdown">
-                            <a href="/regulation">reglamento</a>
+                            <a href="{{action('HomeController@regulation')}}">reglamento</a>
 
                             <ul>
                                 <li class="row">
@@ -147,7 +144,7 @@
                                                 <li><a href="docs/competitionregulation.pdf">reglamento de competencia</a></li>
                                                 <li><a href="docs/technicalannex.pdf">Anexo Tecnico</a></li>
                                                 <li><a href="docs/formatsanddocuments.pdf">categorias y formatos</a></li>
-                                                <li><a href="docs/calls.pdf">Nuestra Convocatoria</a></li>
+                                                <li><a href="docs/calls.pdf">Nuestras Convocatoria</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -205,13 +202,15 @@
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
                                                     <span class="red-color"></span><a href="docs/formatsanddocuments.pdf" download="formatsanddocuments">DESCARGAR</a>
-                                                    <h2>categorias y formatos</h2>
+                                                    <h2>categorias </h2>
+                                                    <h2>y formatos</h2>
                                                 </div>
                                                 <!-- Post Detail -->
 
                                             </div>
                                             <!-- Post Img -->
 
+                                            <!-- Post Img -->
                                             <div class="item">
 
                                                 <!-- Post Img -->
@@ -229,6 +228,9 @@
                                                 <!-- Post Detail -->
 
                                             </div>
+                                            <!-- Post Img -->
+
+
 
                                             <!-- Post Img -->
                                             <div class="item">
@@ -288,13 +290,22 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/statistics">estadisticas</a>
+                            <a href="#">estadisticas</a>
                             <ul>
-                                <li><a href="/next_match">Femenil</a></li>
-                                <li><a href="/next_match">varonil</a></li>
+                                <li><a href="{{action('HomeController@statisticsfemale')}}">Femenil</a></li>
+                                <li><a href="{{action('HomeController@statisticsmale')}}">varonil</a></li>
                             </ul>
                         </li>
-                        <li><a href="/contact">contacto</a></li>
+
+                        <li>
+                            <a href="#">Proximos</a>
+                            <ul>
+                                <li><a href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></li>
+                                <li><a href="{{action('HomeController@nextmatchsmale')}}">Varonil</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="{{action('HomeController@contact')}}">contacto</a></li>
                     </ul>
                     <!-- Nav List -->
 
@@ -304,10 +315,11 @@
         <!-- Nav -->
 
     </header>
+    <!-- Header -->
 
     @yield('content')
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="main-footer style-2">
 
         <!-- Footer Columns -->
@@ -392,17 +404,17 @@
 
 <!-- Slide Menu -->
 <nav id="menu" class="responive-nav">
-    <a class="r-nav-logo" href="home-1.html"><img src="images/LOGo final.png" alt="" width="1921"></a>
+    <a class="r-nav-logo" href="{{action('HomeController@index')}}"><img src="images/LOGo final.png" alt="" width="1921"></a>
     <ul class="respoinve-nav-list">
         <li><a data-toggle="collapse" href="#list-1"><em class="pull-right fa fa-angle-down"></em>Inicio</a>
             <ul class="collapse" id="list-1">
-                <li><a href="about.html">Quienes Somos</a></li>
+                <li><a href="{{action('HomeController@about')}}">Quienes Somos</a></li>
             </ul>
         </li>
         <li><a data-toggle="collapse" href="#list-2"><em class="pull-right fa fa-angle-down"></em>Directorio</a>
             <ul class="collapse" id="list-2">
-                <li><a href="institutions.html">Instituciones</a></li>
-                <li><a href="programers.html">Programadores</a></li>
+                <li><a href="{{action('HomeController@institutions')}}">Instituciones</a></li>
+                <li><a href="{{action('HomeController@programers')}}">Programadores</a></li>
             </ul>
         </li>
         <li>
@@ -415,11 +427,11 @@
         </li>
         <li><a data-toggle="collapse" href="#list-4"><em class="pull-right fa fa-angle-down"></em>Estadisticas</a>
             <ul class="collapse" id="list-4">
-                <li><a href="female.html">Femenil</a></li>
-                <li><a href="male.html">Varonil</a></li>
+                <li><a href="{{action('HomeController@statisticsfemale')}}">Femenil</a></li>
+                <li><a href="{{action('HomeController@statisticsmale')}}">Varonil</a></li>
             </ul>
         </li>
-        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="{{action('HomeController@contact')}}">Contacto</a></li>
     </ul>
 </nav>
 <!-- Slide Menu -->
@@ -446,5 +458,5 @@
 <script src="js/main.js"></script>
 </body>
 
-<!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.blade.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
+<!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
 </html>

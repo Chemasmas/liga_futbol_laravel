@@ -5,7 +5,7 @@
 @section('content')
 
 
-<!-- Page Heading & Breadcrumbs  -->
+	<!-- Page Heading & Breadcrumbs  -->
 	<div class="page-heading-breadcrumbs">
 		<div class="container">
 			<h2>contacto</h2>
@@ -20,15 +20,15 @@
 	<div class="overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/underconstraction-bg.jpg">
 	</div>
 	<!-- Page Heading banner -->
-	
+
 	<!-- Main Content -->
 	<main class="main-content">
 
 		<!-- Contact -->
 		<div class="theme-padding white-bg">
 			<div class="container">
-			
-				<!-- Main Heading -->55
+
+				<!-- Main Heading -->
 				<div class="main-heading-holder">
 					<div class="main-heading">
 						<h2>contactanos</h2>
@@ -52,8 +52,11 @@
 						<div class="address-widget more-info">
 							<span class="address-icon"><i class="fa fa-info"></i></span>
 							<h5>mas informacion</h5>
-							<strong>Alguna descripcion o Titulo</strong>
-							<p>Para agregar algun texto descriptivo o mayores informes</p>
+							<a href="competitionregulation.pdf"><strong>Reglamento de Competencia</strong></a>
+							<a href="technicalannex.pdf"><strong>Anexo Tecnico</strong></a>
+							<a href="formatsanddocuments.pdf"><strong>Categorias y Formatos</strong></a>
+							<a href="calls.html"><strong>Convocatorias</strong></a>
+							<p></p>
 						</div>
 					</li>
 					<li class="col-sm-4">
@@ -75,28 +78,28 @@
 		<!-- Contact Form Holder -->
 		<div class="theme-padding-bottom">
 			<div class="container">
-				<h2>Envianos un mail</h2> 
+				<h2>Envianos un mail</h2>
 				<div class="row">
-				
+
 					<!-- Form -->
 					<form id="contact-form" class="contact-form col-sm-6">
 						<div class="form-group">
-					    	<input type="text" class="form-control" required="required" placeholder="Nombre">
-					    	<i class="fa fa-user"></i>
-					   	</div>
-					   	<div class="form-group">
-					    	<input type="text" class="form-control" required="required" placeholder="Email *">
-					   		<i class="fa fa-envelope"></i>
-					   	</div>
-					   	<div class="form-group">
-					    	<input type="text" class="form-control" required="required" placeholder="Telefono">
-					   		<i class="fa fa-phone"></i>
-					   	</div>
+							<input type="text" class="form-control" required="required" placeholder="Nombre">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" required="required" placeholder="Email *">
+							<i class="fa fa-envelope"></i>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" required="required" placeholder="Telefono">
+							<i class="fa fa-phone"></i>
+						</div>
 						<div class="form-group">
 							<textarea class="form-control style-d" rows="6" id="comment" placeholder="Escribe un comentario..."></textarea>
 							<i class="fa fa-pencil-square-o"></i>
 						</div>
-					   	<button class="btn red-btn pull-right">Enviar</button>
+						<button class="btn red-btn pull-right">Enviar</button>
 					</form>
 					<!-- Form -->
 

@@ -97,6 +97,7 @@ Route::get('/admin/arbitro',['middleware' => 'auth', 'uses' => "ArbitroControlle
 Route::get('/admin/arbitro/crear',['middleware' => 'auth', 'uses' => "ArbitroController@create"]);
 Route::get('/admin/arbitro/historico',['middleware' => 'auth', 'uses' => "ArbitroController@all"]);
 Route::post('/admin/arbitro/store',['middleware' => 'auth', 'uses' => "ArbitroController@store"]);
+Route::get('/admin/arbitro/capturar/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@capturar"]);
 Route::get('/admin/arbitro/partidos',['middleware' => 'auth', 'uses' => "ArbitroController@lista_partidos"]);
 Route::get('/admin/arbitro/{idE}/lista/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@pasar_lista"]);
 Route::post('/admin/arbitro/{idP}/asistio/{idJ}',['middleware' => 'auth', 'uses' => "ArbitroController@asistio"]);
@@ -141,10 +142,13 @@ Route::get('/institutions',"HomeController@institutions");
 Route::get('/contact',"HomeController@contact");
 Route::get('/programers',"HomeController@programers");
 Route::get('/gallery',"HomeController@gallery");
-Route::get('/next_match',"HomeController@nextMatch");
+Route::get('/next_match_female',"HomeController@nextmatchsfemale");
+Route::get('/next_match_male',"HomeController@nextmatchsmale");
 Route::get('/regulation',"HomeController@regulation");
-Route::get('/statistics',"HomeController@statistics");
-
+Route::get('/statistics_female',"HomeController@statisticsfemale");
+Route::get('/statistics_male',"HomeController@statisticsmale");
+Route::get('/match_result_male',"HomeController@matchresultmale");
+Route::get('/match_result_female',"HomeController@matchresultfemale");
 
 
 Route::get('/test',"HomeController@ejemplo");
