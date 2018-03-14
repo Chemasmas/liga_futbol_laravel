@@ -48,7 +48,8 @@
                         <div class="modal fade" id="login-modal">
                             <div class="login-form position-center-center">
                                 <h2>Login<button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button></h2>
-                                <form>
+                                <form method="POST" action="{{action('AdminController@login')}}">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="user" placeholder="domain@live.com">
                                         <i class=" fa fa-envelope"></i>

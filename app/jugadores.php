@@ -19,7 +19,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property instituciones $institucione
  * @property usuarios $usuario
  * @property equipos $equipo
- * @property estadisticas_jugador[] $estadisticasJugadors
  */
 class jugadores extends Model
 {
@@ -56,11 +55,4 @@ class jugadores extends Model
         return $this->belongsTo('App\equipos', 'equipos_id');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function estadisticasJugadores()
-    {
-        return $this->hasMany('App\estadisticas_jugador', 'idJugador');
-    }
 }
