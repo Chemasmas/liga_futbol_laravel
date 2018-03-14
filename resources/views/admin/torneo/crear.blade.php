@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="offset-sm-3 col-sm-6">
-        <form method="POST" action="{{!empty($torneo)?action('TorneoController@update',["id"=>$torneo->id]):action('TorneoController@store')}}">
+        <form method="POST" action="{{!empty($torneo1)?action('TorneoController@update',["id"=>$torneo1->id]):action('TorneoController@store')}}">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Torneo</label>
