@@ -3,7 +3,6 @@
 @section('titulo','Inicio')
 
 @section('content')
-
 	<!-- Slider Holder -->
 	<div class="slider-holder">
 
@@ -25,8 +24,8 @@
 									<div class="banner-caption style-1 p-white h-white pull-right">
 										<h1 class="animated fadeInUp delay-1s">Proximos<br>Partidos<br></h1>
 										<p class="animated fadeInUp delay-2s">Enterate de la siguiente ronda</p>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="nextmatchsfemale.html"><i>+</i>Femenil</a>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="nextmatchsmale.html"><i>+</i>Varonil</a>
+										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@nextmatchsfemale')}}"><i>+</i>Femenil</a>
+										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@nextmatchsmale')}}"><i>+</i>Varonil</a>
 									</div>
 								</div>
 							</div>
@@ -41,8 +40,8 @@
 									<div class="banner-caption style-2 p-white h-white pull-left">
 										<h1 class="animated fadeInUp delay-1s">Estadisticas de<br>jornada actual<br></h1>
 										<p class="animated fadeInUp delay-2s">Checa la tabla de puntaje</p>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="statisticsfemale.html"><i>+</i>Femenil</a>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="statisticsmale.html"><i>+</i>Varonil</a>
+										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@statisticsfemale')}}"><i>+</i>Femenil</a>
+										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@statisticsmale')}}"><i>+</i>Varonil</a>
 									</div>
 								</div>
 							</div>
@@ -57,7 +56,7 @@
 									<div class="banner-caption style-2 p-white h-white pull-left">
 										<h1 class="animated fadeInUp delay-1s">Convocatorias<br>Inscripciones<br>abiertas</h1>
 										<p class="animated fadeInUp delay-2s">Revisa nuestra normativa</p>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="regulation.html"><i>+</i>leer mas</a>
+										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@regulation')}}"><i>+</i>leer mas</a>
 									</div>
 								</div>
 							</div>
@@ -225,8 +224,8 @@
 
 								<!-- Upcoming Fixture -->
 								<div class="col-sm-8 col-xs-7 r-full-width">
-									<h3><em class="red-color">JORNADAS </em>ACTUALES <a class="view-all pull-right" href="nextmatchsmale.html">Varonil</a>
-										<a class="view-all pull-right" href="nextmatchsfemale.html">Femenil</a></h3>
+									<h3><em class="red-color">JORNADAS </em>ACTUALES <a class="view-all pull-right" href="{{action('HomeController@nextmatchsmale')}}">Varonil</a>
+										<a class="view-all pull-right" href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></h3>
 
 									<div class="upcoming-fixture">
 										<div class="table-responsive">
@@ -238,7 +237,7 @@
 													</td>
 													<td class="upcoming-fixture-date"><span>6 Feb 2016 15:00</span></td>
 													<td>
-														<div class="logo-width-name"><img src="images/team-logos-small/img-02.png" alt="nextmatchsfemale.html">Equipo 2</div>
+														<div class="logo-width-name"><img src="images/team-logos-small/img-02.png" alt="{{action('HomeController@nextmatchsfemale')}}">Equipo 2</div>
 													</td>
 												</tr>
 												<tr>
@@ -299,7 +298,7 @@
 
 					<!-- Main Heading -->
 					<br>
-					<a href="gallery.html"><h4>Galeria</h4></a>
+					<a href="{{action('HomeController@gallery')}}"><h4>Galeria</h4></a>
 					</br>
 
 					<!-- Main Heading -->

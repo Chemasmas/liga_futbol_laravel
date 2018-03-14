@@ -101,7 +101,7 @@
 
                     <!-- Logo -->
                     <div class="logo" style="top: -20px; left: -35px;">
-                        <a href="home-1.html"><img src="images/LOGo final full.png" alt="" width="210"></a>
+                        <a href="{{action('HomeController@index')}}"><img src="images/LOGo final full.png" alt="" width="210"></a>
                     </div>
                     <!-- Logo -->
 
@@ -117,22 +117,22 @@
                     <!-- Nav List -->
                     <ul class="nav-list pull-right">
                         <li>
-                            <a href="home-1.html">Inicio</a>
+                            <a href="{{action('HomeController@index')}}">Inicio</a>
                             <ul>
-                                <li><a href="about.html">quienes somos</a></li>
+                                <li><a href="{{action('HomeController@about')}}">quienes somos</a></li>
                                 <li></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="directory.html">directorio</a>
+                            <a href="{{action('HomeController@directory')}}">directorio</a>
                             <ul>
-                                <li><a href="institutions.html">instituciones</a></li>
-                                <li><a href="programers.html">programadores</a></li>
+                                <li><a href="{{action('HomeController@institutions')}}">instituciones</a></li>
+                                <li><a href="{{action('HomeController@programers')}}">programadores</a></li>
                             </ul>
                         </li>
                         <li class="mega-dropdown">
-                            <a href="regulation.html">reglamento</a>
+                            <a href="{{action('HomeController@regulation')}}">reglamento</a>
 
                             <ul>
                                 <li class="row">
@@ -143,7 +143,7 @@
                                                 <li><a href="docs/competitionregulation.pdf">reglamento de competencia</a></li>
                                                 <li><a href="docs/technicalannex.pdf">Anexo Tecnico</a></li>
                                                 <li><a href="docs/formatsanddocuments.pdf">categorias y formatos</a></li>
-                                                <li><a href="docs/calls.pdf">Nuestra Convocatoria</a></li>
+                                                <li><a href="docs/calls.pdf">Nuestras Convocatoria</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -291,20 +291,20 @@
                         <li>
                             <a href="#">estadisticas</a>
                             <ul>
-                                <li><a href="statisticsfemale.html">Femenil</a></li>
-                                <li><a href="statisticsmale.html">varonil</a></li>
+                                <li><a href="{{action('HomeController@statisticsfemale')}}">Femenil</a></li>
+                                <li><a href="{{action('HomeController@statisticsmale')}}">varonil</a></li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="#">Proximos</a>
                             <ul>
-                                <li><a href="nextmatchsfemale.html">Femenil</a></li>
-                                <li><a href="nextmatchsmale.html">Varonil</a></li>
+                                <li><a href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></li>
+                                <li><a href="{{action('HomeController@nextmatchsmale')}}">Varonil</a></li>
                             </ul>
                         </li>
 
-                        <li><a href="contact.html">contacto</a></li>
+                        <li><a href="{{action('HomeController@contact')}}">contacto</a></li>
                     </ul>
                     <!-- Nav List -->
 
@@ -403,17 +403,17 @@
 
 <!-- Slide Menu -->
 <nav id="menu" class="responive-nav">
-    <a class="r-nav-logo" href="home-1.html"><img src="images/LOGo final.png" alt="" width="1921"></a>
+    <a class="r-nav-logo" href="{{action('HomeController@index')}}"><img src="images/LOGo final.png" alt="" width="1921"></a>
     <ul class="respoinve-nav-list">
         <li><a data-toggle="collapse" href="#list-1"><em class="pull-right fa fa-angle-down"></em>Inicio</a>
             <ul class="collapse" id="list-1">
-                <li><a href="about.html">Quienes Somos</a></li>
+                <li><a href="{{action('HomeController@about')}}">Quienes Somos</a></li>
             </ul>
         </li>
         <li><a data-toggle="collapse" href="#list-2"><em class="pull-right fa fa-angle-down"></em>Directorio</a>
             <ul class="collapse" id="list-2">
-                <li><a href="institutions.html">Instituciones</a></li>
-                <li><a href="programers.html">Programadores</a></li>
+                <li><a href="{{action('HomeController@institutions')}}">Instituciones</a></li>
+                <li><a href="{{action('HomeController@programers')}}">Programadores</a></li>
             </ul>
         </li>
         <li>
@@ -426,11 +426,11 @@
         </li>
         <li><a data-toggle="collapse" href="#list-4"><em class="pull-right fa fa-angle-down"></em>Estadisticas</a>
             <ul class="collapse" id="list-4">
-                <li><a href="female.html">Femenil</a></li>
-                <li><a href="male.html">Varonil</a></li>
+                <li><a href="{{action('HomeController@statisticsfemale')}}">Femenil</a></li>
+                <li><a href="{{action('HomeController@statisticsmale')}}">Varonil</a></li>
             </ul>
         </li>
-        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="{{action('HomeController@contact')}}">Contacto</a></li>
     </ul>
 </nav>
 <!-- Slide Menu -->

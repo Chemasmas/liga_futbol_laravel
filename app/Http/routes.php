@@ -141,10 +141,13 @@ Route::get('/institutions',"HomeController@institutions");
 Route::get('/contact',"HomeController@contact");
 Route::get('/programers',"HomeController@programers");
 Route::get('/gallery',"HomeController@gallery");
-Route::get('/next_match',"HomeController@nextMatch");
+Route::get('/next_match_female',"HomeController@nextmatchsfemale");
+Route::get('/next_match_male',"HomeController@nextmatchsmale");
 Route::get('/regulation',"HomeController@regulation");
-Route::get('/statistics',"HomeController@statistics");
-
+Route::get('/statistics_female',"HomeController@statisticsfemale");
+Route::get('/statistics_male',"HomeController@statisticsmale");
+Route::get('/match_result_male',"HomeController@matchresultmale");
+Route::get('/match_result_female',"HomeController@matchresultfemale");
 
 
 Route::get('/test',"HomeController@ejemplo");

@@ -3,7 +3,6 @@
 @section('titulo','Sobre Nosotros')
 
 @section('content')
-
 	<!-- Page Heading & Breadcrumbs  -->
 	<div class="page-heading-breadcrumbs">
 		<div class="container">
@@ -111,7 +110,7 @@
 						<!-- gallery Figure -->
 
 						<!-- gallery Figure -->
-					  <div class="col-sm-3 col-xs-6 r-full-width p-0">
+						<div class="col-sm-3 col-xs-6 r-full-width p-0">
 							<figure class="gallery-figure">
 								<img src="images/gallery-v3/3_orig.png" alt="">
 								<figcaption class="overlay">
@@ -136,9 +135,9 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/4_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
 
@@ -152,9 +151,9 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/5_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
 
@@ -168,9 +167,9 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/7_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
 
@@ -184,9 +183,9 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/web1_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
 
@@ -200,9 +199,9 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/web2_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
 
@@ -218,7 +217,7 @@
 										</ul>
 									</div>
 								</figcaption>
-						  </figure>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
 
@@ -232,12 +231,12 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/web4_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
-					
+
 						<!-- gallery Figure -->
 						<div class="col-sm-3 col-xs-6 r-full-width p-0">
 							<figure class="gallery-figure">
@@ -248,12 +247,12 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/web5_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
-						
+
 						<!-- gallery Figure -->
 						<div class="col-sm-3 col-xs-6 r-full-width p-0">
 							<figure class="gallery-figure">
@@ -264,12 +263,12 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/web6_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
-						
+
 						<!-- gallery Figure -->
 						<div class="col-sm-3 col-xs-6 r-full-width p-0">
 							<figure class="gallery-figure">
@@ -280,15 +279,15 @@
 											<li><a class="fa fa-link" href="#"></a></li>
 											<li><a href="images/gallery-v3/web5_orig.png" data-rel="prettyPhoto[gallery]"><i class="fa fa-search"></i></a></li>
 										</ul>
-								  </div>
-							  </figcaption>
-						  </figure>
+									</div>
+								</figcaption>
+							</figure>
 						</div>
 						<!-- gallery Figure -->
-						
-						
-						
-					
+
+
+
+
 					</div>
 				</div>
 				<!-- Gallery 4 Column -->
@@ -300,5 +299,4 @@
 
 	</main>
 	<!-- Main Content -->
-
 @endsection

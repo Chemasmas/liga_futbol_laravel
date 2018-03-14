@@ -50,8 +50,12 @@ class HomeController extends Controller
         ]);
     }
 
-    public function nextMatch(){
-        return view('publica.nextmatchs',[
+    public function nextmatchsfemale(){
+        return view('publica.nextmatchsfemale',[
+        ]);
+    }
+    public function nextmatchsmale(){
+        return view('publica.nextmatchsmale',[
         ]);
     }
 
@@ -60,12 +64,22 @@ class HomeController extends Controller
         ]);
     }
 
-    public function statistics(){
-        return view('publica.statistics',[
+    public function statisticsfemale(){
+        return view('publica.statisticsfemale',[
         ]);
     }
-
-
+    public function statisticsmale(){
+        return view('publica.statisticsmale',[
+        ]);
+    }
+    public function matchresultfemale(){
+        return view('publica.matchresultfemale',[
+        ]);
+    }
+    public function matchresultmale(){
+        return view('publica.matchresultmale',[
+        ]);
+    }
     public function ejemplo()
     {
         return view('test');
