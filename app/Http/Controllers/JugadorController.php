@@ -26,14 +26,14 @@ class JugadorController extends Controller
      */
     public function index()
     {
-        $jugadores = jugadores::all()->filter( function($x){
+        $jugadores = jugadores::all()->paginate(10)->filter( function($x){
             return $x->usuario->active;
         });
 
-        foreach ($jugadores as $jugador){
+        /*foreach ($jugadores as $jugador){
             debug($jugador->institucione()->get());
             debug($jugador->equipo());
-        }
+        }*/
         return view("admin.jugador.index",[
             "jugadores"=>$jugadores,
             "rutas" => [

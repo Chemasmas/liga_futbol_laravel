@@ -283,12 +283,33 @@ class ArbitroController extends Controller
         else{
             $asistencia = asistencia::where("partidos_id",$idP)->where("jugadores_id",$idJ)->delete();
         }
-
         return redirect()->back();
     }
 
-    public function MarcarGol(){
-        
+    public function capturar($idP){
+        $partido = partidos::findOrFail($idP);
+        $local = $partido->equipol->id;
+        $visitante = $partido->equipov->id;
+
+        $jugadoresL = jugadores::where("equipos_id",$local)->get();
+        $jugadoresV = jugadores::where("equipos_id",$visitante)->get();
+
+
+        debug($partido);
+        debug($jugadoresL);
+        debug($jugadoresV);
+
+        return view('admin.verArbitro.partido',
+            [
+                "partido"=> $partido,
+                "jugadoresL" => $jugadoresL,
+                "jugadoresV" => $jugadoresV,
+                "rutas" => [
+                    "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                    "Parti" => ["etiqueta"=>"Partidos del Dia", "active" => "1" ,"link"=>"/admin/arbitro/partidos"],
+                    "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
+                ]
+            ]);
     }
 }
 

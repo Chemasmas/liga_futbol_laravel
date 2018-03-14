@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $PartidosJugados
  * @property int $PartidosGanados
  * @property int $PartidosEmpatados
+ * @property int $PartidosPerdidos
  * @property int $GolesFavor
  * @property int $GolesContra
  * @property int $DiferenciaGoles
