@@ -60,6 +60,7 @@ class TorneoController extends Controller
     public function create()
     {
         return view('admin.torneo.crear',[
+            "torneo" => null,
             "rutas" => [
             "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
             "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
@@ -128,7 +129,7 @@ class TorneoController extends Controller
         $torneo = torneos::findOrFail($id);
         debug($torneo);
         return view('admin.torneo.crear',[
-            "t"=>$torneo,
+            "torneo"=>$torneo,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
