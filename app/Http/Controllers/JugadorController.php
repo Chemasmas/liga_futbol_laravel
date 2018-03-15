@@ -52,13 +52,13 @@ class JugadorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($pagina = 0)
+    public function create()
     {
-        $paginas = ceil(jugadores::all()->count()/10.0);
-        $instituciones = instituciones::all()->forPage($pagina,10);
+        //$paginas = ceil(jugadores::all()->count()/10.0);
+        $instituciones = instituciones::all();
         $equipos = equipos::all();
         return view("admin.jugador.crear", [
-            "paginas"=>$paginas,
+            //"paginas"=>$paginas,
             "instituciones" => $instituciones,
             "equipos" => $equipos,
             "rutas" => [
@@ -221,12 +221,14 @@ class JugadorController extends Controller
     }
 
 
-    public function all()
+    public function all($offset = 0)
     {
 
-        $jugador = jugadores::all();
+        $paginas = ceil(jugadores::all()->count()/10.0);
+        $jugador = jugadores::all()->forPage($offset,10);
 
         return view('admin.jugador.all', [
+            "paginas" => $paginas,
             "jugadores" => $jugador,
             "rutas" => [
                 "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
