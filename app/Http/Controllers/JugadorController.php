@@ -26,7 +26,7 @@ class JugadorController extends Controller
      */
     public function index($offset = 0)
     {
-        $jugadores = jugadores::all()->skip($offset)->take(10)->filter( function($x){
+        $jugadores = jugadores::all()->forPage($offset,10)->filter( function($x){
             return $x->usuario->active;
         });
 
