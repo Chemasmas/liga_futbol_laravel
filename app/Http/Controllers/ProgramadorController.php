@@ -180,7 +180,7 @@ class ProgramadorController extends Controller
                 $programador = $user->programadores[0];
                 $equipos = equipos::where("idIst",$programador->idInst)->where("activo",1)->select("id")->get();
                 $torneosIds = participantes_torneo::whereIn("Equipos_id",$equipos)->groupBy("Torneo_Id")->select("Torneo_Id")->get();
-                $torneos = torneos::whereIn("id",$torneosIds)->get();
+                $torneos = torneos::whereIn("id",$torneosIds)->where("activo",1)->get();
                 debug($programador);
                 debug($torneosIds);
                 break;
