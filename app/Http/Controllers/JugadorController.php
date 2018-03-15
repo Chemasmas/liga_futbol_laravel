@@ -24,9 +24,9 @@ class JugadorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($offset = 0)
     {
-        $jugadores = jugadores::all()->filter( function($x){
+        $jugadores = jugadores::all()->skip($offset)->take(10)->filter( function($x){
             return $x->usuario->active;
         });
 
