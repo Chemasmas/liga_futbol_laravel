@@ -26,7 +26,7 @@ class JugadorController extends Controller
      */
     public function index($offset = 0)
     {
-        $paginas = jugadores::all()->count();
+        $paginas = jugadores::all()->count()/10;
         $jugadores = jugadores::all()->forPage($offset,10)->filter( function($x){
             return $x->usuario->active;
         });
