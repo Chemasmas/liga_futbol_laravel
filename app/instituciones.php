@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $dir
  * @property string $mapa
  * @property string $escudo
+ * @property boolean $activo
  * @property equipos[] $equipos
  * @property jugadores[] $jugadores
  * @property programadores[] $programadores
@@ -19,7 +20,7 @@ class instituciones extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nombre', 'dir', 'mapa', 'escudo'];
+    protected $fillable = ['nombre', 'dir', 'mapa', 'escudo','activo'];
 
     public $timestamps = false;
 
