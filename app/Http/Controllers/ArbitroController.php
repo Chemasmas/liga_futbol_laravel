@@ -7,6 +7,7 @@ use App\asistencia;
 use App\jugadores;
 use App\partidos;
 use App\usuarios;
+use App\util\Imagenes;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -86,13 +87,9 @@ class ArbitroController extends Controller
         $arbitro->idUsr = $usuario->id;
 
         $foto = $request->file('foto');
-        //if()
-        $arbitro->foto =
-        //debug($request);
-        debug($request->files);
-        //->move($ruta, $arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension());
-        $arbitro->foto = $ruta."/".$arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension();
-
+        if($foto!=null){
+            $arbitro->foto = Imagenes::uploadImage($this->ruta,$foto,$nombre);
+        }
         $arbitro->save(['timestamps' => false]);
 
         return redirect()->back()->with(
@@ -165,10 +162,8 @@ class ArbitroController extends Controller
 
 
         $foto = $request->file('foto');
-        debug($foto);
         if($foto!=null){
-            $request->file('foto')->move($ruta, $arbitro->nombre.".".$foto->getClientOriginalExtension());
-            $arbitro->foto = $ruta."/".$arbitro->nombre.".".$foto->getClientOriginalExtension();
+            $arbitro->foto = Imagenes::uploadImage($this->ruta,$foto,$request["nombre"]);
         }
 
         if(strlen($request["password"])>6){
