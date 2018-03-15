@@ -26,7 +26,7 @@ class JugadorController extends Controller
      */
     public function index($offset = 0)
     {
-        $paginas = jugadores::all()->count()/10;
+        $paginas = ceil(jugadores::all()->count()/10.0);
         $jugadores = jugadores::all()->forPage($offset,10)->filter( function($x){
             return $x->usuario->active;
         });
@@ -52,11 +52,13 @@ class JugadorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($pagina = 0)
     {
-        $instituciones = instituciones::all();
+        $paginas = ceil(jugadores::all()->count()/10.0);
+        $instituciones = instituciones::all()->forPage($pagina,10);
         $equipos = equipos::all();
         return view("admin.jugador.crear", [
+            "paginas"=>$paginas,
             "instituciones" => $instituciones,
             "equipos" => $equipos,
             "rutas" => [

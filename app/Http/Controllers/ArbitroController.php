@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Hash;
 
 class ArbitroController extends Controller
 {
+
+    private $ruta = "arbitros";
     /**
      * Display a listing of the resource.
      *
@@ -82,10 +84,13 @@ class ArbitroController extends Controller
         $arbitro->nombre = $nombre;
         $arbitro->telefono = $telefono;
         $arbitro->idUsr = $usuario->id;
-        $ruta = "arbitros";
+
+        $foto = $request->file('foto');
+        //if()
+        $arbitro->foto =
         //debug($request);
         debug($request->files);
-        $request->file('foto')->move($ruta, $arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension());
+        //->move($ruta, $arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension());
         $arbitro->foto = $ruta."/".$arbitro->nombre.".".$request->file('foto')->getClientOriginalExtension();
 
         $arbitro->save(['timestamps' => false]);
@@ -158,7 +163,7 @@ class ArbitroController extends Controller
         debug($usuario);
         $usuario->username = $request["usuario"];
 
-        $ruta = "arbitros";
+
         $foto = $request->file('foto');
         debug($foto);
         if($foto!=null){

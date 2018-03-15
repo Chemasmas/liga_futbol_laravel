@@ -9,6 +9,15 @@
         <div class="col-sm-12">
             <h3>Lista de Jugadores</h3>
             <div class="col-sm-12">
+                @if(count($jugadores)>0)
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            @for ($i = 1; $i <= $paginas; $i++)
+                                <li class="page-item"><a class="page-link" href="{{action('JugadorController@all',["offset"=>$i])}}">{{$i}}</a></li>
+                            @endfor
+                        </ul>
+                    </nav>
+                @endif
                 <table class="table table-hover table-bordered">
                     @if(count($jugadores)>0)
                         <thead>
