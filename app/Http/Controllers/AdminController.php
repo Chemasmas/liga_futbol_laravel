@@ -27,7 +27,7 @@ class AdminController extends Controller
 
         $email = $request->input("user");
         $password = $request->input("pass");
-        if (Auth::attempt(['username' => $email, 'password' => $password])) {
+        if (Auth::attempt(['username' => $email, 'password' => $password , 'active'=>1])  ) {
             // Authentication passed...
             return redirect()->intended('admin/dashboard')->with(
                 ["message"=>["clase"=>"success","mensaje"=>"Bienvenido ".$email]]
