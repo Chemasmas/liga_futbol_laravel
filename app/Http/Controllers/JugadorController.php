@@ -26,17 +26,20 @@ class JugadorController extends Controller
      */
     public function index($offset = 0)
     {
+        $paginas = jugadores::all()->count();
         $jugadores = jugadores::all()->forPage($offset,10)->filter( function($x){
             return $x->usuario->active;
         });
 
         debug($jugadores);
+        debug($paginas);
         /*foreach ($jugadores as $jugador){
             debug($jugador->institucione()->get());
             debug($jugador->equipo());
         }*/
         return view("admin.jugador.index",[
             "jugadores"=>$jugadores,
+            "paginas"=>$paginas,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "crear"=>["etiqueta"=>"Jugadores-Lista", "active"=>"0","link"=>""]
