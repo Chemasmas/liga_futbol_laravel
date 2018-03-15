@@ -12,7 +12,7 @@
                 @if(count($jugadores)>0)
                     <nav aria-label="Page navigation">
                     <ul class="pagination">
-                    @for ($i = 0; $i < $paginas; $i++)
+                    @for ($i = 1; $i <= $paginas; $i++)
                         <li class="page-item"><a class="page-link" href="{{action('JugadorController@index',["offset"=>$i])}}">{{$i}}</a></li>
                     @endfor
                     </ul>
