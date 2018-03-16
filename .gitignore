@@ -13,3 +13,4 @@ public/instituciones/*
 public/jugadores/*
 public/equipos/*
 .vagrant/*
+*.iml
