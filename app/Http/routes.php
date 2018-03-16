@@ -134,7 +134,6 @@ Route::get('/admin/verProgramador/programacion',['middleware' => 'auth', 'uses' 
 Route::get('/admin/verArbitro/partidosP',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
 Route::get('/admin/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
-
 //Web Muplica
 Route::get('/',"HomeController@index");
 Route::get('/about',"HomeController@about");

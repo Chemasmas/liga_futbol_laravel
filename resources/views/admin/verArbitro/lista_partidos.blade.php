@@ -17,8 +17,8 @@
                 @forelse($partidos as $partido)
                         <tr>
                             <td>
-                                <a href="{{action('ArbitroController@pasar_lista',["idE"=>$partido->equipol->id,"idP"=>$partido->id])}}">
-                                    <img src="{{asset($partido->equipol->institucione->escudo)}}" alt="{{$partido->equipol->institucione->nombre}}" height="50px" width="auto">
+                                <a class="img-thumbnail" href="{{action('ArbitroController@pasar_lista',["idE"=>$partido->equipol->id,"idP"=>$partido->id])}}">
+                                    <img src="{{asset($partido->equipol->institucione->escudo)}}" alt="{{$partido->equipol->institucione->nombre}}" height="50px" width="auto"  >
                                 </a>
                             </td>
                             <td>{{$partido->equipol->nombre}}</td>
@@ -27,7 +27,7 @@
                             </td>
                             <td>{{$partido->equipov->nombre}}</td>
                             <td>
-                                <a href="{{action('ArbitroController@pasar_lista',["idE"=>$partido->equipov->id,"idP"=>$partido->id])}}">
+                                <a class="img-thumbnail" href="{{action('ArbitroController@pasar_lista',["idE"=>$partido->equipov->id,"idP"=>$partido->id])}}">
                                     <img src="{{asset($partido->equipov->institucione->escudo)}}" alt="{{$partido->equipov->institucione->nombre}}" height="50px" width="auto">
                                 </a>
                             </td>
