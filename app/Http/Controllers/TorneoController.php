@@ -185,6 +185,7 @@ class TorneoController extends Controller
         $participantesE = equipos::whereIn("id",$participantes)->get();
         $equipos = equipos::where("genero",$torneo->genero)
             ->whereNotIn("id",$participantes)
+            ->where('activo',1)
             ->get();
         //$eParticipantes = equipos::where("")
 
