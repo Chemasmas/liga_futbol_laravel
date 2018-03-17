@@ -128,7 +128,7 @@ class TorneoController extends Controller
         $torneo = torneos::findOrFail($id);
         debug($torneo);
         return view('admin.torneo.crear',[
-            "torneo1"=>$torneo,
+            "torneo"=>$torneo,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
                 "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
