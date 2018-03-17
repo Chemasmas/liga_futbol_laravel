@@ -9,7 +9,7 @@
         <h3>Información de Árbitro</h3>
         <table class="table table-hover table-bordered">
             <tr>
-                <td rowspan="5"><img src="{{ asset($arbitro->foto) }}" alt="" class="img-responsive" style="width: 100%;"></td>
+                <td rowspan="5"><div><img src="{{ asset($arbitro->foto) }}" alt="" class="img-responsive img-thumbnail" style="width: 100%;"></div></td>
                 <td colspan="2"><h4>Nombre : {{$arbitro->nombre}}</h4></td>
             </tr>
             <tr>
