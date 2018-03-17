@@ -13,7 +13,7 @@
                 <td colspan="2"><h4>Nombre : {{$arbitro->nombre}}</h4></td>
             </tr>
             <tr>
-                <td colspan="3"><h4>Teléfono : {{$arbitro->telefono}}</h4></>
+                <td colspan="3"><h4>Teléfono : {{$arbitro->telefono}}</h4></td>
             </tr>
             <tr>
                 <td colspan="3"><h4>Nombre de Usuario : {{$arbitro->usuario->username}}</h4></td>
