@@ -13,7 +13,7 @@
                 <td colspan="2"><h4>Nombre : {{$jugador->nombre}}</h4></td>
             </tr>
             <tr>
-                <td colspan="3"><h4>Fecha de Nacimiento: {{$jugador->fechaNac}}</h4></>
+                <td colspan="3"><h4>Fecha de Nacimiento: {{$jugador->fechaNac}}</h4></td>
             </tr>
             <tr>
                 <td colspan="3"><h4>Doc. Identidad: {{$jugador->documento_identidad}}</h4></td>
@@ -22,12 +22,12 @@
                 <td colspan="3"><h4>Equipo: {{ $jugador->equipo->nombre}}</h4></td>
             </tr>
             <tr>
-                <td><h4>Institución: {{ $jugador->institucione->nombre}}</h4></td>
-                <td>
-                    <div>
-                    <img src="{{ asset($jugador->institucione->escudo) }}" alt="" class="img-responsive img-thumbnail" style="width: 100%;">
-                    </div>
-                </td>
+            <td><h4>Institución: {{ $jugador->institucione->nombre}}</h4></td>
+            <td>
+                <div>
+                <img src="{{ asset($jugador->institucione->escudo) }}" alt="" class="img-responsive img-thumbnail" style="width: 100%;">
+                </div>
+            </td>
             </tr>
         </table>
     </div>
