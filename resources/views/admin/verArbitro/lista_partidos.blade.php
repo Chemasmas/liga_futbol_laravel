@@ -23,7 +23,7 @@
                             </td>
                             <td>{{$partido->equipol->nombre}}</td>
                             <td>
-                                {{$partido->hora}} <span>{{$partido->campo}}</span>
+                                {{$partido->hora}} <span style="font-weight: bold;">{{$partido->campo}}</span>
                             </td>
                             <td>{{$partido->equipov->nombre}}</td>
                             <td>
