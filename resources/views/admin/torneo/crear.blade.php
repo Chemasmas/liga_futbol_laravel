@@ -10,7 +10,7 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Torneo</label>
-                <input type="text" name="nombre" class="form-control" placeholder=""  value="{{!empty($torneo)?$torneo->nombre:''}}"  >
+                <input type="text" name="nombre" class="form-control" placeholder=""  value="{{!empty($torneo)?$torneo->nombre:''}}">
             </div>
             <!--TODO Esto podria tener una tabla-->
             <div class="form-group">

@@ -279,7 +279,7 @@
         <!-- Breadcrumbs-->
 
         <div class="row">
-            <div class="col-12">
+            <div class="col-sm-12">
                 @if(Session::has('message'))
                 <div class="alert alert-{{Session::get('message')['clase']}}" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

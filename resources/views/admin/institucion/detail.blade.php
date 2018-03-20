@@ -20,7 +20,7 @@
                 <tr>
                         <td>
                                 <div>
-                                        <img src="{{ asset($institucion->escudo)}}" alt="" class="img-responsive img-thumbnail" style="width: 100%;">
+                                        <img src="{{ asset($institucion->escudo)}}" alt="" class="img-responsive img-thumbnail" style="max-height: 20em; max-width: 20em;">
                                 </div>
                         </td>
                 </tr>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\arbitros;
 use App\asistencia;
+use App\Bitacora;
 use App\jugadores;
+use App\participantes_torneo;
 use App\partidos;
 use App\usuarios;
 use App\util\Imagenes;
@@ -295,12 +297,27 @@ class ArbitroController extends Controller
         $jugadoresV = jugadores::where("equipos_id",$visitante)->get();
 
 
-        debug($partido);
-        debug($jugadoresL);
-        debug($jugadoresV);
+        $marcadorL = Bitacora::where("idP",$idP)
+            ->where("goles",1)
+            ->where("idE",$local)
+            ->count();
+
+        $marcadorV = Bitacora::where("idP",$idP)
+            ->where("goles",1)
+            ->where("idE",$visitante)
+            ->count();
+
+
+        //debug($partido);
+        //debug($local);
+        //debug($visitante);
+        //debug($jugadoresL);
+        //debug($jugadoresV);
 
         return view('admin.verArbitro.partido',
             [
+                "marcadorL"=>$marcadorL,
+                "marcadorV"=>$marcadorV,
                 "partido"=> $partido,
                 "jugadoresL" => $jugadoresL,
                 "jugadoresV" => $jugadoresV,
@@ -310,6 +327,97 @@ class ArbitroController extends Controller
                     "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
                 ]
             ]);
+    }
+
+    public function gol(Request $request){
+        debug($request);
+        $bitacora = new Bitacora($request->all());
+        debug($bitacora);
+        $bitacora->save();
+
+        $partido = partidos::findOrFail($bitacora->idP);
+        if($partido->Local == $bitacora->idE ){
+            $partido->marcadorLocal = $partido->marcadorLocal + 1;
+        }
+        else {
+            $partido->marcadorVisitante = $partido->marcadorVisitante + 1;
+        }
+        $partido->save();
+        return redirect()->back();
+    }
+
+    public function amarilla(Request $request){
+        debug($request);
+        $bitacora = new Bitacora($request->all());
+        debug($bitacora);
+        $bitacora->save();
+
+        return redirect()->back();
+    }
+
+    public function roja(Request $request){
+        debug($request);
+        $bitacora = new Bitacora($request->all());
+        debug($bitacora);
+        $bitacora->save();
+
+        return redirect()->back();
+    }
+
+    public function finalizar(Request $request){
+
+        $idP = $request["idP"];
+
+        $partido = partidos::findOrFail($idP);
+        $local = $partido->marcadorLocal;
+        $visitante = $partido->marcadorVisitante;
+
+
+        $partLocal = participantes_torneo::where("Torneo_id",$partido->Torneo_id)
+            ->where("Equipos_id",$partido->Local)->first();
+        $partVisita = participantes_torneo::where("Torneo_id",$partido->Torneo_id)
+            ->where("Equipos_id",$partido->Visitante)->first();
+
+
+        //Local
+        $partLocal->PartidosJugados =  $partLocal->PartidosJugados +1;
+        if($local>$visitante){
+            $partLocal->PartidosGanados =  $partLocal->PartidosGanados +1;
+            $partLocal->Puntos=$partLocal->Puntos+3;
+        }else if($local<$visitante){
+            $partLocal->PartidosPerdidos =  $partLocal->PartidosPerdidos +1;
+            $partLocal->Puntos=$partLocal->Puntos+0;
+        }else{
+            $partLocal->PartidosEmpatados =  $partLocal->PartidosEmpatados +1;
+            $partLocal->Puntos=$partLocal->Puntos+1;
+        }
+        $partLocal->GolesFavor =$partLocal->GolesFavor + $local;
+        $partLocal->GolesContra = $partLocal->GolesContra +$visitante;
+        $partLocal->DiferenciaGoles = $partLocal->GolesFavor - $partLocal->GolesContra;
+        $partLocal->save();
+
+
+        //Visitante
+        $partVisita->PartidosJugados =  $partVisita->PartidosJugados +1;
+        if($local<$visitante){
+            $partVisita->PartidosGanados =  $partVisita->PartidosGanados +1;
+            $partVisita->Puntos=$partVisita->Puntos+3;
+        }else if($local>$visitante){
+            $partVisita->PartidosPerdidos =  $partVisita->PartidosPerdidos +1;
+            $partVisita->Puntos=$partVisita->Puntos+0;
+        }else{
+            $partVisita->PartidosEmpatados =  $partVisita->PartidosEmpatados +1;
+            $partVisita->Puntos=$partVisita->Puntos+1;
+        }
+        $partVisita->GolesFavor =$partVisita->GolesFavor + $visitante;
+        $partVisita->GolesContra = $partVisita->GolesContra +$local;
+        $partVisita->DiferenciaGoles = $partVisita->GolesFavor - $partVisita->GolesContra;
+        $partVisita->save();
+
+        $partido->verifica = -1;
+        $partido->save();
+
+        return redirect()->action("ArbitroController@lista_partidos");
     }
 }
 
