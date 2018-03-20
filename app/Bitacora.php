@@ -19,6 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Bitacora extends Model
 {
+
+    public $timestamps  = false;
+
     /**
      * The table associated with the model.
      * 

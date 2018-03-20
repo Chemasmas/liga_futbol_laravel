@@ -7,83 +7,165 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="text-right">Equipo 1</th>
+                        <th style="text-align: center">
+                            <form action="{{action('ArbitroController@finalizar')}}" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                                <button type="submit" class="btn btn-default">Finalizar</button>
+                            </form>
+                        </th>
+                        <th colspan="2"> Equipo2</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="text-right"><img src="{{asset($partido->equipol->institucione->escudo)}}" alt="" class="img-responsive" style="max-height: 100px;width: 160px;"></td>
+                    <td class="text-right">
+                        <h1>
+                            {{$marcadorL}}
+                        </h1>
+                    </td>
+                    <td></td>
+                    <td>
+                        <h1>
+                            {{$marcadorV}}
+                        </h1>
+                    </td>
+                    <td><img src="{{asset($partido->equipov->institucione->escudo)}}" alt="" class="img-responsive" style="height: 100px;width: 160px;"></td>
+                </tr>
+            </table>
             <div class="col-sm-6">
-                <div class="col-sm-6">
-                    {{$partido->equipol->institucione}}
-                    <table class="table table-condensed">
-                        <th>logo</th>
-                        <th>marcador</th>
-                    </table>
-                    <table class="table table-condensed">
-                        <thead>
-                        <th>Número</th>
-                        <th>Nombre</th>
-                        <th>Acciones</th>
-                        <th></th>
-                        </thead>
-                        <tbody>
-                        @foreach($ as $)
-                            <tr>
-                                <td>{{$->numero}}</td>
-                                <td>{{$->nombre}}</td>
-                                <td>
-                                    <a class="btn btn-info" data-toggle="tooltip" title="Gol" href="{{action(",["id"=>$->id])}}">
-                                        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-                                    </a>
-                                    <a class="btn btn-info" data-toggle="tooltip" title="Amarilla" href="{{action("",["id"=>$->id])}}">
-                                        <i class="fa fa-square-o" aria-hidden="true"></i>
-                                    </a>
-                                    <a class="btn btn-info" data-toggle="tooltip" title="Roja" href="{{action("",["id"=>$->id])}}">
-                                        <i class="fa fa-square" aria-hidden="true"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-sm-6">
-
-                </div>
+                <table class="table table-condensed">
+                    <thead>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    @foreach($jugadoresL as $jugador)
+                        <tr>
+                            <td>{{$jugador->numero}}</td>
+                            <td>{{$jugador->nombre}}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="ddm{{$jugador->id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Acciones
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                        <li style="text-align: center;">
+                                            <form action="{{action('ArbitroController@gol')}}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{$jugador->id}}" name="idJ">
+                                                <input type="hidden" value="{{$partido->equipol->id}}" name="idE">
+                                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                                                <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
+                                                <input type="hidden" value="1" name="goles">
+                                                <button type="submit" class="btn btn-link"><i class="fa fa-futbol-o" aria-hidden="true"></i></button>
+                                            </form>
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <form action="{{action('ArbitroController@amarilla')}}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{$jugador->id}}" name="idJ">
+                                                <input type="hidden" value="{{$partido->equipol->id}}" name="idE">
+                                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                                                <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
+                                                <input type="hidden" value="1" name="amarillas">
+                                                <button type="submit" class="btn btn-link">
+                                                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <form action="{{action('ArbitroController@roja')}}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{$jugador->id}}" name="idJ">
+                                                <input type="hidden" value="{{$partido->equipol->id}}" name="idE">
+                                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                                                <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
+                                                <input type="hidden" value="1" name="rojas">
+                                                <button type="submit" class="btn btn-link">
+                                                    <i class="fa fa-square" aria-hidden="true"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
-            <div class="col-sm-6">
-                <div class="col-sm-6">
-
-                </div>
-                <div class="col-sm-6">
-                    {{$partido->equipov->institucione}}
-                    <table class="table table-condensed">
-                        <th>logo</th>
-                        <th>marcador</th>
-                    </table>
-                    <table class="table table-condensed">
-                        <thead>
-                        <th>Número</th>
-                        <th>Nombre</th>
-                        <th>Acciones</th>
-                        <th></th>
-                        </thead>
-                        <tbody>
-                        @foreach($ as $)
-                            <tr>
-                                <td>{{$->numero}}</td>
-                                <td>{{$->nombre}}</td>
-                                <td>
-                                    <a class="btn btn-info" data-toggle="tooltip" title="Gol" href="{{action(",["id"=>$->id])}}">
-                                        <i class="fa fa-futbol-o" aria-hidden="true"></i>
-                                    </a>
-                                    <a class="btn btn-info" data-toggle="tooltip" title="Amarilla" href="{{action("",["id"=>$->id])}}">
-                                        <i class="fa fa-square-o" aria-hidden="true"></i>
-                                    </a>
-                                     <a class="btn btn-info" data-toggle="tooltip" title="Roja" href="{{action("",["id"=>$->id])}}">
-                                        <i class="fa fa-square" aria-hidden="true"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
+            <div class="col-sm-6 text-right">
+                <table class="table table-condensed">
+                    <thead>
+                    <th>Acciones</th>
+                    <th>Nombre</th>
+                    <th>#</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    @foreach($jugadoresV as $jugador)
+                        <tr>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="ddm{{$jugador->id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Acciones
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                        <li style="text-align: center;">
+                                            <form action="{{action('ArbitroController@gol')}}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{$jugador->id}}" name="idJ">
+                                                <input type="hidden" value="{{$partido->equipov->id}}" name="idE">
+                                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                                                <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
+                                                <input type="hidden" value="1" name="goles">
+                                                <button type="submit" class="btn btn-link"><i class="fa fa-futbol-o" aria-hidden="true"></i></button>
+                                            </form>
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <form action="{{action('ArbitroController@amarilla')}}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{$jugador->id}}" name="idJ">
+                                                <input type="hidden" value="{{$partido->equipov->id}}" name="idE">
+                                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                                                <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
+                                                <input type="hidden" value="1" name="amarillas">
+                                                <button type="submit" class="btn btn-link">
+                                                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+                                        <li style="text-align: center;">
+                                            <form action="{{action('ArbitroController@roja')}}" method="POST">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{$jugador->id}}" name="idJ">
+                                                <input type="hidden" value="{{$partido->equipov->id}}" name="idE">
+                                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                                                <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
+                                                <input type="hidden" value="1" name="rojas">
+                                                <button type="submit" class="btn btn-link">
+                                                    <i class="fa fa-square" aria-hidden="true"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>{{$jugador->nombre}}</td>
+                            <td>{{$jugador->numero}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ use App\participantes_torneo;
 use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -319,6 +320,7 @@ class TorneoController extends Controller
 
     public function jornadasXLS($idT){
         $torneo = torneos::findOrFail($idT);
+
         return Excel::create($torneo->nombre, function($excel) use ($idT) {
 
 
@@ -326,11 +328,20 @@ class TorneoController extends Controller
             $participantes = participantes_torneo::select("Equipos_id")->where("Torneo_id",$idT)->get();
             $participantesE = equipos::whereIn("id",$participantes)->get();
 
+
+
             $excel->sheet('Rol de Juegos', function($sheet) use ($idT,$partidos,$participantesE) {
 
                 $sheet->loadView('excel.base',["partidos"=>$partidos,"participantes"=>$participantesE] );
 
             });
+
+            $excel->sheet('Partidos', function($sheet) use ($idT,$partidos) {
+
+                $sheet->loadView('excel.base2',["partidos"=>$partidos] );
+
+            });
+
 
         })->download('xls');
     }
