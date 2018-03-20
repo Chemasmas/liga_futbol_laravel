@@ -81,11 +81,10 @@ Route::get('/admin/administrador/{idA}/activate',['middleware' => 'auth', 'uses'
 Route::get('/admin/administrador/{idA}/deactivate',['middleware' => 'auth', 'uses' => "AdministradorController@deactivate"]);
 
 
-
 Route::get('/admin/jugador/back',['middleware' => 'auth', 'uses' => "JugadorController@back"]);
 Route::get('/admin/jugador/crear',['middleware' => 'auth', 'uses' => "JugadorController@create"]);
 Route::post('/admin/jugador/store',['middleware' => 'auth', 'uses' => "JugadorController@store"]);
-Route::get('/admin/jugador/historico/{$pagina}',['middleware' => 'auth', 'uses' => "JugadorController@all"]);
+Route::get('/admin/jugador/historico/{pagina?}',['middleware' => 'auth', 'uses' => "JugadorController@all"]);
 Route::get('/admin/jugadores/{offset?}',['middleware' => 'auth', 'uses' => "JugadorController@index"]);
 Route::get("/admin/jugador/{id}",['middleware' => 'auth', 'uses' => "JugadorController@show"]);
 Route::get("/admin/jugador/{id}/edit",['middleware' => 'auth', 'uses' => "JugadorController@edit"]);
@@ -99,6 +98,15 @@ Route::get('/admin/arbitro/crear',['middleware' => 'auth', 'uses' => "ArbitroCon
 Route::get('/admin/arbitro/historico',['middleware' => 'auth', 'uses' => "ArbitroController@all"]);
 Route::post('/admin/arbitro/store',['middleware' => 'auth', 'uses' => "ArbitroController@store"]);
 Route::get('/admin/arbitro/capturar/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@capturar"]);
+
+Route::post('/admin/arbitro/bitacora/gol',['middleware' => 'auth', 'uses' => "ArbitroController@gol"]);
+Route::post('/admin/arbitro/bitacora/amarilla',['middleware' => 'auth', 'uses' => "ArbitroController@amarilla"]);
+Route::post('/admin/arbitro/bitacora/roja',['middleware' => 'auth', 'uses' => "ArbitroController@roja"]);
+Route::post('/admin/arbitro/bitacora/finalizar',['middleware' => 'auth', 'uses' => "ArbitroController@finalizar"]);
+//Route::get('/admin/arbitro/marcador/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@marcadorv"]);
+//Route::post('/admin/arbitro/marcador/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@marcador"]);
+
+
 Route::get('/admin/arbitro/partidos',['middleware' => 'auth', 'uses' => "ArbitroController@lista_partidos"]);
 Route::get('/admin/arbitro/{idE}/lista/{idP}',['middleware' => 'auth', 'uses' => "ArbitroController@pasar_lista"]);
 Route::post('/admin/arbitro/{idP}/asistio/{idJ}',['middleware' => 'auth', 'uses' => "ArbitroController@asistio"]);

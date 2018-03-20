@@ -27,6 +27,8 @@ class participantes_torneo extends Model
      */
     protected $table = 'participantes_torneo';
 
+    public $timestamps  = false;
+
     /**
      * @var array
      */
