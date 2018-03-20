@@ -1,4 +1,11 @@
 <table>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+
     <tr>
         <td>Categoria</td>
         <td>Local</td>
@@ -36,9 +43,9 @@
             <td>{{\Carbon\Carbon::parse($partido->fecha)->format('l')}}</td>
             <td>{{$partido->fecha}}</td>
             <td>{{$partido->hora}}</td>
-            <td>Campo</td>
-            <td>Jornada</td>
-            <td>Observaciones</td>
+            <td>{{$partido->campo}}</td>
+            <td>Jornada {{$partido->$jornada}}</td>
+            <td>{{$partido->notas}}</td>
             <td>Error</td>
         </tr>
         @endforeach

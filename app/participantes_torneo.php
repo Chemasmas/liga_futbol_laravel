@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $GolesContra
  * @property int $DiferenciaGoles
  * @property int $Puntos
+ * @property boolean $status
  * @property equipos $equipo
  * @property torneos $torneo
  */
@@ -32,7 +33,7 @@ class participantes_torneo extends Model
     /**
      * @var array
      */
-    protected $fillable = ['PartidosJugados', 'PartidosGanados', 'PartidosEmpatados', 'GolesFavor', 'GolesContra', 'DiferenciaGoles', 'Puntos'];
+    protected $fillable = ['PartidosJugados', 'PartidosGanados', 'PartidosEmpatados', 'GolesFavor', 'GolesContra', 'DiferenciaGoles', 'Puntos' , 'status'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

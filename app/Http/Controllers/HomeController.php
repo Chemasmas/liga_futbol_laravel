@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\instituciones;
+use App\participantes_torneo;
+use App\torneos;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -64,8 +66,23 @@ class HomeController extends Controller
         ]);
     }
 
-    public function statisticsfemale(){
+    public function statisticsfemale($idT=-1){
+
+        $torneosA = torneos::where("activo",1)->where("genero","F")->get();
+        if($idT==-1){
+            $torneoCurr = $torneosA[0];
+        }
+        else{
+            $torneoCurr = torneos::findOrFail($idT);
+        }
+
+        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)->get()->sortByDesc("Puntos");
+
+        debug($estadisticas);
+
         return view('publica.statisticsfemale',[
+            "torneosA" => $torneosA,
+            "estadisticas"=>$estadisticas,
         ]);
     }
     public function statisticsmale(){
