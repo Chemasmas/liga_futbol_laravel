@@ -153,7 +153,7 @@ Route::get('/next_match_female',"HomeController@nextmatchsfemale");
 Route::get('/next_match_male',"HomeController@nextmatchsmale");
 Route::get('/regulation',"HomeController@regulation");
 Route::get('/statistics_female/{idT?}',"HomeController@statisticsfemale");
-Route::get('/statistics_male',"HomeController@statisticsmale");
+Route::get('/statistics_male/{idT?}',"HomeController@statisticsmale");
 Route::get('/match_result_male',"HomeController@matchresultmale");
 Route::get('/match_result_female',"HomeController@matchresultfemale");
 

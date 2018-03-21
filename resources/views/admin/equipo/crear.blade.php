@@ -23,8 +23,8 @@
             <div class="form-group">
                 <label>Género</label>
                 <select class="form-control" name="genero">
-                    <option value="M" {{!empty($equipo)&&"M"==$equipo->genero?'"selected"':''}} >Varonil</option>
-                    <option value="F" {{!empty($equipo)&&"F"==$equipo->genero?'"selected"':''}}>Femenil</option>
+                    <option value="M" {{!empty($equipo)&&"M"==$equipo->genero?'selected':''}} >Varonil</option>
+                    <option value="F" {{!empty($equipo)&&"F"==$equipo->genero?'selected':''}}>Femenil</option>
                 </select>
             </div>
             <div class="form-group">
