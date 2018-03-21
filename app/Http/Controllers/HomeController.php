@@ -78,11 +78,13 @@ class HomeController extends Controller
 
         $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)->get()->sortByDesc("Puntos");
 
+        debug($torneoCurr);
         debug($estadisticas);
 
         return view('publica.statisticsfemale',[
             "torneosA" => $torneosA,
             "estadisticas"=>$estadisticas,
+            "torneoCurr" =>$torneoCurr,
         ]);
     }
     public function statisticsmale(){

@@ -15,7 +15,7 @@
 	<!-- Page Heading & Breadcrumbs  -->
 
 	<!-- Page Heading banner -->
-	<div class="inner-banner style-2 overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="images/underconstraction-bg.jpg">
+	<div class="inner-banner style-2 overlay-dark theme-padding parallax-window" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/images/underconstraction-bg.jpg">
 		<div class="container theme-padding">
 			<ul id="match-detail-slider" class="match-detail-slider">
 				<li>
@@ -60,7 +60,7 @@
 
 						<!-- Aside Widget -->
 						<div class="aside-widget">
-							<a href="#"><img src="images/Anuncio.jpeg" alt=""></a>
+							<a href="#"><img src="/images/Anuncio.jpeg" alt=""></a>
 						</div>
 						<!-- Aside Widget -->
 
@@ -71,7 +71,7 @@
 								<ul>
 									@foreach($torneosA as $torneo)
 									<li>
-										<img src="images/LOGo final vertical.png" alt="" width="50">
+										<img src="/images/LOGo final vertical.png" alt="" width="50">
 										<h5><a href="{{action('HomeController@statisticsfemale',["idT"=>$torneo->id])}}">
 												{{$torneo->nombre}}
 											</a></h5>
@@ -89,12 +89,12 @@
 							<div class="Popular-news">
 								<ul>
 									<li>
-										<img src="images/LOGo final vertical.png" alt="" width="50">
+										<img src="/images/LOGo final vertical.png" alt="" width="50">
 										<h5><a href="nextmatchsmale.html">proximos partidos</a></h5>
 										<span class="red-color"><i class="fa fa-clock-o"></i>Fechas</span>
 									</li>
 									<li>
-										<img src="images/LOGo final vertical.png" alt="" width="50">
+										<img src="/images/LOGo final vertical.png" alt="" width="50">
 										<h5><a href="matchresultmale.html">resultados de partidos</a></h5>
 										<span class="red-color"><i class="fa fa-clock-o"></i>Fechas</span>
 									</li>
@@ -108,11 +108,11 @@
 					<!-- Aside -->
 
 					<!-- Match Result Contenet -->
-					<div class="col-lg-9 col-sm-8">
+					<div class="col-lg-8 col-sm-7">
 
 						<!-- Piont Table -->
 						<div class="macth-fixture">
-							<h5>Categoria 1</h5>
+							<h5>{{$torneoCurr->nombre}}</h5>
 							<div class="last-matches styel-3">
 								<div class="table-responsive">
 									<table class="table table-bordered table-hover">
@@ -127,10 +127,11 @@
 										</tr>
 										</thead>
 										<tbody>
-										@foreach($estadisticas as $i => $estadistica)
+										<?php $i=1; ?>
+										@foreach($estadisticas as $estadistica)
 										<tr>
-											<td>{{$i}}</td>
-											<td><img src="{{$estadistica->equipo->institucione->escudo}}" alt="" height="50px">{{$estadistica->equipo->nombre}}</td>
+											<td>{{$i++}}</td>
+											<td><img src="/{{$estadistica->equipo->institucione->escudo}}" alt="" height="50px">{{$estadistica->equipo->nombre}}</td>
 											<td>{{intval($estadistica->Puntos)}}</td>
 											<td>{{intval($estadistica->PartidosGanados)}}</td>
 											<td>{{intval($estadistica->PartidosPerdidos)}}</td>
