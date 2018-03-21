@@ -24,8 +24,8 @@
                                             <img src='{{asset($partido->equipol->institucione->escudo)}}' width="50px" height="50px">
                                             {{$partido->equipol->nombre}}
                                             @if($partido->verifica==-1)
-                                            <span style="font-weight: ">
-                                                {{$partido->marcadorLocal}}
+                                            <span style="font-size: 20px;font-weight: bolder">
+                                                [{{$partido->marcadorLocal}}]
                                             </span>
                                             @endif
                                         </td>
@@ -33,8 +33,8 @@
                                             {{$partido->equipov->nombre}}
                                             <img src='{{asset($partido->equipov->institucione->escudo)}}' width="50px" height="50px">
                                             @if($partido->verifica==-1)
-                                            <span>
-                                                {{$partido->marcadorLocal}}
+                                            <span style="font-size: 20px;font-weight: bolder">
+                                                [{{$partido->marcadorVisitante}}]
                                             </span>
                                             @endif
                                         </td>
