@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <h3>Agrega @if($torneo->tipo_torneo==1)7 @else 7 @endif participantes a {{$torneo->nombre}}</h3>
+            <h3>Agrega @if($torneo->tipo_torneo==1)7 @else {{$torneo->tipo_torneo}} @endif participantes a {{$torneo->nombre}}</h3>
             <div class="btn-group" role="group" aria-label="...">
             <a class="btn btn-success" href="{{action("TorneoController@index")}}"> Volver </a>
                 @if(!$torneo->generado)
