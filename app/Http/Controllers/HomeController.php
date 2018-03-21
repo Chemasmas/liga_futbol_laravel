@@ -87,8 +87,25 @@ class HomeController extends Controller
             "torneoCurr" =>$torneoCurr,
         ]);
     }
-    public function statisticsmale(){
+    public function statisticsmale($idT=-1){
+
+        $torneosA = torneos::where("activo",1)->where("genero","M")->get();
+        if($idT==-1){
+            $torneoCurr = $torneosA[0];
+        }
+        else{
+            $torneoCurr = torneos::findOrFail($idT);
+        }
+
+        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)->get()->sortByDesc("Puntos");
+
+        debug($torneoCurr);
+        debug($estadisticas);
+
         return view('publica.statisticsmale',[
+            "torneosA" => $torneosA,
+            "estadisticas"=>$estadisticas,
+            "torneoCurr" =>$torneoCurr,
         ]);
     }
     public function matchresultfemale(){
