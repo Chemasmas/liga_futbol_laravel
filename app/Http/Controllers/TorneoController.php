@@ -305,6 +305,7 @@ class TorneoController extends Controller
 
     public function jornadas($idT){
         $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
+        debug($partidos);
 
         return view("admin.torneo.jornadas",[
            "idT" => $idT,
@@ -353,6 +354,79 @@ class TorneoController extends Controller
         $partido->save();
 
         return redirect()->back();
+    }
+
+    public function resultadoForm($idP){
+
+        $partido = partidos::findOrFail($idP);
+
+        return view("admin.torneo.marcador",[
+            "partido"=>$partido,
+            "rutas" => [
+            ]
+        ]);
+    }
+
+    public function cambiarResultados(Request $request,$idP){
+
+        debug($request);
+        $partido = partidos::findOrFail($idP);
+        $partido->marcadorLocal = $request["localM"];
+        $partido->marcadorVisitante = $request["visitaM"];
+        $partido->verifica = -1;
+        $partido->save();
+
+        $local =$partido->marcadorLocal;
+        $visitante = $partido->marcadorVisitante;
+
+
+        $partLocal = participantes_torneo::where("Torneo_id",$partido->Torneo_id)
+            ->where("Equipos_id",$partido->Local)->first();
+        $partVisita = participantes_torneo::where("Torneo_id",$partido->Torneo_id)
+            ->where("Equipos_id",$partido->Visitante)->first();
+
+
+        //Local
+        $partLocal->PartidosJugados =  $partLocal->PartidosJugados +1;
+        if($local>$visitante){
+            $partLocal->PartidosGanados =  $partLocal->PartidosGanados +1;
+            $partLocal->Puntos=$partLocal->Puntos+3;
+        }else if($local<$visitante){
+            $partLocal->PartidosPerdidos =  $partLocal->PartidosPerdidos +1;
+            $partLocal->Puntos=$partLocal->Puntos+0;
+        }else{
+            $partLocal->PartidosEmpatados =  $partLocal->PartidosEmpatados +1;
+            $partLocal->Puntos=$partLocal->Puntos+1;
+        }
+        $partLocal->GolesFavor =$partLocal->GolesFavor + $local;
+        $partLocal->GolesContra = $partLocal->GolesContra +$visitante;
+        $partLocal->DiferenciaGoles = $partLocal->GolesFavor - $partLocal->GolesContra;
+        $partLocal->save();
+
+        //Visitante
+        $partVisita->PartidosJugados =  $partVisita->PartidosJugados +1;
+        if($local<$visitante){
+            $partVisita->PartidosGanados =  $partVisita->PartidosGanados +1;
+            $partVisita->Puntos=$partVisita->Puntos+3;
+        }else if($local>$visitante){
+            $partVisita->PartidosPerdidos =  $partVisita->PartidosPerdidos +1;
+            $partVisita->Puntos=$partVisita->Puntos+0;
+        }else{
+            $partVisita->PartidosEmpatados =  $partVisita->PartidosEmpatados +1;
+            $partVisita->Puntos=$partVisita->Puntos+1;
+        }
+        $partVisita->GolesFavor =$partVisita->GolesFavor + $visitante;
+        $partVisita->GolesContra = $partVisita->GolesContra +$local;
+        $partVisita->DiferenciaGoles = $partVisita->GolesFavor - $partVisita->GolesContra;
+        $partVisita->save();
+
+        $partido->verifica = -1;
+        $partido->save();
+
+        debug($idP);
+
+        //return redirect()->back();
+        return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
 
 }
