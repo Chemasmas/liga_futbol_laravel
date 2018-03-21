@@ -305,6 +305,7 @@ class TorneoController extends Controller
 
     public function jornadas($idT){
         $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
+        debug($partidos);
 
         return view("admin.torneo.jornadas",[
            "idT" => $idT,
@@ -353,6 +354,30 @@ class TorneoController extends Controller
         $partido->save();
 
         return redirect()->back();
+    }
+
+    public function resultadoForm($idP){
+
+        $partido = partidos::findOrFail($idP);
+
+        return view("admin.torneo.marcador",[
+            "partido"=>$partido,
+            "rutas" => [
+            ]
+        ]);
+    }
+
+    public function cambiarResultados(Request $request,$idP){
+
+        debug($request);
+        $partido = partidos::findOrFail($idP);
+        $partido->marcadorLocal = $request["localM"];
+        $partido->marcadorVisitante = $request["visitaM"];
+        $partido->verifica = -1;
+        debug($idP);
+
+        //return redirect()->back();
+        return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
 
 }

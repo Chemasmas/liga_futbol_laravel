@@ -8,19 +8,19 @@
     <!-- Document Title -->
     <title>Liga Poniente</title>
     <!-- StyleSheets -->
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/transition.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/transition.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/color.css">
+    <link rel="stylesheet" href="/css/responsive.css">
     <!-- FontsOnline -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800|Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <!-- JavaScripts -->
-    <script src="js/vendor/modernizr.js"></script>
+    <script src="/js/vendor/modernizr.js"></script>
 </head>
 <body>
 
@@ -102,7 +102,7 @@
 
                     <!-- Logo -->
                     <div class="logo" style="top: -20px; left: -35px;">
-                        <a href="{{action('HomeController@index')}}"><img src="images/LOGo final full.png" alt="" width="210"></a>
+                        <a href="{{action('HomeController@index')}}"><img src="/images/LOGo final full.png" alt="" width="210"></a>
                     </div>
                     <!-- Logo -->
 
@@ -141,10 +141,10 @@
                                         <div class="blog-categories">
                                             <h2>Reglamento</h2>
                                             <ul class="blog-categories-list">
-                                                <li><a href="docs/competitionregulation.pdf">reglamento de competencia</a></li>
-                                                <li><a href="docs/technicalannex.pdf">Anexo Tecnico</a></li>
-                                                <li><a href="docs/formatsanddocuments.pdf">categorias y formatos</a></li>
-                                                <li><a href="docs/calls.pdf">Nuestras Convocatoria</a></li>
+                                                <li><a href="/docs/competitionregulation.pdf">reglamento de competencia</a></li>
+                                                <li><a href="/docs/technicalannex.pdf">Anexo Tecnico</a></li>
+                                                <li><a href="/docs/formatsanddocuments.pdf">categorias y formatos</a></li>
+                                                <li><a href="/docs/calls.pdf">Nuestras Convocatoria</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -156,13 +156,13 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                    <img src="/images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color"></span><a href="docs/competitionregulation.pdf" download="competitionregulation">DESCARGAR</a>
+                                                    <span class="red-color"></span><a href="/docs/competitionregulation.pdf" download="competitionregulation">DESCARGAR</a>
                                                     <h2>reglamento de competencia</h2>
                                                 </div>
                                                 <!-- Post Detail -->
@@ -175,13 +175,13 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                    <img src="/images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color"></span><a href="docs/technicalannex.pdf" download="technicalannex">DESCARGAR</a>
+                                                    <span class="red-color"></span><a href="/docs/technicalannex.pdf" download="technicalannex">DESCARGAR</a>
                                                     <h2>anexo</h2>
                                                     <h2>tecnico</h2>
                                                 </div>
@@ -195,13 +195,13 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                    <img src="/images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color"></span><a href="docs/formatsanddocuments.pdf" download="formatsanddocuments">DESCARGAR</a>
+                                                    <span class="red-color"></span><a href="/docs/formatsanddocuments.pdf" download="formatsanddocuments">DESCARGAR</a>
                                                     <h2>categorias </h2>
                                                     <h2>y formatos</h2>
                                                 </div>
@@ -215,13 +215,13 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                    <img src="/images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
                                                 <!-- Post Detail -->
                                                 <div class="large-post-detail style-3 p-0">
-                                                    <span class="red-color"></span><a href="docs/calls.pdf" download="calls">DESCARGAR</a>
+                                                    <span class="red-color"></span><a href="/docs/calls.pdf" download="calls">DESCARGAR</a>
                                                     <h2>Nuestras </h2>
                                                     <h2>Convocatorias</h2>
                                                 </div>
@@ -251,7 +251,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-1.jpg" alt="">
+                                                    <img src="/images/blog-grid-view/img-2-1.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -270,7 +270,7 @@
 
                                                 <!-- Post Img -->
                                                 <div class="large-post-img">
-                                                    <img src="images/blog-grid-view/img-2-2.jpg" alt="">
+                                                    <img src="/images/blog-grid-view/img-2-2.jpg" alt="">
                                                 </div>
                                                 <!-- Post Img -->
 
@@ -333,7 +333,7 @@
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
                             <div class="logo-column p-white">
-                                <img src="images/LOGo final.png" alt="" width="300" class="footer-logo">
+                                <img src="/images/LOGo final.png" alt="" width="300" class="footer-logo">
                                 <ul class="address-list style-2">
                                     <li><span>Direccion:</span>Calle granjas No.45 Col. Palo Alto, Cuajimalpa C.P. 05110</li>
                                     <li><span>Telefono:</span>5539441545</li>
@@ -349,7 +349,7 @@
                     <div class="col-sm-4 col-xs-6 r-full-width-2 r-full-width">
                         <div class="column-widget h-white">
                             <h5>Mediva Sport</h5>
-                            <a href="https://medicasport01.wixsite.com/misitio"><img src="images/Anuncio.jpeg" alt=""></a>
+                            <a href="https://medicasport01.wixsite.com/misitio"><img src="/images/Anuncio.jpeg" alt=""></a>
                         </div>
                     </div>
                     <!-- Footer Column -->
@@ -360,20 +360,20 @@
                             <h5>Patrocinadores</h5>
                             <ul id="brand-icons-slider-2" class="brand-icons-slider-2">
                                 <li>
-                                    <a href="#"><img src="images/brand-icons/img-1-1.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-2.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-3.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-4.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-5.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-6.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-1.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-2.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-3.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-4.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-5.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-6.png" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/brand-icons/img-1-1.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-2.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-3.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-4.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-5.png" alt=""></a>
-                                    <a href="#"><img src="images/brand-icons/img-1-6.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-1.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-2.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-3.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-4.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-5.png" alt=""></a>
+                                    <a href="#"><img src="/images/brand-icons/img-1-6.png" alt=""></a>
                                 </li>
                             </ul>
                         </div>
@@ -404,7 +404,7 @@
 
 <!-- Slide Menu -->
 <nav id="menu" class="responive-nav">
-    <a class="r-nav-logo" href="{{action('HomeController@index')}}"><img src="images/LOGo final.png" alt="" width="1921"></a>
+    <a class="r-nav-logo" href="{{action('HomeController@index')}}"><img src="/images/LOGo final.png" alt="" width="1921"></a>
     <ul class="respoinve-nav-list">
         <li><a data-toggle="collapse" href="#list-1"><em class="pull-right fa fa-angle-down"></em>Inicio</a>
             <ul class="collapse" id="list-1">
@@ -437,25 +437,25 @@
 <!-- Slide Menu -->
 
 <!-- Java Script -->
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="/js/vendor/jquery.js"></script>
+<script src="/js/vendor/bootstrap.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script src="js/gmap3.min.js"></script>
-<script src="js/bigslide.js"></script>
-<script src="js/slick.js"></script>
-<script src="js/waterwheelCarousel.js"></script>
-<script src="js/contact-form.js"></script>
-<script src="js/countTo.js"></script>
-<script src="js/datepicker.js"></script>
-<script src="js/rating-star.js"></script>
-<script src="js/range-slider.js"></script>
-<script src="js/spinner.js"></script>
-<script src="js/parallax.js"></script>
-<script src="js/countdown.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/prettyPhoto.js"></script>
-<script src="js/wow-min.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/gmap3.min.js"></script>
+<script src="/js/bigslide.js"></script>
+<script src="/js/slick.js"></script>
+<script src="/js/waterwheelCarousel.js"></script>
+<script src="/js/contact-form.js"></script>
+<script src="/js/countTo.js"></script>
+<script src="/js/datepicker.js"></script>
+<script src="/js/rating-star.js"></script>
+<script src="/js/range-slider.js"></script>
+<script src="/js/spinner.js"></script>
+<script src="/js/parallax.js"></script>
+<script src="/js/countdown.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/prettyPhoto.js"></script>
+<script src="/js/wow-min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 
 <!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
