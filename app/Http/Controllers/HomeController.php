@@ -88,7 +88,6 @@ class HomeController extends Controller
         ]);
     }
     public function statisticsmale($idT=-1){
-
         $torneosA = torneos::where("activo",1)->where("genero","M")->get();
         if($idT==-1){
             $torneoCurr = $torneosA[0];
