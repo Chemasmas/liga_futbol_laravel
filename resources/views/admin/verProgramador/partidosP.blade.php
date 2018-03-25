@@ -35,7 +35,7 @@
                                             {{csrf_field()}}
                                             <input type="time" class="form-control" id="hora" name="hora" value="{{$partido->hora}}">
                                             <input type="date" class="form-control" id="fecha" name="fecha" value="{{$partido->fecha}}">
-                                            <input type="text" class="form-control" id="campo" name="campo" value="{{$partido->campo}}">
+                                            <input type="text" class="form-control" id="campo" name="campo" style="text-transform:uppercase" value="{{$partido->campo}}">
                                             <input type="submit" class="form-control btn btn-success" value="Proponer" >
                                         </form>
                                         @else

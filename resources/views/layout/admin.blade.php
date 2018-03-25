@@ -210,6 +210,8 @@
                         </li>
                     </ul>
                 </li>
+            @endif
+                @if(auth()->user()["level"]<3)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Directorio">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseDirectorio" data-parent="#exampleAccordion">
                         <i class="fa fa-address-book"></i>
@@ -222,15 +224,17 @@
                                 <span class="nav-link-text">Programadores</span>
                             </a>
                         </li>
+                        @if(auth()->user()["level"]<2)
                         <li>
                             <a class="nav-link" href="{{action('DirectorioController@arbitro')}}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
                                 <span class="nav-link-text">Árbitros</span>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </li>
-            @endif
+                @endif
             @if(auth()->user()["level"]<3)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Programacion">
                     <a class="nav-link" href="{{action('ProgramadorController@programacion')}}">
@@ -239,7 +243,7 @@
                     </a>
                 </li>
             @endif
-            @if(auth()->user()["level"]<3)
+            @if(auth()->user()["level"]==3||auth()->user()["level"]<2)
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Partidos">
                 <a class="nav-link" href="{{action('ArbitroController@lista_partidos')}}">
                     <i class="fa fa-list-ol"></i>
