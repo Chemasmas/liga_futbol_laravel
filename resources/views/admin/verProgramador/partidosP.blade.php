@@ -22,8 +22,14 @@
                                     <th>Propuesta</th>
                                 </thead>
                             @foreach($partidos as $partido)
-                                <tr>
-                                    <td>
+                                @if($partido->status == 1)
+                                    <tr style="background-color: rgba(1,147,196,0.3);">
+                                @elseif($partido->status == 0)
+                                        <tr style="background-color: rgba(225,30,45,0.5);">
+                                @elseif($partido->status == 2)
+                                    <tr style="background-color: rgba(136,191,74,0.4);">
+                                @endif
+                                        <td>
                                         {{$partido->equipol->nombre}}
                                     </td>
                                     <td>
