@@ -121,24 +121,27 @@
 											<th>Tabla</th>
 											<th>Equipos</th>
 											<th>Puntos</th>
+											<th>Diferencia de Goles</th>
 											<th>ganados</th>
 											<th>perdidos</th>
 											<th>empates</th>
 										</tr>
 										</thead>
 										<tbody>
-										<?php $i=1; ?>
+                                        <?php $i=1; ?>
 										@foreach($estadisticas as $estadistica)
-										<tr>
-											<td>{{$i++}}</td>
-											<td><img src="/{{$estadistica->equipo->institucione->escudo}}" alt="" height="50px">{{$estadistica->equipo->nombre}}</td>
-											<td>{{intval($estadistica->Puntos)}}</td>
-											<td>{{intval($estadistica->PartidosGanados)}}</td>
-											<td>{{intval($estadistica->PartidosPerdidos)}}</td>
-											<td>{{intval($estadistica->PartidosEmpatados)}}</td>
-										</tr>
+											@if($estadistica->equipo->nombre!="BYE")
+												<tr>
+													<td>{{$i++}}</td>
+													<td><img src="/{{$estadistica->equipo->institucione->escudo}}" alt="" height="50px">{{$estadistica->equipo->nombre}}</td>
+													<td>{{intval($estadistica->Puntos)}}</td>
+													<td>{{intval($estadistica->DiferenciaGoles)}}</td>
+													<td>{{intval($estadistica->PartidosGanados)}}</td>
+													<td>{{intval($estadistica->PartidosPerdidos)}}</td>
+													<td>{{intval($estadistica->PartidosEmpatados)}}</td>
+												</tr>
+											@endif
 										@endforeach
-
 										</tbody>
 									</table>
 								</div>

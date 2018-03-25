@@ -26,8 +26,8 @@ class JugadorController extends Controller
      */
     public function index($offset = 0)
     {
-        $paginas = ceil(jugadores::all()->count()/10.0);
-        $jugadores = jugadores::all()->forPage($offset,10)->filter( function($x){
+        $paginas = ceil(jugadores::all()->count()/20.0);
+        $jugadores = jugadores::all()->forPage($offset,20)->filter( function($x){
             return $x->usuario->active;
         });
 
@@ -224,8 +224,8 @@ class JugadorController extends Controller
     public function all($offset = 0)
     {
 
-        $paginas = ceil(jugadores::all()->count()/10.0);
-        $jugador = jugadores::all()->forPage($offset,10);
+        $paginas = ceil(jugadores::all()->count()/20.0);
+        $jugador = jugadores::all()->forPage($offset,20);
 
         return view('admin.jugador.all', [
             "paginas" => $paginas,

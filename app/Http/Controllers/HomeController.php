@@ -76,7 +76,14 @@ class HomeController extends Controller
             $torneoCurr = torneos::findOrFail($idT);
         }
 
-        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)->get()->sortByDesc("Puntos");
+        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)
+            ->get()->sort(function($a , $b){
+                if($a->Puntos == $b->Puntos){
+                    return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
+                }
+                else
+                    return $a->Puntos < $b->Puntos? 1:-1;
+            });
 
         debug($torneoCurr);
         debug($estadisticas);
@@ -96,7 +103,14 @@ class HomeController extends Controller
             $torneoCurr = torneos::findOrFail($idT);
         }
 
-        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)->get()->sortByDesc("Puntos");
+        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)
+            ->get()->sort(function($a , $b){
+            if($a->Puntos == $b->Puntos){
+                return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
+            }
+            else
+                return $a->Puntos < $b->Puntos? 1:-1;
+        });
 
         debug($torneoCurr);
         debug($estadisticas);
@@ -118,6 +132,14 @@ class HomeController extends Controller
     public function ejemplo()
     {
         return view('test');
+    }
+
+    function ordenar($a , $b){
+        if($a->Puntos == $b->Puntos){
+            return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
+        }
+        else
+            return $a->Puntos < $b->Puntos? 1:-1;
     }
 
 }
