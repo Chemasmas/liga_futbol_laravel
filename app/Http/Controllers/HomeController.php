@@ -21,10 +21,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $incio = Carbon::yesterday();
+        $inicio = Carbon::yesterday();
         $fin = Carbon::today()->addDays(6);
 
-        $partidos = partidos::whereBe
+        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get();
+        debug($inicio);
+        debug($fin);
+        debug($partidos);
         return view('publica.index');
     }
     public function about()
