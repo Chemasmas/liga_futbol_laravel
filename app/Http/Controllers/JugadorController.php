@@ -55,8 +55,8 @@ class JugadorController extends Controller
     public function create()
     {
         //$paginas = ceil(jugadores::all()->count()/10.0);
-        $instituciones = instituciones::all();
-        $equipos = equipos::all();
+        $instituciones = instituciones::where("activo",1)->get();
+        $equipos = equipos::where("activo",1)->get();
         return view("admin.jugador.crear", [
             //"paginas"=>$paginas,
             "instituciones" => $instituciones,

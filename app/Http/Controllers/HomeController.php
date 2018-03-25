@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\instituciones;
 use App\participantes_torneo;
+use App\partidos;
 use App\torneos;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,6 +21,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $incio = Carbon::yesterday();
+        $fin = Carbon::today()->addDays(6);
+
+        $partidos = partidos::whereBe
         return view('publica.index');
     }
     public function about()
