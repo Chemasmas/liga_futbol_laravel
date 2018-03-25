@@ -310,7 +310,7 @@ class ProgramadorController extends Controller
 
         $fecha = $request["fecha"];
 
-        $campo = $request["campo"];
+        $campo = strtoupper($request["campo"]);
 
         //debug($request["fecha"]);
         //debug($request["hora"]);
