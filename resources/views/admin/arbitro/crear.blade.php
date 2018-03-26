@@ -10,23 +10,23 @@
             {{csrf_field()}}
             <div class="form-group">
                 <label for="nombre">Nombre del Árbitro</label>
-                <input type="text" name="nombre" class="form-control" placeholder="" value="{{!empty($arbitro)?$arbitro->nombre:''}}">
+                <input required type="text" name="nombre" class="form-control" placeholder="" value="{{!empty($arbitro)?$arbitro->nombre:''}}">
             </div>
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" class="form-control" placeholder="" value="{{!empty($arbitro)?$arbitro->usuario->username:''}}">
+                <input required type="text" name="usuario" class="form-control" placeholder="" value="{{!empty($arbitro)?$arbitro->usuario->username:''}}">
             </div>
             <div class="form-group">
                 <label for="Password1">Password</label>
-                <input type="password" class="form-control" id="Password1" placeholder="" name="password" value="{{!empty($arbitro)?$arbitro->password:''}}">
+                <input required type="password" class="form-control" id="Password1" placeholder="" name="password" value="{{!empty($arbitro)?$arbitro->password:''}}">
             </div>
             <div class="form-group">
                 <label for="foto">Foto</label>
-                <input type="file" name="foto" class="form-control filestyle" data-input="false" data-buttonText="Selecciona la imagen" data-buttonName="btn-info" data-badge="true">
+                <input required type="file" name="foto" class="form-control filestyle" data-input="false" data-buttonText="Selecciona la imagen" data-buttonName="btn-info" data-badge="true">
             </div>
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="text" name="telefono" class="form-control" placeholder="" value="{{!empty($arbitro)?$arbitro->telefono:''}}">
+                <input required type="text" name="telefono" class="form-control" placeholder="" value="{{!empty($arbitro)?$arbitro->telefono:''}}">
             </div>
             <button type="submit" class="btn btn-success pull-right">{{!empty($arbitro)?'Guardar Edición':'Agregar'}}</button>
         </form>

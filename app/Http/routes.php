@@ -46,6 +46,8 @@ Route::get( "/admin/torneo/{idT}/jornadas",['middleware' => 'auth', 'uses' => "T
 Route::get( "/admin/torneo/{idT}/jornadasXLS",['middleware' => 'auth', 'uses' => "TorneoController@jornadasXLS"] );
 Route::get( "/admin/partido/marcador/{idP}",['middleware' => 'auth', 'uses' => "TorneoController@resultadoForm"] );
 Route::post( "/admin/partido/marcador/{idP}/guardar",['middleware' => 'auth', 'uses' => "TorneoController@cambiarResultados"] );
+Route::get( "/admin/partido/marcador/{idP}/editar",['middleware' => 'auth', 'uses' => "TorneoController@editCambiarResultados"] );
+Route::post("/admin/partido/marcador/{idP}/guardar",['middleware' => 'auth', 'uses' => "TorneoController@updateCambiarResultados"]);
 
 
 /* Control de la programacion*/
