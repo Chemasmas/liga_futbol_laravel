@@ -429,5 +429,30 @@ class TorneoController extends Controller
         return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
 
+    public function editCambiarResultados(Request $request,$idP){
+        $partido = partidos::findOrFail($idP);
+        debug($partido);
+        return view('admin.torneo.update',[
+            "partido"=>$partido,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
+    public function updateCambiarResultados(Request $request,$idP){
+        $partido = partidos::findOrFail($idP);
+        debug($partido);
+        return view('admin.torneo.update',[
+            "partido"=>$partido,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
 }
 

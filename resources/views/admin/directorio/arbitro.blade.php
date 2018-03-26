@@ -17,6 +17,7 @@
                         </tr>
                         </thead>
                     @foreach ($arbitros as $arbitro)
+                        @if($programador->usuario->active==1)
                         <tr>
                             <td>
                                 {{ $arbitro->nombre }}
@@ -25,6 +26,7 @@
                                 {{ $arbitro->telefono }}
                             </td>
                         </tr>
+                        @endif
                         @endforeach
                 </table>
             </div>

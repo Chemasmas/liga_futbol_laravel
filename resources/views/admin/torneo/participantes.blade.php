@@ -16,9 +16,11 @@
                 Generar Rol
             </a>
                 @endif
+                @if($torneo->generado)
             <a class="btn btn-primary" href="{{action("TorneoController@jornadas",["idT"=>$torneo->id])}}" @if(!$torneo->generado) {{'disabled'}} @endif>
                 Jornadas
             </a>
+                @endif
             </div>
             <div class="col-sm-12">
                 <table class="table table-hover table-bordered">
