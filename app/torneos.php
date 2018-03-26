@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property boolean $es_liga
  * @property boolean $generado
  * @property int $jornada
+ * @property boolean $programable
  * @property participantes_torneo[] $participantesTorneos
  * @property partidos[] $partidos
  */

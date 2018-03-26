@@ -48,6 +48,10 @@ Route::get( "/admin/partido/marcador/{idP}",['middleware' => 'auth', 'uses' => "
 Route::post( "/admin/partido/marcador/{idP}/guardar",['middleware' => 'auth', 'uses' => "TorneoController@cambiarResultados"] );
 
 
+/* Control de la programacion*/
+Route::get("/admin/torneo/{idT}/iniciar",['middleware' => 'auth', 'uses' => "TorneoController@mostrarIniciar"] );
+Route::post("/admin/torneo/{idT}/iniciar",['middleware' => 'auth', 'uses' => "TorneoController@start"] );
+Route::post("/admin/torneo/{idT}/iniciar",['middleware' => 'auth', 'uses' => "TorneoController@stop"] );
 
 
 Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@index"]);

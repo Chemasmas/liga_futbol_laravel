@@ -429,5 +429,19 @@ class TorneoController extends Controller
         return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
 
+    public function mostrarIniciar($idT){
+        $torneo = torneos::find($idT);
+        $jornadas = partidos::where("Torneo_id",$torneo->id)->groupBy("jornada")
+            ->select("jornada")->get();
+
+        debug($jornadas);
+        return view("admin.torneo.start",[
+            "partido"=>$torneo,
+            "jornadas"=>$jornadas,
+            "rutas" => [
+            ]
+        ]);
+    }
+
 }
 
