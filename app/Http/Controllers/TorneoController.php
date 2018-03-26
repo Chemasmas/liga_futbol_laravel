@@ -356,13 +356,18 @@ class TorneoController extends Controller
         return redirect()->back();
     }
 
-    public function resultadoForm($idP){
+    public function resultadoForm($idT){
 
-        $partido = partidos::findOrFail($idP);
+        $partido = partidos::findOrFail($idT);
 
         return view("admin.torneo.marcador",[
             "partido"=>$partido,
             "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Lista" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/torneo"],
+                "agregarE" => ["etiqueta" => "AgregarEquipos", "active" => "1", "link" => "/admin/torneo/".$partido->Torneo_id."/participantes"],
+                "jornada" => ["etiqueta" => "Jornadas", "active" => "1", "link" => "/admin/torneo/".$partido->Torneo_id."/jornadas"],
+                "resul" => ["etiqueta" => "Resultado", "active" => "0", "link" => ""]
             ]
         ]);
     }
@@ -444,15 +449,10 @@ class TorneoController extends Controller
 
     public function updateCambiarResultados(Request $request,$idP){
         $partido = partidos::findOrFail($idP);
-        debug($partido);
-        return view('admin.torneo.update',[
-            "partido"=>$partido,
-            "rutas" => [
-                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
-                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
-            ]
-        ]);
+        $partido->marcadorLocal = $request["localM"];
+        $partido->marcadorVisitante = $request["visitaM"];
+        $partido->verifica = -1;
+        $partido->save();
     }
 }
 
