@@ -3,737 +3,841 @@
 @section('titulo','Inicio')
 
 @section('content')
-	<!-- Slider Holder -->
-	<div class="slider-holder">
+    <!-- Slider Holder -->
+    <div class="slider-holder">
 
-		<!-- Banner slider -->
-		<ul id="main-slides" class="main-slides">
+        <!-- Banner slider -->
+        <ul id="main-slides" class="main-slides">
 
-			<!-- Itme -->
-			<li>
-				<div id="animated-slider" class="carousel slide carousel-fade">
+            <!-- Itme -->
+            <li>
+                <div id="animated-slider" class="carousel slide carousel-fade">
 
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
 
-						<!-- Item -->
-						<div class="item active">
-							<img src="images/banner-slider/img-01.jpg" alt="">
-							<div class="position-center-x full-width">
-								<div class="container">
-									<div class="banner-caption style-1 p-white h-white pull-right">
-										<h1 class="animated fadeInUp delay-1s">Proximos<br>Partidos<br></h1>
-										<p class="animated fadeInUp delay-2s">Enterate de la siguiente ronda</p>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@nextmatchsfemale')}}"><i>+</i>Femenil</a>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@nextmatchsmale')}}"><i>+</i>Varonil</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Item -->
+                        <!-- Item -->
+                        <div class="item active">
+                            <img src="images/banner-slider/img-01.jpg" alt="">
+                            <div class="position-center-x full-width">
+                                <div class="container">
+                                    <div class="banner-caption style-1 p-white h-white pull-right">
+                                        <h1 class="animated fadeInUp delay-1s">Proximos<br>Partidos<br></h1>
+                                        <p class="animated fadeInUp delay-2s">Enterate de la siguiente ronda</p>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s"
+                                           href="{{action('HomeController@nextmatchsfemale')}}"><i>+</i>Femenil</a>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s"
+                                           href="{{action('HomeController@nextmatchsmale')}}"><i>+</i>Varonil</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item -->
 
-						<!-- Item -->
-						<div class="item">
-							<img src="images/banner-slider/img-02.jpg" alt="">
-							<div class="position-center-x full-width">
-								<div class="container">
-									<div class="banner-caption style-2 p-white h-white pull-left">
-										<h1 class="animated fadeInUp delay-1s">Estadisticas de<br>jornada actual<br></h1>
-										<p class="animated fadeInUp delay-2s">Checa la tabla de puntaje</p>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@statisticsfemale')}}"><i>+</i>Femenil</a>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@statisticsmale')}}"><i>+</i>Varonil</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Item -->
+                        <!-- Item -->
+                        <div class="item">
+                            <img src="images/banner-slider/img-02.jpg" alt="">
+                            <div class="position-center-x full-width">
+                                <div class="container">
+                                    <div class="banner-caption style-2 p-white h-white pull-left">
+                                        <h1 class="animated fadeInUp delay-1s">Estadisticas de<br>jornada actual<br>
+                                        </h1>
+                                        <p class="animated fadeInUp delay-2s">Checa la tabla de puntaje</p>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s"
+                                           href="{{action('HomeController@statisticsfemale')}}"><i>+</i>Femenil</a>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s"
+                                           href="{{action('HomeController@statisticsmale')}}"><i>+</i>Varonil</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item -->
 
-						<!-- Item -->
-						<div class="item">
-							<img src="images/banner-slider/img-03.jpg" alt="">
-							<div class="position-center-x full-width">
-								<div class="container">
-									<div class="banner-caption style-2 p-white h-white pull-left">
-										<h1 class="animated fadeInUp delay-1s">Convocatorias<br>Inscripciones<br>abiertas</h1>
-										<p class="animated fadeInUp delay-2s">Revisa nuestra normativa</p>
-										<a class="btn lg red-btn animated fadeInRight delay-3s" href="{{action('HomeController@regulation')}}"><i>+</i>leer mas</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Item -->
+                        <!-- Item -->
+                        <div class="item">
+                            <img src="images/banner-slider/img-03.jpg" alt="">
+                            <div class="position-center-x full-width">
+                                <div class="container">
+                                    <div class="banner-caption style-2 p-white h-white pull-left">
+                                        <h1 class="animated fadeInUp delay-1s">Convocatorias<br>Inscripciones<br>abiertas
+                                        </h1>
+                                        <p class="animated fadeInUp delay-2s">Revisa nuestra normativa</p>
+                                        <a class="btn lg red-btn animated fadeInRight delay-3s"
+                                           href="{{action('HomeController@regulation')}}"><i>+</i>leer mas</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item -->
 
-					</div>
-					<!-- Wrapper for slides -->
+                    </div>
+                    <!-- Wrapper for slides -->
 
-					<!-- Nan Control -->
-					<!-- <a class="slider-nav next" href="#animated-slider" data-slide="prev"><i class="fa fa-long-arrow-right"></i></a>
+                    <!-- Nan Control -->
+                    <!-- <a class="slider-nav next" href="#animated-slider" data-slide="prev"><i class="fa fa-long-arrow-right"></i></a>
                     <a class="slider-nav prev" href="#animated-slider" data-slide="next"><i class="fa fa-long-arrow-left"></i></a> -->
-					<!-- Nan Control -->
+                    <!-- Nan Control -->
 
-					<!-- Indicators -->
-					<ul class="carousel-indicators">
-						<li data-target="#animated-slider" data-slide-to="0" class="active"></li>
-						<li data-target="#animated-slider" data-slide-to="1"></li>
-						<li data-target="#animated-slider" data-slide-to="2"></li>
-					</ul>
-					<!-- Indicators -->
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#animated-slider" data-slide-to="0" class="active"></li>
+                        <li data-target="#animated-slider" data-slide-to="1"></li>
+                        <li data-target="#animated-slider" data-slide-to="2"></li>
+                    </ul>
+                    <!-- Indicators -->
 
-				</div>
-			</li>
-			<!-- Itme -->
+                </div>
+            </li>
+            <!-- Itme -->
 
-			<!-- Itme -->
-			<li>
-				<img src="images/banner-bgs/img-03.jpg" alt="">
-				<div class="video-banner-caption position-center-center p-white h-white">
-					<h1>Futbol<br> con valores</h1>
-					<p>Destacados en accion<br> Un paso al exito</p>
-					<ul class="btn-list">
-						<li><a class="btn lg red-btn" href="https://www.youtube.com/watch?v=mqaI7vUjOII" data-rel="prettyPhoto[video]">Ver video<i class="fa fa-play-circle"></i></a></li>
-						<li><a class="btn lg red-btn" href="https://www.youtube.com">Mas videos<i class="fa fa-angle-right"></i></a></li>
-					</ul>
-				</div>
-			</li>
-			<!-- Itme -->
+            <!-- Itme -->
+            <li>
+                <img src="images/banner-bgs/img-03.jpg" alt="">
+                <div class="video-banner-caption position-center-center p-white h-white">
+                    <h1>Futbol<br> con valores</h1>
+                    <p>Destacados en accion<br> Un paso al exito</p>
+                    <ul class="btn-list">
+                        <li><a class="btn lg red-btn" href="https://www.youtube.com/watch?v=mqaI7vUjOII"
+                               data-rel="prettyPhoto[video]">Ver video<i class="fa fa-play-circle"></i></a></li>
+                        <li><a class="btn lg red-btn" href="https://www.youtube.com">Mas videos<i
+                                        class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Itme -->
 
-			<!-- Itme -->
-			<li>
-				<img src="images/banner-bgs/img-01.jpg" alt="">
-			</li>
-			<!-- Itme -->
+            <!-- Itme -->
+            <li>
+                <img src="images/banner-bgs/img-01.jpg" alt="">
+            </li>
+            <!-- Itme -->
 
-			<!-- Itme -->
-			<li>
-				<img src="images/banner-bgs/img-02.jpg" alt="">
-				<div class="position-center-center">
-					<div class="container theme-padding">
-						<div class="pager-heading match-detail h-white">
-							<span class="pull-left win-tag"><img src="images/Instituciones Logo/cropped-cvh-deportes-192x192e8e2.png" alt=""></span>
-							<div class="vs-match-heading position-center-center"><strong class="vs-match-result">3<span>Vs</span>1</strong> <span class="end-time"><em class="fa fa-clock-o"></em>13:57 min</span></div>
-							<span class="pull-right loss-tag"><img src="images/Instituciones Logo/photoa6e0.jpg" alt=""></span>
-						</div>
-					</div>
-				</div>
-			</li>
-			<!-- Itme -->
+            <!-- Itme -->
+            <li>
+                <img src="images/banner-bgs/img-02.jpg" alt="">
+                <div class="position-center-center">
+                    <div class="container theme-padding">
+                        <div class="pager-heading match-detail h-white">
+                            <span class="pull-left win-tag"><img
+                                        src="images/Instituciones Logo/cropped-cvh-deportes-192x192e8e2.png"
+                                        alt=""></span>
+                            <div class="vs-match-heading position-center-center"><strong class="vs-match-result">3<span>Vs</span>1</strong>
+                                <span class="end-time"><em class="fa fa-clock-o"></em>13:57 min</span></div>
+                            <span class="pull-right loss-tag"><img src="images/Instituciones Logo/photoa6e0.jpg" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- Itme -->
 
-		</ul>
-		<!-- Banner slider -->
+        </ul>
+        <!-- Banner slider -->
 
-		<!-- Slides Thmnail -->
-		<div class="main-slides-thumb">
-			<div class="container">
-				<ul id="slides-thmnail" class="slides-thmnail">
-					<li><span><i class="fa fa-sliders"></i>Slides</span></li>
-					<li> <span><i class="fa fa-play-circle"></i>Videos</span> </li>
-					<li> <span><i class="fa fa-soccer-ball-o"></i>Destacados</span></li>
-					<li><span><i class="fa fa-bar-chart"></i>Resultados</span></li>
-				</ul>
-				<ul class="thmnail-arrows">
-					<li class="prev-1"><span class="icon-arrow-01"></span></li>
-					<li class="next-1"><span class="icon-arrow-01"></span></li>
-				</ul>
-			</div>
-		</div>
-		<!-- Slides Thmnail -->
+        <!-- Slides Thmnail -->
+        <div class="main-slides-thumb">
+            <div class="container">
+                <ul id="slides-thmnail" class="slides-thmnail">
+                    <li><span><i class="fa fa-sliders"></i>Slides</span></li>
+                    <li><span><i class="fa fa-play-circle"></i>Videos</span></li>
+                    <li><span><i class="fa fa-soccer-ball-o"></i>Destacados</span></li>
+                    <li><span><i class="fa fa-bar-chart"></i>Resultados</span></li>
+                </ul>
+                <ul class="thmnail-arrows">
+                    <li class="prev-1"><span class="icon-arrow-01"></span></li>
+                    <li class="next-1"><span class="icon-arrow-01"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Slides Thmnail -->
 
-	</div>
-	<!-- Slider Holder -->
+    </div>
+    <!-- Slider Holder -->
 
-	<!-- Main Content -->
-	<main class="main-content">
+    <!-- Main Content -->
+    <main class="main-content">
 
-		<!-- Match Detail -->
-		<section class="theme-padding-bottom bg-fixed">
-			<div class="container">
+        <!-- Match Detail -->
+        <section class="theme-padding-bottom bg-fixed">
+            <div class="container">
 
-				<!-- Add Banners -->
-				<div class="add-banners">
-				</div>
-				<!-- Add Banners -->
+                <!-- Add Banners -->
+                <div class="add-banners">
+                </div>
+                <!-- Add Banners -->
 
-				<!-- Match Detail Content -->
-				<div class="match-detail-content">
-					<div class="row">
-						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-							<div class="row">
+                <!-- Match Detail Content -->
+                <div class="match-detail-content">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="row">
 
-								<!-- Next Matches -->
-								<div class="col-sm-4 col-xs-5 r-full-width">
-									<div class="next-matches"><h4>prox partidos</h4>
+                                <!-- Next Matches -->
+                                <div class="col-sm-4 col-xs-5 r-full-width">
+                                    <div class="next-matches"><h4>prox partidos</h4>
 
-										<div id="matches-detail-slider" class="matches-detail-slider">
+                                        <div id="matches-detail-slider" class="matches-detail-slider">
 
-											<!-- Item -->
-											<div class="item matches-detail" style="background: url(images/country-flags-bg.jpg);">
-												<div class="time-left">
-													<ul id="countdown-1" class="countdown">
-														<li><span class="days">00</span>D:</li>
-														<li><span class="hours">00</span>H:</li>
-														<li><span class="minutes">00</span>M:</li>
-														<li><span class="seconds">00</span>S</li>
-													</ul>
-												</div>
-												<span class="left-date">12/02/2016 / 19:00</span>
-												<div class="team-btw-match">
-													<ul>
-														<li>
-															<img src="images/team-logos/img-01.png" alt="">
-															<span>Footbal<span>Team</span></span>
-														</li>
-														<li>
-															<img src="images/team-logos/img-02.png" alt="">
-															<span>Super Team<span>Club</span></span>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!-- Item -->
+                                            <!-- Item -->
+                                            <div class="item matches-detail"
+                                                 style="background: url(images/country-flags-bg.jpg);">
+                                                <div class="time-left">
+                                                    <ul id="countdown-1" class="countdown">
+                                                        <li><span class="days">00</span>D:</li>
+                                                        <li><span class="hours">00</span>H:</li>
+                                                        <li><span class="minutes">00</span>M:</li>
+                                                        <li><span class="seconds">00</span>S</li>
+                                                    </ul>
+                                                </div>
+                                                <span class="left-date">12/02/2016 / 19:00</span>
+                                                <div class="team-btw-match">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="images/team-logos/img-01.png" alt="">
+                                                            <span>Footbal<span>Team</span></span>
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/team-logos/img-02.png" alt="">
+                                                            <span>Super Team<span>Club</span></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Item -->
 
-											<!-- Item -->
-											<div class="item matches-detail" style="background: url(images/country-flags-bg.jpg);">
-												<div class="time-left">
-													<ul id="countdown-2" class="countdown">
-														<li><span class="days">00</span>D:</li>
-														<li><span class="hours">00</span>H:</li>
-														<li><span class="minutes">00</span>M:</li>
-														<li><span class="seconds">00</span>S</li>
-													</ul>
-												</div>
-												<span class="left-date">12/02/2016 / 19:00</span>
-												<div class="team-btw-match">
-													<ul>
-														<li>
-															<img src="images/team-logos/img-01.png" alt="">
-															<span>Footbal<span>Team</span></span>
-														</li>
-														<li>
-															<img src="images/team-logos/img-02.png" alt="">
-															<span>Super Team<span>Club</span></span>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<!-- Item -->
+                                            <!-- Item -->
+                                            <div class="item matches-detail"
+                                                 style="background: url(images/country-flags-bg.jpg);">
+                                                <div class="time-left">
+                                                    <ul id="countdown-2" class="countdown">
+                                                        <li><span class="days">00</span>D:</li>
+                                                        <li><span class="hours">00</span>H:</li>
+                                                        <li><span class="minutes">00</span>M:</li>
+                                                        <li><span class="seconds">00</span>S</li>
+                                                    </ul>
+                                                </div>
+                                                <span class="left-date">12/02/2016 / 19:00</span>
+                                                <div class="team-btw-match">
+                                                    <ul>
+                                                        <li>
+                                                            <img src="images/team-logos/img-01.png" alt="">
+                                                            <span>Footbal<span>Team</span></span>
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/team-logos/img-02.png" alt="">
+                                                            <span>Super Team<span>Club</span></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Item -->
 
-										</div>
-									</div>
-								</div>
-								<!-- Next Matches -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Next Matches -->
 
-								<!-- Upcoming Fixture -->
-								<div class="col-sm-8 col-xs-7 r-full-width">
-									<h3><em class="red-color">JORNADAS </em>ACTUALES <a class="view-all pull-right" href="{{action('HomeController@nextmatchsmale')}}">Varonil</a>
-										<a class="view-all pull-right" href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></h3>
+                                <!-- Upcoming Fixture -->
+                                <div class="col-sm-8 col-xs-7 r-full-width">
+                                    <h3><em class="red-color">JORNADAS </em>ACTUALES <a class="view-all pull-right"
+                                                                                        href="{{action('HomeController@nextmatchsmale')}}">Varonil</a>
+                                        <a class="view-all pull-right"
+                                           href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></h3>
 
-									<div class="upcoming-fixture">
-										<div class="bs-example bs-example-tabs" data-example-id="togglable-tabs"> <ul class="nav nav-tabs" id="myTabs" role="tablist"> <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li> <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Profile</a></li> <li role="presentation" class="dropdown"> <a href="#" class="dropdown-toggle" id="myTabDrop1" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Dropdown <span class="caret"></span></a> <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents"> <li><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">@fat</a></li> <li><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a></li> </ul> </li> </ul> <div class="tab-content" id="myTabContent"> <div class="tab-pane fade in active" role="tabpanel" id="home" aria-labelledby="home-tab"> <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p> </div> <div class="tab-pane fade" role="tabpanel" id="profile" aria-labelledby="profile-tab"> <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p> </div> <div class="tab-pane fade" role="tabpanel" id="dropdown1" aria-labelledby="dropdown1-tab"> <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p> </div> <div class="tab-pane fade" role="tabpanel" id="dropdown2" aria-labelledby="dropdown2-tab"> <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p> </div> </div> </div>
-									</div>
-								</div>
-								<!-- Upcoming Fixture -->
+                                    <div class="upcoming-fixture">
+                                        <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                                            <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                                                @foreach($fechas as $i=>$fecha)
+                                                    @if($i==1)
+                                                        <li role="presentation" class="active">
+                                                    @else
+                                                        <li role="presentation" class="">
+                                                    @endif
+                                                        <a href="#{{$i}}" id="{{$i}}-tab" role="tab" data-toggle="tab"
+                                                           aria-controls="{{$i}}" aria-expanded="true">
+                                                            @if($i==0)
+                                                                Ayer
+                                                            @elseif($i==1)
+                                                                Hoy
+                                                            @elseif($i==2)
+                                                                Mañana
+                                                            @else
+                                                                {{ Carbon\Carbon::parse($fecha)->format('d-m') }}
+                                                            @endif
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                            <div class="tab-content" id="myTabContent">
+                                                @foreach($fechas as $i=>$fecha)
+                                                    @if($i==1)
+                                                        <div class="tab-pane fade in active" role="tabpanel" id="{{$i}}" aria-labelledby="{{$i}}-tab">
+                                                    @else
+                                                        <div class="tab-pane fade in" role="tabpanel" id="{{$i}}" aria-labelledby="{{$i}}-tab">
+                                                    @endif
+                                                            <?php $vacio = true ?>
+                                                    @foreach($partidosG as $dia => $partidos )
+                                                        @if($fecha == $dia)
+                                                            <?php $vacio=false; ?>
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered">
+                                                                    <tbody>
+                                                                    @foreach($partidos as $partido)
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="logo-width-name">
+                                                                                <img src="{{$partido->equipol->institucione->escudo}}" alt="" height="60px"><br>
+                                                                                {{$partido->equipol->nombre}}
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="upcoming-fixture-date"><span>{{$fecha}} {{$partido->hora}}</span></td>
+                                                                        <td>
+                                                                            <div class="logo-width-name">
+                                                                                <img src="{{$partido->equipov->institucione->escudo}}" alt="" height="60px"><br>
+                                                                                {{$partido->equipov->nombre}}
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    @endforeach
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                    @if($vacio)
+                                                        No hay partidos.
+                                                    @endif
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Upcoming Fixture -->
 
-								<!-- Latest News -->
-								<div class="col-xs-12">
-								</div>
-								<!-- Latest News -->
+                                <!-- Latest News -->
+                                <div class="col-xs-12">
+                                </div>
+                                <!-- Latest News -->
 
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-							<div class="row">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="row">
 
-								<iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=370&amp;wkst=2&amp;bgcolor=%23ff0000&amp;src=ligaponiente.callendar%40gmail.com&amp;color=%231B887A&amp;src=es.mexican%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FMexico_City" style="border-width:1" width="200" height="370" frameborder="1" scrolling="si"></iframe>				<!-- Match Detail Content -->
+                                <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=370&amp;wkst=2&amp;bgcolor=%23ff0000&amp;src=ligaponiente.callendar%40gmail.com&amp;color=%231B887A&amp;src=es.mexican%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FMexico_City"
+                                        style="border-width:1" width="200" height="370" frameborder="1"
+                                        scrolling="si"></iframe>                <!-- Match Detail Content -->
 
-							</div>
-		</section>
-		<!-- Match Detail -->
-		<!-- Gallery And Team -->
-		<div class="theme-padding gallery-holder">
+                            </div>
+        </section>
+        <!-- Match Detail -->
+        <!-- Gallery And Team -->
+        <div class="theme-padding gallery-holder">
 
-			<!-- Gallery v-3 -->
-			<div class="theme-padding-bottom">
-				<div class="container">
+            <!-- Gallery v-3 -->
+            <div class="theme-padding-bottom">
+                <div class="container">
 
-					<!-- Main Heading -->
-					<br>
-					<a href="{{action('HomeController@gallery')}}"><h4>Galeria</h4></a>
-					</br>
+                    <!-- Main Heading -->
+                    <br>
+                    <a href="{{action('HomeController@gallery')}}"><h4>Galeria</h4></a>
+                    </br>
 
-					<!-- Main Heading -->
+                    <!-- Main Heading -->
 
-					<!-- Gallery Columns -->
-					<div class="gallery">
-						<div class="col-sm-6">
-							<div class="row">
-								<div class="col-sm-12 col-xs-12 r-full-width p-0">
-									<figure class="gallery-figure">
-										<img src="images/gallery-v3/imagen 1.jpeg" alt="">
-										<figcaption class="overlay">
-											<div class="position-center-center">
-												<ul class="btn-list">
-													<li><a href="images/gallery-v3/imagen 1.jpeg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
-													<li><a class="fa fa-eye" href="#"></a></li>
-												</ul>
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="col-sm-6 col-xs-6 r-full-width p-0">
-									<figure class="gallery-figure">
-										<img src="images/gallery-v3/imagen 4.jpeg" alt="">
-										<figcaption class="overlay">
-											<div class="position-center-center">
-												<ul class="btn-list">
-													<li><a href="images/gallery-v3/imagen 4.jpeg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
-													<li><a class="fa fa-eye" href="#"></a></li>
-												</ul>
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="col-sm-6 col-xs-6 r-full-width p-0">
-									<figure class="gallery-figure">
-										<img src="images/gallery-v3/imagen 5.jpeg" alt="">
-										<figcaption class="overlay">
-											<div class="position-center-center">
-												<ul class="btn-list">
-													<li><a href="images/gallery-v3/imagen 5.jpeg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
-													<li><a class="fa fa-eye" href="#"></a></li>
-												</ul>
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="row">
-								<div class="col-sm-6 col-xs-6 r-full-width p-0">
-									<figure class="gallery-figure">
-										<img src="images/gallery-v3/imagen 2.jpeg" alt="">
-										<figcaption class="overlay">
-											<div class="position-center-center">
-												<ul class="btn-list">
-													<li><a href="images/gallery-v3/imagen 2.jpeg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
-													<li><a class="fa fa-eye" href="#"></a></li>
-												</ul>
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="col-sm-6 col-xs-6 r-full-width p-0">
-									<figure class="gallery-figure">
-										<img src="images/gallery-v3/imagen 3.jpeg" alt="">
-										<figcaption class="overlay">
-											<div class="position-center-center">
-												<ul class="btn-list">
-													<li><a href="images/gallery-v3/imagen 3.jpeg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
-													<li><a class="fa fa-eye" href="#"></a></li>
-												</ul>
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-								<div class="col-sm-12 col-xs-12 r-full-width p-0">
-									<figure class="gallery-figure">
-										<img src="images/gallery-v3/imagen 6.jpeg" alt="">
-										<figcaption class="overlay">
-											<div class="position-center-center">
-												<ul class="btn-list">
-													<li><a href="images/gallery-v3/imagen 6.jpeg" data-rel="prettyPhoto[gallery-v3]"><i class="fa fa-search"></i></a></li>
-													<li><a class="fa fa-link" href="#"></a></li>
-												</ul>
-											</div>
-										</figcaption>
-									</figure>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Gallery Columns -->
+                    <!-- Gallery Columns -->
+                    <div class="gallery">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12 r-full-width p-0">
+                                    <figure class="gallery-figure">
+                                        <img src="images/gallery-v3/imagen 1.jpeg" alt="">
+                                        <figcaption class="overlay">
+                                            <div class="position-center-center">
+                                                <ul class="btn-list">
+                                                    <li><a href="images/gallery-v3/imagen 1.jpeg"
+                                                           data-rel="prettyPhoto[gallery-v3]"><i
+                                                                    class="fa fa-search"></i></a></li>
+                                                    <li><a class="fa fa-eye" href="#"></a></li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-6 col-xs-6 r-full-width p-0">
+                                    <figure class="gallery-figure">
+                                        <img src="images/gallery-v3/imagen 4.jpeg" alt="">
+                                        <figcaption class="overlay">
+                                            <div class="position-center-center">
+                                                <ul class="btn-list">
+                                                    <li><a href="images/gallery-v3/imagen 4.jpeg"
+                                                           data-rel="prettyPhoto[gallery-v3]"><i
+                                                                    class="fa fa-search"></i></a></li>
+                                                    <li><a class="fa fa-eye" href="#"></a></li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-6 col-xs-6 r-full-width p-0">
+                                    <figure class="gallery-figure">
+                                        <img src="images/gallery-v3/imagen 5.jpeg" alt="">
+                                        <figcaption class="overlay">
+                                            <div class="position-center-center">
+                                                <ul class="btn-list">
+                                                    <li><a href="images/gallery-v3/imagen 5.jpeg"
+                                                           data-rel="prettyPhoto[gallery-v3]"><i
+                                                                    class="fa fa-search"></i></a></li>
+                                                    <li><a class="fa fa-eye" href="#"></a></li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-6 r-full-width p-0">
+                                    <figure class="gallery-figure">
+                                        <img src="images/gallery-v3/imagen 2.jpeg" alt="">
+                                        <figcaption class="overlay">
+                                            <div class="position-center-center">
+                                                <ul class="btn-list">
+                                                    <li><a href="images/gallery-v3/imagen 2.jpeg"
+                                                           data-rel="prettyPhoto[gallery-v3]"><i
+                                                                    class="fa fa-search"></i></a></li>
+                                                    <li><a class="fa fa-eye" href="#"></a></li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-6 col-xs-6 r-full-width p-0">
+                                    <figure class="gallery-figure">
+                                        <img src="images/gallery-v3/imagen 3.jpeg" alt="">
+                                        <figcaption class="overlay">
+                                            <div class="position-center-center">
+                                                <ul class="btn-list">
+                                                    <li><a href="images/gallery-v3/imagen 3.jpeg"
+                                                           data-rel="prettyPhoto[gallery-v3]"><i
+                                                                    class="fa fa-search"></i></a></li>
+                                                    <li><a class="fa fa-eye" href="#"></a></li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-sm-12 col-xs-12 r-full-width p-0">
+                                    <figure class="gallery-figure">
+                                        <img src="images/gallery-v3/imagen 6.jpeg" alt="">
+                                        <figcaption class="overlay">
+                                            <div class="position-center-center">
+                                                <ul class="btn-list">
+                                                    <li><a href="images/gallery-v3/imagen 6.jpeg"
+                                                           data-rel="prettyPhoto[gallery-v3]"><i
+                                                                    class="fa fa-search"></i></a></li>
+                                                    <li><a class="fa fa-link" href="#"></a></li>
+                                                </ul>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Columns -->
 
-				</div>
-			</div>
-			<!-- Gallery v-3 -->
+                </div>
+            </div>
+            <!-- Gallery v-3 -->
 
-			<!-- Player Features And History -->
-			<section class="red-section" style=" background: url(images/red-bg.jpg) no-repeat;">
+            <!-- Player Features And History -->
+            <section class="red-section" style=" background: url(images/red-bg.jpg) no-repeat;">
 
-				<!-- Red Section Heading -->
-				<div class="red-sec-heading">
-					<div class="container">
-						<h5>Jugador destacado</h5>
-					</div>
-				</div>
-				<!-- Red Section Heading -->
+                <!-- Red Section Heading -->
+                <div class="red-sec-heading">
+                    <div class="container">
+                        <h5>Jugador destacado</h5>
+                    </div>
+                </div>
+                <!-- Red Section Heading -->
 
-				<!-- Red saection Content -->
-				<div class="container">
-					<div class="row">
+                <!-- Red saection Content -->
+                <div class="container">
+                    <div class="row">
 
-						<!-- Player Featuer -->
-						<div class="col-sm-6">
-							<div class="theme-padding top-profiler">
-								<img class="player-img animate fadeInLeft" data-wow-delay="0.2s" src="images/player-img.png" alt="">
-								<strong class="number-batch style-1">13</strong>
-								<strong class="number-batch style-2">06</strong>
-							</div>
-						</div>
-						<!-- Player Featuer -->
+                        <!-- Player Featuer -->
+                        <div class="col-sm-6">
+                            <div class="theme-padding top-profiler">
+                                <img class="player-img animate fadeInLeft" data-wow-delay="0.2s"
+                                     src="images/player-img.png" alt="">
+                                <strong class="number-batch style-1">13</strong>
+                                <strong class="number-batch style-2">06</strong>
+                            </div>
+                        </div>
+                        <!-- Player Featuer -->
 
-						<!-- Player History -->
-						<div class="col-sm-6">
-							<ul id="video-slider" class="video-slider">
-								<li class="red-sec-widget player-history h-white p-white">
-									<h3>Partidos relacionados</h3>
-									<p>Una muestra de determinacion</p>
-									<div class="player-video-sec">
-										<div class="video video-post">
-											<img src="images/video-bg.jpg" alt="" width="547">
-											<span class="play-lable fa fa-video-camera"></span>
-											<a class="position-center-center play-icon" href="https://www.youtube.com/watch?v=96PwcKS1po0" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
-										</div>
-									</div>
-								</li>
-								<li class="red-sec-widget player-history h-white p-white">
-									<h3>partidos relacionados</h3>
-									<p>La magia del futbol existe</p>
-									<div class="player-video-sec">
-										<div class="video video-post">
-											<img src="images/video-bg-2.jpg" alt="">
-											<span class="play-lable fa fa-video-camera"></span>
-											<a class="position-center-center play-icon" href="https://www.youtube.com/watch?v=sJukTsWY7ss" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
-										</div>
-									</div>
-								</li>
-								<li class="red-sec-widget player-history h-white p-white">
-									<h3>Partidos Relacionados</h3>
-									<p>Solo hace falta un poco de nobleza</p>
-									<div class="player-video-sec">
-										<div class="video video-post">
-											<img src="images/video-bg-3.jpg" alt="">
-											<span class="play-lable fa fa-video-camera"></span>
-											<a class="position-center-center play-icon" href="https://www.youtube.com/watch?v=uTlos1XMVtQ" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<!-- Player History -->
+                        <!-- Player History -->
+                        <div class="col-sm-6">
+                            <ul id="video-slider" class="video-slider">
+                                <li class="red-sec-widget player-history h-white p-white">
+                                    <h3>Partidos relacionados</h3>
+                                    <p>Una muestra de determinacion</p>
+                                    <div class="player-video-sec">
+                                        <div class="video video-post">
+                                            <img src="images/video-bg.jpg" alt="" width="547">
+                                            <span class="play-lable fa fa-video-camera"></span>
+                                            <a class="position-center-center play-icon"
+                                               href="https://www.youtube.com/watch?v=96PwcKS1po0"
+                                               data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="red-sec-widget player-history h-white p-white">
+                                    <h3>partidos relacionados</h3>
+                                    <p>La magia del futbol existe</p>
+                                    <div class="player-video-sec">
+                                        <div class="video video-post">
+                                            <img src="images/video-bg-2.jpg" alt="">
+                                            <span class="play-lable fa fa-video-camera"></span>
+                                            <a class="position-center-center play-icon"
+                                               href="https://www.youtube.com/watch?v=sJukTsWY7ss"
+                                               data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="red-sec-widget player-history h-white p-white">
+                                    <h3>Partidos Relacionados</h3>
+                                    <p>Solo hace falta un poco de nobleza</p>
+                                    <div class="player-video-sec">
+                                        <div class="video video-post">
+                                            <img src="images/video-bg-3.jpg" alt="">
+                                            <span class="play-lable fa fa-video-camera"></span>
+                                            <a class="position-center-center play-icon"
+                                               href="https://www.youtube.com/watch?v=uTlos1XMVtQ"
+                                               data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Player History -->
 
-					</div>
-				</div>
-				<!-- Red saection Content -->
+                    </div>
+                </div>
+                <!-- Red saection Content -->
 
-			</section>
-			<!-- Player Features And History -->
+            </section>
+            <!-- Player Features And History -->
 
-			<!-- Facts Accounter -->
-			<div class="facts-acounter">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6 pull-right">
-							<ul class="facts-list-acounter" id="tc-counters">
-								<li>
-									<strong class="facts-number" data-from="0" data-to="550" data-speed="1000"></strong>
-									<span>Posesion</span>
-								</li>
-								<li>
-									<strong class="facts-number" data-from="0" data-to="30" data-speed="2000"></strong>
-									<span>Team Members</span>
-								</li>
-								<li>
-									<strong class="facts-number" data-from="0" data-to="158" data-speed="3000"></strong>
-									<span>Partidos Ganados</span>
-								</li>
-								<li>
-									<strong class="facts-number" data-from="0" data-to="199" data-speed="4000"></strong>
-									<span>tiros a gol</span>
-								</li>
-								<li>
-									<strong class="facts-number" data-from="0" data-to="1254" data-speed="5000"></strong>
-									<span>expulciones</span>
-								</li>
-								<li>
-									<strong class="facts-number" data-from="0" data-to="32" data-speed="6000"></strong>
-									<span>faltas</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Facts Accounter -->
+            <!-- Facts Accounter -->
+            <div class="facts-acounter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 pull-right">
+                            <ul class="facts-list-acounter" id="tc-counters">
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="550" data-speed="1000"></strong>
+                                    <span>Posesion</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="30" data-speed="2000"></strong>
+                                    <span>Team Members</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="158" data-speed="3000"></strong>
+                                    <span>Partidos Ganados</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="199" data-speed="4000"></strong>
+                                    <span>tiros a gol</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="1254"
+                                            data-speed="5000"></strong>
+                                    <span>expulciones</span>
+                                </li>
+                                <li>
+                                    <strong class="facts-number" data-from="0" data-to="32" data-speed="6000"></strong>
+                                    <span>faltas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Facts Accounter -->
 
 
-			<!-- Separator -->
-			<div class="container text-center">
-				<span class="sprater"><i class="fa fa-futbol-o"></i></span>
-			</div>
-			<!-- Separator -->
+            <!-- Separator -->
+            <div class="container text-center">
+                <span class="sprater"><i class="fa fa-futbol-o"></i></span>
+            </div>
+            <!-- Separator -->
 
-			<!-- Team -->
-			<div class="container">
-				<div class="team-holder theme-padding-top">
+            <!-- Team -->
+            <div class="container">
+                <div class="team-holder theme-padding-top">
 
-					<!-- Main Heading -->
-					<div class="main-heading-holder">
-						<div class="main-heading">
-							<h2>Jugadores destacados</h2>
-							<p>Los mejores en su posición</p>
-						</div>
-					</div>
-					<!-- Main Heading -->
+                    <!-- Main Heading -->
+                    <div class="main-heading-holder">
+                        <div class="main-heading">
+                            <h2>Jugadores destacados</h2>
+                            <p>Los mejores en su posición</p>
+                        </div>
+                    </div>
+                    <!-- Main Heading -->
 
-					<!-- Team Row -->
-					<div id="team-slider" class="team-slider">
+                    <!-- Team Row -->
+                    <div id="team-slider" class="team-slider">
 
-						<!-- Team Column -->
-						<div class="item">
-							<div class="team-column">
-								<img src="images/team/img-01.jpg" alt="">
-								<span class="player-number">1</span>
-								<div class="team-detail">
-									<h5><a href="team-detail.html">Jugador 1</a></h5>
-									<span class="desination">Defensa</span>
-									<div class="detail-inner">
-										<ul>
-											<li>Equipo</li>
-											<li>Posición</li>
-											<li>Goles</li>
-											<li>Asistencias</li>
-										</ul>
-										<ul>
-											<li>Equipo 1</li>
-											<li>Defensa</li>
-											<li>13</li>
-											<li>Atletico Nacional</li>
-											<li>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Team Column -->
+                        <!-- Team Column -->
+                        <div class="item">
+                            <div class="team-column">
+                                <img src="images/team/img-01.jpg" alt="">
+                                <span class="player-number">1</span>
+                                <div class="team-detail">
+                                    <h5><a href="team-detail.html">Jugador 1</a></h5>
+                                    <span class="desination">Defensa</span>
+                                    <div class="detail-inner">
+                                        <ul>
+                                            <li>Equipo</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
+                                        </ul>
+                                        <ul>
+                                            <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
+                                            <li>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Column -->
 
-						<!-- Team Column -->
-						<div class="item">
-							<div class="team-column">
-								<img src="images/team/img-02.jpg" alt="">
-								<span class="player-number">2</span>
-								<div class="team-detail">
-									<h5><a href="team-detail.html">jugador 2</a></h5>
-									<span class="desination">Medio</span>
-									<div class="detail-inner">
-										<ul>
-											<li>Equipo</li>
-											<li>Posición</li>
-											<li>Goles</li>
-											<li>Asistencias</li>
-										</ul>
-										<ul>
-											<li>Equipo 1</li>
-											<li>Defensa</li>
-											<li>13</li>
-											<li>Atletico Nacional</li>
-											<li>
-											</li>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Team Column -->
+                        <!-- Team Column -->
+                        <div class="item">
+                            <div class="team-column">
+                                <img src="images/team/img-02.jpg" alt="">
+                                <span class="player-number">2</span>
+                                <div class="team-detail">
+                                    <h5><a href="team-detail.html">jugador 2</a></h5>
+                                    <span class="desination">Medio</span>
+                                    <div class="detail-inner">
+                                        <ul>
+                                            <li>Equipo</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
+                                        </ul>
+                                        <ul>
+                                            <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
+                                            <li>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Column -->
 
-						<!-- Team Column -->
-						<div class="item">
-							<div class="team-column">
-								<img src="images/team/img-03.jpg" alt="">
-								<span class="player-number">3</span>
-								<div class="team-detail">
-									<h5><a href="team-detail.html">jugador 3</a></h5>
-									<span class="desination">Delantero</span>
-									<div class="detail-inner">
-										<ul>
-											<li>Equipo</li>
-											<li>Posición</li>
-											<li>Goles</li>
-											<li>Asistencias</li>
-										</ul>
-										<ul>
-											<li>Equipo 1</li>
-											<li>Defensa</li>
-											<li>13</li>
-											<li>Atletico Nacional</li>
-											<li>
-											</li>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Team Column -->
+                        <!-- Team Column -->
+                        <div class="item">
+                            <div class="team-column">
+                                <img src="images/team/img-03.jpg" alt="">
+                                <span class="player-number">3</span>
+                                <div class="team-detail">
+                                    <h5><a href="team-detail.html">jugador 3</a></h5>
+                                    <span class="desination">Delantero</span>
+                                    <div class="detail-inner">
+                                        <ul>
+                                            <li>Equipo</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
+                                        </ul>
+                                        <ul>
+                                            <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
+                                            <li>
+                                            </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Column -->
 
-						<!-- Team Column -->
-						<div class="item">
-							<div class="team-column">
-								<img src="images/team/img-04.jpg" alt="">
-								<span class="player-number">4</span>
-								<div class="team-detail">
-									<h5><a href="team-detail.html">Jugador 4</a></h5>
-									<span class="desination">portero</span>
-									<div class="detail-inner">
-										<ul>
-											<li>Equipo</li>
-											<li>Posición</li>
-											<li>Goles</li>
-											<li>Asistencias</li>
-										</ul>
-										<ul>
-											<li>Equipo 1</li>
-											<li>Defensa</li>
-											<li>13</li>
-											<li>Atletico Nacional</li>
-											<li>
-											</li>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Team Column -->
+                        <!-- Team Column -->
+                        <div class="item">
+                            <div class="team-column">
+                                <img src="images/team/img-04.jpg" alt="">
+                                <span class="player-number">4</span>
+                                <div class="team-detail">
+                                    <h5><a href="team-detail.html">Jugador 4</a></h5>
+                                    <span class="desination">portero</span>
+                                    <div class="detail-inner">
+                                        <ul>
+                                            <li>Equipo</li>
+                                            <li>Posición</li>
+                                            <li>Goles</li>
+                                            <li>Asistencias</li>
+                                        </ul>
+                                        <ul>
+                                            <li>Equipo 1</li>
+                                            <li>Defensa</li>
+                                            <li>13</li>
+                                            <li>Atletico Nacional</li>
+                                            <li>
+                                            </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Column -->
 
-					</div>
-					<!-- Team Row -->
+                    </div>
+                    <!-- Team Row -->
 
-				</div>
-			</div>
-			<!-- Team -->
+                </div>
+            </div>
+            <!-- Team -->
 
-		</div>
-		<!-- Gallery And Team -->
+        </div>
+        <!-- Gallery And Team -->
 
-		<!-- Products -->
-		<div class="products-holder gray-bg theme-padding">
-			<div id="product-slider" class="product-slider nav-style-1">
+        <!-- Products -->
+        <div class="products-holder gray-bg theme-padding">
+            <div id="product-slider" class="product-slider nav-style-1">
 
-				<!-- Product Column -->
-				<div class="product-column">
-					<div class="product-column-inner">
-						<div class="product-img">
-							<img src="images/products/img-01.jpg" alt="">
-						</div>
-						<h5><a href="shop-detail.html">playera deportiva</a></h5>
-						<span class="product-use">para hombre</span>
-					</div>
-					<div class="btm">
-						<a class="btn" href="shop-detail.html">Ver</a>
-						<span class="price">$39.00</span>
-					</div>
-				</div>
-				<!-- Product Column -->
+                <!-- Product Column -->
+                <div class="product-column">
+                    <div class="product-column-inner">
+                        <div class="product-img">
+                            <img src="images/products/img-01.jpg" alt="">
+                        </div>
+                        <h5><a href="shop-detail.html">playera deportiva</a></h5>
+                        <span class="product-use">para hombre</span>
+                    </div>
+                    <div class="btm">
+                        <a class="btn" href="shop-detail.html">Ver</a>
+                        <span class="price">$39.00</span>
+                    </div>
+                </div>
+                <!-- Product Column -->
 
-				<!-- Product Column -->
-				<div class="product-column">
-					<div class="product-column-inner">
-						<div class="product-img">
-							<img src="images/products/img-02.jpg" alt="">
-							<span class="sale-batch">venta</span>
-						</div>
-						<h5><a href="shop-detail.html">copa </a></h5>
-						<span class="product-use">torneo de futbol</span>
-					</div>
-					<div class="btm">
-						<a class="btn" href="shop-detail.html"></i>Ver</a>
-						<span class="price">$39.00</span>
-					</div>
-				</div>
-				<!-- Product Column -->
+                <!-- Product Column -->
+                <div class="product-column">
+                    <div class="product-column-inner">
+                        <div class="product-img">
+                            <img src="images/products/img-02.jpg" alt="">
+                            <span class="sale-batch">venta</span>
+                        </div>
+                        <h5><a href="shop-detail.html">copa </a></h5>
+                        <span class="product-use">torneo de futbol</span>
+                    </div>
+                    <div class="btm">
+                        <a class="btn" href="shop-detail.html"></i>Ver</a>
+                        <span class="price">$39.00</span>
+                    </div>
+                </div>
+                <!-- Product Column -->
 
-				<!-- Product Column -->
-				<div class="product-column">
-					<div class="product-column-inner">
-						<div class="product-img">
-							<img src="images/products/img-03.jpg" alt="">
-						</div>
-						<h5><a href="shop-detail.html">tenis sport</a></h5>
-						<span class="product-use">para hombre</span>
-					</div>
-					<div class="btm">
-						<a class="btn" href="shop-detail.html"></i>ver</a>
-						<span class="price">$39.00</span>
-					</div>
-				</div>
-				<!-- Product Column -->
+                <!-- Product Column -->
+                <div class="product-column">
+                    <div class="product-column-inner">
+                        <div class="product-img">
+                            <img src="images/products/img-03.jpg" alt="">
+                        </div>
+                        <h5><a href="shop-detail.html">tenis sport</a></h5>
+                        <span class="product-use">para hombre</span>
+                    </div>
+                    <div class="btm">
+                        <a class="btn" href="shop-detail.html"></i>ver</a>
+                        <span class="price">$39.00</span>
+                    </div>
+                </div>
+                <!-- Product Column -->
 
-				<!-- Product Column -->
-				<div class="product-column">
-					<div class="product-column-inner">
-						<div class="product-img">
-							<img src="images/products/img-04.jpg" alt="">
-						</div>
-						<h5><a href="shop-detail.html">playera deportiva</a></h5>
-						<span class="product-use">para hombre</span>
-					</div>
-					<div class="btm"><a class="btn" href="shop-detail.html"></i>ver </a> <span class="price">$39.00</span></div>
-				</div>
-				<!-- Product Column -->
+                <!-- Product Column -->
+                <div class="product-column">
+                    <div class="product-column-inner">
+                        <div class="product-img">
+                            <img src="images/products/img-04.jpg" alt="">
+                        </div>
+                        <h5><a href="shop-detail.html">playera deportiva</a></h5>
+                        <span class="product-use">para hombre</span>
+                    </div>
+                    <div class="btm"><a class="btn" href="shop-detail.html"></i>ver </a> <span
+                                class="price">$39.00</span></div>
+                </div>
+                <!-- Product Column -->
 
-				<!-- Product Column -->
-				<div class="product-column">
-					<div class="product-column-inner">
-						<div class="product-img">
-							<img src="images/products/img-05.jpg" alt="">
-							<span class="sale-batch">Venta</span>
-						</div>
-						<h5><a href="shop-detail.html">Guantes de portero</a></h5>
-						<span class="product-use">para futbol</span>
-					</div>
-					<div class="btm">
-						<a class="btn" href="shop-detail.html"></i>ver </a>
-						<span class="price">$39.00</span>
-					</div>
-				</div>
-				<!-- Product Column -->
+                <!-- Product Column -->
+                <div class="product-column">
+                    <div class="product-column-inner">
+                        <div class="product-img">
+                            <img src="images/products/img-05.jpg" alt="">
+                            <span class="sale-batch">Venta</span>
+                        </div>
+                        <h5><a href="shop-detail.html">Guantes de portero</a></h5>
+                        <span class="product-use">para futbol</span>
+                    </div>
+                    <div class="btm">
+                        <a class="btn" href="shop-detail.html"></i>ver </a>
+                        <span class="price">$39.00</span>
+                    </div>
+                </div>
+                <!-- Product Column -->
 
-				<!-- Product Column -->
-				<div class="product-column">
-					<div class="product-column-inner">
-						<div class="product-img">
-							<img src="images/products/img-06.jpg" alt="">
-						</div>
-						<h5><a href="shop-detail.html">Sports T-Shirt</a></h5>
-						<span class="product-use">Men’s Running Shirt</span>
-					</div>
-					<div class="btm">
-						<a class="btn" href="shop-detail.html"></i>ver</a>
-						<span class="price">$39.00</span>
-					</div>
-				</div>
-				<!-- Product Column -->
+                <!-- Product Column -->
+                <div class="product-column">
+                    <div class="product-column-inner">
+                        <div class="product-img">
+                            <img src="images/products/img-06.jpg" alt="">
+                        </div>
+                        <h5><a href="shop-detail.html">Sports T-Shirt</a></h5>
+                        <span class="product-use">Men’s Running Shirt</span>
+                    </div>
+                    <div class="btm">
+                        <a class="btn" href="shop-detail.html"></i>ver</a>
+                        <span class="price">$39.00</span>
+                    </div>
+                </div>
+                <!-- Product Column -->
 
-				<!-- Product Column -->
-				<div class="product-column">
-					<div class="product-column-inner">
-						<div class="product-img">
-							<img src="images/products/img-01.jpg" alt="">
-						</div>
-						<h5><a href="shop-detail.html">Playera Deportiva</a></h5>
-						<span class="product-use">Para Hombre</span>
-					</div>
-					<div class="btm">
-						<a class="btn" href="shop-detail.html"></i>ver</a>
-						<span class="price">$39.00</span>
-					</div>
-				</div>
-				<!-- Product Column -->
+                <!-- Product Column -->
+                <div class="product-column">
+                    <div class="product-column-inner">
+                        <div class="product-img">
+                            <img src="images/products/img-01.jpg" alt="">
+                        </div>
+                        <h5><a href="shop-detail.html">Playera Deportiva</a></h5>
+                        <span class="product-use">Para Hombre</span>
+                    </div>
+                    <div class="btm">
+                        <a class="btn" href="shop-detail.html"></i>ver</a>
+                        <span class="price">$39.00</span>
+                    </div>
+                </div>
+                <!-- Product Column -->
 
-			</div>
-		</div>
-		<!-- Products -->
+            </div>
+        </div>
+        <!-- Products -->
 
-	</main>
-	<!-- Main Content -->
+    </main>
+    <!-- Main Content -->
 
 @endsection

@@ -24,11 +24,19 @@ class HomeController extends Controller
         $inicio = Carbon::yesterday();
         $fin = Carbon::today()->addDays(6);
 
-        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get();
+        $fechas = [];
+        for($i=0;$i<7;$i++){
+            array_push( $fechas,Carbon::yesterday()->addDays($i)->format('Y-m-d') );
+        }
+
+        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
         debug($inicio);
         debug($fin);
         debug($partidos);
-        return view('publica.index');
+        return view('publica.index',[
+            "partidosG"=>$partidos,
+            "fechas" => $fechas,
+        ]);
     }
     public function about()
     {
