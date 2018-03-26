@@ -22,8 +22,14 @@
                                     <th>Propuesta</th>
                                 </thead>
                             @foreach($partidos as $partido)
-                                <tr>
-                                    <td>
+                                @if($partido->status == 1)
+                                    <tr style="background-color: rgba(1,147,196,0.3);">
+                                @elseif($partido->status == 0)
+                                        <tr style="background-color: rgba(225,30,45,0.5);">
+                                @elseif($partido->status == 2)
+                                    <tr style="background-color: rgba(136,191,74,0.4);">
+                                @endif
+                                        <td>
                                         {{$partido->equipol->nombre}}
                                     </td>
                                     <td>
@@ -35,7 +41,7 @@
                                             {{csrf_field()}}
                                             <input type="time" class="form-control" id="hora" name="hora" value="{{$partido->hora}}">
                                             <input type="date" class="form-control" id="fecha" name="fecha" value="{{$partido->fecha}}">
-                                            <input type="text" class="form-control" id="campo" name="campo" value="{{$partido->campo}}">
+                                            <input type="text" class="form-control" id="campo" name="campo" style="text-transform:uppercase" value="{{$partido->campo}}">
                                             <input type="submit" class="form-control btn btn-success" value="Proponer" >
                                         </form>
                                         @else

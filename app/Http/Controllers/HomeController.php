@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\instituciones;
 use App\participantes_torneo;
+use App\partidos;
 use App\torneos;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,7 +21,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('publica.index');
+        $inicio = Carbon::yesterday();
+        $fin = Carbon::today()->addDays(6);
+
+        $fechas = [];
+        for($i=0;$i<7;$i++){
+            array_push( $fechas,Carbon::yesterday()->addDays($i)->format('Y-m-d') );
+        }
+
+        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
+        debug($inicio);
+        debug($fin);
+        debug($partidos);
+        return view('publica.index',[
+            "partidosG"=>$partidos,
+            "fechas" => $fechas,
+        ]);
     }
     public function about()
     {
@@ -76,7 +93,14 @@ class HomeController extends Controller
             $torneoCurr = torneos::findOrFail($idT);
         }
 
-        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)->get()->sortByDesc("Puntos");
+        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)
+            ->get()->sort(function($a , $b){
+                if($a->Puntos == $b->Puntos){
+                    return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
+                }
+                else
+                    return $a->Puntos < $b->Puntos? 1:-1;
+            });
 
         debug($torneoCurr);
         debug($estadisticas);
@@ -96,7 +120,14 @@ class HomeController extends Controller
             $torneoCurr = torneos::findOrFail($idT);
         }
 
-        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)->get()->sortByDesc("Puntos");
+        $estadisticas = participantes_torneo::where("Torneo_id",$torneoCurr->id)
+            ->get()->sort(function($a , $b){
+            if($a->Puntos == $b->Puntos){
+                return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
+            }
+            else
+                return $a->Puntos < $b->Puntos? 1:-1;
+        });
 
         debug($torneoCurr);
         debug($estadisticas);
@@ -118,6 +149,14 @@ class HomeController extends Controller
     public function ejemplo()
     {
         return view('test');
+    }
+
+    function ordenar($a , $b){
+        if($a->Puntos == $b->Puntos){
+            return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
+        }
+        else
+            return $a->Puntos < $b->Puntos? 1:-1;
     }
 
 }
