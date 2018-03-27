@@ -8,7 +8,7 @@
 		<div class="container">
 			<h2>Proximos partidos varonil</h2>
 			<ul class="breadcrumbs">
-				<li><a href="#">estadisticas</a></li>
+				<li><a href="#">Proximos</a></li>
 				<li>Proximos Partidos varonil</li>
 			</ul>
 		</div>

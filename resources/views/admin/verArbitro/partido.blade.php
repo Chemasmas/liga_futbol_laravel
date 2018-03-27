@@ -9,17 +9,23 @@
         <div class="row">
             <table class="table table-condensed">
                 <thead>
-                    <tr>
-                        <th colspan="2" class="text-right">Equipo 1</th>
-                        <th style="text-align: center">
-                            <form action="{{action('ArbitroController@finalizar')}}" method="POST">
-                                {{ csrf_field() }}
-                                <input type="hidden" value="{{$partido->id}}" name="idP">
+                    <form action="{{action('ArbitroController@finalizar')}}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" value="{{$partido->id}}" name="idP">
+                        <tr>
+                            <label for="notas">Notas</label>
+                        </tr>
+                        <tr>
+                            <textarea name="notas" id="" cols="30" rows="5" class="form-control" placeholder="Aqui van las notas del partido"></textarea>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="text-right">Equipo 1</th>
+                            <th style="text-align: center">
                                 <button type="submit" class="btn btn-default">Finalizar</button>
-                            </form>
-                        </th>
-                        <th colspan="2"> Equipo2</th>
-                    </tr>
+                            </th>
+                            <th colspan="2"> Equipo2</th>
+                        </tr>
+                    </form>
                 </thead>
                 <tr>
                     <td class="text-right"><img src="{{asset($partido->equipol->institucione->escudo)}}" alt="" class="img-responsive" style="max-height: 100px;width: 160px;"></td>

@@ -7,6 +7,7 @@ use App\participantes_torneo;
 use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
+use App\util\Puntos;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -356,13 +357,18 @@ class TorneoController extends Controller
         return redirect()->back();
     }
 
-    public function resultadoForm($idP){
+    public function resultadoForm($idT){
 
-        $partido = partidos::findOrFail($idP);
+        $partido = partidos::findOrFail($idT);
 
         return view("admin.torneo.marcador",[
             "partido"=>$partido,
             "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Lista" => ["etiqueta" => "Torneos-Lista", "active" => "1", "link" => "/admin/torneo"],
+                "agregarE" => ["etiqueta" => "AgregarEquipos", "active" => "1", "link" => "/admin/torneo/".$partido->Torneo_id."/participantes"],
+                "jornada" => ["etiqueta" => "Jornadas", "active" => "1", "link" => "/admin/torneo/".$partido->Torneo_id."/jornadas"],
+                "resul" => ["etiqueta" => "Resultado", "active" => "0", "link" => ""]
             ]
         ]);
     }
@@ -373,9 +379,11 @@ class TorneoController extends Controller
         $partido = partidos::findOrFail($idP);
         $partido->marcadorLocal = $request["localM"];
         $partido->marcadorVisitante = $request["visitaM"];
-        $partido->verifica = -1;
         $partido->save();
 
+        Puntos::calculoPuntos($idP);
+
+        /*
         $local =$partido->marcadorLocal;
         $visitante = $partido->marcadorVisitante;
 
@@ -424,10 +432,62 @@ class TorneoController extends Controller
         $partido->save();
 
         debug($idP);
-
+        */
         //return redirect()->back();
         return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
 
+    public function mostrarIniciar($idT){
+        $torneo = torneos::find($idT);
+        $jornadas = partidos::where("Torneo_id",$torneo->id)->groupBy("jornada")
+            ->select("jornada")->get();
+
+        debug($jornadas);
+        return view("admin.torneo.start",[
+            "idT"=>$idT,
+            "partido"=>$torneo,
+            "jornadas"=>$jornadas,
+            "rutas" => [
+            ]
+        ]);
+    }
+
+    public function editCambiarResultados(Request $request,$idP){
+        $partido = partidos::findOrFail($idP);
+        debug($partido);
+        return view('admin.torneo.update',[
+            "partido"=>$partido,
+            "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"Editar", "active"=>"0","link"=>""]
+            ]
+        ]);
+    }
+
+    public function updateCambiarResultados(Request $request,$idP){
+        $partido = partidos::findOrFail($idP);
+        $partido->marcadorLocal = $request["localM"];
+        $partido->marcadorVisitante = $request["visitaM"];
+        $partido->verifica = -1;
+        $partido->save();
+
+        Puntos::calculoPuntos($idP);
+        return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
+    }
+
+    public function start(Request $request,$idT){
+        $torneo = torneos::find($idT);
+        $torneo->jornada = $request["jornada"];
+        $torneo->programable = 1;
+        $torneo->save();
+        return redirect()->action("TorneoController@index");
+    }
+    public function stop($idT){
+        $torneo = torneos::find($idT);
+        $torneo->programable = 0;
+        $torneo->save();
+        return redirect()->action("TorneoController@index");
+    }
 }
 

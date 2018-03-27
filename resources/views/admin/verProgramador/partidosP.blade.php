@@ -42,11 +42,17 @@
                                             <input type="time" class="form-control" id="hora" name="hora" value="{{$partido->hora}}">
                                             <input type="date" class="form-control" id="fecha" name="fecha" value="{{$partido->fecha}}">
                                             <input type="text" class="form-control" id="campo" name="campo" style="text-transform:uppercase" value="{{$partido->campo}}">
-                                            <input type="submit" class="form-control btn btn-success" value="Proponer" >
+                                            @if($partido->status==1)
+                                                <input type="submit" class="form-control btn btn-success" value="Aceptar">
+                                                @else
+                                                <input type="submit" class="form-control btn btn-success" value="Proponer" >
+                                            @endif
                                         </form>
                                         @else
                                             {{$partido->fecha}} [{{$partido->hora}}] <span style="font-weight: bold">{{$partido->campo}}</span>
+                                            @if(auth()->user()["level"]<2)
                                             <a href="{{action("ProgramadorController@habilitar_edicion_partido",["idP"=>$partido->id])}}">Modificar</a>
+                                            @endif
                                         @endif
                                     </td>
                                 </tr>

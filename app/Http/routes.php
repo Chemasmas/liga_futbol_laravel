@@ -46,8 +46,14 @@ Route::get( "/admin/torneo/{idT}/jornadas",['middleware' => 'auth', 'uses' => "T
 Route::get( "/admin/torneo/{idT}/jornadasXLS",['middleware' => 'auth', 'uses' => "TorneoController@jornadasXLS"] );
 Route::get( "/admin/partido/marcador/{idP}",['middleware' => 'auth', 'uses' => "TorneoController@resultadoForm"] );
 Route::post( "/admin/partido/marcador/{idP}/guardar",['middleware' => 'auth', 'uses' => "TorneoController@cambiarResultados"] );
+Route::get( "/admin/partido/marcador/{idP}/editar",['middleware' => 'auth', 'uses' => "TorneoController@editCambiarResultados"] );
+Route::post("/admin/partido/marcador/{idP}/guardar",['middleware' => 'auth', 'uses' => "TorneoController@updateCambiarResultados"]);
 
 
+/* Control de la programacion*/
+Route::get("/admin/torneo/{idT}/iniciar",['middleware' => 'auth', 'uses' => "TorneoController@mostrarIniciar"] );
+Route::post("/admin/torneo/{idT}/iniciar",['middleware' => 'auth', 'uses' => "TorneoController@start"] );
+Route::get("/admin/torneo/{idT}/stop",['middleware' => 'auth', 'uses' => "TorneoController@stop"] );
 
 
 Route::get('/admin/equipo',['middleware' => 'auth', 'uses' => "EquipoController@index"]);

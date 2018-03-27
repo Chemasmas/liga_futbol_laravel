@@ -65,6 +65,17 @@
                                 <i class="fa fa-check" aria-hidden="true"></i>
                             </a>
                         @endif
+                        @if(Auth::user()->level==1)
+                            @if(!$torneo->programable)
+                                <a class="btn btn-info" data-toggle="tooltip" title="Programar" href='{{ action("TorneoController@mostrarIniciar",["idT"=>$torneo->id])}}'>
+                                    <i class="fa fa-play" aria-hidden="true"></i>
+                                </a>
+                            @else
+                                <a class="btn btn-info" data-toggle="tooltip" title="Bloquear" href='{{ action("TorneoController@stop",["idT"=>$torneo->id])}}'>
+                                    <i class="fa fa-stop" aria-hidden="true"></i>
+                                </a>
+                            @endif
+                        @endif
                     </td>
                 </tr>
             @empty
