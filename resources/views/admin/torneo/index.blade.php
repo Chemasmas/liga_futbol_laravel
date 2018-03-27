@@ -71,7 +71,7 @@
                                     <i class="fa fa-play" aria-hidden="true"></i>
                                 </a>
                             @else
-                                <a class="btn btn-info" data-toggle="tooltip" title="Bloquear" href='{{ action("TorneoController@activate",["idT"=>$torneo->id])}}'>
+                                <a class="btn btn-info" data-toggle="tooltip" title="Bloquear" href='{{ action("TorneoController@stop",["idT"=>$torneo->id])}}'>
                                     <i class="fa fa-stop" aria-hidden="true"></i>
                                 </a>
                             @endif

@@ -444,6 +444,7 @@ class TorneoController extends Controller
 
         debug($jornadas);
         return view("admin.torneo.start",[
+            "idT"=>$idT,
             "partido"=>$torneo,
             "jornadas"=>$jornadas,
             "rutas" => [
@@ -473,6 +474,20 @@ class TorneoController extends Controller
 
         Puntos::calculoPuntos($idP);
         return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
+    }
+
+    public function start(Request $request,$idT){
+        $torneo = torneos::find($idT);
+        $torneo->jornada = $request["jornada"];
+        $torneo->programable = 1;
+        $torneo->save();
+        return redirect()->action("TorneoController@index");
+    }
+    public function stop($idT){
+        $torneo = torneos::find($idT);
+        $torneo->programable = 0;
+        $torneo->save();
+        return redirect()->action("TorneoController@index");
     }
 }
 

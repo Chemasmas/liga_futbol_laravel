@@ -176,11 +176,14 @@ class ProgramadorController extends Controller
             case 1: //ES Admin
                 $torneos = torneos::where("activo",1)->get();
                 break;
-            case 2: //Es Programadore
+            case 2: //Es Programador
                 $programador = $user->programadores[0];
                 $equipos = equipos::where("idIst",$programador->idInst)->where("activo",1)->select("id")->get();
                 $torneosIds = participantes_torneo::whereIn("Equipos_id",$equipos)->groupBy("Torneo_Id")->select("Torneo_Id")->get();
-                $torneos = torneos::whereIn("id",$torneosIds)->where("activo",1)->get();
+                $torneos = torneos::whereIn("id",$torneosIds)
+                    ->where("activo",1)
+                    ->where("programable",1 )
+                    ->get();
                 debug($programador);
                 debug($torneosIds);
                 break;
@@ -209,11 +212,19 @@ class ProgramadorController extends Controller
                 $partidos = partidos::where("Torneo_id",$idT)->get()->groupBy("jornada");
                 break;
             case 2: //Es Programadore
+                $jornada = $torneo = torneos::findOrFail($idT);
                 $programador = $user->programadores[0];
                 $equipos = equipos::where("idIst",$programador->idInst)->where("activo",1)->select("id")->get();
-                $partidos = partidos::where("Torneo_id",$idT)->whereIn("Local",$equipos)
+                $partidos = partidos::where("Torneo_id",$idT)
+                                ->whereIn("Local",$equipos)
                                 ->orWhereIn("Visitante",$equipos)->where("Torneo_id",$idT)
-                                ->get()->groupBy("jornada");
+                                ->get()->groupBy("jornada")
+                                ->filter( function ($v) use ($jornada){
+                                    debug($v[0]->jornada);
+                                    debug($jornada);
+                                    //return true;
+                                    return $v[0]->jornada>=$jornada->jornada && $v[0]->jornada<=$jornada->jornada+2;
+                                });
                 break;
             default: return redirect()->action("AdminController@index")->with(
 
