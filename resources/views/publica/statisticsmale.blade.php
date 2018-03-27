@@ -6,9 +6,10 @@
 	<!-- Page Heading & Breadcrumbs  -->
 	<div class="page-heading-breadcrumbs">
 		<div class="container">
-			<h2>Estadisticas</h2>
+			<h2>Estadisticas Varonil</h2>
 			<ul class="breadcrumbs">
 				<li><a href="#">Estadisticas</a></li>
+				<li><a href="#">Estadisticas Varonil</a></li>
 			</ul>
 		</div>
 	</div>
