@@ -368,6 +368,11 @@ class ArbitroController extends Controller
     public function finalizar(Request $request){
 
         $idP = $request["idP"];
+        $partido = partidos::findOrFail($idP);
+        $partido->jugado = 1;
+        $partido->verifica = -1;
+        $partido->notas = $request["notas"];
+        $partido->save();
         Puntos::calculoPuntos($idP);
 /*
         $partido = partidos::findOrFail($idP);
