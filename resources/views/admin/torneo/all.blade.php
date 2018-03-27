@@ -28,7 +28,7 @@
                         {{ $torneo->nombre }}
                     </td>
                     <td>
-                        {{ $torneo->tipo_torneo }}
+                        @if($torneo->tipo_torneo==1)7 2V @else {{$torneo->tipo_torneo}} @endif
                     </td>
                     <td>
                         @if($torneo->genero=='M')
