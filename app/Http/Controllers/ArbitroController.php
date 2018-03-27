@@ -10,6 +10,7 @@ use App\participantes_torneo;
 use App\partidos;
 use App\usuarios;
 use App\util\Imagenes;
+use App\util\Puntos;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -367,7 +368,8 @@ class ArbitroController extends Controller
     public function finalizar(Request $request){
 
         $idP = $request["idP"];
-
+        Puntos::calculoPuntos($idP);
+/*
         $partido = partidos::findOrFail($idP);
         $local = $partido->marcadorLocal;
         $visitante = $partido->marcadorVisitante;
@@ -416,7 +418,7 @@ class ArbitroController extends Controller
 
         $partido->verifica = -1;
         $partido->save();
-
+*/
         return redirect()->action("ArbitroController@lista_partidos");
     }
 }

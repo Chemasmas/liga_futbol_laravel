@@ -7,6 +7,7 @@ use App\participantes_torneo;
 use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
+use App\util\Puntos;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -378,9 +379,11 @@ class TorneoController extends Controller
         $partido = partidos::findOrFail($idP);
         $partido->marcadorLocal = $request["localM"];
         $partido->marcadorVisitante = $request["visitaM"];
-        $partido->verifica = -1;
         $partido->save();
 
+        Puntos::calculoPuntos($idP);
+
+        /*
         $local =$partido->marcadorLocal;
         $visitante = $partido->marcadorVisitante;
 
@@ -429,7 +432,7 @@ class TorneoController extends Controller
         $partido->save();
 
         debug($idP);
-
+        */
         //return redirect()->back();
         return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
@@ -467,6 +470,9 @@ class TorneoController extends Controller
         $partido->marcadorVisitante = $request["visitaM"];
         $partido->verifica = -1;
         $partido->save();
+
+        Puntos::calculoPuntos($idP);
+        return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
 }
 
