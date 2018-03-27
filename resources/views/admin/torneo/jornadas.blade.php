@@ -38,14 +38,17 @@
                                             </span>
                                             @endif
                                         </td>
-                                        @if(Auth::user()->level==1 && $partido->verifica!=-1)
+                                        @if(Auth::user()->level==1)
                                             <td>
-                                                <a class="btn btn-info" data-toggle="tooltip" title="Agregar Resultado" href='{{ action("TorneoController@resultadoForm",['idP'=>$partido->id])}}'>
-                                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                                </a>
-                                                <a class="btn btn-info" data-toggle="tooltip" title="Editar Resultado" href='{{action("TorneoController@resultadoForm",["id"=>$partido->id])}}'>
-                                                    <i class="fa fa-edit" aria-hidden="true"></i>
-                                                </a>
+                                                @if($partido->jugado==1)
+                                                    <a class="btn btn-info" data-toggle="tooltip" title="Editar Resultado" href='{{action("TorneoController@resultadoForm",["id"=>$partido->id])}}'>
+                                                        <i class="fa fa-edit" aria-hidden="true"></i>
+                                                    </a>
+                                                @else
+                                                    <a class="btn btn-info" data-toggle="tooltip" title="Agregar Resultado" href='{{ action("TorneoController@resultadoForm",['idP'=>$partido->id])}}'>
+                                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                                    </a>
+                                                @endif
                                             </td>
                                             @else
                                                 <td></td>

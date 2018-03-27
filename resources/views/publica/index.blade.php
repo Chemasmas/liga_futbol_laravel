@@ -18,7 +18,7 @@
 
                         <!-- Item -->
                         <div class="item active">
-                            <img src="images/banner-slider/img-01.jpg" alt="">
+                            <img src="images/banner-slider/Estadio_Azteca.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-1 p-white h-white pull-right">
