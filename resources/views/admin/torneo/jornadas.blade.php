@@ -53,6 +53,9 @@
                                             @else
                                                 <td></td>
                                         @endif
+                                        <td>
+                                            {{$partido->notas}}
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
