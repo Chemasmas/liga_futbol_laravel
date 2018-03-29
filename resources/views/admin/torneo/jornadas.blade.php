@@ -54,7 +54,9 @@
                                                 <td></td>
                                         @endif
                                         <td>
-                                            {{$partido->notas}}
+                                            <div style="overscroll-behavior-y: auto;">
+                                                {{$partido->notas}}
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

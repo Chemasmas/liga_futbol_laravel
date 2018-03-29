@@ -16,6 +16,7 @@
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
