@@ -53,6 +53,11 @@
                                             @else
                                                 <td></td>
                                         @endif
+                                        <td>
+                                            <div style="overscroll-behavior-y: auto;">
+                                                {{$partido->notas}}
+                                            </div>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

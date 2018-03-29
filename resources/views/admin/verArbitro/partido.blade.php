@@ -16,7 +16,7 @@
                             <label for="notas">Notas</label>
                         </tr>
                         <tr>
-                            <textarea name="notas" id="" cols="30" rows="5" class="form-control" placeholder="Aqui van las notas del partido"></textarea>
+                            <textarea name="notas" id="" cols="30" rows="5" class="form-control" placeholder="Aqui van las notas del partido">{{$partido->notas}}</textarea>
                         </tr>
                         <tr>
                             <th colspan="2" class="text-right">Equipo 1</th>
@@ -31,13 +31,13 @@
                     <td class="text-right"><img src="{{asset($partido->equipol->institucione->escudo)}}" alt="" class="img-responsive" style="max-height: 100px;width: 160px;"></td>
                     <td class="text-right">
                         <h1>
-                            {{$marcadorL}}
+                            {{$partido->marcadorLocal}}
                         </h1>
                     </td>
                     <td></td>
                     <td>
                         <h1>
-                            {{$marcadorV}}
+                            {{$partido->marcadorVisitante}}
                         </h1>
                     </td>
                     <td><img src="{{asset($partido->equipov->institucione->escudo)}}" alt="" class="img-responsive" style="height: 100px;width: 160px;"></td>

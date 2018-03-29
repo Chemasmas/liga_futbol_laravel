@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800|Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <!-- JavaScripts -->
     <script src="/js/vendor/modernizr.js"></script>
+    <link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}">
 </head>
 <body>
 
@@ -431,6 +432,15 @@
                 <li><a href="{{action('HomeController@statisticsmale')}}">Varonil</a></li>
             </ul>
         </li>
+		
+		<li>
+			<a data-toggle="collapse" href="#list-5"><i class="pull-right fa fa-angle-down"></i>Proximos</a>
+			<ul class="collapse" id="list-5">
+			 	<li><a href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></li>
+			    <li><a href="{{action('HomeController@nextmatchsmale')}}">Varonil</a></li>
+			</ul>
+		</li> 
+		
         <li><a href="{{action('HomeController@contact')}}">Contacto</a></li>
     </ul>
 </nav>

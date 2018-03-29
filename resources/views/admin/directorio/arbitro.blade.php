@@ -17,7 +17,7 @@
                         </tr>
                         </thead>
                     @foreach ($arbitros as $arbitro)
-                        @if($programador->usuario->active==1)
+                        @if($arbitro->usuario->active==1)
                         <tr>
                             <td>
                                 {{ $arbitro->nombre }}

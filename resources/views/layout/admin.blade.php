@@ -16,6 +16,7 @@
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -248,6 +249,14 @@
                 <a class="nav-link" href="{{action('ArbitroController@lista_partidos')}}">
                     <i class="fa fa-list-ol"></i>
                     <span class="nav-link-text">Partidos</span>
+                </a>
+            </li>
+            @endif
+            @if(auth()->user()["level"]==2)
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
+                <a class="nav-link" href="{{action('EquipoController@teamList')}}">
+                    <i class="fa fa-list-ol" aria-hidden="true"></i>
+                    <span class="nav-link-text">Lista de Equipos</span>
                 </a>
             </li>
             @endif

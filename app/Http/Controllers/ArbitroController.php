@@ -297,7 +297,7 @@ class ArbitroController extends Controller
         $jugadoresL = jugadores::where("equipos_id",$local)->get();
         $jugadoresV = jugadores::where("equipos_id",$visitante)->get();
 
-
+        /*
         $marcadorL = Bitacora::where("idP",$idP)
             ->where("goles",1)
             ->where("idE",$local)
@@ -307,7 +307,7 @@ class ArbitroController extends Controller
             ->where("goles",1)
             ->where("idE",$visitante)
             ->count();
-
+        */
 
         //debug($partido);
         //debug($local);
@@ -317,8 +317,8 @@ class ArbitroController extends Controller
 
         return view('admin.verArbitro.partido',
             [
-                "marcadorL"=>$marcadorL,
-                "marcadorV"=>$marcadorV,
+                //"marcadorL"=>$marcadorL,
+                //"marcadorV"=>$marcadorV,
                 "partido"=> $partido,
                 "jugadoresL" => $jugadoresL,
                 "jugadoresV" => $jugadoresV,
@@ -344,6 +344,7 @@ class ArbitroController extends Controller
             $partido->marcadorVisitante = $partido->marcadorVisitante + 1;
         }
         $partido->save();
+        Puntos::calculoPuntos($bitacora->idP);
         return redirect()->back();
     }
 
@@ -372,6 +373,7 @@ class ArbitroController extends Controller
         $partido->jugado = 1;
         $partido->verifica = -1;
         $partido->notas = $request["notas"];
+
         $partido->save();
         Puntos::calculoPuntos($idP);
 /*
