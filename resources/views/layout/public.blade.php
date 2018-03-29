@@ -431,6 +431,15 @@
                 <li><a href="{{action('HomeController@statisticsmale')}}">Varonil</a></li>
             </ul>
         </li>
+		
+		<li>
+			<a data-toggle="collapse" href="#list-5"><i class="pull-right fa fa-angle-down"></i>Proximos</a>
+			<ul class="collapse" id="list-5">
+			 	<li><a href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></li>
+			    <li><a href="{{action('HomeController@nextmatchsmale')}}">Varonil</a></li>
+			</ul>
+		</li> 
+		
         <li><a href="{{action('HomeController@contact')}}">Contacto</a></li>
     </ul>
 </nav>
