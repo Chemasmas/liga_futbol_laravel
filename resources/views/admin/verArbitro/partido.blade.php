@@ -16,7 +16,7 @@
                             <label for="notas">Notas</label>
                         </tr>
                         <tr>
-                            <textarea name="notas" id="" cols="30" rows="5" class="form-control" placeholder="Aqui van las notas del partido"></textarea>
+                            <textarea name="notas" id="" cols="30" rows="5" class="form-control" placeholder="Aqui van las notas del partido">{{$partido->notas}}</textarea>
                         </tr>
                         <tr>
                             <th colspan="2" class="text-right">Equipo 1</th>
