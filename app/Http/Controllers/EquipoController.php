@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\equipos;
 use App\instituciones;
 use App\jugadores;
+use App\programadores;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -29,6 +31,36 @@ class EquipoController extends Controller
             ]
         ]);
 
+    }
+
+    public function teamList()
+    {
+        $equiposG = equipos::whereNotIn("id", [1])->where("activo",1)->get();
+        $usuario = Auth::user();
+        $usuario->programadores()->first();
+
+        return view('admin.ListaEquipos.teamList', [
+            "equipos" => $equiposG,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Equipo" => ["etiqueta" => "Equipos-Lista", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
+    public function showJugadores($id)
+    {
+        $jugadores = jugadores::where("equipos_id",$id)->get();
+
+        return view('admin.ListaEquipos.jugadores_lista',
+            [
+                "jugadores"=> $jugadores,
+                "rutas" => [
+                    "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                    "Parti" => ["etiqueta"=>"Partidos del Dia", "active" => "1" ,"link"=>"/admin/arbitro/partidos"],
+                    "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
+                ]
+            ]);
     }
 
     public function all()
