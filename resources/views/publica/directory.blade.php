@@ -22,7 +22,7 @@
 			<div class="container text-center">
 				<div class="about-video">
 					<div class="video">
-						<h4><a class="btn red-btn" href="institutions.html">INSTITUCIONES</a></h4>
+						<h4><a href="{{action('HomeController@institutions')}}">INSTITUCIONES</a></h4>
 						<img src="images/Logos Full.png">
 						<a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><em class="fa fa-video-camera"></em></a>
 					</div>
@@ -34,7 +34,7 @@
 						<p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
 						<h1></h1>
-						<h4><a class="btn red-btn" href="programers.html">Programadores</a></h4>
+						<h4><a href="{{action('HomeController@programers')}}">Programadores</a></h4>
 						<img src="images/gallery-v3/programadores.jpeg" alt="">
 						<a class="position-center-center play-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" data-rel="prettyPhoto[video]"><i class="fa fa-video-camera"></i></a>
 					</div>

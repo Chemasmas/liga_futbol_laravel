@@ -9,6 +9,7 @@ Homestead.json
 ./.vagrant/*
 .idea/deployment.xml
 .idea/php.xml
+public/arbitros/*
 public/instituciones/*
 public/jugadores/*
 public/equipos/*
@@ -16,3 +17,7 @@ public/equipos/*
 *.iml
 
 \.idea/
+
+public/arbitros/
+
+public/css/\.DS_Store
