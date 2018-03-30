@@ -234,20 +234,27 @@ class TorneoController extends Controller
         }
 
 
-        $participante = new participantes_torneo();
-        $participante->Torneo_id = $idT;
-        $participante->Equipos_id = $request["Equipos_id"];
-        $participante->PartidosEmpatados = 0;
-        $participante->PartidosGanados = 0;
-        $participante->PartidosJugados = 0;
-        $participante->GolesContra = 0;
-        $participante->GolesFavor = 0;
-        $participante->DiferenciaGoles = 0;
-        $participante->Puntos = 0;
+        $repetido = participantes_torneo::where("Torneo_id",$idT)->where("Equipos_id",$request["Equipos_id"])
+                    ->count();
+        debug($repetido);
 
-        $participante->save(['timestamps' => false]);
+        if($repetido==0){
+            $participante = new participantes_torneo();
+            $participante->Torneo_id = $idT;
+            $participante->Equipos_id = $request["Equipos_id"];
+            $participante->PartidosEmpatados = 0;
+            $participante->PartidosGanados = 0;
+            $participante->PartidosJugados = 0;
+            $participante->GolesContra = 0;
+            $participante->GolesFavor = 0;
+            $participante->DiferenciaGoles = 0;
+            $participante->Puntos = 0;
 
-        debug("Exito!!");
+            $participante->save(['timestamps' => false]);
+            debug("Exito!!");
+        }
+
+
         return redirect()
             ->action("TorneoController@participantes",["idT"=>$idT])
             ->with([
