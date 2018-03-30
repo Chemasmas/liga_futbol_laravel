@@ -65,7 +65,7 @@
                                 <i class="fa fa-check" aria-hidden="true"></i>
                             </a>
                         @endif
-                        @if(Auth::user()->level==1)
+                        @if(Auth::user()->level==1 && $torneo->generado==1)
                             @if(!$torneo->programable)
                                 <a class="btn btn-info" data-toggle="tooltip" title="Programar" href='{{ action("TorneoController@mostrarIniciar",["idT"=>$torneo->id])}}'>
                                     <i class="fa fa-play" aria-hidden="true"></i>
