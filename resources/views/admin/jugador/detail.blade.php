@@ -2,7 +2,11 @@
 
 @section('titulo','Ver Jugador')
 
-@section('rol',"")
+@if(auth()->user()["level"]<2)
+    @section('rol','Admin')
+@elseif(auth()->user()["level"]==4)
+    @section('rol','Jugador')
+@endif
 
 @section('content')
     <div class="offset-sm-2 col-sm-8">

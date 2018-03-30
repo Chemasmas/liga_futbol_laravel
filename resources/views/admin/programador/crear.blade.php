@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
-@section('titulo',!empty($programador)?'Editar Programador':'Crear Programador')
+@section('titulo',!empty($programador)?'Editar Programador':'Agregar Programador')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
     <div class="offset-sm-3 col-sm-6">

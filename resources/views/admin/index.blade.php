@@ -1,8 +1,5 @@
 @extends('layout.admin')
 
-
-
-
 @if(auth()->user()["level"]<2)
     @section('titulo','Bienvenido')
 @elseif(auth()->user()["level"]==2)
@@ -15,7 +12,7 @@
 
 
 @if(auth()->user()["level"]<2)
-@section('rol','Admin')
+    @section('rol','Admin')
 @elseif(auth()->user()["level"]==2)
     @section('rol','Programador')
 @elseif(auth()->user()["level"]==3)

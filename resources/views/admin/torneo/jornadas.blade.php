@@ -3,7 +3,7 @@
 
 @section('titulo','Jornadas')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
 

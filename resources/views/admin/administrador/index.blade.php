@@ -2,7 +2,7 @@
 
 @section('titulo','Administradores')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
 
