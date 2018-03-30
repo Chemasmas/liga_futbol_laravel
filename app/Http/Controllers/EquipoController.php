@@ -35,9 +35,15 @@ class EquipoController extends Controller
 
     public function teamList()
     {
-        $equiposG = equipos::whereNotIn("id", [1])->where("activo",1)->get();
         $usuario = Auth::user();
-        $usuario->programadores()->first();
+        $programador = $usuario->programadores()->first();
+
+        debug($programador);
+
+        $equiposG = equipos::whereNotIn("id", [1])
+                    ->where("activo",1)
+                    ->where("idIst",$programador->idInst)
+                    ->get();
 
         return view('admin.ListaEquipos.teamList', [
             "equipos" => $equiposG,
