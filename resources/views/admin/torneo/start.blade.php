@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
-@section('titulo',!empty($torneo)?'Editar Torneo':'Crear Torneo')
+@section('titulo','Autorizar Programacion')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
 

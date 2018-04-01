@@ -1,8 +1,12 @@
 @extends('layout.admin')
 
-@section('titulo','Partido')
+@section('titulo','Marcador')
 
-@section('rol',"")
+@if(auth()->user()["level"]<2)
+    @section('rol','Admin')
+@elseif(auth()->user()["level"]==3)
+    @section('rol','Arbitro')
+@endif
 
 @section('content')
     <div class="container">

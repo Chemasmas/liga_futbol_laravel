@@ -2,7 +2,11 @@
 
 @section('titulo','Propuesta de Partidos')
 
-@section('rol',"")
+@if(auth()->user()["level"]<2)
+    @section('rol','Admin')
+@elseif(auth()->user()["level"]==2)
+    @section('rol','Programador')
+@endif
 
 @section('content')
 

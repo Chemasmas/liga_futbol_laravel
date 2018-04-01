@@ -2,7 +2,7 @@
 
 @section('titulo','Ver Administrador')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
     <div class="offset-sm-2 col-sm-8">

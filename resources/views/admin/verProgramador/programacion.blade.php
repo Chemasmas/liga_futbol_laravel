@@ -1,8 +1,12 @@
 @extends('layout.admin')
 
-@section('titulo','Programacion de Torneos ')
+@section('titulo','Lista Programacion')
 
-@section('rol',"")
+@if(auth()->user()["level"]<2)
+    @section('rol','Admin')
+@elseif(auth()->user()["level"]==2)
+    @section('rol','Programador')
+@endif
 
 @section('content')
 
