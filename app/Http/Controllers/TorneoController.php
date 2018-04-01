@@ -455,8 +455,12 @@ class TorneoController extends Controller
             "partido"=>$torneo,
             "jornadas"=>$jornadas,
             "rutas" => [
+                "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
+                "Torneo"=>["etiqueta"=>"Torneos-Lista", "active"=>"1","link"=>"/admin/torneo"],
+                "crear"=>["etiqueta"=>"Autorizar-Programacion", "active"=>"0","link"=>""]
             ]
         ]);
+
     }
 
     public function editCambiarResultados(Request $request,$idP){

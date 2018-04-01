@@ -160,7 +160,7 @@ Route::get('/statistics_female/{idT?}',"HomeController@statisticsfemale");
 Route::get('/statistics_male/{idT?}',"HomeController@statisticsmale");
 Route::get('/match_result_male',"HomeController@matchresultmale");
 Route::get('/match_result_female',"HomeController@matchresultfemale");
-Route::get('/courts',"HomeController@court");
+Route::get('/courts',"HomeController@courts");
 
 Route::get('/test',"HomeController@ejemplo");
 
