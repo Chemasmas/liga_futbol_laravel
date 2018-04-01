@@ -325,7 +325,7 @@ class ArbitroController extends Controller
                 "rutas" => [
                     "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
                     "Parti" => ["etiqueta"=>"Partidos-Lista", "active" => "1" ,"link"=>"/admin/arbitro/partidos"],
-                    "Juga" => ["etiqueta" => "Resultados", "active" => "0", "link" => ""]
+                    "Juga" => ["etiqueta" => "Marcador", "active" => "0", "link" => ""]
                 ]
             ]);
     }
