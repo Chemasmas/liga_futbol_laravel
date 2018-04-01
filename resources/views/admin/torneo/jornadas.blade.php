@@ -3,7 +3,7 @@
 
 @section('titulo','Jornadas')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
 
@@ -54,7 +54,7 @@
                                                 <td></td>
                                         @endif
                                         <td>
-                                            <div style="overscroll-behavior-y: auto;">
+                                            <div style="max-width: 300px;max-height: 15em;overflow: auto;overflow-x: hidden;">
                                                 {{$partido->notas}}
                                             </div>
                                         </td>

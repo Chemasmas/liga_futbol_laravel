@@ -2,7 +2,7 @@
 
 @section('titulo','Programadores Historico')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
     <div class="row">

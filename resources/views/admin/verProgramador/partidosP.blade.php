@@ -2,7 +2,11 @@
 
 @section('titulo','Propuesta de Partidos')
 
-@section('rol',"")
+@if(auth()->user()["level"]<2)
+    @section('rol','Admin')
+@elseif(auth()->user()["level"]==2)
+    @section('rol','Programador')
+@endif
 
 @section('content')
 
@@ -36,7 +40,12 @@
                                         {{$partido->equipov->nombre}}
                                     </td>
                                     <td>
-                                        @if($partido->status!=2 && $partido->verifica!=Auth::user()->id)
+                                        @if($partido->jugado==1)
+                                            Marcador:
+                                            <span style="font-weight: bold">
+                                                {{$partido->marcadorLocal}} VS {{$partido->marcadorVisitante}}
+                                            </span>
+                                        @elseif($partido->status!=2 && $partido->verifica!=Auth::user()->id)
                                         <form method="POST" action="{{action('ProgramadorController@propuesta',["idP"=>$partido->id])}}" class="form-inline">
                                             {{csrf_field()}}
                                             <input type="time" class="form-control" id="hora" name="hora" value="{{$partido->hora}}">

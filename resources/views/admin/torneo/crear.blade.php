@@ -2,7 +2,7 @@
 
 @section('titulo',!empty($torneo)?'Editar Torneo':'Crear Torneo')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
     <div class="offset-sm-3 col-sm-6">

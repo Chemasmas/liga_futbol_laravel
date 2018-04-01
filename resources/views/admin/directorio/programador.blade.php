@@ -2,7 +2,11 @@
 
 @section('titulo','Directorio Programadores')
 
-@section('rol','Admin')
+@if(auth()->user()["level"]<2)
+    @section('rol','Admin')
+@elseif(auth()->user()["level"]==2)
+    @section('rol','Programador')
+@endif
 
 @section('content')
     <div class="row">

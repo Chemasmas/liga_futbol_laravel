@@ -1,8 +1,8 @@
 @extends('layout.admin')
 
-@section('titulo','Pase de Lista')
+@section('titulo','Lista Jugadores')
 
-@section('rol',"")
+@section('rol',"Programador")
 
 @section('content')
         <div class="row">

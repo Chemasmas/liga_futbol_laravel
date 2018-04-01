@@ -2,7 +2,7 @@
 
 @section('titulo','Arbitros')
 
-@section('rol',"")
+@section('rol',"Admin")
 
 @section('content')
         <div class="row">
