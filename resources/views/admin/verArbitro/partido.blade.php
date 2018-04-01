@@ -75,7 +75,7 @@
                                                 <input type="hidden" value="{{$partido->id}}" name="idP">
                                                 <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
                                                 <input type="hidden" value="1" name="goles">
-                                                <button type="submit" class="btn btn-link"><i class="fa fa-futbol-o" aria-hidden="true"></i></button>
+                                                <button type="submit" class="btn btn-link" title="Gol" data-toggle="tooltip"><i class="fa fa-futbol-o" aria-hidden="true"></i></button>
                                             </form>
                                         </li>
                                         <li style="text-align: center;">
@@ -86,7 +86,7 @@
                                                 <input type="hidden" value="{{$partido->id}}" name="idP">
                                                 <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
                                                 <input type="hidden" value="1" name="amarillas">
-                                                <button type="submit" class="btn btn-link">
+                                                <button type="submit" class="btn btn-link" title="Tarjeta Amarilla" data-toggle="tooltip">
                                                     <i class="fa fa-square-o" aria-hidden="true"></i>
                                                 </button>
                                             </form>
@@ -99,7 +99,7 @@
                                                 <input type="hidden" value="{{$partido->id}}" name="idP">
                                                 <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
                                                 <input type="hidden" value="1" name="rojas">
-                                                <button type="submit" class="btn btn-link">
+                                                <button type="submit" class="btn btn-link" title="Tarjeta Roja" data-toggle="tooltip">
                                                     <i class="fa fa-square" aria-hidden="true"></i>
                                                 </button>
                                             </form>
@@ -138,7 +138,7 @@
                                                 <input type="hidden" value="{{$partido->id}}" name="idP">
                                                 <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
                                                 <input type="hidden" value="1" name="goles">
-                                                <button type="submit" class="btn btn-link"><i class="fa fa-futbol-o" aria-hidden="true"></i></button>
+                                                <button type="submit" class="btn btn-link" title="Gol" data-toggle="tooltip"><i class="fa fa-futbol-o" aria-hidden="true"></i></button>
                                             </form>
                                         </li>
                                         <li style="text-align: center;">
@@ -149,7 +149,7 @@
                                                 <input type="hidden" value="{{$partido->id}}" name="idP">
                                                 <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
                                                 <input type="hidden" value="1" name="amarillas">
-                                                <button type="submit" class="btn btn-link">
+                                                <button type="submit" class="btn btn-link" title="Tarjeta Amarilla" data-toggle="tooltip">
                                                     <i class="fa fa-square-o" aria-hidden="true"></i>
                                                 </button>
                                             </form>
@@ -162,7 +162,7 @@
                                                 <input type="hidden" value="{{$partido->id}}" name="idP">
                                                 <input type="hidden" value="{{$partido->Torneo_id}}" name="idT">
                                                 <input type="hidden" value="1" name="rojas">
-                                                <button type="submit" class="btn btn-link">
+                                                <button type="submit" class="btn btn-link" title="Tarjeta Roja" data-toggle="tooltip">
                                                     <i class="fa fa-square" aria-hidden="true"></i>
                                                 </button>
                                             </form>
