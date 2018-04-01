@@ -197,7 +197,7 @@ class ProgramadorController extends Controller
         return view("admin.verProgramador.programacion",[
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
-                "crear"=>["etiqueta"=>"Programación-Lista", "active"=>"0","link"=>""]
+                "crear"=>["etiqueta"=>"Programacion-Lista", "active"=>"0","link"=>""]
             ],
             "torneos" => $torneos,
         ]);
