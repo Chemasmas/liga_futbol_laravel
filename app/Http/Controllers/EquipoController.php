@@ -63,8 +63,8 @@ class EquipoController extends Controller
                 "jugadores"=> $jugadores,
                 "rutas" => [
                     "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                    "Parti" => ["etiqueta"=>"Partidos del Dia", "active" => "1" ,"link"=>"/admin/arbitro/partidos"],
-                    "Juga" => ["etiqueta" => "Partidos del Día", "active" => "0", "link" => ""]
+                    "Parti" => ["etiqueta"=>"Equipos-Lista", "active" => "1" ,"link"=>"/admin/equipos"],
+                    "Juga" => ["etiqueta" => "Jugadores", "active" => "0", "link" => ""]
                 ]
             ]);
     }

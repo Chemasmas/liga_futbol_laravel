@@ -18,7 +18,7 @@
 @elseif(auth()->user()["level"]==3)
     @section('rol','Arbitro')
 @elseif(auth()->user()["level"]==4)
-    @section('rol','Jugadores')
+    @section('rol','Jugador')
 @endif
 <?php $rutas = ["Home"=>["etiqueta"=>"Home", "active"=>"0","link"=>"#"] ] ?>
 
