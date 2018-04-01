@@ -159,7 +159,7 @@ class HomeController extends Controller
             return $a->Puntos < $b->Puntos? 1:-1;
     }
 
-    public function court()
+    public function courts()
     {
         return view('publica.courts');
     }
