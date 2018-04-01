@@ -143,7 +143,7 @@ class JugadorController extends Controller
         $jugador = jugadores::find($id);
 
         $instituciones = instituciones::all();
-        $equipos = equipos::all();
+        $equipos = equipos::where("activo",1)->get();
         return view("admin.jugador.crear", [
             "jugador" => $jugador,
             "usuario" => $jugador->usuario,

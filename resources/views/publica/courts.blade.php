@@ -1,6 +1,6 @@
 @extends('layout.public')
 
-@section('titulo','Instituciones')
+@section('titulo','Canchas')
 
 @section('content')
 	<!-- Page Heading & Breadcrumbs  -->
