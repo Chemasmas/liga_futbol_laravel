@@ -286,7 +286,7 @@
                                                                             <tr>
                                                                                 <td colspan="3" style="text-align: center; font-weight: bolder;">
                                                                                     @foreach($partidos as $partido)
-                                                                                        @if($partido->Torneo_id == $torneo->Torneo_id)
+                                                                                        @if($partido->Torneo_id == $torneo->Torneo_id && $partido->torneo->activo==1)
                                                                                             {{$partido->torneo->nombre}}
                                                                                             <?php break; ?>
                                                                                         @endif
@@ -294,7 +294,7 @@
                                                                                 </td>
                                                                             </tr>
                                                                             @foreach($partidos as $partido)
-                                                                                @if($partido->Torneo_id == $torneo->Torneo_id)
+                                                                                @if($partido->Torneo_id == $torneo->Torneo_id && $partido->torneo->activo==1)
                                                                                 <tr>
                                                                                     <td>
                                                                                         <div class="logo-width-name">
