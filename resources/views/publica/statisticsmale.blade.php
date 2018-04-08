@@ -121,11 +121,12 @@
 									    	<tr>
 										        <th>Tabla</th>
 										        <th>Equipos</th>
-										        <th>Puntos</th>
+												<th>Partidos Jugados</th>
+												<th>Ganados</th>
+												<th>Perdidos</th>
+												<th>Empates</th>
 												<th>Diferencia de Goles</th>
-										        <th>ganados</th>
-										        <th>perdidos</th>
-										        <th>empates</th>
+												<th>Puntos</th>
 									      	</tr>
 									    </thead>
 									    <tbody>
@@ -135,11 +136,12 @@
 											<tr>
 												<td>{{$i++}}</td>
 												<td><img src="/{{$estadistica->equipo->institucione->escudo}}" alt="" height="50px">{{$estadistica->equipo->nombre}}</td>
-												<td>{{intval($estadistica->Puntos)}}</td>
-												<td>{{intval($estadistica->DiferenciaGoles)}}</td>
+												<td>{{intval($estadistica->PartidosJugados)}}</td>
 												<td>{{intval($estadistica->PartidosGanados)}}</td>
 												<td>{{intval($estadistica->PartidosPerdidos)}}</td>
 												<td>{{intval($estadistica->PartidosEmpatados)}}</td>
+												<td>{{intval($estadistica->DiferenciaGoles)}}</td>
+												<td>{{intval($estadistica->Puntos)}}</td>
 											</tr>
 											@endif
 										@endforeach

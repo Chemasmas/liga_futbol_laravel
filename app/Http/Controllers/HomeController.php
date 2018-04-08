@@ -33,6 +33,9 @@ class HomeController extends Controller
 
         $torneos = partidos::whereBetween("fecha",[$inicio,$fin])->groupBy("Fecha","Torneo_id")->get(["Fecha","Torneo_id"]);
 
+        $proximos = partidos::where("fecha",Carbon::today() )->get();
+
+
         debug($inicio);
         debug($fin);
         debug($partidos);
