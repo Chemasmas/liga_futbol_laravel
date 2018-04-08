@@ -284,7 +284,7 @@
                                                                     @foreach($torneos as $dia => $torneo )
                                                                         @if($fecha == $torneo->Fecha)
                                                                             <tr>
-                                                                                <td colspan="3">
+                                                                                <td colspan="3" style="text-align: center; font-weight: bolder;">
                                                                                     @foreach($partidos as $partido)
                                                                                         @if($partido->Torneo_id == $torneo->Torneo_id)
                                                                                             {{$partido->torneo->nombre}}
