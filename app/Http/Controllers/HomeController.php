@@ -29,11 +29,11 @@ class HomeController extends Controller
             array_push( $fechas,Carbon::yesterday()->addDays($i)->format('Y-m-d') );
         }
 
-        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
+        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->where("activo",1)->get()->groupBy("fecha");
 
-        $torneos = partidos::whereBetween("fecha",[$inicio,$fin])->groupBy("Fecha","Torneo_id")->get(["Fecha","Torneo_id"]);
+        $torneos = partidos::whereBetween("fecha",[$inicio,$fin])->where("activo",1)->groupBy("Fecha","Torneo_id")->get(["Fecha","Torneo_id"]);
 
-        $proximos = partidos::where("fecha",Carbon::today() )->get();
+        $proximos = partidos::where("fecha",Carbon::today() )->where("activo",1)->get();
 
 
         debug($inicio);
