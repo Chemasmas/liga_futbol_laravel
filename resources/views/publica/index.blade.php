@@ -281,22 +281,41 @@
                                                             <div class="table-responsive">
                                                                 <table class="table table-bordered">
                                                                     <tbody>
-                                                                    @foreach($partidos as $partido)
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="logo-width-name">
-                                                                                <img src="{{$partido->equipol->institucione->escudo}}" alt="" height="60px"><br>
-                                                                                {{$partido->equipol->nombre}}
-                                                                            </div>
-                                                                        </td>
-                                                                        <td class="upcoming-fixture-date"><span>{{$fecha}} {{$partido->hora}}</span></td>
-                                                                        <td>
-                                                                            <div class="logo-width-name">
-                                                                                <img src="{{$partido->equipov->institucione->escudo}}" alt="" height="60px"><br>
-                                                                                {{$partido->equipov->nombre}}
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
+                                                                    @foreach($torneos as $dia => $torneo )
+                                                                        @if($fecha == $torneo->Fecha)
+                                                                            <tr>
+                                                                                <td colspan="3">
+                                                                                    @foreach($partidos as $partido)
+                                                                                        @if($partido->Torneo_id == $torneo->Torneo_id)
+                                                                                            {{$partido->torneo->nombre}}
+                                                                                            <?php break; ?>
+                                                                                        @endif
+                                                                                    @endforeach
+                                                                                </td>
+                                                                            </tr>
+                                                                            @foreach($partidos as $partido)
+                                                                                @if($partido->Torneo_id == $torneo->Torneo_id)
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="logo-width-name">
+                                                                                            <img src="{{$partido->equipol->institucione->escudo}}" alt="" height="60px"><br>
+                                                                                            {{$partido->equipol->nombre}}
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td class="upcoming-fixture-date">
+                                                                                        <span>{{$fecha}}<br>{{$partido->hora}}<br>{{$partido->campo}}</span>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="logo-width-name">
+                                                                                            <img src="{{$partido->equipov->institucione->escudo}}" alt="" height="60px"><br>
+                                                                                            {{$partido->equipov->nombre}}
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                @endif
+                                                                            @endforeach
+
+                                                                        @endif
                                                                     @endforeach
                                                                     </tbody>
                                                                 </table>

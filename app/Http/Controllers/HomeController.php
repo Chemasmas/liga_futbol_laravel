@@ -30,11 +30,16 @@ class HomeController extends Controller
         }
 
         $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
+
+        $torneos = partidos::whereBetween("fecha",[$inicio,$fin])->groupBy("Fecha","Torneo_id")->get(["Fecha","Torneo_id"]);
+
         debug($inicio);
         debug($fin);
         debug($partidos);
+        debug($torneos);
         return view('publica.index',[
             "partidosG"=>$partidos,
+            "torneos"=>$torneos,
             "fechas" => $fechas,
         ]);
     }
