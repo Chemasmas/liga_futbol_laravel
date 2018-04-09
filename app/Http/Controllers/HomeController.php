@@ -29,6 +29,9 @@ class HomeController extends Controller
             array_push( $fechas,Carbon::yesterday()->addDays($i)->format('Y-m-d') );
         }
 
+        debug(Carbon::now());
+        debug(Carbon::now()->hour);
+
         $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
 
         $torneos = partidos::whereBetween("fecha",[$inicio,$fin])->groupBy("Fecha","Torneo_id")->get(["Fecha","Torneo_id"]);
