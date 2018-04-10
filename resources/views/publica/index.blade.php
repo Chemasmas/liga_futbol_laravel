@@ -36,7 +36,7 @@
 
                         <!-- Item -->
                         <div class="item">
-                            <img src="images/banner-slider/img-02.jpg" alt="">
+                            <img src="images/banner-slider/img-02.png" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
                                     <div class="banner-caption style-2 p-white h-white pull-left">
