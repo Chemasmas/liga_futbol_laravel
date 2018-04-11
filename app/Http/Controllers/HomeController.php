@@ -29,6 +29,11 @@ class HomeController extends Controller
             array_push( $fechas,Carbon::yesterday()->addDays($i)->format('Y-m-d') );
         }
 
+        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()
+            ->filter(function ($value) {
+                return $value->torneo->activo;
+            })
+            ->groupBy("fecha");
 
         Carbon::setLocale('MX');
         $hora = Carbon::now();
