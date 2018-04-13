@@ -131,7 +131,6 @@
                                 <li><a href="{{action('HomeController@institutions')}}">instituciones y canchas</a></li>
 
 
-                                <li><a href="{{action('HomeController@programers')}}">programadores</a></li>
                             </ul>
                         </li>
                         <li class="mega-dropdown">
@@ -418,7 +417,6 @@
                 <li><a href="{{action('HomeController@institutions')}}">Instituciones y Canchas</a></li>
 
 
-                <li><a href="{{action('HomeController@programers')}}">Programadores</a></li>
             </ul>
         </li>
         <li>
@@ -472,4 +470,4 @@
 </body>
 
 <!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
-</html>
+</html></html>

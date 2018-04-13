@@ -485,6 +485,22 @@
 		</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
 
 
+
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Universidad Justo Sierra</font></h2>
+			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Av. de los Cipreses No. 2010, Las Animas,<br /> 53229 Naucalpan de Juárez, Méx.</font></div>
+
+			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.6892445680273!2d-99.31556508560767!3d19.468960544563082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20457a2538111%3A0x3ff9a0a982e2e151!2sUniversidad+Justo+Sierra+San+Mateo!5e0!3m2!1ses-419!2smx!4v1520309199738" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
+
+			<div><div style="height: 0px; overflow: hidden; width: 100%;"></div>
+				<hr class="styled-hr" style="width:100%;"></hr>
+				<div style="height: 0px; overflow: hidden; width: 100%;"></div></div>
+
+		</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
+
+
+
+
+
 			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">kinder oakhill</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Loma del Recuerdo 50, Lomas de Vista Hermosa,<br /> 05100 Ciudad de México, CDMX</font></div>
 
@@ -530,16 +546,6 @@
 
 
 
-				<h2 class="wsite-content-title" style="text-align:left;"><font size="3">justo sierra</font></h2>
-				<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Av. de los Cipreses No. 2010, Las Animas,<br /> 53229 Naucalpan de Juárez, Méx.</font></div>
-
-				<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.6892445680273!2d-99.31556508560767!3d19.468960544563082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20457a2538111%3A0x3ff9a0a982e2e151!2sUniversidad+Justo+Sierra+San+Mateo!5e0!3m2!1ses-419!2smx!4v1520309199738" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
-
-				<div><div style="height: 0px; overflow: hidden; width: 100%;"></div>
-					<hr class="styled-hr" style="width:100%;"></hr>
-					<div style="height: 0px; overflow: hidden; width: 100%;"></div></div>
-
-			</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
 
 
 
@@ -583,9 +589,26 @@
 
 
 
-				<h2 class="wsite-content-title"><font size="3">cruz azul santa fe ¨monjas</font></h2>
-				<div class="paragraph"><font color="#2a2a2a"><font size="3"><span>Valle de Las Monjas 10, San Mateo Tlaltenango,</span></font><br /><span><font size="3">&#8203; 05600  Ciudad de México</font></span></font></div>
-				<div><div id="826094171357939767" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.6217708018344!2d-99.28900568560955!3d19.34221214857807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20750332a1891%3A0x2570e2229068741d!2sValle+de+Las+Monjas+10%2C+San+Mateo+Tlaltenango%2C+05600+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1520310375312" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
+				<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Nido Aguila Santa Fe</font></h2>
+				<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Tecolote 230,Parque Tarango<br /> 01580 Ciudad de México, CDMX</font></div>
+
+				<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.0796376860117!2d-99.25155378539856!3d19.34700094842629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20090e9bf0dc5%3A0x3c27f3f0759bb47a!2sNido+%C3%81guila+Santa+Fe!5e1!3m2!1ses-419!2smx!4v1523507859908" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
+
+				<div><div style="height: 0px; overflow: hidden; width: 100%;"></div>
+					<hr class="styled-hr" style="width:100%;"></hr>
+					<div style="height: 0px; overflow: hidden; width: 100%;"></div></div>
+
+			</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
+
+
+
+
+
+
+
+				<h2 class="wsite-content-title"><font size="3">Canchas Dos Ríos</font></h2>
+				<div class="paragraph"><font color="#2a2a2a"><font size="3"><span>Camino a San Ramon 155</span></font><br /><span><font size="3">&#8203; 52790 Dos Ríos, Méx.</font></span></font></div>
+				<div><div id="826094171357939767" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d3563.4502122281256!2d-99.34334845620538!3d19.373714387954987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d19.374640499999998!2d-99.34125859999999!5e1!3m2!1ses-419!2smx!4v1523507331485" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
 
 				<div><div style="height: 0px; overflow: hidden; width: 100%;"></div>
 					<hr class="styled-hr" style="width:100%;"></hr>
