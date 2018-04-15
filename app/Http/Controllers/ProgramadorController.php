@@ -453,10 +453,7 @@ class ProgramadorController extends Controller
 
         return view('admin.verProgramador.torneos_participantes', [
             "torneos"=>$torneos_participamos,
-            "rutas" => [
-                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Juga" => ["etiqueta" => "Programadores-Historico", "active" => "0", "link" => ""]
-            ]
+            "rutas" => []
         ]);
     }
 
@@ -466,10 +463,7 @@ class ProgramadorController extends Controller
 
         return view('admin.verProgramador.marcador', [
             "partidosG"=>$partidos,
-            "rutas" => [
-                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
-                "Juga" => ["etiqueta" => "Programadores-Historico", "active" => "0", "link" => ""]
-            ]
+            "rutas" => []
         ]);
     }
 }
