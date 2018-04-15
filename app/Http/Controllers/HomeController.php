@@ -36,7 +36,7 @@ class HomeController extends Controller
 
 
         $fechas = [];
-        for($i=0;$i<7;$i++){
+        for($i=0;$i<9;$i++){
             array_push( $fechas,Carbon::yesterday()->addDays($i)->format('Y-m-d') );
         }
 
