@@ -259,6 +259,12 @@
                     <span class="nav-link-text">Lista de Equipos</span>
                 </a>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
+                <a class="nav-link" href="{{action('ProgramadorController@torneos_participantes')}}">
+                    <i class="fa fa-list-ol" aria-hidden="true"></i>
+                    <span class="nav-link-text">Lista de Torneos</span>
+                </a>
+            </li>
             @endif
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
                 <a class="nav-link" href="{{action('ProgramadorController@perfil')}}">

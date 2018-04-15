@@ -124,6 +124,8 @@ Route::get('/admin/arbitro/{idA}/deactivate',['middleware' => 'auth', 'uses' => 
 Route::get('/admin/programador',['middleware' => 'auth', 'uses' => "ProgramadorController@index"]);
 Route::get('/admin/programador/crear',['middleware' => 'auth', 'uses' => "ProgramadorController@create"]);
 Route::get('/admin/programador/historico',['middleware' => 'auth', 'uses' => "ProgramadorController@all"]);
+Route::get('/admin/programador/resultados',['middleware' => 'auth', 'uses' => "ProgramadorController@torneos_participantes"]);
+Route::get('/admin/programador/resultados/{idT}',['middleware' => 'auth', 'uses' => "ProgramadorController@marcadores"]);
 Route::post('/admin/programador/store',['middleware' => 'auth', 'uses' => "ProgramadorController@store"]);
 Route::get("/admin/programador/{id}",['middleware' => 'auth', 'uses' => "ProgramadorController@show"]);
 Route::get("/admin/programador/{id}/edit",['middleware' => 'auth', 'uses' => "ProgramadorController@edit"]);
