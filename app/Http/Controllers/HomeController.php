@@ -31,7 +31,7 @@ class HomeController extends Controller
         }
         else{
             $inicio = Carbon::today();
-            $fin = Carbon::today()->addDays(7);
+            $fin = Carbon::today()->addDays(9);
         }
 
 
