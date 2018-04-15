@@ -21,6 +21,7 @@
                             <img src="images/banner-slider/Estadio_Azteca.jpg" alt="">
                             <div class="position-center-x full-width">
                                 <div class="container">
+
                                     <div class="banner-caption style-1 p-white h-white pull-right">
                                         <h1 class="animated fadeInUp delay-1s">Proximos<br>Partidos<br></h1>
                                         <p class="animated fadeInUp delay-2s">Enterate de la siguiente ronda</p>
@@ -177,59 +178,38 @@
 
                                         <div id="matches-detail-slider" class="matches-detail-slider">
 
+                                        @forelse($proximos as $proximo)
                                             <!-- Item -->
-                                            <div class="item matches-detail"
+                                            <div class="item matches-detail" height="260px"
                                                  style="background: url(images/country-flags-bg.jpg);">
                                                 <div class="time-left">
                                                     <ul id="countdown-1" class="countdown">
-                                                        <li><span class="days">00</span>D:</li>
-                                                        <li><span class="hours">00</span>H:</li>
-                                                        <li><span class="minutes">00</span>M:</li>
-                                                        <li><span class="seconds">00</span>S</li>
-                                                    </ul>
-                                                </div>
-                                                <span class="left-date">12/02/2016 / 19:00</span>
-                                                <div class="team-btw-match">
-                                                    <ul>
-                                                        <li>
-                                                            <img src="images/team-logos/img-01.png" alt="">
-                                                            <span>Footbal<span>Team</span></span>
-                                                        </li>
-                                                        <li>
-                                                            <img src="images/team-logos/img-02.png" alt="">
-                                                            <span>Super Team<span>Club</span></span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- Item -->
 
-                                            <!-- Item -->
-                                            <div class="item matches-detail"
-                                                 style="background: url(images/country-flags-bg.jpg);">
-                                                <div class="time-left">
-                                                    <ul id="countdown-2" class="countdown">
                                                         <li><span class="days">00</span>D:</li>
                                                         <li><span class="hours">00</span>H:</li>
                                                         <li><span class="minutes">00</span>M:</li>
                                                         <li><span class="seconds">00</span>S</li>
                                                     </ul>
                                                 </div>
-                                                <span class="left-date">12/02/2016 / 19:00</span>
+                                                <span class="left-date">{{$proximo->fecha}} / {{$proximo->hora}}</span>
                                                 <div class="team-btw-match">
                                                     <ul>
                                                         <li>
-                                                            <img src="images/team-logos/img-01.png" alt="">
-                                                            <span>Footbal<span>Team</span></span>
+                                                            <img src="{{asset($proximo->equipol->institucione->escudo)}}" alt="" height="60px" width="auto">
+                                                            <span>{{$proximo->equipol->nombre}}</span>
                                                         </li>
                                                         <li>
-                                                            <img src="images/team-logos/img-02.png" alt="">
-                                                            <span>Super Team<span>Club</span></span>
+                                                            <img src="{{asset($proximo->equipov->institucione->escudo)}}" alt="" height="60px" width="auto">
+                                                            <span>{{$proximo->equipov->nombre}}</span>
                                                         </li>
                                                     </ul>
+                                                    <br>
                                                 </div>
                                             </div>
                                             <!-- Item -->
+                                            @empty
+                                                    <div class="item matches-detail">No Hay Partidos Hoy</div>
+                                        @endforelse
 
                                         </div>
                                     </div>

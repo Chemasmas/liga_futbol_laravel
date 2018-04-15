@@ -21,8 +21,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $inicio = Carbon::yesterday();
-        $fin = Carbon::today()->addDays(6);
+        $hora = Carbon::now();
+        $hora->setTimezone('America/Mexico_City');
+        debug($hora);
+
+        if($hora->hour<20){
+            $inicio = Carbon::yesterday();
+            $fin = Carbon::today()->addDays(6);
+        }
+        else{
+            $inicio = Carbon::today();
+            $fin = Carbon::today()->addDays(9);
+        }
+
 
         $fechas = [];
         for($i=0;$i<7;$i++){
@@ -35,26 +46,30 @@ class HomeController extends Controller
             })
             ->groupBy("fecha");
 
-        Carbon::setLocale('MX');
-        $hora = Carbon::now();
-        debug($hora);
-        debug($hora->hour);
+
+        //debug($hora->hour);
+        //debug($hora->format('H:i:s'));
+        //debug(\DateTimeZone::listAbbreviations());
 
         $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
 
         $torneos = partidos::whereBetween("fecha",[$inicio,$fin])->groupBy("Fecha","Torneo_id")->get(["Fecha","Torneo_id"]);
 
-        $proximos = partidos::where("fecha",Carbon::today() )->get();
+        $proximos = partidos::whereBetween("fecha",[$inicio,$inicio->addDays(2)])->where('hora','>',$hora->format('H:i:s'))->get()->sortBy('fecha');
+        //$proximos = partidos::where("fecha",Carbon::today())->get();
 
 
-        debug($inicio);
-        debug($fin);
-        debug($partidos);
-        debug($torneos);
+        //debug($proximos);
+        //debug($inicio);
+        //debug($fin);
+        //debug($partidos);
+        //debug($torneos);
+        debug($proximos);
         return view('publica.index',[
             "partidosG"=>$partidos,
             "torneos"=>$torneos,
             "fechas" => $fechas,
+            "proximos"=>$proximos,
         ]);
     }
     public function about()
