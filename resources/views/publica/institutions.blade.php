@@ -395,10 +395,10 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">escuela sierra nevada</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">escuela sierra nevada lomas</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Camino Cuajimalpa-Palo Solo 1, Hacienda de Las Palmas,<br /> 52763 Huixquilucan de Degollado, MEX</font></div>
 
-			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.4400717860913!2d-99.2928750856088!3d19.393382846959987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d206c59d168325%3A0xfa83231c4fa8672e!2sEscuela+Sierra+Nevada!5e0!3m2!1ses-419!2smx!4v1518948441207" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
+			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.4400717860913!2d-99.2928750856088!3d19.393382846959987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d206c59d168325%3A0xfa83231c4fa8672e!2sEscuela+Sierra+Nevada+Lomas!5e0!3m2!1ses-419!2smx!4v1518948441207" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
 
 			<div><div style="height: 0px; overflow: hidden; width: 100%;"></div>
 				<hr class="styled-hr" style="width:100%;"></hr>
@@ -486,7 +486,7 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Universidad Justo Sierra</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Universidad Justo Sierra San Mateo</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Av. de los Cipreses No. 2010, Las Animas,<br /> 53229 Naucalpan de Juárez, Méx.</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.6892445680273!2d-99.31556508560767!3d19.468960544563082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20457a2538111%3A0x3ff9a0a982e2e151!2sUniversidad+Justo+Sierra+San+Mateo!5e0!3m2!1ses-419!2smx!4v1520309199738" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
