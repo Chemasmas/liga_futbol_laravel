@@ -114,7 +114,7 @@
 
             <!-- Itme -->
             <li>
-                <img src="images/banner-bgs/img-02.jpg" alt="">
+                <img src="images/banner-bgs/img-02.png" alt="">
                 <div class="position-center-center">
                     <div class="container theme-padding">
                         <div class="pager-heading match-detail h-white">

@@ -128,12 +128,9 @@
                         <li>
                             <a href="{{action('HomeController@directory')}}">directorio</a>
                             <ul>
-                                <li><a href="{{action('HomeController@institutions')}}">instituciones</a></li>
-								
-								<li><a href="{{action('HomeController@courts')}}">Canchas</a></li>
+                                <li><a href="{{action('HomeController@institutions')}}">instituciones y canchas</a></li>
 
-								
-                                <li><a href="{{action('HomeController@programers')}}">programadores</a></li>
+
                             </ul>
                         </li>
                         <li class="mega-dropdown">
@@ -321,7 +318,7 @@
     </header>
     <!-- Header -->
 
-    @yield('content')
+@yield('content')
 
 <!-- Footer -->
     <footer class="main-footer style-2">
@@ -417,12 +414,9 @@
         </li>
         <li><a data-toggle="collapse" href="#list-2"><em class="pull-right fa fa-angle-down"></em>Directorio</a>
             <ul class="collapse" id="list-2">
-                <li><a href="{{action('HomeController@institutions')}}">Instituciones</a></li>
-				
-				<li><a href="{{action('HomeController@courts')}}">Canchas</a></li>
+                <li><a href="{{action('HomeController@institutions')}}">Instituciones y Canchas</a></li>
 
-				
-                <li><a href="{{action('HomeController@programers')}}">Programadores</a></li>
+
             </ul>
         </li>
         <li>
@@ -439,15 +433,15 @@
                 <li><a href="{{action('HomeController@statisticsmale')}}">Varonil</a></li>
             </ul>
         </li>
-		
-		<li>
-			<a data-toggle="collapse" href="#list-5"><i class="pull-right fa fa-angle-down"></i>Proximos</a>
-			<ul class="collapse" id="list-5">
-			 	<li><a href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></li>
-			    <li><a href="{{action('HomeController@nextmatchsmale')}}">Varonil</a></li>
-			</ul>
-		</li> 
-		
+
+        <li>
+            <a data-toggle="collapse" href="#list-5"><i class="pull-right fa fa-angle-down"></i>Proximos</a>
+            <ul class="collapse" id="list-5">
+                <li><a href="{{action('HomeController@nextmatchsfemale')}}">Femenil</a></li>
+                <li><a href="{{action('HomeController@nextmatchsmale')}}">Varonil</a></li>
+            </ul>
+        </li>
+
         <li><a href="{{action('HomeController@contact')}}">Contacto</a></li>
     </ul>
 </nav>
@@ -476,4 +470,4 @@
 </body>
 
 <!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
-</html>
+</html></html>
