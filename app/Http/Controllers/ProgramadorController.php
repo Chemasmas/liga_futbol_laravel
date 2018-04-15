@@ -435,5 +435,42 @@ class ProgramadorController extends Controller
             ["message" => ["clase" => "warning", "mensaje" => $programadores->nombre . " Desactivado"]]
         );
     }
+
+
+    public function torneos_participantes(){
+
+        //Esta vista solo debe de mostrarla a los programadores
+        $usuario = Auth::user();
+        $programador = $usuario->programadores[0];
+
+        $equipos = equipos::where('activo',1)->where('idIst',$programador->idInst)->select('id')->get();
+        $torneos = participantes_torneo::whereIn('Equipos_id',$equipos)->select('Torneo_id')->get();
+
+        $torneos_participamos = torneos::whereIn('id',$torneos)->get();
+
+        debug($usuario);
+        debug($programador);
+
+        return view('admin.verProgramador.torneos_participantes', [
+            "torneos"=>$torneos_participamos,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Juga" => ["etiqueta" => "Programadores-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
+
+    public function marcadores($idT){
+        $torneo = torneos::findOrFail($idT);
+        $partidos = partidos::where('Torneo_id',$idT)->get()->groupBy('jornada');
+
+        return view('admin.verProgramador.marcador', [
+            "partidosG"=>$partidos,
+            "rutas" => [
+                "Home" => ["etiqueta" => "Home", "active" => "1", "link" => "/admin/dashboard"],
+                "Juga" => ["etiqueta" => "Programadores-Historico", "active" => "0", "link" => ""]
+            ]
+        ]);
+    }
 }
 
