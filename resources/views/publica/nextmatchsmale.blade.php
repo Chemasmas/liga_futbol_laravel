@@ -58,51 +58,32 @@
 							<!-- Matches Dates Shedule -->
 							<div class="matches-dates-shedule">
 								<ul>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-01.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-02.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 1<em class="red-color"> 6 Feb 2016 15:00</em> equipo 2</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-03.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-04.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 3<em class="red-color"> 6 Feb 2016 15:00</em> equipo 4</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-05.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-06.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong><em class="red-color"><font color="#363636">equipo 5</font> 6 Feb 2016 15:00</em> equipo 6</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-01.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-02.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 7<em class="red-color"> 6 Feb 2016 15:00</em> equipo 8</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-03.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-04.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 9<em class="red-color"> 6 Feb 2016 15:00</em> equipo 10</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-05.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-06.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 11<em class="red-color"> 6 Feb 2016 15:00</em> equipo 12</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-01.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-02.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 13<em class="red-color"> 6 Feb 2016 15:00</em> equipo 14</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-03.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-04.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 15<em class="red-color"> 6 Feb 2016 15:00</em> equipo 16</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
-									<li>
-										<span class="pull-left"><img src="images/matches-logo/img-05.png" alt=""></span>
-										<span class="pull-right"><img src="images/matches-logo/img-06.png" alt=""></span>
-										<div class="detail"><a href="#">Detalles de Partido</a> <strong>equipo 17<em class="red-color"> 6 Feb 2016 15:00</em> equipo 18</strong> <span class="location-marker"><em class="fa fa-map-marker"></em> Lugar</span></div>
-									</li>
+									@foreach($partidos as $partido)
+										<li>
+										<span class="pull-left">
+											<img src="{{asset($partido->equipol->institucione->escudo)}}" alt="" height="60px">
+										</span>
+											<span class="pull-right">
+											<img src="{{asset($partido->equipov->institucione->escudo)}}" alt="" height="60px">
+										</span>
+											<div class="detail">
+												<a href="#">
+													Detalles de Partido
+												</a>
+												<strong>
+													{{$partido->equipol->nombre}}
+													<em class="red-color"> {{$partido->fecha}} {{$partido->hora}}</em>
+													{{$partido->equipov->nombre}}
+												</strong>
+												<span class="location-marker">
+												<em class="fa fa-map-marker">
+
+												</em>
+													{{$partido->campo}}
+											</span>
+											</div>
+										</li>
+									@endforeach
 								</ul>
 							</div>
 							<!-- Matches Dates Shedule -->

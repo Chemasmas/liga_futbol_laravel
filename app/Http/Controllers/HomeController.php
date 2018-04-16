@@ -96,11 +96,37 @@ class HomeController extends Controller
     }
 
     public function nextmatchsfemale(){
+
+        $inicio = Carbon::yesterday()->setTimezone('America/Mexico_City');
+        $fin = Carbon::today()->addDays(9)->setTimezone('America/Mexico_City');
+
+        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])
+            ->get()
+            ->filter(function ($value) {
+                debug($value->torneo->genero);
+                return $value->torneo->activo && $value->torneo->genero == 'F';
+            })
+            ;
+
         return view('publica.nextmatchsfemale',[
+            "partidos"=>$partidos,
         ]);
     }
     public function nextmatchsmale(){
+
+        $inicio = Carbon::yesterday()->setTimezone('America/Mexico_City');
+        $fin = Carbon::today()->addDays(9)->setTimezone('America/Mexico_City');
+
+        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])
+            ->get()
+            ->filter(function ($value) {
+                debug($value->torneo->genero);
+                return $value->torneo->activo && $value->torneo->genero == 'M';
+            })
+        ;
+
         return view('publica.nextmatchsmale',[
+            "partidos"=>$partidos,
         ]);
     }
 
