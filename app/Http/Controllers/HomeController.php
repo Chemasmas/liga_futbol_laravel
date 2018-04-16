@@ -27,17 +27,17 @@ class HomeController extends Controller
 
         if($hora->hour<20){
             $inicio = Carbon::yesterday();
-            $fin = Carbon::today()->addDays(6);
+            $fin = Carbon::today()->addDays(9);
         }
         else{
             $inicio = Carbon::today();
-            $fin = Carbon::today()->addDays(9);
+            $fin = Carbon::today()->addDays(10);
         }
 
 
         $fechas = [];
         for($i=0;$i<9;$i++){
-            array_push( $fechas,Carbon::yesterday()->addDays($i)->format('Y-m-d') );
+            array_push( $fechas,Carbon::yesterday()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d') );
         }
 
         $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()
