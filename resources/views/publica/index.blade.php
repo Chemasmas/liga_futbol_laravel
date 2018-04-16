@@ -254,7 +254,7 @@
                                                     @else
                                                         <div class="tab-pane fade in" role="tabpanel" id="{{$i}}" aria-labelledby="{{$i}}-tab">
                                                     @endif
-                                                            <?php $vacio = true ?>
+                                                    <?php $vacio = true ?>
                                                     @foreach($partidosG as $dia => $partidos )
                                                         @if($fecha == $dia)
                                                             <?php $vacio=false; ?>
@@ -268,7 +268,7 @@
                                                                                     @foreach($partidos as $partido)
                                                                                         @if($partido->Torneo_id == $torneo->Torneo_id)
                                                                                             {{$partido->torneo->nombre}}
-                                                                                            <?php break; ?>
+                                                                                            @break
                                                                                         @endif
                                                                                     @endforeach
                                                                                 </td>
