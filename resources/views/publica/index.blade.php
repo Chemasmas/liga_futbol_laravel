@@ -268,7 +268,7 @@
                                                                                     @foreach($partidos as $partido)
                                                                                         @if($partido->Torneo_id == $torneo->Torneo_id)
                                                                                             {{$partido->torneo->nombre}}
-                                                                                            @break
+                                                                                            <?php break; ?>
                                                                                         @endif
                                                                                     @endforeach
                                                                                 </td>
