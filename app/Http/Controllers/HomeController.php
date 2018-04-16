@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -21,42 +22,47 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $hora = Carbon::now();
+        $hora = Carbon::now('America/Mexico_City');
         $hora->setTimezone('America/Mexico_City');
         //debug($hora);
 
-        $inicio = Carbon::yesterday()->setTimezone('America/Mexico_City');
-        $fin = Carbon::today()->addDays(9)->setTimezone('America/Mexico_City');
+        $inicio = Carbon::yesterday('America/Mexico_City');
+        $fin = Carbon::today('America/Mexico_City')->addDays(9);
 
         debug($inicio);
         debug($fin);
 
         $fechas = [];
         for($i=0;$i<9;$i++){
-            array_push($fechas, Carbon::yesterday()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d'));
+            array_push($fechas, Carbon::yesterday('America/Mexico_City')->addDays($i)->format('Y-m-d'));
         }
         debug($fechas);
 
+
+        $proximos = partidos::where("fecha",Carbon::today('America/Mexico_City')->format('Y-m-d'))->where('hora','>',$hora->format('H:i:s'))->get()->sortBy('fecha');
         $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()
             ->filter(function ($value) {
                 return $value->torneo->activo;
             })
             ->groupBy("fecha");
 
-        $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
+        //$partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
 
         $torneos = partidos::whereBetween("fecha",[$inicio,$fin])->groupBy("Fecha","Torneo_id")->get(["Fecha","Torneo_id"]);
 
-        $proximos = partidos::whereBetween("fecha",[$inicio,$inicio->addDays(2)])->where('hora','>',$hora->format('H:i:s'))->get()->sortBy('fecha');
+        //$proximos = partidos::whereBetween("fecha",[$inicio,$inicio->addDays(2)])->where('hora','>',$hora->format('H:i:s'))->get()->sortBy('fecha');
         //$proximos = partidos::where("fecha",Carbon::today())->get();
 
 
         //debug($proximos);
         //debug($inicio);
         //debug($fin);
-        //debug($partidos);
+        //
         //debug($torneos);
+
         debug($proximos);
+        debug($partidos);
+        Log::debug($partidos);
         return view('publica.index',[
             "partidosG"=>$partidos,
             "torneos"=>$torneos,
