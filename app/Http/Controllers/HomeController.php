@@ -37,8 +37,14 @@ class HomeController extends Controller
 
         $fechas = [];
         for($i=0;$i<9;$i++){
-            array_push( $fechas,Carbon::yesterday()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d') );
+            if($hora->hour<20) {
+                array_push($fechas, Carbon::yesterday()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d'));
+            }
+            else{
+                array_push($fechas, Carbon::today()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d'));
+            }
         }
+        debug($fechas);
 
         $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()
             ->filter(function ($value) {
