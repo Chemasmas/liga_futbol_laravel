@@ -223,7 +223,7 @@ class ProgramadorController extends Controller
                                     debug($v[0]->jornada);
                                     debug($jornada);
                                     //return true;
-                                    return $v[0]->jornada>=$jornada->jornada && $v[0]->jornada<=$jornada->jornada+2;
+                                    return $v[0]->jornada>=$jornada->jornada-1 && $v[0]->jornada<=$jornada->jornada+2;
                                 });
                 break;
             default: return redirect()->action("AdminController@index")->with(

@@ -23,26 +23,17 @@ class HomeController extends Controller
     {
         $hora = Carbon::now();
         $hora->setTimezone('America/Mexico_City');
-        debug($hora);
+        //debug($hora);
 
-        if($hora->hour<20){
-            $inicio = Carbon::yesterday();
-            $fin = Carbon::today()->addDays(9);
-        }
-        else{
-            $inicio = Carbon::today();
-            $fin = Carbon::today()->addDays(10);
-        }
+        $inicio = Carbon::yesterday()->setTimezone('America/Mexico_City');
+        $fin = Carbon::today()->addDays(9)->setTimezone('America/Mexico_City');
 
+        debug($inicio);
+        debug($fin);
 
         $fechas = [];
         for($i=0;$i<9;$i++){
-            if($hora->hour<20) {
-                array_push($fechas, Carbon::yesterday()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d'));
-            }
-            else{
-                array_push($fechas, Carbon::today()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d'));
-            }
+            array_push($fechas, Carbon::yesterday()->addDays($i)->setTimezone('America/Mexico_City')->format('Y-m-d'));
         }
         debug($fechas);
 
@@ -51,11 +42,6 @@ class HomeController extends Controller
                 return $value->torneo->activo;
             })
             ->groupBy("fecha");
-
-
-        //debug($hora->hour);
-        //debug($hora->format('H:i:s'));
-        //debug(\DateTimeZone::listAbbreviations());
 
         $partidos = partidos::whereBetween("fecha",[$inicio,$fin])->get()->groupBy("fecha");
 
