@@ -410,7 +410,7 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">instituto cumbres mèxico</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">instituto cumbres méxico</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Loma del Recuerdo 50, Lomas de Vista Hermosa,<br /> 05100 Ciudad de México, CDMX</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.7175992006005!2d-99.27081938560906!3d19.381376847340018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2012869119eeb%3A0x99798643952def81!2sInstituto+Cumbres+M%C3%A9xico!5e0!3m2!1ses-419!2smx!4v1518948696251" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
