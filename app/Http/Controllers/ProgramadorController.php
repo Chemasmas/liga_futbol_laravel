@@ -460,7 +460,7 @@ class ProgramadorController extends Controller
     public function marcadores($idT){
         $torneo = torneos::findOrFail($idT);
         $partidos = partidos::where('Torneo_id',$idT)->get()->groupBy('jornada');
-
+        debug($partidos);
         return view('admin.verProgramador.marcador', [
             "partidosG"=>$partidos,
             "rutas" => []
@@ -468,7 +468,7 @@ class ProgramadorController extends Controller
     }
 
     public function estado_torneos(){
-        $torneos = torneos::where('programable',1);
+        $torneos = torneos::where('programable',1)->where('activo',1);
 
         return view('admin.verProgramador.marcador', [
             "partidosG"=>$torneos,

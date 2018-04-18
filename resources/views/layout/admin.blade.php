@@ -259,6 +259,22 @@
                     <span class="nav-link-text">Lista de Equipos</span>
                 </a>
             </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
+                        <a class="nav-link" href="{{action('ProgramadorController@torneos_participantes')}}">
+                            <i class="fa fa-list-ol" aria-hidden="true"></i>
+                            <span class="nav-link-text">Marcadores</span>
+                        </a>
+                    </li>
+            @endif
+            @if(auth()->user()["level"]<2)
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
+                    <a class="nav-link" href="{{action('AdministradorController@estado')}}">
+                        <i class="fa fa-list-ol" aria-hidden="true"></i>
+                        <span class="nav-link-text">Estado de los partidos</span>
+                    </a>
+                </li>
+
             @endif
             @if(auth()->user()["level"]<2)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estado">
@@ -267,14 +283,7 @@
                         <span class="nav-link-text">Lista de Equipos</span>
                     </a>
                 </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
-                        <a class="nav-link" href="{{action('AdministradorController@estado')}}">
-                            <i class="fa fa-list-ol" aria-hidden="true"></i>
-                            <span class="nav-link-text">Estado de los partidos</span>
-                        </a>
-                    </li>
-
-                @endif
+            @endif
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
                 <a class="nav-link" href="{{action('ProgramadorController@perfil')}}">
                     <i class="fa fa-user" aria-hidden="true"></i>
