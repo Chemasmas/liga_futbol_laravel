@@ -32,10 +32,10 @@
                                 {{$partido->equipol->nombre}}
                             </td>
                             <td>
-                                {{$partido->marcadorVisitante}}
+                                {{$partido->marcadorLocal}}
                             </td>
                             <td>
-                                {{$partido->marcadorLocal}}
+                                {{$partido->marcadorVisitante}}
                             </td>
                             <td>
                                 {{$partido->equipov->nombre}}
