@@ -446,7 +446,7 @@ class ProgramadorController extends Controller
         $equipos = equipos::where('activo',1)->where('idIst',$programador->idInst)->select('id')->get();
         $torneos = participantes_torneo::whereIn('Equipos_id',$equipos)->select('Torneo_id')->get();
 
-        $torneos_participamos = torneos::whereIn('id',$torneos)->get();
+        $torneos_participamos = torneos::whereIn('id',$torneos)->where('activo',1)->get();
 
         debug($usuario);
         debug($programador);
