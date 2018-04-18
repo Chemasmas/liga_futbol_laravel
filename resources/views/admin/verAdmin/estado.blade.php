@@ -37,10 +37,10 @@
                             {{$partido->jornada}}
                         </td>
                         <td>
-                            {{$partido->fecha}}
+                            Dia: {{$partido->fecha}}
                         </td>
                         <td>
-                            {{$partido->hora}}
+                            Hora: {{$partido->hora}}
                         </td>
                     </tr>
                 @endforeach
