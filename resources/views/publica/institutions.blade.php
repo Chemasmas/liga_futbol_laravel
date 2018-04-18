@@ -156,7 +156,7 @@
 		</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">ESN Lomas San Mateo</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Escuela Sierra Nevada Lomas San Mateo</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Mariposa Golondrina 2, Jardines de San Mateo, <br /> 53200 Naucalpan de Juárez, Méx.</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.102741634089!2d-99.26340608560727!3d19.494215043760168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2036bce21932b%3A0x78461ad174c01bb8!2sEscuela+Sierra+Nevada+San+Mateo!5e0!3m2!1ses-419!2smx!4v1520307000005" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
@@ -168,7 +168,7 @@
 		</td> <td class="wsite-multicol-col" style="width:33.339642714949%; padding:0 20px;">
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">ESN Lomas</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Escuela Sierra Nevada Lomas</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Paseo de la Reforma 715, Lomas de Chapultepec, Miguel Hidalgo,<br /> 11000 Ciudad de México, D.F.</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.733947033903!2d-99.21552198560832!3d19.42389804599325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2018b5dc48555%3A0xa5574b7e2ad1afe8!2sEscuela+SIERRA+NEVADA+Preescolar!5e0!3m2!1ses-419!2smx!4v1520307381798" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
@@ -335,7 +335,7 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">escuela britanico americana</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">British American School</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Fuente del Niño 16, Lomas de Tecamachalco,<br /> 53950 Naucalpan de Juárez, Mexico</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.611749328631!2d-99.23135228560828!3d19.42917414582604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2022a0f49e14d%3A0x274ad57039cb8b9c!2sBritish+American+School!5e0!3m2!1ses-419!2smx!4v1518947011159" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
@@ -350,7 +350,7 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">escuela eton</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Colegio eton</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Prados de la Montaña, D García Ramos S/n, Lomas de Santa Fe, Contadero,<br /> 05619 Ciudad de México, CDMX</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60217.595586403455!2d-99.277790553803!3d19.38647706494983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdff6739c95103%3A0x7692728bae0d843c!2sEton+School!5e0!3m2!1ses-419!2smx!4v1518947279067" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
@@ -365,7 +365,7 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">escuela myschool</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">myschool</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Cerrada Parque de Alcázar 6, Fracc. Jardines de la Herradura,<br /> 52778 Huxquilucan, MEX</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.094466620329!2d-99.27338628560857!3d19.408323946486853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2014939859533%3A0x5e2c614f377d366b!2sMy+School!5e0!3m2!1ses-419!2smx!4v1518947541355" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
@@ -395,10 +395,10 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">escuela sierra nevada lomas</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">escuela sierra nevada interlomas</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Camino Cuajimalpa-Palo Solo 1, Hacienda de Las Palmas,<br /> 52763 Huixquilucan de Degollado, MEX</font></div>
 
-			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.4400717860913!2d-99.2928750856088!3d19.393382846959987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d206c59d168325%3A0xfa83231c4fa8672e!2sEscuela+Sierra+Nevada+Lomas!5e0!3m2!1ses-419!2smx!4v1518948441207" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
+			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.4400717860913!2d-99.2928750856088!3d19.393382846959987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d206c59d168325%3A0xfa83231c4fa8672e!2sEscuela+Sierra+Nevada+Interlomas!5e0!3m2!1ses-419!2smx!4v1518948441207" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
 
 			<div><div style="height: 0px; overflow: hidden; width: 100%;"></div>
 				<hr class="styled-hr" style="width:100%;"></hr>
@@ -486,7 +486,7 @@
 
 
 
-			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Universidad Justo Sierra San Mateo</font></h2>
+			<h2 class="wsite-content-title" style="text-align:left;"><font size="3">Justo Sierra San Mateo</font></h2>
 			<div class="paragraph" style="text-align:left;"><font size="3" color="#2a2a2a">Av. de los Cipreses No. 2010, Las Animas,<br /> 53229 Naucalpan de Juárez, Méx.</font></div>
 
 			<div><div id="428824268679595785" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.6892445680273!2d-99.31556508560767!3d19.468960544563082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20457a2538111%3A0x3ff9a0a982e2e151!2sUniversidad+Justo+Sierra+San+Mateo!5e0!3m2!1ses-419!2smx!4v1520309199738" width="250" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>
