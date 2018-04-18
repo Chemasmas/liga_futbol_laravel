@@ -36,6 +36,12 @@
                         <td>
                             {{$partido->jornada}}
                         </td>
+                        <td>
+                            {{$partido->fecha}}
+                        </td>
+                        <td>
+                            {{$partido->hora}}
+                        </td>
                     </tr>
                 @endforeach
                 @empty
