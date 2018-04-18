@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\administradores;
+use App\torneos;
 use App\usuarios;
 use Illuminate\Http\Request;
 
@@ -213,6 +214,26 @@ class AdministradorController extends Controller
         return redirect()->back()->with(
             ["message" => ["clase" => "warning", "mensaje" => $administrador->nombre . " Desactivado"]]
         );
+    }
+
+    public function estado(){
+        $torneos = torneos::where('programable',1)->get();
+        $torneosU = [];
+
+        foreach($torneos as $k => $torneo){
+            $torneosU[$k] = [];
+            $torneosU[$k]['torneo'] = $torneo;
+            $torneosU[$k]['partidos'] = $torneo->partidos
+                ->filter(function ($partido) use ($torneo) {
+                    return $partido->jornada >= $torneo->jornada && $partido->jornada <= $torneo->jornada+3;
+                });
+        }
+
+        debug($torneosU);
+        return view('admin.verAdmin.estado', [
+            "torneos"=>$torneosU,
+            "rutas" => []
+        ]);
     }
 }
 

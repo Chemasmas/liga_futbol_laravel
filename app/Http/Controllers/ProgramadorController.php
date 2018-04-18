@@ -466,5 +466,14 @@ class ProgramadorController extends Controller
             "rutas" => []
         ]);
     }
+
+    public function estado_torneos(){
+        $torneos = torneos::where('programable',1);
+
+        return view('admin.verProgramador.marcador', [
+            "partidosG"=>$torneos,
+            "rutas" => []
+        ]);
+    }
 }
 
