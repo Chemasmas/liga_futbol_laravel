@@ -225,7 +225,7 @@ class AdministradorController extends Controller
             $torneosU[$k]['torneo'] = $torneo;
             $torneosU[$k]['partidos'] = $torneo->partidos
                 ->filter(function ($partido) use ($torneo) {
-                    return $partido->jornada >= $torneo->jornada && $partido->jornada <= $torneo->jornada+3;
+                    return $partido->jornada >= $torneo->jornada && $partido->jornada <= $torneo->jornada+2;
                 });
         }
 
