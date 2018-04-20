@@ -22,9 +22,9 @@
                         {{$partido->equipol->nombre}}
                     </td>
                     <td>
-                        <input type="number" name="localM" class="form-control">
+                        <input type="number" name="localM" class="form-control" value={{$partido->marcadorLocal}}>
                     </td>
-                    <td><input type="number" name="visitaM" class="form-control"></td>
+                    <td><input type="number" name="visitaM" class="form-control" value={{$partido->marcadorVisitante}}></td>
                     <td>
                         {{$partido->equipov->nombre}}
                     </td>
