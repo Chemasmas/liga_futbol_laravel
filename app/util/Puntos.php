@@ -34,8 +34,8 @@ class Puntos
 
     private static function puntosEquipo($idE,$idT){
         debug($idE);
-        $pJ = partidos::where("jugado",1)
-            ->where("Visitante",$idE)
+        $pJ = partidos::where("Visitante",$idE)
+            ->where("jugado",1)
             ->orWhere("Local",$idE)
             ->where("jugado",1)
             ->count();
@@ -56,14 +56,37 @@ class Puntos
         $gCV = partidos::where("jugado",1)->where("Visitante",$idE)->sum("marcadorLocal");
 
 
+        $byeCount = partidos::where("Visitante",$idE)
+            ->where("jugado",1)
+            ->orWhere("Local",$idE)
+            ->where("jugado",1)
+            ->get()
+            ->filter( function($item){
+                return $item->equipol->nombre == 'BYE' or $item->equipol->nombre == 'BYE';
+            })
+            ->count();
+
+        debug("Equipo ".$idE);
+        debug($pGL);
+        debug($pGV);
+        debug($pEL);
+        debug($pEV);
+        debug($pPL);
+        debug($pPV);
+        debug($gFL);
+        debug($gFV);
+        debug($gCL);
+        debug($gCV);
+        debug($byeCount);
+
         $estadistica = participantes_torneo::where("Torneo_id",$idT)
             ->where("Equipos_id",$idE)->first();
 
 
 
-        $estadistica->PartidosJugados = $pJ;
+        $estadistica->PartidosJugados = $pJ - $byeCount;
         $estadistica->PartidosGanados = $pGL + $pGV;
-        $estadistica->PartidosEmpatados = $pEL + $pEV;
+        $estadistica->PartidosEmpatados = $pEL + $pEV - $byeCount;
         $estadistica->PartidosPerdidos = $pPL + $pPV;
         $estadistica->GolesFavor = $gFL + $gFV;
         $estadistica->GolesContra = $gCL + $gCV;
@@ -72,7 +95,7 @@ class Puntos
 
         $estadistica->save();
 
-        debug($estadistica->id);
+        debug($estadistica);
 
         //debug($pJ);
         //debug($pGL);
