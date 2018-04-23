@@ -14,7 +14,7 @@
         <div class="col-sm-12">
             <h3>Lista de torneos por programar</h3>
             <table class="table table-bordered">
-                @foreach($torneos as $torneo)
+                @forelse($torneos as $torneo)
                     <tr>
                         <td>{{$torneo->nombre}}</td>
                         <td>
@@ -23,7 +23,30 @@
                             </a>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    @foreach($torneosP as $partido)
+                    <tr>
+                        <td>{{$partido->equipol->nombre}}</td>
+                        <td>
+                            <img src="{{asset($partido->equipol->institucione->escudo)}}" alt="" style="height: 100px; width: auto;">
+                        </td>
+                        @if($partido->jugado)
+                            <td>{{$partido->fecha}}</td>
+                            <td>{{$partido->hora}}</td>
+                            <td>{{$partido->campo}}</td>
+                        @else
+                            <td>{{$partido->marcadorLocal}}</td>
+                            <td>{{$partido->campo}}</td>
+                            <td>{{$partido->marcadorVisitante}}</td>
+                        @endif
+                        <td>
+                            <img src="{{asset($partido->equipov->institucione->escudo)}}" alt="" style="height: 100px; width: auto;">
+                        </td>
+                        <td>{{$partido->equipov->nombre}}</td>
+
+                    </tr>
+                    @endforeach
+                @endforelse
             </table>
         </div>
     </div>

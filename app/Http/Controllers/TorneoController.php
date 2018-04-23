@@ -8,7 +8,6 @@ use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
 use App\util\Puntos;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
