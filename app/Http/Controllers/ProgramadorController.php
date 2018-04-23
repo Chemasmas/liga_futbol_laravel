@@ -172,6 +172,8 @@ class ProgramadorController extends Controller
 
         $user = Auth::user();
         $torneos = [];
+        $inicio = Carbon::today('America/Mexico_City')->startOfWeek();
+        $fin = Carbon::today('America/Mexico_City')->endOfWeek();
         switch ($user->level){
             case 1: //ES Admin
                 $torneos = torneos::where("activo",1)->get();
@@ -192,8 +194,7 @@ class ProgramadorController extends Controller
                 debug($programador);
                 debug($torneosIds);
 
-                $inicio = Carbon::today('America/Mexico_City')->startOfWeek();
-                $fin = Carbon::today('America/Mexico_City')->endOfWeek();
+
                 debug($inicio);
                 debug($fin);
                 $torneosP = torneos::whereIn("id",$torneosIds)
