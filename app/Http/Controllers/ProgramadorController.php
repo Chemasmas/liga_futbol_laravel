@@ -175,6 +175,11 @@ class ProgramadorController extends Controller
         switch ($user->level){
             case 1: //ES Admin
                 $torneos = torneos::where("activo",1)->get();
+                $torneosIds = participantes_torneo::groupBy("Torneo_Id")->select("Torneo_Id")->get();
+                $torneosP = torneos::whereIn("id",$torneosIds)
+                    ->where("activo",1)
+                    ->select('id')
+                    ->get();
                 break;
             case 2: //Es Programador
                 $programador = $user->programadores[0];
@@ -186,11 +191,27 @@ class ProgramadorController extends Controller
                     ->get();
                 debug($programador);
                 debug($torneosIds);
+
+                $inicio = Carbon::today('America/Mexico_City')->startOfWeek();
+                $fin = Carbon::today('America/Mexico_City')->endOfWeek();
+                debug($inicio);
+                debug($fin);
+                $torneosP = torneos::whereIn("id",$torneosIds)
+                    ->where("activo",1)
+                    ->select('id')
+                    ->get();
                 break;
             default: return redirect()->action("AdminController@index")->with(
-                ["message"=>["clase"=>"danger","mensaje"=>"No puedes Acceder a esa seccion"]]
+                [
+                    "message"=>["clase"=>"danger","mensaje"=>"No puedes Acceder a esa seccion"]
+
+                ]
             );
         }
+
+
+        $partidos = partidos::whereIn('Torneo_id',$torneosP)->whereBetween('fecha',[$inicio,$fin])->get();
+        debug($torneosP);
 
         debug($torneos);
 
@@ -200,6 +221,7 @@ class ProgramadorController extends Controller
                 "crear"=>["etiqueta"=>"Programacion-Lista", "active"=>"0","link"=>""]
             ],
             "torneos" => $torneos,
+            "torneosP" => $partidos,
         ]);
     }
 
