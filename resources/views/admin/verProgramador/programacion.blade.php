@@ -13,6 +13,12 @@
     <div class="row">
         <div class="col-sm-12">
             <h3>Lista de torneos por programar</h3>
+
+            @if(Auth::user()->level<2)
+                <a href="{{action('AdministradorController@partidosSemanales')}}" class="btn btn-success">Partidos de la Semana</a>
+                <br>
+                <br>
+            @endif
             <table class="table table-bordered">
                 @forelse($torneos as $torneo)
                     <tr>
@@ -24,8 +30,10 @@
                         </td>
                     </tr>
                 @empty
-                    @foreach($torneosP as $partido)
+                    @foreach($torneosP->sortBy(["fecha","hora"]) as $partido)
                     <tr>
+                        <td>{{$partido->fecha}}</td>
+                        <td>{{$partido->hora}}</td>
                         <td>{{$partido->equipol->nombre}}</td>
                         <td>
                             <img src="{{asset($partido->equipol->institucione->escudo)}}" alt="" style="height: 100px; width: auto;">

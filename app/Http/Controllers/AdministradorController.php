@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\administradores;
+use App\partidos;
 use App\torneos;
 use App\usuarios;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdministradorController extends Controller
 {
@@ -227,13 +230,36 @@ class AdministradorController extends Controller
                 ->filter(function ($partido) use ($torneo) {
                     return $partido->jornada >= $torneo->jornada && $partido->jornada <= $torneo->jornada+2;
                 });
-        }
-
-        debug($torneosU);
+        }        debug($torneosU);
         return view('admin.verAdmin.estado', [
             "torneos"=>$torneosU,
             "rutas" => []
         ]);
+    }
+
+
+    public function partidosSemanales(){
+
+        Carbon::setLocale('mx');
+        $inicio = Carbon::today('America/Mexico_City')->startOfWeek();
+        $fin = Carbon::today('America/Mexico_City')->endOfWeek();
+
+
+        return Excel::create("Semanal_".$inicio->format("d-m")."_".$fin->format("d-m"), function($excel) {
+            Carbon::setLocale('mx');
+            $inicio = Carbon::today('America/Mexico_City')->startOfWeek();
+            $fin = Carbon::today('America/Mexico_City')->endOfWeek();
+            $partidos = partidos::whereBetween('fecha',[$inicio,$fin])->orderBy("fecha")->get()->groupBy("fecha");
+
+
+            $excel->sheet('Partidos_'.$inicio->format("d-m")."_".$fin->format("d-m"), function($sheet) use ($partidos) {
+
+                $sheet->loadView('excel.semanal',["partidos"=>$partidos] );
+
+            });
+
+
+        })->download('xls');
     }
 }
 
