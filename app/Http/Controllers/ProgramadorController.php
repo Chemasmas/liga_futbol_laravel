@@ -47,7 +47,6 @@ class ProgramadorController extends Controller
     {
         $instituciones = instituciones::all();
         return view("admin.programador.crear", [
-            "rutas"=>[],
             "instituciones" => $instituciones,
             "rutas" => [
                 "Home"=>["etiqueta"=>"Home", "active"=>"1","link"=>"/admin/dashboard"],
@@ -116,7 +115,6 @@ class ProgramadorController extends Controller
         $programador = programadores::findOrFail($id);
         $instituciones = instituciones::all();
         return view("admin.programador.crear", [
-            "rutas"=>[],
             "instituciones" => $instituciones,
             "programador" => $programador,
             "rutas" => [
@@ -345,13 +343,6 @@ class ProgramadorController extends Controller
         $fecha = $request["fecha"];
 
         $campo = strtoupper($request["campo"]);
-
-        //debug($request["fecha"]);
-        //debug($request["hora"]);
-        //debug(strtotime($request["hora"]));
-
-        //debug(Auth::user()->level);
-        //debug(Auth::user()->level<2);
 
         if( Auth::user()->level < 2 ) // es admin
         {

@@ -276,14 +276,6 @@
                 </li>
 
             @endif
-            @if(auth()->user()["level"]<2)
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Estado">
-                    <a class="nav-link" href="{{action('EquipoController@teamList')}}">
-                        <i class="fa fa-list-ol" aria-hidden="true"></i>
-                        <span class="nav-link-text">Lista de Equipos</span>
-                    </a>
-                </li>
-            @endif
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Perfil">
                 <a class="nav-link" href="{{action('ProgramadorController@perfil')}}">
                     <i class="fa fa-user" aria-hidden="true"></i>

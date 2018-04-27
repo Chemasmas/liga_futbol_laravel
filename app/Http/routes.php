@@ -138,6 +138,7 @@ Route::get('/admin/programador/{idT}/rol',['middleware' => 'auth', 'uses' => "Pr
 
 Route::post('/admin/partido/{idP}/proponer',['middleware' => 'auth', 'uses' => "ProgramadorController@propuesta"]);
 Route::get('/admin/partido/{idP}/liberar',['middleware' => 'auth', 'uses' => "ProgramadorController@habilitar_edicion_partido"]);
+Route::get('/admin/partidos/semanal',['middleware' => 'auth', 'uses' => "AdministradorController@partidosSemanales"]);
 
 Route::get('/admin/directorioP',['middleware' => 'auth', 'uses' => "DirectorioController@programador"]);
 Route::get('/admin/directorioA',['middleware' => 'auth', 'uses' => "DirectorioController@arbitro"]);
@@ -149,7 +150,7 @@ Route::get('/admin/verProgramador/programacion',['middleware' => 'auth', 'uses' 
 Route::get('/admin/verArbitro/partidosP',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
 Route::get('/admin/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
-//Web Muplica
+//Web Publica
 Route::get('/',"HomeController@index");
 Route::get('/about',"HomeController@about");
 Route::get('/directory',"HomeController@directory");
