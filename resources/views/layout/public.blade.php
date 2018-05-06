@@ -126,12 +126,7 @@
                         </li>
 
                         <li>
-                            <a href="{{action('HomeController@directory')}}">directorio</a>
-                            <ul>
-                                <li><a href="{{action('HomeController@institutions')}}">instituciones y canchas</a></li>
-
-
-                            </ul>
+                            <a href="{{action('HomeController@institutions')}}">directorio</a>
                         </li>
                         <li class="mega-dropdown">
                             <a href="{{action('HomeController@regulation')}}">reglamento</a>
@@ -470,4 +465,4 @@
 </body>
 
 <!-- Mirrored from finelayers.net/html/soccer/soccer-ltr/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Jan 2018 07:57:16 GMT -->
-</html></html>
+</html>
