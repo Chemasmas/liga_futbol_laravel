@@ -247,8 +247,8 @@ class AdministradorController extends Controller
 
         return Excel::create("Semanal_".$inicio->format("d-m")."_".$fin->format("d-m"), function($excel) {
             Carbon::setLocale('mx');
-            $inicio = Carbon::today('America/Mexico_City')->startOfWeek();
-            $fin = Carbon::today('America/Mexico_City')->endOfWeek();
+            $inicio = Carbon::today('America/Mexico_City')->addWeeks(1)->startOfWeek();
+            $fin = Carbon::today('America/Mexico_City')->addWeeks(1)->endOfWeek();
             $partidos = partidos::whereBetween('fecha',[$inicio,$fin])->orderBy("fecha")->get()->groupBy("fecha");
 
 
