@@ -33,6 +33,7 @@ class torneos extends Model
      */
     protected $fillable = ['nombre', 'tipo_torneo', 'activo', 'genero', 'es_liga','generado',"jornada"];
 
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

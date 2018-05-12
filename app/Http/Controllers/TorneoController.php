@@ -15,7 +15,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
-
 class TorneoController extends Controller
 {
     /**
@@ -87,8 +86,6 @@ class TorneoController extends Controller
 
         $torneo->save(['timestamps' => false]);
 
-        //TODO validacion exito de la insercion
-        //success
         return redirect()->back()->with(
             ["message"=>["clase"=>"success","mensaje"=>"Torneo Creado"]]
         );
@@ -106,7 +103,6 @@ class TorneoController extends Controller
     {
         $torneo = torneos::findOrFail($id);
 
-        //Todo , retrieve info form torneo
         return view('admin.torneo.info',[
             "torneo" => $torneo,
             "participantes" => $torneo->participantesTorneos()->get(),
@@ -448,5 +444,34 @@ class TorneoController extends Controller
         $torneo->save();
         return redirect()->action("TorneoController@index");
     }
+
+    public function generateSemis($idT){
+
+        $torneo = torneos::findOrFail($idT);
+        $estadisticas = participantes_torneo::where("Torneo_id",$torneo->id)
+            ->get()->sort(function($a , $b){
+                if($a->Puntos == $b->Puntos){
+                    return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
+                }
+                else
+                    return $a->Puntos < $b->Puntos? 1:-1;
+            });
+
+        debug($estadisticas[0]);
+        debug($estadisticas[1]);
+        debug($estadisticas[2]);
+        debug($estadisticas[3]);
+        debug($estadisticas);
+
+        return $estadisticas;
+
+    }
+
+    public function generateFinals($idT){
+
+    }
+
+
+
 }
 
