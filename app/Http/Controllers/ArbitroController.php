@@ -239,9 +239,8 @@ class ArbitroController extends Controller
         $ayer = Carbon::yesterday();
         $limite = Carbon::today()->addDay(4);
         //$partidos2 = partidos::whereBetween( "fecha",array($ayer,$limite) )->get()->groupBy("fecha");
-        debug(partidos::all());
+
         debug($partidos);
-        //debug($partidos2);
 
         return view('admin.verArbitro.lista_partidos',
             [
@@ -297,24 +296,6 @@ class ArbitroController extends Controller
         $jugadoresL = jugadores::where("equipos_id",$local)->get();
         $jugadoresV = jugadores::where("equipos_id",$visitante)->get();
 
-        /*
-        $marcadorL = Bitacora::where("idP",$idP)
-            ->where("goles",1)
-            ->where("idE",$local)
-            ->count();
-
-        $marcadorV = Bitacora::where("idP",$idP)
-            ->where("goles",1)
-            ->where("idE",$visitante)
-            ->count();
-        */
-
-        //debug($partido);
-        //debug($local);
-        //debug($visitante);
-        //debug($jugadoresL);
-        //debug($jugadoresV);
-
         return view('admin.verArbitro.partido',
             [
                 //"marcadorL"=>$marcadorL,
@@ -344,7 +325,8 @@ class ArbitroController extends Controller
             $partido->marcadorVisitante = $partido->marcadorVisitante + 1;
         }
         $partido->save();
-        Puntos::calculoPuntos($bitacora->idP);
+        if($partido->torneo->tipo == 0)
+            Puntos::calculoPuntos($bitacora->idP);
         return redirect()->back();
     }
 
@@ -375,57 +357,10 @@ class ArbitroController extends Controller
         $partido->notas = $request["notas"];
 
         $partido->save();
-        Puntos::calculoPuntos($idP);
-/*
-        $partido = partidos::findOrFail($idP);
-        $local = $partido->marcadorLocal;
-        $visitante = $partido->marcadorVisitante;
 
+        if($partido->torneo->tipo == 0)
+            Puntos::calculoPuntos($idP);
 
-        $partLocal = participantes_torneo::where("Torneo_id",$partido->Torneo_id)
-            ->where("Equipos_id",$partido->Local)->first();
-        $partVisita = participantes_torneo::where("Torneo_id",$partido->Torneo_id)
-            ->where("Equipos_id",$partido->Visitante)->first();
-
-
-        //Local
-        $partLocal->PartidosJugados =  $partLocal->PartidosJugados +1;
-        if($local>$visitante){
-            $partLocal->PartidosGanados =  $partLocal->PartidosGanados +1;
-            $partLocal->Puntos=$partLocal->Puntos+3;
-        }else if($local<$visitante){
-            $partLocal->PartidosPerdidos =  $partLocal->PartidosPerdidos +1;
-            $partLocal->Puntos=$partLocal->Puntos+0;
-        }else{
-            $partLocal->PartidosEmpatados =  $partLocal->PartidosEmpatados +1;
-            $partLocal->Puntos=$partLocal->Puntos+1;
-        }
-        $partLocal->GolesFavor =$partLocal->GolesFavor + $local;
-        $partLocal->GolesContra = $partLocal->GolesContra +$visitante;
-        $partLocal->DiferenciaGoles = $partLocal->GolesFavor - $partLocal->GolesContra;
-        $partLocal->save();
-
-
-        //Visitante
-        $partVisita->PartidosJugados =  $partVisita->PartidosJugados +1;
-        if($local<$visitante){
-            $partVisita->PartidosGanados =  $partVisita->PartidosGanados +1;
-            $partVisita->Puntos=$partVisita->Puntos+3;
-        }else if($local>$visitante){
-            $partVisita->PartidosPerdidos =  $partVisita->PartidosPerdidos +1;
-            $partVisita->Puntos=$partVisita->Puntos+0;
-        }else{
-            $partVisita->PartidosEmpatados =  $partVisita->PartidosEmpatados +1;
-            $partVisita->Puntos=$partVisita->Puntos+1;
-        }
-        $partVisita->GolesFavor =$partVisita->GolesFavor + $visitante;
-        $partVisita->GolesContra = $partVisita->GolesContra +$local;
-        $partVisita->DiferenciaGoles = $partVisita->GolesFavor - $partVisita->GolesContra;
-        $partVisita->save();
-
-        $partido->verifica = -1;
-        $partido->save();
-*/
         return redirect()->action("ArbitroController@lista_partidos");
     }
 }

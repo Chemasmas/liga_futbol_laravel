@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property boolean $generado
  * @property int $jornada
  * @property boolean $programable
+ * @property boolean $isSemiReady
+ * @property boolean $isFinalReady
  * @property participantes_torneo[] $participantesTorneos
  * @property partidos[] $partidos
  */
@@ -33,6 +35,7 @@ class torneos extends Model
      */
     protected $fillable = ['nombre', 'tipo_torneo', 'activo', 'genero', 'es_liga','generado',"jornada"];
 
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -49,3 +52,4 @@ class torneos extends Model
         return $this->hasMany('App\partidos', 'Torneo_id');
     }
 }
+

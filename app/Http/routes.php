@@ -150,6 +150,13 @@ Route::get('/admin/verProgramador/programacion',['middleware' => 'auth', 'uses' 
 Route::get('/admin/verArbitro/partidosP',['middleware' => 'auth', 'uses' => "ProgramadorController@partidos"]);
 Route::get('/admin/perfil',['middleware' => 'auth', 'uses' => "ProgramadorController@perfil"]);
 
+
+//Semifinales
+Route::get("/generateSemis/{idT}",['middleware' => 'auth', 'uses' => "TorneoController@generateSemis"]);
+Route::get("/generateFinals/{idT}",['middleware' => 'auth', 'uses' => "TorneoController@generateFinals"]);
+
+
+
 //Web Publica
 Route::get('/',"HomeController@index");
 Route::get('/about',"HomeController@about");
