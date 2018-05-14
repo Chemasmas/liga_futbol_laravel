@@ -8,11 +8,15 @@ use App\partidos;
 use App\torneos;
 use App\util\Plantillas;
 use App\util\Puntos;
+
+use App\util\Utilidades;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
 
 class TorneoController extends Controller
@@ -377,13 +381,13 @@ class TorneoController extends Controller
 
     public function cambiarResultados(Request $request,$idP){
 
-        debug($request);
         $partido = partidos::findOrFail($idP);
         $partido->marcadorLocal = $request["localM"];
         $partido->marcadorVisitante = $request["visitaM"];
         $partido->save();
 
-        Puntos::calculoPuntos($idP);
+        if($partido->torneo->tipo != 0)
+            Puntos::calculoPuntos($idP);
 
         return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
@@ -427,7 +431,8 @@ class TorneoController extends Controller
         $partido->verifica = -1;
         $partido->save();
 
-        Puntos::calculoPuntos($idP);
+        if($partido->torneo->tipo == 0)
+            Puntos::calculoPuntos($idP);
         return redirect()->action("TorneoController@jornadas",["idP"=>$partido->Torneo_id]);
     }
 
@@ -448,26 +453,108 @@ class TorneoController extends Controller
     public function generateSemis($idT){
 
         $torneo = torneos::findOrFail($idT);
+
+        if($torneo->isSemiReady)
+            return redirect()->back();
+
         $estadisticas = participantes_torneo::where("Torneo_id",$torneo->id)
-            ->get()->sort(function($a , $b){
+            ->get()
+            ->sort(function($a , $b){
                 if($a->Puntos == $b->Puntos){
                     return $a->DiferenciaGoles < $b->DiferenciaGoles? 1:-1;
                 }
                 else
                     return $a->Puntos < $b->Puntos? 1:-1;
-            });
+            })
+            ->slice(0,4);
+        $lastJ = partidos::where("Torneo_id",$idT)->max("jornada");
 
-        debug($estadisticas[0]);
-        debug($estadisticas[1]);
-        debug($estadisticas[2]);
-        debug($estadisticas[3]);
-        debug($estadisticas);
 
-        return $estadisticas;
+        //Debo generar 2 partidos nuevos:
+        $partido1 = new partidos();
+        $partido1->Local = $estadisticas[0]->equipo->id;
+        $partido1->Visitante = $estadisticas[3]->equipo->id;
+        $partido1->jornada = $lastJ + 1;
+        $partido1->Torneo_id = $idT;
+        $partido1->marcadorLocal = 0;
+        $partido1->marcadorVisitante = 0;
+        $partido1->jugado = 0;
+        $partido1->tipo = 1;
+
+        $partido2 = new partidos();
+        $partido2->Local = $estadisticas[1]->equipo->id;
+        $partido2->Visitante = $estadisticas[2]->equipo->id;
+        $partido2->jornada = $lastJ + 1;
+        $partido2->Torneo_id = $idT;
+        $partido2->marcadorLocal = 0;
+        $partido2->marcadorVisitante = 0;
+        $partido2->jugado = 0;
+        $partido2->tipo = 1;
+
+        $partido1->save();
+        $partido2->save();
+
+        $torneo->isSemiReady = 1;
+        $torneo->save();
+
+        debug($estadisticas[0]->equipo->id . " VS ". $estadisticas[3]->equipo->id );
+        debug($estadisticas[1]->equipo->id . " VS ". $estadisticas[2]->equipo->id );
+        debug($lastJ);
+
+        Log::debug($estadisticas);
+
+
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Exito"]]
+        );
 
     }
 
     public function generateFinals($idT){
+        $torneo = torneos::findOrFail($idT);
+
+        if($torneo->isFinalReady)
+            return redirect()->back()->with(
+                ["message"=>["clase"=>"danger","mensaje"=>"La final ya ha sido generada"]]
+            );
+
+        $lastJ = partidos::where("Torneo_id",$idT)->max("jornada");
+        $partidosSemi = partidos::where("Torneo_id",$idT)->where("tipo",1)->where("jugado",1)->get();
+
+        Log::debug($partidosSemi);
+
+        if(count($partidosSemi) == 0){
+            return redirect()->back()->with(
+                ["message"=>["clase"=>"danger","mensaje"=>"Faltan partidos por jugar"]]
+            );
+        }
+
+
+        $ganador1 = Utilidades::getWinner($partidosSemi[0]->id);
+        $ganador2 = Utilidades::getWinner($partidosSemi[1]->id);
+
+        Log::debug($ganador1);
+        Log::debug($ganador2);
+
+        $partido1 = new partidos();
+        $partido1->Local = $ganador1;
+        $partido1->Visitante = $ganador2;
+        $partido1->jornada = $lastJ + 1;
+        $partido1->Torneo_id = $idT;
+        $partido1->marcadorLocal = 0;
+        $partido1->marcadorVisitante = 0;
+        $partido1->jugado = 0;
+        $partido1->tipo = 2;
+
+        $partido1->save();
+
+        $torneo->isFinalReady = 1;
+        $torneo->save();
+
+
+        return redirect()->back()->with(
+            ["message"=>["clase"=>"success","mensaje"=>"Exito"]]
+        );
 
     }
 

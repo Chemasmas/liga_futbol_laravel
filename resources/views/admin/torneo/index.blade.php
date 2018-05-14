@@ -76,6 +76,18 @@
                                 </a>
                             @endif
                         @endif
+                        @if(Auth::user()->level == 1)
+                            @if(!$torneo->isSemiReady)
+                            <a class="btn btn-info" data-toggle="tooltip" title="Generar Semifinales" href='{{ action("TorneoController@generateSemis",["idT"=>$torneo->id])}}'>
+                                SemiFinal
+                            </a>
+                            @endif
+                            @if($torneo->isSemiReady && !$torneo->isFinalReady)
+                            <a class="btn btn-info" data-toggle="tooltip" title="Generar Finales" href='{{ action("TorneoController@generateFinals",["idT"=>$torneo->id])}}'>
+                                Final
+                            </a>
+                            @endif
+                        @endif
                     </td>
                 </tr>
             @empty

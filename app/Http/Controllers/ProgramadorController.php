@@ -332,8 +332,6 @@ class ProgramadorController extends Controller
         debug("Propuesta");
 
         $partido = partidos::findOrFail($idP);
-        //debug($partido);
-        //debug($partido->status == 2);
 
         if( $partido->status == 2 && Auth::user()->level > 1 ) // Ya asignada y no eres admin
             return redirect()->back();
